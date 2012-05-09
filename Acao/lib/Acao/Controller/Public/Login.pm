@@ -48,6 +48,18 @@ Faz a chamada para a autenticação, iniciando a sessão do usuário.
 
 =cut
 
+#Função responsável por remover os espaços em branco para evitar possíveis erros
+sub trim {
+  my $string = shift;
+  for ($string) {
+    s/^\s+//;
+    s/\s+$//;
+  }
+  return $string;
+}
+
+
+
 sub login : Chained('base') : PathPart('') : Args(0) {
     my ( $self, $c ) = @_;
     my $user     = $c->request->params->{user};
@@ -55,14 +67,14 @@ sub login : Chained('base') : PathPart('') : Args(0) {
 
     if ( defined $user && defined $password ) {
         
-        if ($c->authenticate( { id => $user, password => $password })) {
+        if ($c->authenticate( { id => trim($user), password => $password })) {
             $c->flash->{erro} = '';
             if (ref($c->user->memberof) ne 'ARRAY' or !($c->model('Usuario')->validaUser($c->user->dn))) {
                 $c->flash->{erro} = 'usuario-nao-acao';
                 $c->res->redirect( $c->uri_for_action('/auth/logout'));
                 return;
             }
-
+			
             $c->res->redirect( $c->uri_for_action('/auth/principal') );
             return;
 
