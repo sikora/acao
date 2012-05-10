@@ -108,6 +108,8 @@
 </div>
 <br>
 
+
+
  <fieldset>
    <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/visualizar_por_tipo', [ id_volume, controle, id_documento ])%]" class="_buscar">Visualizar Todos Deste Tipo</a>
    <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/alterar', [ id_volume, controle, id_documento ]) %]" class="alterar" >Alterar Documento</a>
@@ -118,6 +120,7 @@
         <label for="representaDocumentoFisico"> Representa Documento Físico </label>
    [%  END %]
 <br><br>
+
  <div id="form_container"></div>
   <input type="hidden" name="view" value="visualizar">
   [% IF c.model('Documento').pode_alterar_documento(id_volume,controle,id_documento) %]
