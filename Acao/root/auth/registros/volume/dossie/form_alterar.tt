@@ -24,7 +24,7 @@
 [% SET nome = dos.nome %]
 [% SET localizacao = dos.localizacao %]
 
- <form id="form" name="form" action="[% c.uri_for_action('/auth/registros/volume/dossie/store_alterar', [ id_volume, controle ],{qtdDocumentos => qtdDocumentos}) %]" method="post" onsubmit="">
+ <form id="form" name="form" action="[% c.uri_for_action('/auth/registros/volume/dossie/store_alterar', [ id_volume, controle ]) %]" method="post" onsubmit="">
 
   [% INCLUDE 'auth/registros/volume/dossie/_formDossie.tt' %]
 
@@ -53,7 +53,10 @@
 
  <script language="javascript">
   function validaForm(){
-
+ 	if (!check_auths()) {
+		alert('Número mínimo de permissões não atingido.');
+		return false;
+	}
     if(document.getElementById('nome').value == ''){
       alert('Informe o nome do Prontuário');
       document.getElementById('nome').focus();
