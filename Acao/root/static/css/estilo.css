@@ -1684,3 +1684,22 @@ font-weight: 600;
 #fieldsetColunas {
   display: none;
   }
+
+/* Indices */
+
+.filter {
+    left: 65px;
+    position: relative;
+}
+
+#filtrarGrid {
+    font-weight: bold;
+    left: 5px;
+    position: relative;
+    top: 48px;
+    width: 50px;
+}
+
+.filters {
+   height: 30px;
+	}
