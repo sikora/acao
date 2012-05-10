@@ -170,14 +170,10 @@
 
    generateXsdFormUI();
 
+// Desabilitar os campos inputs & selects da visualização do formulário
+$(document).ready(function(){
 
-$(function(){
-
-	$(':input').click(function(){
-
-		$(this).attr('disabled', true);
-		
-	});
+		$(':input', ':select', ':textarea').attr('disabled', 'disabled');
 
 });
 
