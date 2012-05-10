@@ -1,10 +1,35 @@
-[% SET labels_roles = {
-        "alterar" => "Alterar este Volume",
-        "criar" => "Criar Prontuários neste Volume",
-        "listar" => "Listar este Volume",
-        "visualizar" => "Ver este Volume",
-        "transferir" => "Transferir Prontuários neste Volume",
-   } %]
+[% # IF model == 'documento' %]
+[%	  SET labels_roles = {
+        "alterar" => "Alterar este Documento",
+        "listar" => "Listar este Documento",
+        "visualizar" => "Ver este Documento",
+        "transferir" => "Transferir este Documento",
+       } %]
+[% #  END %]
+
+[%  IF model == 'volume'   %]
+[% 	  SET labels_roles = {
+	        "alterar" => "Alterar este Volume",
+	        "criar" => "Criar Prontuários neste Volume",
+	        "listar" => "Listar este Volume",
+	        "visualizar" => "Ver este Volume",
+	        "transferir" => "Transferir Prontuários neste Volume",
+	   } %]
+
+[%   END %]
+[%   IF model == 'dossie' %]
+[%	   SET labels_roles = {
+	        "alterar" => "Alterar este Prontuário",
+	        "criar" => "Criar Documentos neste Prontuário",
+	        "listar" => "Listar este Prontuário",
+	        "visualizar" => "Ver este Prontuário",
+	        "transferir" => "Transferir este Prontuário",
+	   } %]
+[%   END %]
+
+
+
+
 <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes">
      <table id="grid_autorizacoes">
       <thead>

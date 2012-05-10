@@ -4,11 +4,11 @@
 	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
 	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
 	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
-	xmlns="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cadastro-org_mov_est.xsd"
-	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cadastro-org_mov_est.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cad-prof_pol_juv.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cad-prof_pol_juv.xsd"
 	elementFormDefault="qualified">
 
-	<xs:element name="FichaCadProfPolJuv" type="FichaCadProfPolJuv">
+	<xs:element name="cadProfPolJuv" type="cadProfPolJuv">
 		<xs:annotation>
 			<xs:appinfo>
 				<xhtml:label>FICHA DE CADASTRO DOS PROFISSIONAIS DA POLÍTICA DE JUVENTUDE</xhtml:label>
@@ -23,7 +23,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:complexType name="FichaCadProfPolJuv">
+	<xs:complexType name="cadProfPolJuv">
 		<xs:sequence>
 
 			<xs:element name="numero" minOccurs="0" type="xs:integer">
@@ -197,7 +197,7 @@
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="escolaridade" minOccurs="0" maxOccurs="5">
+			<xs:element name="escolaridade" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>01 – Qual a sua escolaridade?</xhtml:label>
@@ -244,7 +244,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="ocupacaoProjeto" minOccurs="0" maxOccurs="6">
+			<xs:element name="ocupacaoProjeto" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>02- Na sua ocupação no Projeto você é?</xhtml:label>
@@ -276,7 +276,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="corRacaEtnia" minOccurs="0" maxOccurs="4">
+			<xs:element name="corRacaEtnia" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>03 – Você se considera de qual cor ou raça/etnia?</xhtml:label>
@@ -306,7 +306,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="estadoCivil" minOccurs="0" maxOccurs="5">
+			<xs:element name="estadoCivil" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>04 – Estado civil</xhtml:label>
@@ -337,7 +337,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="orientacaoSexual" minOccurs="0" maxOccurs="4">
+			<xs:element name="orientacaoSexual" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>05- Orientação Sexual</xhtml:label>
@@ -379,7 +379,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="quantosFilhosTem" minOccurs="0" maxOccurs="5">
+			<xs:element name="quantosFilhosTem" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>06- Quantos (as) filhos (as) você tem?</xhtml:label>
@@ -410,7 +410,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="tipoDeficiencia" minOccurs="0" maxOccurs="3">
+			<xs:element name="tipoDeficiencia" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>07- Você tem algum tipo de deficiência?</xhtml:label>
@@ -446,7 +446,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="beneficiarioProjetoPoliticaJuventude" minOccurs="0" maxOccurs="3">
+			<xs:element name="beneficiarioProjetoPoliticaJuventude" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>08-  Você já foi beneficiário (a)  de algum projeto da política de juventude?</xhtml:label>
@@ -482,7 +482,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="rendaFamiliar" minOccurs="0" maxOccurs="5">
+			<xs:element name="rendaFamiliar" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>09- Somando a sua renda com a das pessoas que moram com você, qual é a renda familiar?</xhtml:label>
@@ -513,7 +513,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="participouAreaPoliticaJuventudeRelevantes" minOccurs="0" maxOccurs="6">
+			<xs:element name="participouAreaPoliticaJuventudeRelevantes" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>10-  Cite os cursos e oficinas dos quais você já participou na área da Política de Juventude que você considera mais relevantes para sua carreira profissional:</xhtml:label>
@@ -551,7 +551,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="funcoesAnterioresAreaJuventude" minOccurs="0" maxOccurs="2">
+			<xs:element name="funcoesAnterioresAreaJuventude" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>11- Descreva suas funções anteriores na área de juventude:</xhtml:label>
