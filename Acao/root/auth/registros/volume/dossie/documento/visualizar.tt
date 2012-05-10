@@ -166,6 +166,10 @@
    fillValues  ("[% c.uri_for_action('/auth/registros/volume/dossie/documento/xml', [ id_volume, controle, id_documento ]) %]");
 
    generateXsdFormUI();
+   $(document).ready(function() {
+   	$('input, select, textarea').attr('disabled', 'disabled');
+   });
+
  </script>
 
 [% INCLUDE 'footer.tt' %]
