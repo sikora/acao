@@ -27,11 +27,18 @@
 [% IF !interval_ini %]
   [% SET interval_ini = 0 %]
 [% END %]
+<script  language="javascript">
 
-<table>
+	$(document).ready(function() {
+		$('#tableSearch').tableFilter();
+	});
+
+</script>
+<div id="filtrarGrid">Filtrar :</div>
+<table id='tableSearch'>
 <thead>
  <tr>
-  <th width="20%">Dossiês</th>
+  <th width="20%">Prontuários</th>
  </tr>
 </thead>
 <TBODY>
@@ -39,7 +46,7 @@
     <tr>
         <td>
             <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/visualizar', [ entrie.volume.id_volume, entrie.dossie.id_dossie, entrie.documento ])%]" >
-                [% entrie.resumo %] 
+                [% entrie.resumo %]
 
             </a>
         </td>

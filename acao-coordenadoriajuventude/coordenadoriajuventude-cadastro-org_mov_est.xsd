@@ -4,11 +4,11 @@
 	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
 	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
 	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
-	xmlns="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cadastro-org_mov_est.xsd"
-	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cadastro-org_mov_est.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cad-org_mov_est.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cad-org_mov_est.xsd"
 	elementFormDefault="qualified">
 
-	<xs:element name="OrganizacoesEst" type="OrganizacoesEst">
+	<xs:element name="orgMovEst" type="orgMovEst">
 		<xs:annotation>
 			<xs:appinfo>
 				<xhtml:label> FICHA DE CADASTRO DAS ORGANIZAÇÕES E MOVIMENTOS DE JUVENTUDE</xhtml:label>
@@ -23,7 +23,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:complexType name="OrganizacoesEst">
+	<xs:complexType name="orgMovEst">
 		<xs:sequence>
             <xs:element name="identificOrganiz">
 				<xs:annotation>
@@ -38,7 +38,7 @@
 								<xs:appinfo>
 									<xhtml:label>Nome da Organização/SIGLA</xhtml:label>
 								</xs:appinfo>
-							</xs:annotation>
+							</xs:annotation>orgMovEst
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:maxLength value="255" />
@@ -177,7 +177,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="infoSobreOrganiz" minOccurs="0" maxOccurs="20">
+			<xs:element name="infoSobreOrganiz" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>II-INFORMAÇÕES SOBRE A ORGANIZAÇÃO</xhtml:label>
@@ -278,7 +278,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="participantes" minOccurs="0" maxOccurs="20">
+			<xs:element name="participantes" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>III. PARTICIPANTES</xhtml:label>
@@ -345,7 +345,7 @@
 			</xs:element>
 
 
-			<xs:element name="formaOrganiz" minOccurs="0" maxOccurs="20">
+			<xs:element name="formaOrganiz" minOccurs="0" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>IV. FORMAS DE ORGANIZAÇÃO</xhtml:label>
