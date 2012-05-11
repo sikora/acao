@@ -1703,3 +1703,7 @@ font-weight: 600;
 .filters {
    height: 30px;
 	}
+
+#voltar {font-size:13px;}
+
+#voltar a:hover {color:#ecbf05;}

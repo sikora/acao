@@ -169,8 +169,11 @@
    fillValues  ("[% c.uri_for_action('/auth/registros/volume/dossie/documento/xml', [ id_volume, controle, id_documento ]) %]");
 
    generateXsdFormUI();
+
+// Desabilitar os campos inputs & selects da visualização do formulário
+
    $(document).ready(function() {
-   	$('input, select, textarea').attr('disabled', 'disabled');
+   		$('input, select, textarea').attr('disabled', 'disabled');
    });
 
  </script>
