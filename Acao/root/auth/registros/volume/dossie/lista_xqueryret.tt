@@ -3,9 +3,15 @@
     <tr>
 
         <td>
-         <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/lista', [ id_volume, '___id_dossie___' ]).replace('___id_dossie___','{$x/ns:controle/text()}') %]" >
-               <span title="{$x/ns:controle/text()}">{substring($x/ns:controle/text(),0, 10)}... </span>
-           </a>
+         { if ( $x/ns:estado/text() eq 'aberto') then (
+		         <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/lista', [ id_volume, '___id_dossie___' ]).replace('___id_dossie___','{$x/ns:controle/text()}') %]" >
+		               <span title="{$x/ns:controle/text()}">{substring($x/ns:controle/text(),0, 10)}... </span>
+		           </a>
+            ) else (
+                 <a href="#"  onclick="javasctipt:alert('Prontuário deve estar no estado ABERTO para que possa ser visualizado!')" >
+		               <span title="{$x/ns:controle/text()}">{substring($x/ns:controle/text(),0, 10)}... </span>
+		           </a>
+              )}
         </td>
 
         <td>
