@@ -30,7 +30,6 @@ serem carregados e a versão da aplicação.
 =head1 METHODS
 
 =cut
-
 use strict;
 use utf8;
 use warnings;
@@ -56,10 +55,10 @@ __PACKAGE__->log(
     Catalyst::Log::Log4perl->new( __PACKAGE__->path_to('Log4perl.conf') . '' )
 );
 
-__PACKAGE__->config( 'Plugin::ConfigLoader' => { 
-                driver => { 
-                        'General' => { -UTF8 => 1 }, 
-                } 
+__PACKAGE__->config( 'Plugin::ConfigLoader' => {
+                driver => {
+                        'General' => { -UTF8 => 1 },
+                }
 } );
 
 

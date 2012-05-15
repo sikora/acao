@@ -64,7 +64,7 @@ para essa área.
 sub principal : Chained('base') : PathPart('') : Args(0) {
     my ( $self, $c ) = @_;
     # redireciona o usuário para área administrativa caso seja super admin.
-    
+  
     if (($admin_super ~~ @{$c->user->memberof})) {
         $c->res->redirect( $c->uri_for_action('/auth/admin/principal') );
     } else {
