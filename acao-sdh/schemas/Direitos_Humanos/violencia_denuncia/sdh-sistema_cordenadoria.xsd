@@ -164,7 +164,7 @@
 						<xs:element name="coferencia" type="xs:boolean">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Coferência</xhtml:label>
+									<xhtml:label>Conferência</xhtml:label>
 								 </xs:appinfo>
 							</xs:annotation>
 						</xs:element>
@@ -246,6 +246,18 @@
 								 </xs:annotation>
 						    <xs:complexType>
 					           <xs:sequence>
+                         <xs:element name="nomeLocalEvent" minOccurs="0"  >
+			                <xs:annotation>
+				                <xs:appinfo>
+					                <xhtml:label>Nome do local</xhtml:label>
+				                </xs:appinfo>
+			                </xs:annotation>
+			                <xs:simpleType>
+					    <xs:restriction base="xs:string">
+						    <xs:maxLength value="255" />
+					    </xs:restriction>
+				        </xs:simpleType>
+                        </xs:element> 
 			              	   </xs:sequence>
 						    </xs:complexType>		
 						</xs:element>
