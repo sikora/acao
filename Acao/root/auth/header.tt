@@ -64,8 +64,7 @@
 							[%  USE Dumper %]
 							[% lotacao = c.model('Usuario').getDadosUsuarioLdap(c.user.dn, 'adm').memberOf.first %]
 							[% lotacoes = lotacao.match('^.*?=(.*?),') %]
-                        <td>
-							[% lotacoes.0 %]</td>
+                        <td>[% lotacoes.0 %]</td>
                     </tr>
                 </table>
             </div>
