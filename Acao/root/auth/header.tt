@@ -58,13 +58,14 @@
                       [% ELSE %]
                         <th>Operador:</th>
                       [% END %]
-                     
+
                         <td><a href="[% c.uri_for_action('/auth/usuario/ver_user') %]" alt="Editar Conta" title="Alterar Senha">[% c.user.cn %]</a></td>
-                        <th style="padding-left:60px">Lotação:</th>                   
+                        <th style="padding-left:60px">Lotação:</th>
 							[%  USE Dumper %]
 							[% lotacao = c.model('Usuario').getDadosUsuarioLdap(c.user.dn, 'adm').memberOf.first %]
-							[% lotacoes = lotacao.match('^o=(.*?),') %]
-                        <td>[% lotacoes.0 %]</td>
+							[% lotacoes = lotacao.match('^.*?=(.*?),') %]
+                        <td>
+							[% lotacoes.0 %]</td>
                     </tr>
                 </table>
             </div>
