@@ -562,7 +562,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="participouAreaPoliticaJuventudeRelevantes" minOccurs="0"  minOccurs="20">
+    		<xs:element name="partAreaPolJuvRel" minOccurs="0"  maxOccurs="20">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>10-  Cite os cursos e oficinas dos quais você já participou na área da Política de Juventude que você considera mais relevantes para sua carreira profissional:</xhtml:label>
@@ -615,7 +615,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="funcoesAnterioresAreaJuventude" minOccurs="0" >
+			<xs:element name="funcAnterAreaJuv" maxOccurs="20" >
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>11- Descreva suas funções anteriores na área de juventude:</xhtml:label>
