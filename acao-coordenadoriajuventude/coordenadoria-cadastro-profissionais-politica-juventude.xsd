@@ -297,7 +297,6 @@
 							<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:enumeration value="Servidor" />
-								<xs:enumeration value="Concursado(a)" />
 								<xs:enumeration value="Terceirizado(a)" />
 								<xs:enumeration value="Comissionado(a)" />
 								<xs:enumeration value="Temporário(a)" />
@@ -562,7 +561,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="participouAreaPoliticaJuventudeRelevantes" minOccurs="0"  minOccurs="20">
+			<xs:element name="participouAreaPoliticaJuventudeRelevantes" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>10-  Cite os cursos e oficinas dos quais você já participou na área da Política de Juventude que você considera mais relevantes para sua carreira profissional:</xhtml:label>
@@ -674,19 +673,6 @@
 						<xhtml:label>Data:</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
-			</xs:element>
-
-			<xs:element name="assinatura" minOccurs="0">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Assinatura do profissional:</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:maxLength value="255" />
-					</xs:restriction>
-				</xs:simpleType>
 			</xs:element>
 
 		</xs:sequence>
