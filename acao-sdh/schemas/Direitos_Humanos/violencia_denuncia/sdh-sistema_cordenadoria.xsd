@@ -22,6 +22,24 @@
 	<xs:complexType name="sistemacordenadoria">
 		<xs:sequence>
 
+			<xs:element name="programa" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Programa</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="COOID" />
+						<xs:enumeration value="COPPIR" />
+						<xs:enumeration value="COPEDEF" />
+						<xs:enumeration value="CDS" />
+						<xs:enumeration value="FUNCI" />
+						<xs:enumeration value="RAIZ" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
 			<xs:element name="sistemaCordenadoria">
 				<xs:annotation>
 					<xs:appinfo>
@@ -164,7 +182,7 @@
 						<xs:element name="coferencia" type="xs:boolean">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Coferência</xhtml:label>
+									<xhtml:label>Conferência</xhtml:label>
 								 </xs:appinfo>
 							</xs:annotation>
 						</xs:element>
@@ -246,6 +264,18 @@
 								 </xs:annotation>
 						    <xs:complexType>
 					           <xs:sequence>
+                         <xs:element name="nomeLocalEvent" minOccurs="0"  >
+			                <xs:annotation>
+				                <xs:appinfo>
+					                <xhtml:label>Nome do local</xhtml:label>
+				                </xs:appinfo>
+			                </xs:annotation>
+			                <xs:simpleType>
+					    <xs:restriction base="xs:string">
+						    <xs:maxLength value="255" />
+					    </xs:restriction>
+				        </xs:simpleType>
+                        </xs:element> 
 			              	   </xs:sequence>
 						    </xs:complexType>		
 						</xs:element>

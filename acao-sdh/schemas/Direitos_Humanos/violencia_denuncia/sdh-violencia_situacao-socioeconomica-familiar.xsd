@@ -11,7 +11,7 @@
 			<xs:appinfo>
 				<xhtml:label>09. SITUAÇÃO SÓCIO-ECONÔMICA FAMILIAR</xhtml:label>
                 <class:classificacoes>
-                    <class:classificacao>cn=Geral,cn=Direitos Humanos</class:classificacao>
+                    <class:classificacao>cn=Vitima,cn=Direitos Humanos</class:classificacao>
                 </class:classificacoes>
 			</xs:appinfo>
 		</xs:annotation>
@@ -198,7 +198,7 @@
 								    </xs:appinfo>
 							    </xs:annotation>
 						    </xs:element>	
-						    <xs:element name="outroEquipamento"  minOccurs="0" type="xs:string">
+						    <xs:element name="outroEquipamento"  minOccurs="0" type="xs:boolean">
 							    <xs:annotation>
 								    <xs:appinfo>
 									    <xhtml:label>Outros equipamentos</xhtml:label>
