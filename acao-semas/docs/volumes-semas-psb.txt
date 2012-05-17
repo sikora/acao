@@ -1,0 +1,104 @@
+HIERQUIZAÇÃO DE VOLUMES DO PSB
+
+Def. PSB  - Proteção Social Básica
+	 CRAS Centro de Referência de Assistência Social
+   
+
+1. VOLUMES DOS CRAS 
+
+	Nomes dos volumes da Proteção Social Básica:
+		CRAS-BARRA DO CEARÁ
+		CRAS-PIRAMBU
+		CRAS-LAGAMAR
+		CRAS-MUCURIPE
+		CRAS-PRAIA DO FUTURO II
+		CRAS-SERVILUZ
+		CRAS-BELA VISTA
+		CRAS-QUINTINO CUNHA
+		CRAS-COUTO FERNANDES
+		CRAS-SERRINHA
+		CRAS-VILA UNIÃO
+		CRAS-ARACAPÉ
+		CRAS-BOM JARDIM
+		CRAS-CONJUNTO ESPERANÇA
+		CRAS-GRANJA PORTUGAL
+		CRAS-GENIBAÚ
+		CRAS-MONDUBIM
+		CRAS-CANINDEZINHO
+		CRAS-CASTELÃO
+		CRAS-CONJUNTO PALMEIRAS
+		CRAS-DENDÊ
+		CRAS-JARDIM DAS OLIVEIRAS
+		CRAS-JOÃO PAULO II
+		CRAS-ITINEREANTE
+
+	Instrumentais ou documentos:
+		Ficha de Identificação da Família
+		Plano de Acompanhamento Familiar
+
+	Identificador de prontuário no volumes:
+		NIS do responsável da família
+
+	Classificação: 
+		Assistencia Social, Proteção Social Básica
+
+	Acessos:
+		Usuários da SEMAS acessa todos os volumes
+		Usuários dos DAS acessa somente os volumes do CRAS de sua competência
+		CRAS acessa somente o seu olume
+
+
+2. VOLUMES DAS ATIVIDADES COLETIVAS
+
+	Nomes dos volumes das Atividades Coletivas:
+		ATIV.COLETIVAS_2011
+		ATIV.COLETIVAS_2012
+
+	Instrumentais ou documentos:
+		Planejamento Mensal
+		Relatório Mensal das Atividades Coletivas
+
+	Identificador de prontuário no volumes:
+		Esquema geral: 
+			RELATÓRIO + [Nome do Projeto] + [Mês] + [Nome do CRAS]
+		Exemplos:
+			RELATÓRIO PROJOVEM FEV CRAS PIRAMBU
+			RELATÓRIO PROJOVEM FEV CRAS BARRA DO CEARÁ
+						...
+
+	Classificação:
+		Assistêncial Social, Atividades Coletivas PSB
+
+	Acessos:
+		Usuários da SEMAS acessa todos os relatórios do volume
+		Usuários do DAS acessa somente os relatórios do incluídos pelos CRAS
+		CRAS acessa somente os relatórios do incluídos pelo seu CRAS
+
+3. VOLUMES DOS RELATÓRIOS
+
+	Nome do volume dos RELATÓRIOS:
+		RELATÓRIOS PSB 2011
+		RELATÓRIOS PSB 2012
+		....
+
+	Instrumentais ou documentos:
+		Relatório de Gestão
+		Relatório Quantitativo Mensal
+
+	Identificador de prontuário no volumes:
+		Esquema geral: 
+			RELATÓRIO + [Nome do Projeto] + [Mês] + [Nome do CRAS]
+		RELATÓRIO PROJOVEM FEV CRAS PIRAMBU
+		RELATÓRIO PROJOVEM FEV CRAS BARRA DO CEARÁ
+		...
+		RELATÓRIO DE GESTÃO 01/2012
+		RELATÓRIO DE GESTÃO 02/2012
+		...
+
+	Classificação:
+		Assistêncial Social, Relatórios PSB
+
+	Acessos:
+		Usuários da SEMAS acessa todos os relatórios do volume
+		Usuários do DAS acessa somente os relatórios do incluídos pelos CRAS
+		CRAS acessa somente os relatórios do incluídos pelo seu CRAS
