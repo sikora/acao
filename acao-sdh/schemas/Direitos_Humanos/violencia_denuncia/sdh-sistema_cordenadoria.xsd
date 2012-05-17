@@ -22,6 +22,24 @@
 	<xs:complexType name="sistemacordenadoria">
 		<xs:sequence>
 
+			<xs:element name="programa" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Programa</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="COOID" />
+						<xs:enumeration value="COPPIR" />
+						<xs:enumeration value="COPEDEF" />
+						<xs:enumeration value="CDS" />
+						<xs:enumeration value="FUNCI" />
+						<xs:enumeration value="RAIZ" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
 			<xs:element name="sistemaCordenadoria">
 				<xs:annotation>
 					<xs:appinfo>
