@@ -21,7 +21,6 @@
 
 	<xs:complexType name="sistemacordenadoria">
 		<xs:sequence>
-
 			<xs:element name="programa" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>

@@ -21,7 +21,6 @@
 
 	<xs:complexType name="dadosPessoaisVitima">
 		<xs:sequence>
-
 				<xs:element name="protocolo" minOccurs="0">
 					<xs:annotation>
 						<xs:appinfo>
