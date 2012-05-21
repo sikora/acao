@@ -993,7 +993,7 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-										
+
 									</xs:sequence>
 								</xs:complexType>
 						</xs:element>
@@ -1023,7 +1023,7 @@
 
 							<xs:complexType>
 								<xs:sequence>
-									
+
 							        <xs:element name="numdadcompl" minOccurs="0">
 							            <xs:annotation>
 							                <xs:appinfo>
@@ -1107,7 +1107,7 @@
 							                </xs:appinfo>
 							            </xs:annotation>
 							        </xs:element>
-	
+
 								</xs:sequence>
 							</xs:complexType>
 						
@@ -1116,7 +1116,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 
 			<xs:element name="identificacaoPotencialidades">
 			
@@ -1160,7 +1159,7 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									
+
 									<xs:element name="ativperiodo" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
