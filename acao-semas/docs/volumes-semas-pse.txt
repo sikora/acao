@@ -1,4 +1,4 @@
-HIERQUIZAÇÃO DE VOLUMES DO PSE
+HIERARQUIZAÇÃO DE VOLUMES DO PSE
 
 Def. A Proteção Social Especial ou PSE compreende dois programas: 
 	Programa de Enfrentamento a Violação de Direito
@@ -23,13 +23,12 @@ Def. As classificações definidas  para volumes, prontuários e documentos da P
 5. Assistencia Social, Proteção Social Especial, Relatórios Gestão PSE
 
 
-1. VOLUMES DOS CREAS
-	Volumes definidos para a Proteção Social Especial, Programa de Enfrentamento a Violação de Direito
+1. VOLUMES DOS CREAS - Volumes definidos para a Proteção Social Especial, Programa de Enfrentamento a Violação de Direito
 		CREAS SER II
 		CREAS SER III
 		CREAS SER V
 
-	Instrumentais do volumes v1,v2 e v3:
+	Instrumentais dos volumes:
 		Ficha de Atendimento
 		Ficha Específica CREAS
 		Plano de Acompanhamento
@@ -42,30 +41,32 @@ Def. As classificações definidas  para volumes, prontuários e documentos da P
 		Assistencia Social, Proteção Social Especial, Programa de Enfrentamento a Violação de Direito
 
 	Acesso:
-		criação somente pela CASA DE PASSAGEM
+		Ficha de Atendimento (Criação/Alteração pelo CREAS, lista/visualização C. PASSAGEM)
+		Ficha Específica CREAS (Criação/Alteração pelo CREAS, lista/visualização C. PASSAGEM)
+		Plano de Acompanhamento (Criação/Alteração pelo CREAS, lista/visualização C. PASSAGEM)
+		Ficha Específica da Casa de Passagem (Criação/Alteração pela C.PASSAGEM, lista/visualização CREAS)
 
 
-2. VOLUMES DO CENTRO POP
+2. VOLUMES DO CENTRO POP - Volumes definidos para a Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
+	
+		Nome do volume:
+			CENTRO POP
 
-	Volumes definidos para a Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
-	Nome do volume:
-		CENTRO POP
+		Instrumentais desse volume
+			Ficha de Atendimento
+			Ficha Específica do Centro POP
+			Ficha Específica da Abordagem de Rua
+			Plano de Acompanhamento
+			Ficha Específica do Espaço de Acolhimento Noturno
 
-	Instrumentais desse volume
-		Ficha de Atendimento
-		Ficha Específica do Centro POP
-		Ficha Específica da Abordagem de Rua
-		Plano de Acompanhamento
-		Ficha Específica do Espaço de Acolhimento Noturno
+		Identificador do prontuário
+			NIS ou CPF da pessoa
 
-	Identificador do prontuário
-		NIS ou CPF da pessoa
+		Classificação: 
+			Assistencia Social, Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
 
-	Classificação: 
-		Assistencia Social, Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
-
-	Acesso: 
-		Criação somente pelo Espaço de Acolhimento Noturno
+		Acesso: 
+			Criação somente pelo Espaço de Acolhimento Noturno
 
 3. VOLUMES DA COORDENAÇÃO DE MÉDIA COMPLEXIDADE
 

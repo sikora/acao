@@ -69,7 +69,7 @@
 
 [% IF erro %]
 <div id="voltar">
-	<a href="http://localhost:3000/auth/administracao" title="Voltar">Voltar</a>
+	<a href="../auth/administracao" title="Voltar">Voltar</a>
 </div>
    <span class="erro">
      [% IF mensagens_erro.exists(codigo_erro) %]

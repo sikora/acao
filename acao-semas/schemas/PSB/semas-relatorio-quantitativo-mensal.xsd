@@ -1761,7 +1761,7 @@
 			<xs:element name="numcres" minOccurs="1">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Nº do CRES/CRP</xhtml:label>
+						<xhtml:label>Nº do CRESS/CRP *</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
@@ -1771,10 +1771,10 @@
 				</xs:simpleType>
 			</xs:element>
 			
-			<xs:element name="datadoc" minOccurs="0" type="xs:date">
+			<xs:element name="datadoc" minOccurs="1" type="xs:date">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Data</xhtml:label>
+						<xhtml:label>Data *</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

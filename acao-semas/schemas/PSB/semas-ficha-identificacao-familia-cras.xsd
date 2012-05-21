@@ -17,6 +17,7 @@
                 </class:classificacoes>
                 <idx:index>
                     <idx:hint key="pessoa.numeronis" xpath="formFichaIdentificacaoFamilia/identificacao/numeronis"/>
+                    <idx:hint key="pessoa.codfamiliar" xpath="formFichaIdentificacaoFamilia/identificacao/codfamiliar"/>
                     <idx:hint key="pessoa.nome" xpath="formFichaIdentificacaoFamilia/identresponsavel/nomresp"/>
                     <idx:hint key="pessoa.rg" xpath="formFichaIdentificacaoFamilia/identresponsavel/numrgresp"/>
                     <idx:hint key="pessoa.cpfresp" xpath="formFichaIdentificacaoFamilia/identresponsavel/cpf"/>
@@ -41,6 +42,19 @@
 
 				<xs:complexType>
 					<xs:sequence>
+
+				        <xs:element name="codfamiliar" minOccurs="1">
+				            <xs:annotation>
+				                <xs:appinfo>
+				                    <xhtml:label>Código Familiar *</xhtml:label>
+				                </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+				                <xs:restriction base="xs:integer">
+				                    <xs:maxLength value="11"/>
+				                </xs:restriction>
+				            </xs:simpleType>
+				        </xs:element>
 
 				        <xs:element name="numeronis" minOccurs="1">
 				            <xs:annotation>
@@ -156,7 +170,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-				        <xs:element name="origencaminhamentooutro" minOccurs="0">
+				        <xs:element name="origencamoutro" minOccurs="0">
 				            <xs:annotation>
 				                <xs:appinfo>
 				                    <xhtml:label>Outros</xhtml:label>
@@ -309,6 +323,10 @@
 				                <xs:appinfo>
 				                    <xhtml:label>Comunidade/Localidade</xhtml:label>
 				                </xs:appinfo>
+								<xsdext:extensions>
+									<xsdext:engine>autoComplete</xsdext:engine>
+									<xsdext:service>/comunidades</xsdext:service>
+								</xsdext:extensions>
 				            </xs:annotation>
 				            <xs:simpleType>
 				                <xs:restriction base="xs:string">
@@ -402,7 +420,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="identidadegenresp"  minOccurs="0">
+						<xs:element name="identgenresp"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>1.9 Identidade de gênero</xhtml:label>
@@ -410,6 +428,8 @@
 							</xs:annotation>
 							<xs:simpleType>
 							<xs:restriction base="xs:string">
+								<xs:enumeration value="Masculino" />
+								<xs:enumeration value="Feminino" />
 								<xs:enumeration value="Travesti" />
 								<xs:enumeration value="Transsexual" />
 								<xs:enumeration value="Trangênero" />
@@ -851,6 +871,23 @@
 										</xs:simpleType>
 									</xs:element>
 
+									<xs:element name="identgenmemb"  minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Identidade de gênero</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="Masculino" />
+											<xs:enumeration value="Feminino" />
+											<xs:enumeration value="Travesti" />
+											<xs:enumeration value="Transsexual" />
+											<xs:enumeration value="Trangênero" />
+										</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+
 									<xs:element name="dtnascmembro" minOccurs="0" type="xs:date">
 										<xs:annotation>
 											<xs:appinfo>
@@ -1078,7 +1115,7 @@
 						
 					</xs:sequence>
 				</xs:complexType>
-			</xs:element>				
+			</xs:element>
 
 
 			<xs:element name="identificacaoPotencialidades">
@@ -1188,46 +1225,18 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="inscricaocadunico"  minOccurs="0">
+						<xs:element name="datentrcadunico" minOccurs="0" type="xs:date">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>6.1 Está Inscrito(a) no Cadastro Único</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="Sim" />
-								<xs:enumeration value="Não" />
-							</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-
-						<xs:element name="seinscritocadunico" minOccurs="0" type="xs:date">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Em Caso Afirmativo, Data da entrevista</xhtml:label>
+									<xhtml:label>1. Data da entrevista</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
 
-				        <xs:element name="codigodomicilio" minOccurs="0">
-				            <xs:annotation>
-				                <xs:appinfo>
-				                    <xhtml:label>Código Familiar</xhtml:label>
-				                </xs:appinfo>
-				            </xs:annotation>
-				            <xs:simpleType>
-				                <xs:restriction base="xs:string">
-				                    <xs:maxLength value="255"/>
-				                     <xs:pattern value="[0-9]+"/>
-				                </xs:restriction>
-				            </xs:simpleType>
-				        </xs:element>
-
-						<xs:element name="senaoinscritocadunico"  minOccurs="0">
+						<xs:element name="senaoinscrcadunico"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Caso Não, a família encontra-se no perfil do Cadastro Único</xhtml:label>
+									<xhtml:label>Encontra-se no perfil do Cadastro Único</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -1287,7 +1296,7 @@
 						<xs:element name="particprogprojeto"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>6.4 Participa de algum Programa/Projeto ou Serviço  ou recebe algum benefício a parti do Cadastro Único</xhtml:label>
+									<xhtml:label>6.4 Participa de algum Programa/Projeto ou Serviço  ou recebe algum benefício a partir do Cadastro Único</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
