@@ -1,7 +1,6 @@
-HIERQUIZAÇÃO DE VOLUMES DO PSB
+HIERQUIZAÇÃO DOS VOLUMES DO PSB
 
-Def. PSB  - Proteção Social Básica
-	 CRAS Centro de Referência de Assistência Social
+Def. PSB  - Proteção Social Básica; CRAS - Centro de Referência de Assistência Social
    
 
 1. VOLUMES DOS CRAS 
@@ -37,15 +36,20 @@ Def. PSB  - Proteção Social Básica
 		Plano de Acompanhamento Familiar
 
 	Identificador de prontuário no volumes:
-		NIS do responsável da família
+		CÓDIGO FAMILIAR
 
 	Classificação: 
 		Assistencia Social, Proteção Social Básica
 
 	Acessos:
-		Usuários da SEMAS acessa todos os volumes
-		Usuários dos DAS acessa somente os volumes do CRAS de sua competência
-		CRAS acessa somente o seu olume
+		Operadores da SEMAS: lista/visualiza/cria/alterar volumes, prontuários no volumes
+				     altera lotação/permissão de volumes/prontuários/documentos
+		Operadores dos DAS:  lista/visualiza os volumes dos CRAS de sua abrangência
+				     lista/visualiza prontuários dos volumes que tem acesso 
+				     lista/visualiza documentos dos prontuários que acessa
+				     não altera lotação/permissões de documentos
+		Operadores dos CRAS: lista/visualiza/cria/altera prontuários, documentos nos prontuários do volume que tem acesso
+				     não altera lotação/permissões de documentos
 
 
 2. VOLUMES DAS ATIVIDADES COLETIVAS
@@ -58,21 +62,26 @@ Def. PSB  - Proteção Social Básica
 		Planejamento Mensal
 		Relatório Mensal das Atividades Coletivas
 
-	Identificador de prontuário no volumes:
+	Identificador de prontuário:
 		Esquema geral: 
 			RELATÓRIO + [Nome do Projeto] + [Mês] + [Nome do CRAS]
 		Exemplos:
-			RELATÓRIO PROJOVEM FEV CRAS PIRAMBU
-			RELATÓRIO PROJOVEM FEV CRAS BARRA DO CEARÁ
+			RELATÓRIO PROJOVEM 01/2012 CRAS PIRAMBU
+			RELATÓRIO PROJOVEM 01/2012 CRAS BARRA DO CEARÁ
 						...
 
 	Classificação:
 		Assistêncial Social, Atividades Coletivas PSB
 
 	Acessos:
-		Usuários da SEMAS acessa todos os relatórios do volume
-		Usuários do DAS acessa somente os relatórios do incluídos pelos CRAS
-		CRAS acessa somente os relatórios do incluídos pelo seu CRAS
+		Operadores da SEMAS: lista/visualiza/cria/altera volumes e prontuários
+                                     altara lotação/permissão de volumes/prontuários/documentos
+		Operadores do DAS:   lista/visualiza volumes, prontuários e documentos
+    				     não altera lotação/permissões de documentos
+		Operadores CRAS:     lista/visualiza/ todos os volumes;  
+				     lista/visualiza/ os prontuários que tem acesso
+                                     lista/visualiza/cria/altera documentos  dos prontuários que tem acesso
+				     não altera lotação/permissões de documentos
 
 3. VOLUMES DOS RELATÓRIOS
 
@@ -85,20 +94,28 @@ Def. PSB  - Proteção Social Básica
 		Relatório de Gestão
 		Relatório Quantitativo Mensal
 
-	Identificador de prontuário no volumes:
-		Esquema geral: 
-			RELATÓRIO + [Nome do Projeto] + [Mês] + [Nome do CRAS]
-		RELATÓRIO PROJOVEM FEV CRAS PIRAMBU
-		RELATÓRIO PROJOVEM FEV CRAS BARRA DO CEARÁ
-		...
-		RELATÓRIO DE GESTÃO 01/2012
-		RELATÓRIO DE GESTÃO 02/2012
-		...
+	Identificador de prontuário:
+		Esquema geral: 	RELATÓRIO + [Nome do Projeto] + [Mês] + [Nome do CRAS]
+
+		Exemplo1:
+			RELATÓRIO PROJOVEM FEV CRAS PIRAMBU
+			RELATÓRIO PROJOVEM FEV CRAS BARRA DO CEARÁ
+			...
+
+		Exemplo2(Relatório de Gestão):
+			RELATÓRIO DE GESTÃO 01/2012
+			RELATÓRIO DE GESTÃO 02/2012
+			...
 
 	Classificação:
 		Assistêncial Social, Relatórios PSB
 
 	Acessos:
-		Usuários da SEMAS acessa todos os relatórios do volume
-		Usuários do DAS acessa somente os relatórios do incluídos pelos CRAS
-		CRAS acessa somente os relatórios do incluídos pelo seu CRAS
+		Operadores da SEMAS: lista/visualiza/cria/altera volumes e prontuários
+                                     altara lotação/permissão de volumes/prontuários/documentos
+		Operadores do DAS:   lista/visualiza volumes, prontuários e documentos
+    				     não altera lotação/permissões de documentos
+		Operadores CRAS:     lista/visualiza/ todos os volumes;  
+				     lista/visualiza/ os prontuários que tem acesso
+                                     lista/visualiza/cria/altera documentos  dos prontuários que tem acesso
+				     não altera lotação/permissões de documentos
