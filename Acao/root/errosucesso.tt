@@ -68,9 +68,11 @@
   } %]
 
 [% IF erro %]
+
 <div id="voltar">
-	<a href="http://localhost:3000/auth/administracao" title="Voltar">Voltar</a>
+	<a href="[%c.uri_for_action('/auth/administracao')%]" title="Voltar">Voltar</a>
 </div>
+
    <span class="erro">
      [% IF mensagens_erro.exists(codigo_erro) %]
           [% mensagens_erro.item(codigo_erro) %]
