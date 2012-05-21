@@ -34,6 +34,24 @@
 					</xs:simpleType>
 				</xs:element>
 
+				<xs:element name="projeto"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Projeto</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+                            <xs:enumeration value="COOID" />
+                            <xs:enumeration value="COPPIR" />
+                            <xs:enumeration value="COPEDEF" />
+                            <xs:enumeration value="CDS" />
+                            <xs:enumeration value="FUNCI" />
+                            <xs:enumeration value="RAIZ" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
 				<xs:element name="nomeuser" minOccurs="0">
 					<xs:annotation>
 						<xs:appinfo>
