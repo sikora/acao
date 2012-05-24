@@ -24,6 +24,8 @@ Def. As classificações definidas  para volumes, prontuários e documentos da P
 
 
 1. VOLUMES DOS CREAS - Volumes definidos para a Proteção Social Especial, Programa de Enfrentamento a Violação de Direito
+
+	Nomes do volumes:
 		CREAS SER II
 		CREAS SER III
 		CREAS SER V
@@ -46,6 +48,7 @@ Def. As classificações definidas  para volumes, prontuários e documentos da P
 		Plano de Acompanhamento (Criação/Alteração pelo CREAS, lista/visualização C. PASSAGEM)
 		Ficha Específica da Casa de Passagem (Criação/Alteração pela C.PASSAGEM, lista/visualização CREAS)
 
+(até aqui - definições revisadas)
 
 2. VOLUMES DO CENTRO POP - Volumes definidos para a Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
 	
@@ -71,36 +74,42 @@ Def. As classificações definidas  para volumes, prontuários e documentos da P
 3. VOLUMES DA COORDENAÇÃO DE MÉDIA COMPLEXIDADE
 
 	Nome dos volumes:
-		MEDIA_COMPLEXIDADE
+		MÉDIA COMPLEXIDADE
 
 	Instrumentais desse volume, classificados por prontuários:
-		QUANTITATIVO_MENSAL
-			Relatório Mensal Quantitativo Centro Pop
-			Relatório Mensal Quantitativo-CREAS
-		RELATÓRIO_DE_GESTÃO
-			Relatório de Gestão
-		RELATÓRIO_DE_GESTÃO_COORDENACAO
-			Relatório de Gestão
+
+		A1.Relatório Mensal Quantitativo Centro Pop
+		A2.Relatório Mensal Quantitativo-CREAS
+		A3.Relatório de Gestão
+
+	Identificador dos prontuários:
+		QUANTITATIVO MENSAL(A1,A2)
+		RELATÓRIO DE GESTÃO(A3)
+		RELATÓRIO DE GESTÃO COORDENAÇÃO(3)
 
 	Classificação: 
 		Assistencia Social, Proteção Social Especial, Relatórios Média Complexidade
         Relatórios Gestão PSE
     Acesso:
+		??
 
 
 4. VOLUMES DA COORDENAÇÃO DE ALTA COMPLEXIDADE
 
 	Nome do volume:
-		ALTA_COMPLEXIDADE
+		ALTA COMPLEXIDADE
 
 	Instrumentais desse volume, classificados por prontuários:
-		QUANTITATIVOS_MENSAL
-			Relatório Mensal Quantitativo Casa de Passagem
-			Relatório Mensal Quantitativo Espaço de Acolhimento Noturno
-		RELATÓRIO_DE_GESTÃO
-			Relatório de Gestão
-		RELATÓRIO_DE_GESTÃO_COORDENACAO
-			Relatório de Gestão
+		
+			A1. Relatório Mensal Quantitativo Casa de Passagem
+			A2. Relatório Mensal Quantitativo Espaço de Acolhimento Noturno
+			A3. Relatório de Gestão
+
+	Identificação dos prontuários:
+		QUANTITATIVOS MENSAL(A1,A2)
+		RELATÓRIO DE GESTÃO(A3)
+		RELATÓRIO DE GESTÃO COORDENAÇÃO(A3)
+
 	Classificação: 
 		Assistencia Social, Proteção Social Especial, Relatórios Alta Complexidade
         Relatórios Gestão PSE
