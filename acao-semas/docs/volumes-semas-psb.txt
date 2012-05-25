@@ -1,0 +1,121 @@
+HIERQUIZAÇÃO DOS VOLUMES DO PSB
+
+Def. PSB  - Proteção Social Básica; CRAS - Centro de Referência de Assistência Social
+   
+
+1. VOLUMES DOS CRAS 
+
+	Nomes dos volumes da Proteção Social Básica:
+		CRAS-BARRA DO CEARÁ
+		CRAS-PIRAMBU
+		CRAS-LAGAMAR
+		CRAS-MUCURIPE
+		CRAS-PRAIA DO FUTURO II
+		CRAS-SERVILUZ
+		CRAS-BELA VISTA
+		CRAS-QUINTINO CUNHA
+		CRAS-COUTO FERNANDES
+		CRAS-SERRINHA
+		CRAS-VILA UNIÃO
+		CRAS-ARACAPÉ
+		CRAS-BOM JARDIM
+		CRAS-CONJUNTO ESPERANÇA
+		CRAS-GRANJA PORTUGAL
+		CRAS-GENIBAÚ
+		CRAS-MONDUBIM
+		CRAS-CANINDEZINHO
+		CRAS-CASTELÃO
+		CRAS-CONJUNTO PALMEIRAS
+		CRAS-DENDÊ
+		CRAS-JARDIM DAS OLIVEIRAS
+		CRAS-JOÃO PAULO II
+		CRAS-ITINEREANTE
+
+	Instrumentais ou documentos:
+		Ficha de Identificação da Família
+		Plano de Acompanhamento Familiar
+
+	Identificador de prontuário no volumes:
+		CÓDIGO FAMILIAR
+
+	Classificação: 
+		Assistencia Social, Proteção Social Básica
+
+	Acessos:
+		Operadores da SEMAS: lista/visualiza/cria/alterar volumes, prontuários no volumes
+				     altera lotação/permissão de volumes/prontuários/documentos
+		Operadores dos DAS:  lista/visualiza os volumes dos CRAS de sua abrangência
+				     lista/visualiza prontuários dos volumes que tem acesso 
+				     lista/visualiza documentos dos prontuários que acessa
+				     não altera lotação/permissões de documentos
+		Operadores dos CRAS: lista/visualiza/cria/altera prontuários, documentos nos prontuários do volume que tem acesso
+				     não altera lotação/permissões de documentos
+
+
+2. VOLUMES DAS ATIVIDADES COLETIVAS
+
+	Nomes dos volumes das Atividades Coletivas:
+		ATIV.COLETIVAS_2011
+		ATIV.COLETIVAS_2012
+
+	Instrumentais ou documentos:
+		Planejamento Mensal
+		Relatório Mensal das Atividades Coletivas
+
+	Identificador de prontuário:
+		Esquema geral: 
+			RELATÓRIO + [Nome do Projeto] + [Mês] + [Nome do CRAS]
+		Exemplos:
+			RELATÓRIO PROJOVEM 01/2012 CRAS PIRAMBU
+			RELATÓRIO PROJOVEM 01/2012 CRAS BARRA DO CEARÁ
+						...
+
+	Classificação:
+		Assistêncial Social, Atividades Coletivas PSB
+
+	Acessos:
+		Operadores da SEMAS: lista/visualiza/cria/altera volumes e prontuários
+                                     altara lotação/permissão de volumes/prontuários/documentos
+		Operadores do DAS:   lista/visualiza volumes, prontuários e documentos
+    				     não altera lotação/permissões de documentos
+		Operadores CRAS:     lista/visualiza/ todos os volumes;  
+				     lista/visualiza/ os prontuários que tem acesso
+                                     lista/visualiza/cria/altera documentos  dos prontuários que tem acesso
+				     não altera lotação/permissões de documentos
+
+3. VOLUMES DOS RELATÓRIOS
+
+	Nome do volume dos RELATÓRIOS:
+		RELATÓRIOS PSB 2011
+		RELATÓRIOS PSB 2012
+		....
+
+	Instrumentais ou documentos:
+		Relatório de Gestão
+		Relatório Quantitativo Mensal
+
+	Identificador de prontuário:
+		Esquema geral: 	RELATÓRIO + [Nome do Projeto] + [Mês] + [Nome do CRAS]
+
+		Exemplo1:
+			RELATÓRIO PROJOVEM FEV CRAS PIRAMBU
+			RELATÓRIO PROJOVEM FEV CRAS BARRA DO CEARÁ
+			...
+
+		Exemplo2(Relatório de Gestão):
+			RELATÓRIO DE GESTÃO 01/2012
+			RELATÓRIO DE GESTÃO 02/2012
+			...
+
+	Classificação:
+		Assistêncial Social, Relatórios PSB
+
+	Acessos:
+		Operadores da SEMAS: lista/visualiza/cria/altera volumes e prontuários
+                                     altara lotação/permissão de volumes/prontuários/documentos
+		Operadores do DAS:   lista/visualiza volumes, prontuários e documentos
+    				     não altera lotação/permissões de documentos
+		Operadores CRAS:     lista/visualiza/ todos os volumes;  
+				     lista/visualiza/ os prontuários que tem acesso
+                                     lista/visualiza/cria/altera documentos  dos prontuários que tem acesso
+				     não altera lotação/permissões de documentos

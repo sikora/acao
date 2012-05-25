@@ -3,9 +3,15 @@
     <tr>
 
         <td>
-         <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/lista', [ id_volume, '___id_dossie___' ]).replace('___id_dossie___','{$x/ns:controle/text()}') %]" >
-               <span title="{$x/ns:controle/text()}">{substring($x/ns:controle/text(),0, 10)}... </span>
-           </a>
+         { if ( $x/ns:estado/text() eq 'aberto') then (
+		         <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/lista', [ id_volume, '___id_dossie___' ]).replace('___id_dossie___','{$x/ns:controle/text()}') %]" >
+		               <span title="{$x/ns:controle/text()}">{substring($x/ns:controle/text(),0, 10)}... </span>
+		           </a>
+            ) else (
+                 <a href="#"  onclick="javasctipt:alert('Prontuário deve estar no estado ABERTO para que possa ser visualizado!')" >
+		               <span title="{$x/ns:controle/text()}">{substring($x/ns:controle/text(),0, 10)}... </span>
+		           </a>
+              )}
         </td>
 
         <td>
@@ -14,10 +20,8 @@
                 {$x/ns:nome/text()}
       </span>
         </td>
-
         <td>
             <span>
-
                 {string-join(for $c in $x/ns:classificacoes/cl:classificacao/text()
                  return (if (ends-with($c,",[% c.model('LDAP').assuntos_dn %]")) then (
                                 string-join(reverse(for $i in tokenize(substring-before($c,",[% c.model('LDAP').assuntos_dn %]"),',')
@@ -25,14 +29,12 @@
                                ) else ($c)),', ')}
             </span>
         </td>
-
         <!--<td>
             <span title="{$x/ns:localizacao/text()}">
                 {substring($x/ns:localizacao/text(),0, 12)}
                 {$x/ns:localizacao/text()}
             </span>
         </td>-->
-
         <td>
          { if ( $x/ns:representaDossieFisico/text() = 1 ) then ("Sim") else ("Não") }
         </td>

@@ -1,0 +1,119 @@
+HIERARQUIZAÇÃO DE VOLUMES DO PSE
+
+Def. A Proteção Social Especial ou PSE compreende dois programas: 
+	Programa de Enfrentamento a Violação de Direito
+	Programa de Atendimento A População em Situação de Rua
+
+Def. As lotações para os volumes da Proteção Social Especial
+
+1. PMF-SEMAS-CREAS SER II
+2. PMF-SEMAS-CREAS SER III
+3. PMF-SEMAS-CREAS SER V
+4. PMF-SEMAS-CENTRO POP
+5. PMF-SEMAS-CASA DE PASSAGEM
+6. PMF-SEMAS-ESPAÇO DE ACOLHIMENTO NOTURNO
+
+
+Def. As classificações definidas  para volumes, prontuários e documentos da Proteção Social Especial são
+
+1. Assistencia Social, Proteção Social Especial, Programa de Enfrentamento a Violação de Direito
+2. Assistencia Social, Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
+3. Assistencia Social, Proteção Social Especial, Relatórios Média Complexidade
+4. Assistencia Social, Proteção Social Especial, Relatórios Alta Complexidade
+5. Assistencia Social, Proteção Social Especial, Relatórios Gestão PSE
+
+
+1. VOLUMES DOS CREAS - Volumes definidos para a Proteção Social Especial, Programa de Enfrentamento a Violação de Direito
+
+	Nomes do volumes:
+		CREAS SER II
+		CREAS SER III
+		CREAS SER V
+
+	Instrumentais dos volumes:
+		Ficha de Atendimento
+		Ficha Específica CREAS
+		Plano de Acompanhamento
+		Ficha Específica da Casa de Passagem
+
+	Identificador do prontuário:
+		NIS ou CPF da pessoa
+
+	Classificação: 
+		Assistencia Social, Proteção Social Especial, Programa de Enfrentamento a Violação de Direito
+
+	Acesso:
+		Ficha de Atendimento (Criação/Alteração pelo CREAS, lista/visualização C. PASSAGEM)
+		Ficha Específica CREAS (Criação/Alteração pelo CREAS, lista/visualização C. PASSAGEM)
+		Plano de Acompanhamento (Criação/Alteração pelo CREAS, lista/visualização C. PASSAGEM)
+		Ficha Específica da Casa de Passagem (Criação/Alteração pela C.PASSAGEM, lista/visualização CREAS)
+
+(até aqui - definições revisadas)
+
+2. VOLUMES DO CENTRO POP - Volumes definidos para a Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
+	
+		Nome do volume:
+			CENTRO POP
+
+		Instrumentais desse volume
+			Ficha de Atendimento
+			Ficha Específica do Centro POP
+			Ficha Específica da Abordagem de Rua
+			Plano de Acompanhamento
+			Ficha Específica do Espaço de Acolhimento Noturno
+
+		Identificador do prontuário
+			NIS ou CPF da pessoa
+
+		Classificação: 
+			Assistencia Social, Proteção Social Especial, Programa de Atendimento A População em Situação de Rua
+
+		Acesso: 
+			Criação somente pelo Espaço de Acolhimento Noturno
+
+3. VOLUMES DA COORDENAÇÃO DE MÉDIA COMPLEXIDADE
+
+	Nome dos volumes:
+		MÉDIA COMPLEXIDADE
+
+	Instrumentais desse volume, classificados por prontuários:
+
+		A1.Relatório Mensal Quantitativo Centro Pop
+		A2.Relatório Mensal Quantitativo-CREAS
+		A3.Relatório de Gestão
+
+	Identificador dos prontuários:
+		QUANTITATIVO MENSAL(A1,A2)
+		RELATÓRIO DE GESTÃO(A3)
+		RELATÓRIO DE GESTÃO COORDENAÇÃO(3)
+
+	Classificação: 
+		Assistencia Social, Proteção Social Especial, Relatórios Média Complexidade
+        Relatórios Gestão PSE
+    Acesso:
+		??
+
+
+4. VOLUMES DA COORDENAÇÃO DE ALTA COMPLEXIDADE
+
+	Nome do volume:
+		ALTA COMPLEXIDADE
+
+	Instrumentais desse volume, classificados por prontuários:
+		
+			A1. Relatório Mensal Quantitativo Casa de Passagem
+			A2. Relatório Mensal Quantitativo Espaço de Acolhimento Noturno
+			A3. Relatório de Gestão
+
+	Identificação dos prontuários:
+		QUANTITATIVOS MENSAL(A1,A2)
+		RELATÓRIO DE GESTÃO(A3)
+		RELATÓRIO DE GESTÃO COORDENAÇÃO(A3)
+
+	Classificação: 
+		Assistencia Social, Proteção Social Especial, Relatórios Alta Complexidade
+        Relatórios Gestão PSE
+    Acesso:
+		Para o Relatório de Gestão do PSE, cada Equipamento deverá ver/editar somente o relatório dele
+		A SEMAS deverá acesso a todos os relatórios
+

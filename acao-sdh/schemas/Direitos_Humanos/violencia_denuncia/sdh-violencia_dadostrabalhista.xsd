@@ -11,7 +11,7 @@
 			<xs:appinfo>
 				<xhtml:label>12.DADOS TRABALHISTAS</xhtml:label>
                 <class:classificacoes>
-                    <class:classificacao>cn=Geral,cn=Direitos Humanos</class:classificacao>
+                    <class:classificacao>cn=Vitima,cn=Direitos Humanos</class:classificacao>
                 </class:classificacoes>
 			</xs:appinfo>
 		</xs:annotation>
@@ -121,14 +121,6 @@
 				    </xs:simpleType>
 			    </xs:element>
 
-                <xs:element name="testemunhas" minOccurs="0" type="xs:string">
-	                <xs:annotation>
-		                <xs:appinfo>
-			                <xhtml:label>Testemunhas</xhtml:label>
-		                </xs:appinfo>
-	                </xs:annotation>
-                </xs:element>
-
 			    <xs:element name="rg" minOccurs="0">
 				    <xs:annotation>
 					    <xs:appinfo>
@@ -182,7 +174,24 @@
 				    </xs:simpleType>
 			    </xs:element>
 
-
+                <xs:element name="testemunhas" maxOccurs="10">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Testemunhas</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+		                <xs:element name="testemunnha" minOccurs="0"  type="xs:string">
+			                <xs:annotation>
+				                <xs:appinfo>
+					                <xhtml:label>Testemunha com RG e Endereço</xhtml:label>
+				                </xs:appinfo>
+			                </xs:annotation>
+                        </xs:element>
+	                </xs:sequence>
+                </xs:complexType>
+            </xs:element>			
 		</xs:sequence>
 	</xs:complexType>
 

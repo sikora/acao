@@ -11,7 +11,7 @@
 			<xs:appinfo>
 				<xhtml:label>10.DADOS JURÍDICOS</xhtml:label>
                 <class:classificacoes>
-                    <class:classificacao>cn=Geral,cn=Direitos Humanos</class:classificacao>
+                    <class:classificacao>cn=Vitima,cn=Direitos Humanos</class:classificacao>
                 </class:classificacoes>
 			</xs:appinfo>
 		</xs:annotation>
@@ -23,7 +23,7 @@
             <xs:element name="procJudicialAndamento">
 	            <xs:annotation>
 		            <xs:appinfo>
-			            <xhtml:label>Existe processo judicial em andamento?</xhtml:label>
+			            <xhtml:label>Já existe processo judicial em andamento?</xhtml:label>
 		            </xs:appinfo>
 	            </xs:annotation>
 	            <xs:complexType>

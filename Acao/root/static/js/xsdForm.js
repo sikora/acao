@@ -454,6 +454,10 @@ function generateFormFromSimpleTypeNodeRestrictionEnumeration(tagRaiz, xmlNode, 
     newSelect.id    = inputName;
     dd.appendChild(newSelect);
 
+    if (minOccurs > 0) {
+        newSelect.setAttribute('class', 'xsdForm__mandatory')
+    }
+
     var restrictionNode = getNodeByTagName(xmlNode, 'xs:restriction');
 
     var newOption;
@@ -528,9 +532,11 @@ function generateFormFromSimpleTypeNodeRestrictionMaxLength(tagRaiz, xmlNode, na
         field.setAttribute('rel', service);
     }
 
+    if (minOccurs > 0) {
+        field.setAttribute('class', 'xsdForm__mandatory')
+    }
+
     dd.appendChild(field);
-
-
 
     var frag = document.createDocumentFragment();
     frag.appendChild(dt);

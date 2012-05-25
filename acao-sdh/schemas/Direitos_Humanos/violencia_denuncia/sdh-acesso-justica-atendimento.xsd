@@ -1,0 +1,426 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh-acesso_justica_atendimento.xsd"
+	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh-acesso_justica_atendimento.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	elementFormDefault="qualified">
+
+	<xs:element name="formAcessoJustica" type="formAcessoJustica">
+		<xs:annotation>
+			<xs:appinfo>
+				<xhtml:label>RAIZ ACESSO À JUSTIÇA ATENDIMENTO</xhtml:label>
+				<class:classificacoes>
+					<class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+				</class:classificacoes>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="formAcessoJustica">
+		<xs:sequence>
+
+			<xs:element name="orientsexual" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Qual a Raiz de Cidadania? </xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Raiz Pirambu" />
+						<xs:enumeration value="Raiz Floresta" />
+						<xs:enumeration value="Raiz Mucuripe" />
+						<xs:enumeration value="Raiz Pio XII" />
+						<xs:enumeration value="Raiz Antônio Bezerra" />
+						<xs:enumeration value="Raiz Bela Vista" />
+						<xs:enumeration value="Raiz Quintino Cunha" />
+						<xs:enumeration value="Raiz Planalto Pici" />
+						<xs:enumeration value="Raiz Serrinha" />
+						<xs:enumeration value="Raiz Vila União" />
+						<xs:enumeration value="Raiz Bom Jardim" />
+						<xs:enumeration value="Raiz Conjunto Ceará" />
+						<xs:enumeration value="Raiz José Walter" />
+						<xs:enumeration value="Raiz Mondubim" />
+						<xs:enumeration value="Raiz Conjunto Palmeiras" />
+						<xs:enumeration value="Raiz Lagoa Redonda" />
+						<xs:enumeration value="Raiz São Cristóvão" />																													
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			
+			<xs:element name="regionalRaiz" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Regional</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="SER I" />
+						<xs:enumeration value="SER II" />
+						<xs:enumeration value="SER III" />
+						<xs:enumeration value="SER IV" />
+						<xs:enumeration value="SER V" />
+						<xs:enumeration value="SER VI" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>		
+			<xs:element name="dataAtendimento" minOccurs="0" type="xs:date">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Data do atendimento</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>	
+			
+			<xs:element name="nomeDoAtendimento" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Nome do atendido</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>		
+			
+			<xs:element name="nomeSocial" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Nome social</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>			
+			
+			<xs:element name="endereco" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Endereço</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>			
+
+
+			<xs:element name="telefone" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Telefone</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>			
+			<xs:element name="bairro" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Bairro</xhtml:label>
+					</xs:appinfo>
+					<xsdext:extensions>
+						<xsdext:engine>autoComplete</xsdext:engine>
+						<xsdext:service>/bairros</xsdext:service>
+					</xsdext:extensions>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>	
+			<xs:element name="regional" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Regional</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="SER I" />
+						<xs:enumeration value="SER II" />
+						<xs:enumeration value="SER III" />
+						<xs:enumeration value="SER IV" />
+						<xs:enumeration value="SER V" />
+						<xs:enumeration value="SER VI" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			      <xs:element name="descricaoDemanda" minOccurs="0" type="xs:string">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Descrição da demanda</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+				 </xs:element>					
+		
+			
+               <xs:element name="encaminhamento" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Encaminhamento</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="caps" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>CAPS – Centros de Atenção Psicossocial</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="creas" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>CREAS – Centro de Referência Especializado da Assistência Social</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>	
+						<xs:element name="creasPop" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>CREAS POP – Centro de Referência Especializado da Assistência Social para População de Rua</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>					
+						<xs:element name="cras" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>CRAS – Centros de Referência da Assistência Social</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						
+							<xs:element name="mpf" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>MPF – Ministério Público Federal</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>						
+						<xs:element name="dpu" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>DPU – Defensoria Pública da União</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="dpuceCentral" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Defensoria Pública do Ceará - central DPE</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="dpuceUnifor" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Defensoria Pública do Ceará - EPJ Unifor</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="dpuceFB" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Defensoria Pública do Ceará - EPJ FArias Brito</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="dpuceChristus" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Defensoria Pública do Ceará - EPJ Christus</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="dpuceFaSete" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Defensoria Pública do Ceará - NPJ FA7</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+							<xs:element name="cosp" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Controladoria dos Órgãos de Segurança Pública</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>					
+						<xs:element name="sejus" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>SEJUS – Secretaria de justiça do Estado do Ceará</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>																	
+						<xs:element name="habitafor" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>HABITAFOR - Fundação de Desenvolvimento Habitacional de Fortaleza</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="concelhoTutelar" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Conselho Tutelar</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="stds" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>STDS - Secretaria do Trabalho e Desenvolvimento Social do Estado do Ceará</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="postoDeSaude" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Posto de Saúde</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="hospital" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Hospital</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>						
+						<xs:element name="sme" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>SME – Secretaria Municipal de Educação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>						
+						<xs:element name="seduc" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>SEDUC – Secretaria Estadual de Educação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>		
+						<xs:element name="dececa" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>DECECA – Delegacia de Defesa da Criança e do Adolescente </xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>	
+						<xs:element name="ddm" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>DDM – Delegacia da Mulher</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>	
+						<xs:element name="distritosPolicias" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Distritos Policiais</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="procon" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>PROCON</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="mpceCaoij" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Ministério Público do Ceará - Centro e Apoio Operacional da Infância e Juventude</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>		
+						<xs:element name="mpceCaoc" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Ministério Público do Ceará - Centro de Apoio Operacional da Cidadania (Defesa da Educação, Defesa do Idoso e do Portador de Deficiência)</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="mpceDecon" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Ministério Público do Ceará - DECON – Defesa do Consumidor</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>						
+						<xs:element name="postoDescentralizadoINSS" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Postos descentralizados do INSS</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+                        </xs:element>
+						<xs:element name="centroRefLGBT" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Centro de Referência LGBT Janaina Dutra</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>	
+						<xs:element name="centroRefMulher" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Centro de Referência da Mulher Francisca Clotilde</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>					
+						<xs:element name="outros" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Outros</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+																																											
+						<xs:element name="especifiqueOutros" minOccurs="0" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Especifique outros</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="sintese" minOccurs="0" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Síntese do encaminhamento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>	
+								
+				
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

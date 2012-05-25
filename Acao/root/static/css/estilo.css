@@ -1222,7 +1222,7 @@ a._criar {
     background-color: transparent;
     background-position: 0 1px;
     background-repeat: no-repeat;
-    line-height: 14px;
+    line-height: 10px;
     padding-bottom: 5px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -1684,3 +1684,26 @@ font-weight: 600;
 #fieldsetColunas {
   display: none;
   }
+
+/* Indices */
+
+.filter {
+    left: 65px;
+    position: relative;
+}
+
+#filtrarGrid {
+    font-weight: bold;
+    left: 5px;
+    position: relative;
+    top: 48px;
+    width: 50px;
+}
+
+.filters {
+   height: 30px;
+	}
+
+#voltar {font-size:13px;}
+
+#voltar a:hover {color:#ecbf05;}

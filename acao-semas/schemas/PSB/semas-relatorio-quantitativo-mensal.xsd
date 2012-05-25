@@ -33,10 +33,10 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="ser" minOccurs="0">
+						<xs:element name="ser" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Regional</xhtml:label>
+									<xhtml:label>Regional *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -51,10 +51,10 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="cras" minOccurs="0">
+						<xs:element name="cras" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>CRAS</xhtml:label>
+									<xhtml:label>CRAS *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -82,7 +82,7 @@
 									<xs:enumeration value="CRAS-DENDÊ" />
 									<xs:enumeration value="CRAS-JARDIM DAS OLIVEIRAS" />
 									<xs:enumeration value="CRAS-JOÃO PAULO II" />
-									<xs:enumeration value="CRAS-ITINEREANTE" />		
+									<xs:enumeration value="CRAS-ITINEREANTE" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
@@ -90,7 +90,7 @@
 						<xs:element name="mes" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Mês</xhtml:label>
+									<xhtml:label>Mês *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -114,7 +114,7 @@
 						<xs:element name="ano" minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Ano</xhtml:label>
+									<xhtml:label>Ano *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
@@ -1761,7 +1761,7 @@
 			<xs:element name="numcres" minOccurs="1">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Nº do CRES/CRP</xhtml:label>
+						<xhtml:label>Nº do CRESS/CRP *</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
@@ -1771,10 +1771,10 @@
 				</xs:simpleType>
 			</xs:element>
 			
-			<xs:element name="datadoc" minOccurs="0" type="xs:date">
+			<xs:element name="datadoc" minOccurs="1" type="xs:date">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Data</xhtml:label>
+						<xhtml:label>Data *</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

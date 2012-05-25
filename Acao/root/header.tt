@@ -30,7 +30,7 @@
         <title>Ação - Sistema de Acompanhamentos de Projetos Sociais</title>
         <link href='[% c.uri_for('/static/css/ui-lightness/jquery-ui-1.7.2.custom.css') %]' rel='stylesheet' type='text/css' />
         <link href='[% c.uri_for('/static/css/estilo.css') %]' rel='stylesheet' type='text/css' />
-        
+		<script type="text/javascript" src="Scripts/picnet.table.filter.js"></script>
 
     </head>
 

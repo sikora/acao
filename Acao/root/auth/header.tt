@@ -27,6 +27,7 @@
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery.ui-1.8.6.custom.min.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/funcoes.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/picnet.table.filter.min.js') %]'></script>
 
     <!--Instituto Atlântico-->
         <link href='[% c.uri_for('/static/css/estilo_ia.css') %]' rel='stylesheet' type='text/css' />
@@ -57,7 +58,13 @@
                       [% ELSE %]
                         <th>Operador:</th>
                       [% END %]
+
                         <td><a href="[% c.uri_for_action('/auth/usuario/ver_user') %]" alt="Editar Conta" title="Alterar Senha">[% c.user.cn %]</a></td>
+                        <th style="padding-left:60px">Lotação:</th>
+							[%  USE Dumper %]
+							[% lotacao = c.model('Usuario').getDadosUsuarioLdap(c.user.dn, 'adm').memberOf.first %]
+							[% lotacoes = lotacao.match('^.*?=(.*?),') %]
+                        <td>[% lotacoes.0 %]</td>
                     </tr>
                 </table>
             </div>

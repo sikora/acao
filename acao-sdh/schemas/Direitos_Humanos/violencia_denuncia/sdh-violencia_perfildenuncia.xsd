@@ -11,7 +11,7 @@
 			<xs:appinfo>
 				<xhtml:label>01.PERFIL DA DENÚNCIA</xhtml:label>
                 <class:classificacoes>
-                    <class:classificacao>cn=Geral,cn=Direitos Humanos</class:classificacao>
+                    <class:classificacao>cn=Denuncia,cn=Direitos Humanos</class:classificacao>
                 </class:classificacoes>
 			</xs:appinfo>
 		</xs:annotation>
@@ -19,6 +19,33 @@
 
 	<xs:complexType name="perfildenuncia">
 		<xs:sequence>
+
+			<xs:element name="programa" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Programa</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="EDDH" />
+						<xs:enumeration value="CRLGBT" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+				<xs:element name="protocolo" minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Protocolo</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
 
 			<xs:element name="tipodedenuncia" minOccurs="0">
 				<xs:annotation>
@@ -74,7 +101,8 @@
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="Criança/Adolescente" />
+						<xs:enumeration value="Criança" />
+						<xs:enumeration value="Adolescente" />
 						<xs:enumeration value="Pessoa com deficiência" />
 						<xs:enumeration value="Negro" />
 						<xs:enumeration value="Idoso" />
@@ -83,7 +111,8 @@
 						<xs:enumeration value="LGBT" />
 						<xs:enumeration value="Imigrante africano" />
 						<xs:enumeration value="Imigrante oriental" />
-						<xs:enumeration value="Imigrante boiviano" />
+						<xs:enumeration value="Imigrante Sul Americano" />
+						<xs:enumeration value="População de rua" />
 						<xs:enumeration value="Outro" />
 					</xs:restriction>
 				</xs:simpleType>

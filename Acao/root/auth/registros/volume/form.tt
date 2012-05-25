@@ -51,7 +51,7 @@
  <script language="javascript">
   function validaForm(){
 
-	if (!check_auths()) {
+   	if (!check_auths()) {
 		alert('Número mínimo de permissões não atingido.');
 		return false;
 	}
