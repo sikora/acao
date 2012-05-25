@@ -236,6 +236,7 @@
 								<xs:enumeration value="Esporte e lazer" />
 								<xs:enumeration value="Direitos Humanos e Cidadania" />
 								<xs:enumeration value="Comunicação" />
+								<xs:enumeration value="Outros" />
 							</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
