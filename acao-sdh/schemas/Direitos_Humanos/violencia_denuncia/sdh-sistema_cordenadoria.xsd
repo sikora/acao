@@ -35,6 +35,7 @@
 						<xs:enumeration value="CDS" />
 						<xs:enumeration value="FUNCI" />
 						<xs:enumeration value="RAIZ" />
+						<xs:enumeration value="EIXO DE PROMOÇÃO" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
