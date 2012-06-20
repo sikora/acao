@@ -187,7 +187,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="tipoOrganiz"  minOccurs="1">
+						<xs:element name="tipoOrganiz"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>2.1. Qual tipo de organização:</xhtml:label>
@@ -213,7 +213,7 @@
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="tematicaAbordadas"  minOccurs="1">
+						<xs:element name="tematicaAbordadas"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>2.2. Temáticas abordadas:</xhtml:label>
@@ -249,17 +249,12 @@
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="atividadesDesenvolvidas" minOccurs="0">
+						<xs:element name="atividadesDesenvolvidas" minOccurs="0" type="xs:string">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>2.3. Quais as atividades desenvolvidas? </xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
 						<xs:element name="territorioAtuacao" minOccurs="0">
@@ -302,7 +297,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="faixaEtariaParticip"  minOccurs="1">
+						<xs:element name="faixaEtariaParticip"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>3.2. Qual a faixa etária dos participantes:</xhtml:label>
@@ -326,7 +321,7 @@
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="jovensParticipAtividOrganiz"  minOccurs="1">
+						<xs:element name="jovensParticipAtividOrganiz"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>3.3. Quantos jovens participam atualmente das atividades da organização:</xhtml:label>
@@ -356,7 +351,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="ondeAcontecemAtividOrganiz"  minOccurs="1">
+						<xs:element name="ondeAcontecemAtividOrganiz"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>4.1. Onde acontecem as atividades da Organização:</xhtml:label>
@@ -382,7 +377,7 @@
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="frequenciaCostumaReunir"  minOccurs="1">
+						<xs:element name="frequenciaCostumaReunir"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>4.2. Com que freqüência costuma se reunir:</xhtml:label>
