@@ -18,6 +18,34 @@
   # Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor,
 */
 
+var itemRequired = '<span style="color:red">*</span>';
+var notRequired = '';
+
+function starVerify( txt ) {
+    if( txt.substr( txt.length -1, 1) == '*' )
+        return txt.substr( 0 , txt.length-1);
+    else return txt;
+}
+
+function returnRequiredItems(divx) {
+    var empties = 0;
+    $('input[need], select[need], textarea[need]').each( function() {
+        if( $(this).val() == null || $(this).val() == undefined || $(this).val() == '')
+            empties++;
+    });
+    if( empties == 1 ) {
+        $("#" + divx).html(empties + ' campo obrigatório não foi preenchido.')
+            .addClass('fieldRequired');
+    }else if ( empties > 1) {
+        $("#" + divx).html( empties + ' campos obrigatórios não foram preenchidos.')
+            .addClass('fieldRequired');
+    }else {
+        $("#" + divx).html('')
+            .removeClass('fieldRequired');
+    }
+    return empties;
+}
+
 function createInput(type, name, id, maxlength, valorPadrao) {
     var newInput = document.createElement('input');
     newInput.type  = type;
@@ -455,7 +483,9 @@ function generateFormFromSimpleTypeNodeRestrictionEnumeration(tagRaiz, xmlNode, 
     dd.appendChild(newSelect);
 
     if (minOccurs > 0) {
-        newSelect.setAttribute('class', 'xsdForm__mandatory')
+        newSelect.setAttribute('class', 'xsdForm__mandatory');
+        newSelect.setAttribute('title', 'Este ítem é obrigatório!');
+        newSelect.setAttribute('need', '1');
     }
 
     var restrictionNode = getNodeByTagName(xmlNode, 'xs:restriction');
@@ -473,7 +503,7 @@ function generateFormFromSimpleTypeNodeRestrictionEnumeration(tagRaiz, xmlNode, 
     }
 
     var newLabel = document.createElement("label");
-    newLabel.innerHTML = label;
+    newLabel.innerHTML = starVerify(label) + (minOccurs > 0 ? itemRequired: notRequired);
     newLabel.htmlFor = inputName;
 
     dt.appendChild(newLabel);
@@ -701,6 +731,14 @@ function generateForm(xsdFile,containerId) {
         var elemRoot = getNodeByTagName(tagRaiz, 'xs:element'); // elemento raiz
         var elHtml = generateFormFromNode(tagRaiz, elemRoot, "xsdform___");
         getById(containerId).appendChild( elHtml );
+        
+        var divx = document.createElement('div');
+        divx.id = "requireditems";
+        getById(containerId).appendChild( divx);
+        $('input[need], select[need], textarea[need]').tipsy({trigger: 'focus', gravity: 'w'});
+        $('input[need], select[need], textarea[need]').blur( function(){onBlurVerify( this );} );
+        $('input[need], select[need], textarea[need]').change( function(){returnRequiredItems("requireditems");} );
+        returnRequiredItems("requireditems");
 
     } catch (myError) {
         alert( myError.name + ': ' + myError.message + "\n" + myError);
@@ -764,7 +802,9 @@ function generateXml(xsdFile, input_to_set) {
 function createFieldString(name, minOccurs, maxOccurs) {
     var field = createTextArea(name);
     if (minOccurs > 0) {
-        field.setAttribute('class', 'xsdForm__mandatory')
+        field.setAttribute('class', 'xsdForm__mandatory');
+        field.setAttribute('title', 'Este ítem é obrigatório!');
+        field.setAttribute('need', '1');
     }
     return field;
 }
@@ -784,7 +824,7 @@ function createFieldInteger(name, minOccurs, maxLength) {
     field = createInput('text', name, name, maxLength);
     field.setAttribute('class','xsdForm__integer');
     if (minOccurs > 0) {
-        field.setAttribute('class', 'xsdForm__integer xsdForm__mandatory')
+        field.setAttribute('class', 'xsdForm__integer xsdForm__mandatory');
     }
     return field;
 }
@@ -794,7 +834,6 @@ function createFieldDate(name, minOccurs) {
     field = createInput('text', name);
     field.setAttribute('maxlength', '10');
     field.setAttribute('class', 'xsdForm__date');
-    //field.setAttribute('onblur', 'validateValues()');
     if (minOccurs > 0) {
         field.setAttribute('class', 'xsdForm__date xsdForm__mandatory')
     }
@@ -873,10 +912,15 @@ function generateFormField(tagRaiz, xmlNode, type, namePattern, minOccurs, maxOc
         alert(type + ' - Unknown type!');
         return false;
     }
+    
+    if(minOccurs > 0 ) {
+        field.setAttribute('title', 'Este ítem é obrigatório!');
+        field.setAttribute('need', '1');
+    }
 
     var frag = document.createDocumentFragment();
     var dt = document.createElement('dt');
-    var newLabel = createLabel(getTextTagInAnnotationAppinfo(xmlNode, 'xhtml:label'), inputName);
+    var newLabel = createLabel( starVerify(getTextTagInAnnotationAppinfo(xmlNode, 'xhtml:label')) + (minOccurs > 0 ? itemRequired: notRequired), inputName);
 
     if ( type == "xs:boolean") {
         dt.setAttribute('class', 'dtsemdd');
@@ -890,13 +934,26 @@ function generateFormField(tagRaiz, xmlNode, type, namePattern, minOccurs, maxOc
         divType.setAttribute('name', 'type');
         divType.setAttribute('style', 'display:none;');
         divType.appendChild( document.createTextNode( type ) );
-
         dd.appendChild(field);
         dt.appendChild(newLabel);
         frag.appendChild(dt);
         frag.appendChild(dd);
     }
     return frag;
+}
+
+function onBlurVerify( el ) {
+    var elq = $( el );
+    x = elq;
+    //console.log( 'onBlur', el, elq, elq.val() );
+    if ( ( elq.is ('input') || elq.is ('select') || elq.is ('textarea') )&& (elq.val() == null || elq.val() == undefined || elq.val() == '') ) {
+        elq.focus();
+        elq.attr('title',  'Atenção! Informe este ítem!');
+        elq.tipsy("show");
+    } else {
+        elq.attr('title', 'Este ítem é obrigatório!');
+        elq.tipsy("hide");
+    }
 }
 	
 function fillValues(xmlFile) {
