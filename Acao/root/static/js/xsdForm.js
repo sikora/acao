@@ -374,6 +374,14 @@ function generateFormFromComplexTypeNode(tagRaiz, xmlNode, namePattern, name, la
     }
 }
 
+/*function delField(id, divRepeat) {
+    var idField = id.substring(3,id.length);
+    $('#'+id).remove();
+    $('#'+idField).remove();
+  //  for (i=0; i<divRepeat.childNodes.length; i++){
+//        divRepeat.removeChild(divRepeat.childNodes[2]);
+  //  }
+} */
 function generateFormFromComplexTypeNodeNoRepeat(tagRaiz, xmlNode, namePattern, name, label) {
     // gerar o fieldset com o legend e os conteudos...
     var legend = document.createElement('legend');
