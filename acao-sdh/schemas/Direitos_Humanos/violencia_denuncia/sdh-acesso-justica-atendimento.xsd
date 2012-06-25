@@ -407,6 +407,29 @@
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
+						<xs:element name="mediacao" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Mediação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+																																											
+						<xs:element name="especifiqueMediacao" minOccurs="0" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Especifique Mediação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="numeroProcedimento" minOccurs="0" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Número Procedimento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
 
 						<xs:element name="sintese" minOccurs="0" type="xs:string">
 							<xs:annotation>

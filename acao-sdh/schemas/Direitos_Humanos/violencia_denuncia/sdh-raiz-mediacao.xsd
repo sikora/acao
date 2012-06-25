@@ -89,10 +89,10 @@
 				</xs:simpleType>
 			</xs:element>		
 			
-			<xs:element name="nomeSocial" minOccurs="0">
+			<xs:element name="nomeConvidado" minOccurs="0" maxOccurs="50">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Nome social</xhtml:label>
+						<xhtml:label>Nome do convidado</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
@@ -100,7 +100,7 @@
 						<xs:maxLength value="255" />
 					</xs:restriction>
 				</xs:simpleType>
-			</xs:element>			
+			</xs:element>		
 			
 			<xs:element name="endereco" minOccurs="0">
 				<xs:annotation>

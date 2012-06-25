@@ -151,9 +151,9 @@ function convert_dateTime_ptbr2xsd(dateTime) {
     var segundo;
     var dateTimeReturn;
 
-    dia = date.substring(0,2);
-    mes = date.substring(3,5);
-    ano = date.substring(6,10);
+    dia = dateTime.substring(0,2);
+    mes = dateTime.substring(3,5);
+    ano = dateTime.substring(6,10);
     hora    = dateTime.substring(11,13);
     minuto  = dateTime.substring(14,16);
     segundo = dateTime.substring(17,19);

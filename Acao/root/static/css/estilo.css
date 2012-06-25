@@ -1707,3 +1707,10 @@ font-weight: 600;
 #voltar {font-size:13px;}
 
 #voltar a:hover {color:#ecbf05;}
+
+.fieldRequired {
+    background-color: #FFF0F0 !important;
+    border: 2px dashed #CC0000;
+    padding: 5px;
+    margin: 5px;
+}
