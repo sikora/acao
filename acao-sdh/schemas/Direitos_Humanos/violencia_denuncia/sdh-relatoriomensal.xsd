@@ -11,7 +11,7 @@
 	<xs:element name="sistemacordenadoria" type="sistemacordenadoria">
 		<xs:annotation>
 			<xs:appinfo>
-				<xhtml:label>SISTEMA COORDENADORIA</xhtml:label>
+				<xhtml:label>RELATÓRIO MENSAL</xhtml:label>
 				<class:classificacoes>
 					<class:classificacao>cn=Relatórios,cn=Direitos Humanos</class:classificacao>
 				</class:classificacoes>
