@@ -98,7 +98,7 @@
     <a href="[% c.uri_for_action('/auth/registros/consolidador/definicaoconsolidacao/lista', [ id_definicao_consolidacao ], args) %]"> Pr&oacute;ximo </a>
 [% END %]
 
-<br><br>
+<br/><br/>
 
  <caption><a href="[% c.uri_for_action('/auth/registros/consolidador/definicaoconsolidacao/iniciar', [ id_definicao_consolidacao ], {}) %]"> Consolidar </a></caption>
 [% INCLUDE 'footer.tt' %]

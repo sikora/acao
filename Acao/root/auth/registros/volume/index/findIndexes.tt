@@ -27,7 +27,7 @@
 [% IF !interval_ini %]
   [% SET interval_ini = 0 %]
 [% END %]
-<script  language="javascript">
+<script  type="text/javascript">
 
 	$(document).ready(function() {
 		$('#tableSearch').tableFilter();
@@ -41,7 +41,7 @@
   <th width="20%">Prontuários</th>
  </tr>
 </thead>
-<TBODY>
+<tbody>
  [% FOREACH entrie IN entries.all %]
     <tr>
         <td>
@@ -52,7 +52,7 @@
         </td>
     </tr>
  [% END %]
-</TBODY>
+</tbody>
 </table>
 
 [% paginacao = PROCESS 'auth/registros/volume/paginacao.tt' %]

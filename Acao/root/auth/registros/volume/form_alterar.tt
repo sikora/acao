@@ -18,7 +18,7 @@
 # Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor,
 %]
 [% INCLUDE 'auth/registros/volume/header_alterar.tt' %]
-<br>
+<br/>
 <h3 class="titulo-form_">Alterar Volume:</h3>
 [% SET vol = ( c.model('Volume').getDadosVolumeId(id_volume) ) %]
 [% SET nome = vol.nome %]
@@ -44,12 +44,12 @@
            [% INCLUDE 'auth/registros/volume/_formPermissoes.tt' %]
   </div>
 
-  <input type="submit" name="opcao" onClick="javascript:return validaForm();" value="Salvar">
+  <input type="submit" name="opcao" onClick="javascript:return validaForm();" value="Salvar"/>
 
-  <input type="button" name="Cancelar" onClick="javascript:history.go(-1);" value="Cancelar">
+  <input type="button" name="Cancelar" onClick="javascript:history.go(-1);" value="Cancelar"/>
  </form>
 
- <script language="javascript">
+ <script type="text/javascript">
   function validaForm(){
  	if (!check_auths()) {
 		alert('Número mínimo de permissões não atingido.');

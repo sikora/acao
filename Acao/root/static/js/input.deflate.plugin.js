@@ -63,7 +63,7 @@
 			// e entao substituimos o original pelo seu clone de outro tipo
 			// precisamos fazer assim porque o IE n�o aceita sobrescrever o type,
 			// mesmo quando n�o est� associado � DOM
-			este.replaceWith('<input type="hidden" name="'+este.attr('name')+'" id="'+este.attr('id')+'">');
+			este.replaceWith('<input type="hidden" name="'+este.attr('name')+'" id="'+este.attr('id')+'"/>');
 			este = $('#' + este.attr('id'));
 			este.val(value);
 			} 

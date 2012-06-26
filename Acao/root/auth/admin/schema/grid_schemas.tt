@@ -6,7 +6,7 @@
   <th>Classificação</th>
  </tr>
 </thead>
-<TBODY>
+<tbody>
 
 [% TRY %]
 
@@ -35,7 +35,7 @@
 [% END %]
 
 
-</TBODY>
+</tbody>
 </table>
-<input type="hidden" name="template" value="[% xqueryret | html %]" >
+<input type="hidden" name="template" value="[% xqueryret | html %]" />
 </div>

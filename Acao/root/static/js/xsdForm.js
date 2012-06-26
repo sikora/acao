@@ -272,9 +272,13 @@ function generateXmlFromNode(odoc, namespace, tagRaiz, xmlNode, namePattern) {
     if (minOccurs == null) {minOccurs = 1}
     if (type != null && static_type(type)) {
         if ( type == "xs:boolean" ) {
-            return generateXmlFromCheckboxTextNode(odoc, namespace, tagRaiz, xmlNode, namePattern);
+            var x =  generateXmlFromCheckboxTextNode(odoc, namespace, tagRaiz, xmlNode, namePattern);
+            //console.log('--C>', x);
+            return x;
         } else {
-            return generateXmlFromSimpleTextNode(odoc, namespace, tagRaiz, xmlNode, namePattern);
+            var x= generateXmlFromSimpleTextNode(odoc, namespace, tagRaiz, xmlNode, namePattern);
+            //console.log('-->', x);
+            return x;
         }
     } else if (type != null) {
         for (var i = 0; i < tagRaiz.childNodes.length; i++) {
@@ -288,9 +292,13 @@ function generateXmlFromNode(odoc, namespace, tagRaiz, xmlNode, namePattern) {
         // inline type definition
         for (var i = 0; i < xmlNode.childNodes.length; i++) {
             if (xmlNode.childNodes[i].nodeType == 1 && xmlNode.childNodes[i].nodeName == 'xs:complexType') {
-                return generateXmlFromComplexTypeNode(odoc, namespace, tagRaiz, xmlNode.childNodes[i], namePattern, getValueAttributeByName(xmlNode, "name"), minOccurs, maxOccurs);
+                var x= generateXmlFromComplexTypeNode(odoc, namespace, tagRaiz, xmlNode.childNodes[i], namePattern, getValueAttributeByName(xmlNode, "name"), minOccurs, maxOccurs);
+                //console.log('--D>', x);
+                return x;
             } else if (xmlNode.childNodes[i].nodeType == 1 && xmlNode.childNodes[i].nodeName == 'xs:simpleType') {
-                return generateXmlFromSimpleTypeNode(odoc, namespace, tagRaiz, xmlNode.childNodes[i], namePattern, getValueAttributeByName(xmlNode, "name"), minOccurs, maxOccurs);
+                var x= generateXmlFromSimpleTypeNode(odoc, namespace, tagRaiz, xmlNode.childNodes[i], namePattern, getValueAttributeByName(xmlNode, "name"), minOccurs, maxOccurs);
+                //console.log('--E>', x);
+                return x;
             }
         }
     }
@@ -307,17 +315,13 @@ function generateFormFromComplexTypeNode(tagRaiz, xmlNode, namePattern, name, la
         spanLabel.innerHTML = label;
         var subnamePattern = namePattern +'__'+name;
         var buttonAdd = document.createElement('input');
-        var buttonDel = document.createElement('input');
         buttonAdd.setAttribute('type', 'button');
         buttonAdd.setAttribute('value', '+');
-        buttonDel.setAttribute('type', 'button');
-        buttonDel.setAttribute('value', '-');
         divRepeat.setAttribute('id', subnamePattern);
         divBarra.setAttribute('id', subnamePattern+'__barra');
         divBarra.setAttribute('class', 'xsdForm__repeatBarra');
         divRepeat.setAttribute('class', 'xsdForm__repeat');
         divRepeat.appendChild(spanLabel);
-        divBarra.appendChild(buttonDel);
         divBarra.appendChild(buttonAdd);
         spanLabel.appendChild(divBarra);
 
@@ -328,11 +332,6 @@ function generateFormFromComplexTypeNode(tagRaiz, xmlNode, namePattern, name, la
                 buttonAdd.removeAttribute('disabled');
             } else {
                 buttonAdd.setAttribute('disabled',true);
-            }
-            if (currentCount > minOccurs) {
-                buttonDel.removeAttribute('disabled');
-            } else {
-                buttonDel.setAttribute('disabled',true);
             }
         }
 
@@ -345,6 +344,18 @@ function generateFormFromComplexTypeNode(tagRaiz, xmlNode, namePattern, name, la
             if (maxOccurs == "unbounded" || currentCount < maxOccurs) {
                 var html = generateFormFromComplexTypeNodeNoRepeat(tagRaiz, xmlNode, namePattern+"__"+currentCount, name, "Item "+(currentCount+1));
                 divRepeat.appendChild(html);
+
+                var buttonDelItem = document.createElement('input');
+                buttonDelItem.setAttribute('type', 'button');
+                buttonDelItem.setAttribute('id', 'remove' + currentCount);
+                buttonDelItem.setAttribute('value', 'Remover este item');
+                //divRepeat.appendChild(buttonDelItem);
+                html.appendChild(buttonDelItem);
+               // $('#bt_'+namePattern+'__'+currentCount+'__composicaoFamiliar').click(function() {delField($(this).attr('id'), divRepeat);});
+                // deletar
+               $('#'+'remove' + currentCount).click(function() {
+                   $( this ).parent().remove();
+                });
                 currentCount++;
                 genereteXsdFormUIInMaxOccurs();
             }
@@ -353,35 +364,18 @@ function generateFormFromComplexTypeNode(tagRaiz, xmlNode, namePattern, name, la
         buttonAdd.onclick = onclickAdd;
         divRepeat.addRepeat = onclickAdd;
 
-        var onclickDel = function() {
-            if (currentCount > minOccurs) {
-                divRepeat.removeChild(divRepeat.childNodes[currentCount]);
-                currentCount--;
-            }
-            refreshEnableDisable();
-        }
-        buttonDel.onclick = onclickDel;
-        divRepeat.delRepeat = onclickDel;
-
         for (var i = 0; i < minOccurs; i++) {
             onclickAdd();
         }
         refreshEnableDisable();
-
+        //alert(divRepeat.textContent);
         return divRepeat;
     } else {
         return generateFormFromComplexTypeNodeNoRepeat(tagRaiz, xmlNode, namePattern, name, label);
     }
 }
 
-/*function delField(id, divRepeat) {
-    var idField = id.substring(3,id.length);
-    $('#'+id).remove();
-    $('#'+idField).remove();
-  //  for (i=0; i<divRepeat.childNodes.length; i++){
-//        divRepeat.removeChild(divRepeat.childNodes[2]);
-  //  }
-} */
+
 function generateFormFromComplexTypeNodeNoRepeat(tagRaiz, xmlNode, namePattern, name, label) {
     // gerar o fieldset com o legend e os conteudos...
     var legend = document.createElement('legend');
@@ -420,7 +414,9 @@ function generateXmlFromComplexTypeNode(odoc, namespace, tagRaiz, xmlNode, nameP
         var count = divRepeat.xsdFormCurrentCount();
         var frag = odoc.createDocumentFragment();
         for (var i = 0; i < count; i++) {
-            frag.appendChild(generateXmlFromComplexTypeNodeNoRepeat(odoc, namespace, tagRaiz, xmlNode, namePattern+"__"+i, name));
+            var nf = generateXmlFromComplexTypeNodeNoRepeat(odoc, namespace, tagRaiz, xmlNode, namePattern+"__"+i, name);
+            if (nf.children.length > 0)
+                frag.appendChild(nf);
         }
         return frag;
     } else {
@@ -432,10 +428,12 @@ function generateXmlFromComplexTypeNodeNoRepeat(odoc, namespace, tagRaiz, xmlNod
     // gerar o fieldset com o legend e os conteudos...
 
     var tag = odoc.createElementNS(namespace, name);
-
+  //console.warn(name, namePattern, xmlNode, tagRaiz);
 
     for (var i = 0; i < xmlNode.childNodes.length; i++) {
         var el = xmlNode.childNodes[i];
+        if( name == 'composicaoFamiliar') console.warn(name, el); //ARTZ 1
+        
         if (el.nodeType == 1 && el.nodeName == 'xs:sequence') {
             for (var j = 0; j < el.childNodes.length; j++) {
                 if (el.childNodes[j].nodeType == 1 && el.childNodes[j].nodeName == "xs:element") {
@@ -586,6 +584,11 @@ function generateFormFromSimpleTypeNodeRestrictionMaxLength(tagRaiz, xmlNode, na
 function generateXmlFromSimpleTypeNode(odoc, namespace, tagRaiz, xmlNode, namePattern, name, minOccurs, maxOccurs) {
 
     var inputName = namePattern + "__" + name;
+    if (!getById(inputName)) {   // ------------------------------------------------------ ARTZ
+        //console.log( 'generateXmlFromSimpleTypeNode--->', inputName);
+        return false;
+    }
+
     var fieldValue = getById(inputName).value;
 
     if ( minOccurs != '0' || fieldValue != '' ) {
@@ -690,6 +693,12 @@ function generateXmlFromSimpleTextNode(odoc, namespace, tagRaiz, xmlNode, namePa
     var minOccurs = getValueAttributeByName(xmlNode, "minOccurs");
     if (minOccurs == null) {minOccurs = 1}
     var inputName = namePattern + "__" + name;
+
+    if (!getById(inputName)) { /// -------------------ARTZ
+        //console.log('generateXmlFromSimpleTextNode', inputName);
+        return false;
+    }
+
     var valueField = getById(inputName).value;
     if ( minOccurs > 0 && valueField == '' ) {
         throw "Campo obrigatório";
@@ -718,6 +727,11 @@ function generateXmlFromCheckboxTextNode(odoc, namespace, tagRaiz, xmlNode, name
     var name = getValueAttributeByName(xmlNode, "name");
     var inputName = namePattern + "__" + name;
 
+    if (!getById(inputName)) { /// -------------------ARTZ
+        //console.log('generateXmlFromSimpleTextNode', inputName);
+        return false;
+    }
+
     var tag = odoc.createElementNS(namespace, name);
     var content;
     if (getById(inputName).checked) {
@@ -730,6 +744,9 @@ function generateXmlFromCheckboxTextNode(odoc, namespace, tagRaiz, xmlNode, name
     return tag;
 }
 
+/*
+ * Chamado inicialmente para criar o formulario html
+ */
 function generateForm(xsdFile,containerId) {
     try {
 
@@ -738,7 +755,7 @@ function generateForm(xsdFile,containerId) {
         var tagRaiz  = xml.getElementsByTagNameNS('http://www.w3.org/2001/XMLSchema','schema')[0];
         var elemRoot = getNodeByTagName(tagRaiz, 'xs:element'); // elemento raiz
         var elHtml = generateFormFromNode(tagRaiz, elemRoot, "xsdform___");
-        getById(containerId).appendChild( elHtml );
+        getById(containerId).appendChild(elHtml );
         
         var divx = document.createElement('div');
         divx.id = "requireditems";
@@ -747,6 +764,9 @@ function generateForm(xsdFile,containerId) {
         $('input[need], select[need], textarea[need]').blur( function(){onBlurVerify( this );} );
         $('input[need], select[need], textarea[need]').change( function(){returnRequiredItems("requireditems");} );
         returnRequiredItems("requireditems");
+        $(document).ready(function() {
+            returnRequiredItems("requireditems");
+         });
 
     } catch (myError) {
         alert( myError.name + ': ' + myError.message + "\n" + myError);
@@ -755,7 +775,6 @@ function generateForm(xsdFile,containerId) {
 
 function generateFormIteration(xsdFile,containerId,Iteration) {
     try {
-
         //carrega o xml
         var xml = xmlLoader(xsdFile);
         var tagRaiz  = xml.getElementsByTagName('xs:schema')[0];
@@ -793,9 +812,13 @@ function generateXml(xsdFile, input_to_set) {
         var odoc = document.implementation.createDocument("", "", null);
         var generated = generateXmlFromNode(odoc, namespace, tagRaiz, elemRoot, "xsdform___");
 
-        odoc.appendChild(generated);
+        if (generated) odoc.appendChild(generated);
         input_to_set.value = ((new XMLSerializer()).serializeToString(odoc));
-
+//console.log(odoc);
+//window.docx = odoc;
+//window.inp = input_to_set;
+//alert(input_to_set.value); // ----------------------- ARTZ
+//return false; //RETIRAR ISSO
 
     } catch (myError) {
         if (myError.name != null) {
@@ -953,7 +976,6 @@ function generateFormField(tagRaiz, xmlNode, type, namePattern, minOccurs, maxOc
 function onBlurVerify( el ) {
     var elq = $( el );
     x = elq;
-    //console.log( 'onBlur', el, elq, elq.val() );
     if ( ( elq.is ('input') || elq.is ('select') || elq.is ('textarea') )&& (elq.val() == null || elq.val() == undefined || elq.val() == '') ) {
         elq.focus();
         elq.attr('title',  'Atenção! Informe este ítem!');

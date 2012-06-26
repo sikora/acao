@@ -46,6 +46,6 @@
         <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/alterar', [ id_volume,controle,'___id_documento___' ]).replace('___id_documento___','{$x/dc:id/text()}') %]"  class="editar" title="Alterar Documento" >Alterar Documento</a>
     </td>
 
-    <input type="hidden" id="id_dossie" nome="id_dossie" value="{$x/ns:dossie/ns:collection/text()}"/>
+    <input type="hidden" id="id_dossie" name="id_dossie" value="{$x/ns:dossie/ns:collection/text()}"/>
   </tr>
 )

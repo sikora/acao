@@ -52,7 +52,7 @@
           Marcar Todas
           [% FOREACH r IN labels_roles.keys %]
              <li>
-                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]"/>
+                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]" />
           [% labels_roles.item(r) %]
              </li>
           [% END %]
@@ -62,7 +62,7 @@
 
     <div id="grid-autorizacoes">
    [% # IF c.model('Volume').pode_criar_volume() %]
-   <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes">
+   <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes"/>
       <table >
           <thead>
             <tr>
@@ -236,8 +236,6 @@ function check_auths() {
 
 }
 
-
-
 function check_auths() {
 	var qtd_auths = $("#grid-autorizacoes tr").length-1;
 	var secs=[];
@@ -269,8 +267,6 @@ function check_auths() {
     return count>=3;
 
 }
-
-
 
    </script>
 

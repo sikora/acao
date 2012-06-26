@@ -29,14 +29,14 @@
           [% c.model('Volume').options_volumes(id_volume) %]
     </select>
 
-    <input type="submit" id="Submeter" name="Submeter">
+    <input type="submit" id="Submeter" name="Submeter"/>
 
 </form>
 
 
 [% INCLUDE 'footer.tt' %]
 
- <script language="javascript">
+ <script type="text/javascript">
   function validaForm(){
     if(document.getElementById('volume_destino').value == ''){
       alert('Informe o volume de destino.');

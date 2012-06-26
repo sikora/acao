@@ -19,7 +19,7 @@
 %]
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
-    <head onload="document.focus()">
+    <head>
 
   	<script type="text/javascript">
     		function onload_focus(){
@@ -36,7 +36,7 @@
 
     <body onload="onload_focus();">
         <div id='topo'>
-            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]">
+            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]" alt="Brasão da Prefeitura Municipal de Fortaleza"/>
             <div id='topoTitulo'>
                 Ação - Sistema de Acompanhamento de Projetos Sociais
             </div>
