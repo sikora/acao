@@ -119,10 +119,10 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="relparentvitafirm"  minOccurs="1">
+						<xs:element name="relparentvitafirm"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Caso afirmativo, assinalar abaixo *</xhtml:label>
+									<xhtml:label>Caso afirmativo, assinalar abaixo</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -147,10 +147,10 @@
 							</xs:simpleType>
 						</xs:element>
 						
-						<xs:element name="relparentvitneg"  minOccurs="1">
+						<xs:element name="relparentvitneg"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Caso negativo, assinalar abaixo *</xhtml:label>
+									<xhtml:label>Caso negativo, assinalar abaixo</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -398,7 +398,6 @@
 				</xs:annotation>
 			</xs:element>
 
-
 			<xs:element name="sitviolintrafamiliar">
 				<xs:annotation>
 					<xs:appinfo>
@@ -410,347 +409,558 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="crianadolviolifam"  minOccurs="1">
+						<xs:element name="crianAdolVioliFamMasc012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>5.1. Criança ou adolescente vítimas de violência intrafamiliar, 
-												especificado segundo o sexo *</xhtml:label>
+												especificado segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadolviolifamfx"  minOccurs="1">
+						<xs:element name="crianAdolVioliFamMasc1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.1.1 Faixa etária *</xhtml:label>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="0 a 12 anos" />
-									<xs:enumeration value="13 a 17 anos" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadolabussex"  minOccurs="1">
+						<xs:element name="crianAdolVioliFamFem012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.2 - Crianças ou adolescentes vítimas de abuso sexual 
-													especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadolabussexfx"  minOccurs="1">
+						<xs:element name="crianAdolVioliFamFem1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.2.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="0 a 12 anos" />
-									<xs:enumeration value="13 a 17 anos" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadolexplsex"  minOccurs="1">
+						<xs:element name="crianAdolAbusSexMasc012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.3 - Crianças ou adolescentes vítimas de exploração sexual, 
-												especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>5.2 - Crianças ou adolescentes vítimas de abuso sexual
+													especificada segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadolexplsexfx"  minOccurs="1">
+						<xs:element name="crianAdolAbusSexMasc1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.3.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="0 a 12 anos" />
-									<xs:enumeration value="13 a 17 anos" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadolnegligaban"  minOccurs="1">
+						<xs:element name="crianAdolAbusSexFem012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.4 - Crianças ou adolescentes vítimas de negligência ou abandono, 
-										especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadolnegligabanfx"  minOccurs="1">
+						<xs:element name="crianAdolAbusSexFem1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.4.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="0 a 12 anos" />
-									<xs:enumeration value="13 a 17 anos" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadoltrabinf"  minOccurs="1">
+						<xs:element name="crianAdolExplSexMasc012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.5 - Crianças ou adolescentes em situação de trabalho infantil, 
-											especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>5.3 - Crianças ou adolescentes vítimas de exploração sexual,
+												especificada segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="crianadoltrabinffx"  minOccurs="1">
+						<xs:element name="crianAdolExplSexMasc1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.5.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="0 a 12 anos" />
-									<xs:enumeration value="13 a 17 anos" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="idosoviolifam"  minOccurs="1">
+						<xs:element name="crianAdolExplSexFem012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.6 - Pessoas idosas – 60 anos ou mais – vítimas de violência 
-									intrafamiliar, especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="idosonegligaban"  minOccurs="1">
+						<xs:element name="crianAdolExplSexFem1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.7 - Pessoas idosas – 60 anos ou mais – vítimas de negligência 
-									ou abandono, especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesdefviolifam"  minOccurs="1">
+						<xs:element name="crianAdolNegligAbanMasc012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.8 - Pessoas com deficiência, vítimas de violência intrafamiliar, 
-											especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>5.4 - Crianças ou adolescentes vítimas de negligência ou abandono,
+										especificada segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesdefviolifamfx"  minOccurs="1">
+						<xs:element name="crianAdolNegligAbanMasc1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.8.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Faixa etária: 0 a 12 anos" />
-									<xs:enumeration value="Faixa etária: 13 a 17 anos" />
-									<xs:enumeration value="Faixa etária: 18 a 59 anos" />
-									<xs:enumeration value="Faixa etária: 60 anos ou mais" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesdefviolneglsex"  minOccurs="1">
+						<xs:element name="crianAdolNegligAbanFem012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="crianAdolNegligAbanFem1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="crianAdolTrabInfMasc012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.5 - Crianças ou adolescentes em situação de trabalho infantil,
+											especificada segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="crianAdolTrabInfMasc1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="crianAdolTrabInfFem012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="crianAdolTrabInfFem1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="idosoVioliFamMasc"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.6 - Pessoas idosas – 60 anos ou mais – vítimas de violência
+									intrafamiliar, especificada segundo o sexo - Masculino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="idosoVioliFamFem"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="idosoNegligAbanMasc"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.7 - Pessoas idosas – 60 anos ou mais – vítimas de negligência
+									ou abandono, especificada segundo o sexo - Masculino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="idosoNegligAbanFem"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamMasc012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.8 - Pessoas com deficiência, vítimas de violência intrafamiliar,
+											especificada segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamMasc1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamMasc1859Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 18 a 59 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamMasc60maisAnos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 60 anos ou mais*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamFem012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamFem1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamFem1859Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 18 a 59 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefVioliFamFem60maisAnos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 60 anos ou mais*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDefViolNeglSexMasc012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>5.9 - Pessoas com deficiência vítimas de negligencia ou 
-									abandono, especificada segundo o sexo *</xhtml:label>
+									abandono, especificada segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Feminino" />
-									<xs:enumeration value="Masculino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesdefviolifamfx"  minOccurs="1">
+						<xs:element name="pesDefViolNeglSexMasc1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.9.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Faixa etária: 0 a 12 anos" />
-									<xs:enumeration value="Faixa etária: 13 a 17 anos" />
-									<xs:enumeration value="Faixa etária: 18 a 59 anos" />
-									<xs:enumeration value="Faixa etária: 60 anos ou mais" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="mulvitviolifam"  minOccurs="1">
+						<xs:element name="pesDefViolNeglSexMasc1859Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.10 - Mulheres adultas – vítimas de violência intrafamiliar *</xhtml:label>
+									<xhtml:label>Masculino - 18 a 59 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="18 a 59 anos" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesvittrafserhum"  minOccurs="1">
+						<xs:element name="pesDefViolNeglSexMasc60maisAnos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.11 - Pessoas vítimas de tráfico de seres humanos, 
-									especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>Masculino - 60 anos ou mais*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Masculino" />
-									<xs:enumeration value="Feminino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesvittrafserhumfx"  minOccurs="1">
+						<xs:element name="pesDefViolNeglSexFem012Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.11.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Faixa etária: 0 a 12 anos" />
-									<xs:enumeration value="Faixa etária: 13 a 17 anos" />
-									<xs:enumeration value="Faixa etária: 18 a 59 anos" />
-									<xs:enumeration value="Faixa etária: 60 anos ou mais" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-
-						<xs:element name="pesdiscorientsex"  minOccurs="1">
+						<xs:element name="pesDefViolNeglSexFem1317Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.12 - Pessoas vítimas de discriminação por orientação sexual *</xhtml:label>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Masculino" />
-									<xs:enumeration value="Feminino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesositrua"  minOccurs="1">
+						<xs:element name="pesDefViolNeglSexFem1859Anos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.13 - Pessoas em situação de rua, especificada segundo o sexo *</xhtml:label>
+									<xhtml:label>Feminino - 18 a 59 anos*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Masculino" />
-									<xs:enumeration value="Feminino" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="pesositruafx"  minOccurs="1">
+						<xs:element name="pesDefViolNeglSexFem60maisAnos"  minOccurs="1" type="xs:integer">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>5.13.1 - Faixa etária *</xhtml:label>
+									<xhtml:label>Feminino - 60 anos ou mais*</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Faixa etária: 0 a 12 anos" />
-									<xs:enumeration value="Faixa etária: 13 a 17 anos" />
-									<xs:enumeration value="Faixa etária: 18 a 59 anos" />
-									<xs:enumeration value="Faixa etária: 60 anos ou mais" />
-								</xs:restriction>
-							</xs:simpleType>
+						</xs:element>
+
+						<xs:element name="mulvitviolifam"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.10 - Mulheres adultas (18 a 59 anos) vítimas de violência 
+                                                                                        intrafamiliar (física, psicológica ou sexual) *</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumMasc012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.11 - Pessoas vítimas de tráfico de seres humanos,
+									especificada segundo o sexo - Masculino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumMasc1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumMasc1859Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 18 a 59 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumMasc60maisAnos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 60 anos ou mais*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumFem012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumFem1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumFem1859Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 18 a 59 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesVitTrafSerHumFem60maisAnos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 60 anos ou mais*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDiscOrientSexMasc"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.12 - Pessoas vítimas de discriminação por orientação
+                                                                                        sexual - Masculino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesDiscOrientSexFem"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaMasc012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>5.13 - Pessoas em situação de rua, especificada segundo o
+                                                                                    sexo - Masculino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaMasc1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaMasc1859Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 18 a 59 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaMasc60maisAnos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Masculino - 60 anos ou mais*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaFem012Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 0 a 12 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaFem1317Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 13 a 17 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaFem1859Anos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 18 a 59 anos*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="pesSitRuaFem60maisAnos"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino - 60 anos ou mais*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
 						</xs:element>
 
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 
+			<xs:element name="adolMedSocioEduc">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>6. REGISTRO DE VOLUME DE ADOLESCENTES EM 
+                                                        CUMPRIMENTO DE MEDIDAS SOCIOEDUCATIVAS</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+
+				<xs:complexType>
+					<xs:sequence>
+<!-- ******************* -->
+
+						<xs:element name="adolLiberAssistMasc"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>6.1 - Quantidade de adolescentes em cumprimento
+                                                                                de Liberdade Assistida - LA - Masculino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="adolLiberAssistFem"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+<!-- ******************* -->
+
+						<xs:element name="adolPSCMasc"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>6.2 - Quantidade de adolescentes em cumprimento
+                                                                            de Prestação de Serviços à Comunidade - PSC - Masculino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="adolPSCFem"  minOccurs="1" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Feminino*</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+<!-- ******************* -->
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+
 
 			<xs:element name="encamcaso"  minOccurs="1">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>6. Encaminhamentos do Caso *</xhtml:label>
+						<xhtml:label>7. Encaminhamentos do Caso *</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<xs:enumeration value="PAEFI" />
-						<xs:enumeration value="PAE" />
+						<xs:enumeration value="PAEFI/PAE" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -758,7 +968,7 @@
 			<xs:element name="encamoutroservs">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>7. Encaminhamentos para outros serviços</xhtml:label>
+						<xhtml:label>8. Encaminhamentos para outros serviços</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 
@@ -794,7 +1004,7 @@
 						<xs:element name="politinterset"  minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Políticas intersetoriais *</xhtml:label>
+									<xhtml:label>Outros serviços *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -826,7 +1036,7 @@
 			<xs:element name="evolucdocaso" minOccurs="0" type="xs:string">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>8. Evolução do caso</xhtml:label>
+						<xhtml:label>9. Evolução do caso</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

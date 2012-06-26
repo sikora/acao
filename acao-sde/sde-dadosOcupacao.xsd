@@ -43,6 +43,69 @@
 		                </xs:restriction>
 		            </xs:simpleType>
 		        </xs:element>
+				<xs:element name="tpLocal"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Tipo de local</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Residência" />
+						<xs:enumeration value="Sem lugar fixo" />
+						<xs:enumeration value="Outros" />
+					</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+		        <xs:element name="outroLocal" minOccurs="0">
+		            <xs:annotation>
+		                <xs:appinfo>
+		                    <xhtml:label>Especifique outro local</xhtml:label>
+		                </xs:appinfo>
+		            </xs:annotation>
+		            <xs:simpleType>
+		                <xs:restriction base="xs:string">
+		                    <xs:maxLength value="255"/>
+		                </xs:restriction>
+		            </xs:simpleType>
+		        </xs:element>
+				<xs:element name="tpPonto"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Tipo de ponto</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Fixo" />
+						<xs:enumeration value="Serviço a Domicílio" />
+						<xs:enumeration value="Ambulante permanente" />
+                        <xs:enumeration value="Feirante permanente" />
+						<xs:enumeration value="Ambulante ocasional" />
+                        <xs:enumeration value="Feirante ocasional" />
+                        <xs:enumeration value="Outro" />
+					</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+		        <xs:element name="outroPonto" minOccurs="0">
+		            <xs:annotation>
+		                <xs:appinfo>
+		                    <xhtml:label>Especifique outro ponto</xhtml:label>
+		                </xs:appinfo>
+		            </xs:annotation>
+		            <xs:simpleType>
+		                <xs:restriction base="xs:string">
+		                    <xs:maxLength value="255"/>
+		                </xs:restriction>
+		            </xs:simpleType>
+		        </xs:element>
+		        <xs:element name="qtEmpregados" minOccurs="0" type="xs:integer">
+		            <xs:annotation>
+		                <xs:appinfo>
+		                    <xhtml:label>Nr de empregados</xhtml:label>
+		                </xs:appinfo>
+		            </xs:annotation>
+		        </xs:element>
 				<xs:element name="logradouro"  minOccurs="0" maxOccurs="10">
 					<xs:annotation>
 						<xs:appinfo>
@@ -139,69 +202,7 @@
 		                </xs:restriction>
 		            </xs:simpleType>
 		        </xs:element>
-				<xs:element name="tpLocal"  minOccurs="0">
-					<xs:annotation>
-						<xs:appinfo>
-							<xhtml:label>Tipo de local</xhtml:label>
-						</xs:appinfo>
-					</xs:annotation>
-					<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:enumeration value="Residência" />
-						<xs:enumeration value="Sem lugar fixo" />
-						<xs:enumeration value="Outros" />
-					</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-		        <xs:element name="outroLocal" minOccurs="0">
-		            <xs:annotation>
-		                <xs:appinfo>
-		                    <xhtml:label>Especifique outro local</xhtml:label>
-		                </xs:appinfo>
-		            </xs:annotation>
-		            <xs:simpleType>
-		                <xs:restriction base="xs:string">
-		                    <xs:maxLength value="255"/>
-		                </xs:restriction>
-		            </xs:simpleType>
-		        </xs:element>
-				<xs:element name="tpPonto"  minOccurs="0">
-					<xs:annotation>
-						<xs:appinfo>
-							<xhtml:label>Tipo de ponto</xhtml:label>
-						</xs:appinfo>
-					</xs:annotation>
-					<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:enumeration value="Fixo" />
-						<xs:enumeration value="Serviço a Domicílio" />
-						<xs:enumeration value="Ambulante permanente" />
-                        <xs:enumeration value="Feirante permanente" />
-						<xs:enumeration value="Ambulante ocasional" />
-                        <xs:enumeration value="Feirante ocasional" />
-                        <xs:enumeration value="Outro" />
-					</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-		        <xs:element name="outroPonto" minOccurs="0">
-		            <xs:annotation>
-		                <xs:appinfo>
-		                    <xhtml:label>Especifique outro ponto</xhtml:label>
-		                </xs:appinfo>
-		            </xs:annotation>
-		            <xs:simpleType>
-		                <xs:restriction base="xs:string">
-		                    <xs:maxLength value="255"/>
-		                </xs:restriction>
-		            </xs:simpleType>
-		        </xs:element>
-		        <xs:element name="qtEmpregados" minOccurs="0" type="xs:integer">
-		            <xs:annotation>
-		                <xs:appinfo>
-		                    <xhtml:label>Nr de empregados</xhtml:label>
-		                </xs:appinfo>
-		            </xs:annotation>
-		        </xs:element>
+
 
         </xs:sequence>
     </xs:complexType>

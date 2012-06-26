@@ -66,6 +66,7 @@
                                 <xs:enumeration value="Apoio aos Processos de Produção e Comercialização da Unidade de Beneficiamento da Casca de Coco Verde" />
                                 <xs:enumeration value="Artesanato Competitivo" />
                                 <xs:enumeration value="As Quatro Estações do Artesanato" />
+                                <xs:enumeration value="Balcão de emprego" />
                                 <xs:enumeration value="Beneficiamento da Casca de Coco" />
                                 <xs:enumeration value="Capacitação e Organização de Mulheres para a Geração de Emprego e Renda" />
                                 <xs:enumeration value="Compra Antecipada Especial da Agricultura Familiar" />
@@ -75,7 +76,6 @@
                                 <xs:enumeration value="Credcultura Jovem" />
                                 <xs:enumeration value="Credjovem Solidário" />
                                 <xs:enumeration value="Despertar do Ser para o Desenvolvimento Local" />
-                                <xs:enumeration value="DIFERENCIART: Saciando a Arte na Diversidade" />
                                 <xs:enumeration value="DIFERENCIART: Saciando a Arte na Diversidade" />
                                 <xs:enumeration value="DIFERENCIART: Trabalhando a Arte e a Cultura na Diversidade" />
                                 <xs:enumeration value="Empreendedorismo, Geração de Trabalho e a Copa de 2014 – A Cadeia Produtiva com Foco na Sustentabilidade" />
@@ -162,10 +162,10 @@
 				                </xs:restriction>
 				            </xs:simpleType>
 				        </xs:element>
-				        <xs:element name="atividade"  minOccurs="0">
+				        <xs:element name="acao"  minOccurs="0">
 					        <xs:annotation>
 						        <xs:appinfo>
-							        <xhtml:label>Atividade</xhtml:label>
+							        <xhtml:label>Ação</xhtml:label>
 						        </xs:appinfo>
 					        </xs:annotation>
 					        <xs:simpleType>
@@ -183,6 +183,33 @@
                                 <xs:enumeration value="Apoio ao Desenvolvimento de Empreendimentos de Negócios" />		
 					        </xs:restriction>
 					        </xs:simpleType>
+				        </xs:element>
+				        <xs:element name="atividadeQual"  minOccurs="0">
+					        <xs:annotation>
+						        <xs:appinfo>
+							        <xhtml:label>Atividade de qualificação </xhtml:label>
+						        </xs:appinfo>
+					        </xs:annotation>
+					        <xs:simpleType>
+					        <xs:restriction base="xs:string">
+                                <xs:enumeration value="Curso" />
+                                <xs:enumeration value="Intermediação de Mão de Obra" />
+                                <xs:enumeration value="Seguro Desemprego" />
+                                <xs:enumeration value="Qualificação" />
+					        </xs:restriction>
+					        </xs:simpleType>
+				        </xs:element>
+				        <xs:element name="localRealAcao" minOccurs="0">
+				            <xs:annotation>
+				                <xs:appinfo>
+				                    <xhtml:label>Local de Realização da Ação</xhtml:label>
+				                </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+				                <xs:restriction base="xs:string">
+				                    <xs:maxLength value="255"/>
+				                </xs:restriction>
+				            </xs:simpleType>
 				        </xs:element>
 						<xs:element name="valor" minOccurs="0">
 							<xs:annotation>
