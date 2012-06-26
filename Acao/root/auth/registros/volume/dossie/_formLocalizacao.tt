@@ -28,9 +28,9 @@
      </div>
  <dl>
    <div id="divLocalVirtual" rel="[% local_basedn %]">
-       <input type="checkbox" name="local_virtual" class="local_virtual"  > Este prontuário é Virtual <br/><br/>
+       <input type="checkbox" name="local_virtual" class="local_virtual" /> Este prontuário é Virtual <br/><br/>
    </div>
-   <div id="divHerdarLocal" ><input type="checkbox" name="herdar_local" class="herdar_local"  >
+   <div id="divHerdarLocal" ><input type="checkbox" name="herdar_local" class="herdar_local" />
        <strong>Local:</strong> <span class="textLocal">[% IF loc == '';  'Virtual'; ELSE; loc; END %]<span/><br/><br/></div>
    <div id="divLocal" rel="[% c.uri_for_action('/auth/ajax/processa_localizacao') %]">
      <input type="hidden" name="local_basedn" id="local_basedn" value="[% local_basedn %]" />
@@ -163,10 +163,7 @@
 
 
   </div>
-  <input type="button" name="opcao_local" id="opcao_local" value="Navegar"><br/>
+  <input type="button" name="opcao_local" id="opcao_local" value="Navegar"/><br/>
 </dl>
 
  </fieldset>
-
-
-

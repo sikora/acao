@@ -124,8 +124,8 @@
 });
  </script>
      </div>
-        <input type="button" name="add_class" id="add_class" value="Adicionar">
-        <input type="button" name="opcao_class_nav" id="opcao_class_nav" value="Navegar"><br/>
+        <input type="button" name="add_class" id="add_class" value="Adicionar"/>
+        <input type="button" name="opcao_class_nav" id="opcao_class_nav" value="Navegar"/><br/>
      </dl>
 
  </fieldset>
@@ -175,4 +175,3 @@
 
 });
 </script>
-

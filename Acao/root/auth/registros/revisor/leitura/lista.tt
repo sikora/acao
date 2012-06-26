@@ -177,7 +177,7 @@
 
 </form>
 
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
     function valida_campos_busca(){
         if(document.getElementById('buscar_dados').checked) {
             if(document.getElementById('campo_formulario').value == '0'){

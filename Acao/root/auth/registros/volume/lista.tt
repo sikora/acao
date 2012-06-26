@@ -49,8 +49,7 @@
 <!--      <a class="criar" href="[% c.uri_for_action('/auth/registros/volume/form') %]">Criar Volume</a>-->
 <!--  [% END %]-->
 <!--  </span>-->
-</h3>
-<!---->
+<!-- </h3> -->
 <!--<h3 class="titulo-form_">Busca Índices |-->
 <!--  <span style="font-size:13px; font-weight:normal;">-->
 <!--      <a class="buscar" href="[% c.uri_for_action('/auth/registros/volume/index/formIndexes') %]">Buscar por índices</a>-->
@@ -80,7 +79,7 @@
 
  </tr>
 </thead>
-<TBODY>
+<tbody>
 
 [% TRY %]
 
@@ -118,10 +117,10 @@
 [% END %]
 [% paginacao = PROCESS 'auth/registros/volume/paginacao.tt' %]
 
-</TBODY>
+</tbody>
 </table>
 
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
 
     function confirmaFechamento(){
         if (!confirm('Deseja realmente fechar este volume?')){

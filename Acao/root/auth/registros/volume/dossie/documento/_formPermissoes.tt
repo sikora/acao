@@ -30,7 +30,7 @@
      </div>
      <input type="hidden" name="basedn" value="[% basedn %]" />
      <dt>
-     <dt><input type="checkbox" name="herdar_author" id="herdar_author" [% IF herdar == 1 %] checked [% END %] /> Herdar Autorizações do Prontuário</dt>
+     <dt><input type="checkbox" name="herdar_author" id="herdar_author" [% IF herdar == 1 %] checked="checked" [% END %] /> Herdar Autorizações do Prontuário</dt>
 [% SET labels_roles = {
         "alterar" => "Alterar este Documento",
         "listar" => "Listar este Documento",
@@ -55,7 +55,7 @@
           Marcar Todas
           [% FOREACH r IN labels_roles.keys %]
              <li>
-                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]"/>
+                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]" />
           [% labels_roles.item(r) %]
              </li>
           [% END %]

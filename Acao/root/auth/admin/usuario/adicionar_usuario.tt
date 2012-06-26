@@ -27,13 +27,13 @@
          <legend><img src="[% c.uri_for('/static/img/user/user.png') %]" alt="Informação de Usuário" /> Informação de Usuário</legend>
           <dl>
             <dt>Nome:</dt>
-              <dd><input type="text" name="nome" value="[% nome %]" ></dd>
+              <dd><input type="text" name="nome" value="[% nome %]" /></dd>
             <dt>Sobrenome:</dt>
-              <dd><input type="text" name="sobrenome" value="[% sobrenome %]" ></dd>
+              <dd><input type="text" name="sobrenome" value="[% sobrenome %]" /></dd>
             <dt>Email:</dt>
-              <dd><input type="text" name="email" value="[% email %]" ></dd>
+              <dd><input type="text" name="email" value="[% email %]" /></dd>
             <dt>Telefone:</dt>
-              <dd><input type="text" name="fone" value="[% fone %]" ></dd>
+              <dd><input type="text" name="fone" value="[% fone %]" /></dd>
          </dl>
       </fieldset>
       <fieldset class="cadInfoLogin" >
@@ -41,63 +41,63 @@
            <dl>
 
              <dt>Usuário:</dt>
-                <dd><input type="text" name="uid" value="[% uid %]" ></dd>
+                <dd><input type="text" name="uid" value="[% uid %]" /></dd>
              <dt>Senha:</dt>
-               <dd><input type="password" name="senha" value="[% senha %]" ></dd>
+               <dd><input type="password" name="senha" value="[% senha %]" /></dd>
             </dl>
           </fieldset>
       </fieldset>
   <fieldset  class="autorizacao">
      <legend><img src="[% c.uri_for('/static/img/pass/lock_add.png') %]" alt="Autorizações no Sistema" /> Autorizações no Sistema</legend>
 
-     <dl><dt><input type="checkbox" value="" id="checkAllRegistros" name="checkAllRegistros"> Marcar Todos   </dt>  </dl>
+     <dl><dt><input type="checkbox" value="" id="checkAllRegistros" name="checkAllRegistros" /> Marcar Todos   </dt>  </dl>
      <fieldset class="registro">
         <legend>Volume</legend>
         <dl>
-          <dt><input type="checkbox" value="listar" name="volume[]"> </dt>
+          <dt><input type="checkbox" value="listar" name="volume[]" /> </dt>
           <dd>Listar</dd>
-          <dt><input type="checkbox" value="visualizar" name="volume[]"> </dt>
+          <dt><input type="checkbox" value="visualizar" name="volume[]" /> </dt>
           <dd>Visualizar</dd>
-          <dt><input type="checkbox" value="criar" name="volume[]"> </dt>
+          <dt><input type="checkbox" value="criar" name="volume[]" /> </dt>
           <dd>Criar</dd>
-          <dt><input type="checkbox" value="alterar" name="volume[]"> </dt>
+          <dt><input type="checkbox" value="alterar" name="volume[]" /> </dt>
           <dd>Alterar</dd>
-          <dt><input type="checkbox" value="transferir" name="volume[]"> </dt>
+          <dt><input type="checkbox" value="transferir" name="volume[]" /> </dt>
           <dd>Transferir</dd>
         </dl>
      </fieldset>
      <fieldset class="registro">
         <legend>Prontuário</legend>
         <dl>
-          <dt><input type="checkbox" value="listar" name="dossie[]"> </dt>
+          <dt><input type="checkbox" value="listar" name="dossie[]" /> </dt>
           <dd>Listar</dd>
-          <dt><input type="checkbox" value="visualizar" name="dossie[]"> </dt>
+          <dt><input type="checkbox" value="visualizar" name="dossie[]" /> </dt>
           <dd>Visualizar</dd>
-          <dt><input type="checkbox" value="criar" name="dossie[]"> </dt>
+          <dt><input type="checkbox" value="criar" name="dossie[]" /> </dt>
           <dd>Criar</dd>
-          <dt><input type="checkbox" value="alterar" name="dossie[]"> </dt>
+          <dt><input type="checkbox" value="alterar" name="dossie[]" /> </dt>
           <dd>Alterar</dd>
-          <dt><input type="checkbox" value="transferir" name="dossie[]"> </dt>
+          <dt><input type="checkbox" value="transferir" name="dossie[]" /> </dt>
           <dd>Transferir</dd>
         </dl>
      </fieldset>
      <fieldset class="registro">
         <legend>Documento</legend>
         <dl>
-          <dt><input type="checkbox" value="listar" name="documento[]"> </dt>
+          <dt><input type="checkbox" value="listar" name="documento[]" /> </dt>
           <dd>Listar</dd>
-          <dt><input type="checkbox" value="visualizar" name="documento[]"> </dt>
+          <dt><input type="checkbox" value="visualizar" name="documento[]" /> </dt>
           <dd>Visualizar</dd>
-          <dt><input type="checkbox" value="criar" name="documento[]"> </dt>
+          <dt><input type="checkbox" value="criar" name="documento[]" /> </dt>
           <dd>Criar</dd>
-          <dt><input type="checkbox" value="alterar" name="documento[]"> </dt>
+          <dt><input type="checkbox" value="alterar" name="documento[]" /> </dt>
           <dd>Alterar</dd>
-          <dt><input type="checkbox" value="transferir" name="documento[]"> </dt>
+          <dt><input type="checkbox" value="transferir" name="documento[]" /> </dt>
           <dd>Transferir</dd>
         </dl>
      </fieldset>
 
-       <input type="checkbox" value="super" name="super"><img src="[% c.uri_for('/static/img/user/user_suit.png') %]" alt=" Super Administrador" /> Poderes de Super Administrador
+       <input type="checkbox" value="super" name="super" /><img src="[% c.uri_for('/static/img/user/user_suit.png') %]" alt=" Super Administrador" /> Poderes de Super Administrador
 
   </fieldset>
 [% INCLUDE 'auth/admin/usuario/include_navegador_ldap.tt' %]
@@ -107,10 +107,8 @@
 
 
 
-
-
-<input type="submit" value="Criar">
-<input type="reset" value="Cancelar">
+<input type="submit" value="Criar"/>
+<input type="reset" value="Cancelar"/>
 
 </form>
 
@@ -171,7 +169,6 @@ function remove(action, posicao) {
         });
 
 }
-
 
 
 </script>

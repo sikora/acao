@@ -30,7 +30,7 @@
      </div>
      <input type="hidden" name="basedn" value="[% basedn %]" />
      <dt>
-     <dt><input type="checkbox" name="herdar_author" id="herdar_author" [% IF herdar == 1 %] checked [% END %] /> Herdar Autorizações do Volume</dt>
+     <dt><input type="checkbox" name="herdar_author" id="herdar_author" [% IF herdar == 1 %] checked="checked" [% END %] /> Herdar Autorizações do Volume</dt>
 [% SET labels_roles = {
         "alterar" => "Alterar este Prontuário",
         "criar" => "Criar Documentos neste Prontuário",
@@ -53,7 +53,7 @@
           Marcar Todas
           [% FOREACH r IN labels_roles.keys %]
              <li>
-                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]"/>
+                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]" />
           [% labels_roles.item(r) %]
              </li>
           [% END %]
@@ -63,7 +63,7 @@
 
     <div id="grid-autorizacoes">
    [% # IF c.model('Dossie').pode_criar_dossie() %]
-   <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes">
+   <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes"/>
       <table >
           <thead>
             <tr>
@@ -237,10 +237,5 @@ function check_auths() {
     return count>=3 || $('#herdar_author').is(':checked');
 
 }
-
-
-
-
-
 
    </script>
