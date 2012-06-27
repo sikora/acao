@@ -105,7 +105,7 @@
     <a href="[% c.uri_for_action('/auth/registros/consolidador/definicaoconsolidacao/consolidacao/lista', [ id_definicao_consolidacao, consolidacao.id_consolidacao ], args) %]"> Pr&oacute;ximo </a>
 
 [% IF consolidacao.status != 'Finalizada' %]
-<SCRIPT language="javascript">
+<script type="text/javascript">
 var url_template = "[% c.uri_for_action('/auth/registros/consolidador/definicaoconsolidacao/consolidacao/fragmentos_alertas', [ id_definicao_consolidacao, consolidacao.id_consolidacao], '__aid__', c.req.params) %]";
 function definir_timeout() {
      var ultimo_alerta = $('#alertas_tbody tr:last-child');

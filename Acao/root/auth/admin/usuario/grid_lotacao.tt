@@ -1,4 +1,4 @@
-<input type="hidden" value="[% lotacao | html %]" name="lotacao">
+<input type="hidden" value="[% lotacao | html %]" name="lotacao"/>
 <table id="grid_lotacao">
   <thead>
   <tr>

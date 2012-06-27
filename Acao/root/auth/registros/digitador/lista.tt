@@ -32,7 +32,7 @@
   <th>Fim da Digitacao</th>
  </tr>
 </thead>
-<TBODY>
+<tbody>
  
   [% # O foreach abaixo vai buscar diretamente no model por estar livre de contexto %] 
   [% # (nao recebe argumento pela url) %]
@@ -48,7 +48,7 @@
   <td>[% leitura.digitacao_fim %]</a></td>
  </tr>
  [% END %]
-</TBODY>
+</tbody>
 </table>
 
 [% INCLUDE 'footer.tt' %]

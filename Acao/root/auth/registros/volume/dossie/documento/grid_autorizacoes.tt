@@ -4,7 +4,7 @@
         "visualizar" => "Ver este Documento",
         "transferir" => "Transferir este Documento",
    } %]
-<input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes">
+<input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes"/>
      <table id="grid_autorizacoes">
       <thead>
         <tr>

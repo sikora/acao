@@ -42,7 +42,7 @@
         <option value="" selected="selected"> Todos </option>
         [%  c.model('Schema').options_classificacao_xsd() %]
       </select>
-      <input type="submit" value="buscar">
+      <input type="submit" value="buscar"/>
     </form>
     </fieldset>
 </div>
@@ -60,7 +60,7 @@
   <th>Excluir</th>
  </tr>
 </thead>
-<TBODY>
+<tbody>
 
 [% TRY %]
 
@@ -101,10 +101,10 @@
 [% END %]
 
 
-</TBODY>
+</tbody>
 </table>
 
-<input type="hidden" name="template" value="[% xqueryret | html %]" >
+<input type="hidden" name="template" value="[% xqueryret | html %]" />
 <script type="text/javascript">
 function buscar(action) {
 var busca = $("#busca").val();

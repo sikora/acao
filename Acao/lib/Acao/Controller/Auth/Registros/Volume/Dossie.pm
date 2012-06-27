@@ -76,11 +76,11 @@ sub lista : Chained('base') : PathPart('') : Args(0) {
         return;
     }
     if ($c->req->params->{dossiesAbertos} || $c->req->params->{dossiesFechados}) {
-        $c->stash->{'dossiesAbertos'} =  $c->req->params->{dossiesAbertos} eq 'on' ? 'checked' : '';
-        $c->stash->{'dossiesFechados'} = $c->req->params->{dossiesFechados} eq 'on' ? 'checked' : '';
+        $c->stash->{'dossiesAbertos'} =  $c->req->params->{dossiesAbertos} eq 'on' ? 'checked="checked"' : '';
+        $c->stash->{'dossiesFechados'} = $c->req->params->{dossiesFechados} eq 'on' ? 'checked="checked"' : '';
    } else {
-        $c->stash->{'dossiesFechados'} = 'checked';
-        $c->stash->{'dossiesAbertos'}  = 'checked';
+        $c->stash->{'dossiesFechados'} = 'checked="checked"';
+        $c->stash->{'dossiesAbertos'}  = 'checked="checked"';
    
    }
     

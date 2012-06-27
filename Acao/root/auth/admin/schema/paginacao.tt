@@ -34,11 +34,11 @@
     [% args.import(c.req.params()) %]
 
     [% args.import({ interval_ini => 0}) %]
-    <a class="paginacao-grid-primeiro" href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]"> << Primeiro </a>
+    <a class="paginacao-grid-primeiro" href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]"> &lt;&lt; Primeiro </a>
 
     [% IF interval_ini > 0 %]
         [% args.import({ interval_ini => interval_ini - 1 }) %]
-        <a href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]" title="Anterior"> < Anterior </a>
+        <a href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]" title="Anterior"> &lt; Anterior </a>
     [% END %]
 
     [% WHILE ini <= fim %]
@@ -58,10 +58,10 @@
 
     [% IF estado_controle_paginacao < numero_paginas && estado_controle_paginacao != '' %]
         [% args.import({ interval_ini => interval_ini + 1 }) %]
-        <a href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]" title="Próximo"> Próximo > </a>
+        <a href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]" title="Próximo"> Próximo &gt; </a>
     [% END %]
 
     [% args.import({ interval_ini => numero_paginas }) %]
-    <a href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]"> Último >> </a>
+    <a href="[% c.uri_for_action('/auth/admin/schema/buscar', args) %]"> Último &gt;&gt; </a>
 
 </div>

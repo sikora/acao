@@ -65,74 +65,74 @@
 <!--         <legend><img src="[% c.uri_for('/static/img/user/user.png') %]" alt="Informação de Usuário" /> Informação de Usuário</legend>-->
 <!--          <dl>-->
 <!--            <dt>Usuário:</dt>-->
-<!--              <dd><input type="text" name="nome" value="[% usuario.uid %]" ></dd>-->
+<!--              <dd><input type="text" name="nome" value="[% usuario.uid %]" /></dd>-->
 <!--            <dt>Nome:</dt>-->
-<!--              <dd><input type="text" name="nome" value="[% usuario.nome %]" ></dd>-->
+<!--              <dd><input type="text" name="nome" value="[% usuario.nome %]" /></dd>-->
 <!--            <dt>Sobrenome:</dt>-->
-<!--              <dd><input type="text" name="sobrenome" value="[% usuario.sobrenome %]" ></dd>-->
+<!--              <dd><input type="text" name="sobrenome" value="[% usuario.sobrenome %]" /></dd>-->
 <!--            <dt>Email:</dt>-->
-<!--              <dd><input type="text" name="email" value="[% usuario.email %]" ></dd>-->
+<!--              <dd><input type="text" name="email" value="[% usuario.email %]" /></dd>-->
 <!--            <dt>Telefone:</dt>-->
-<!--              <dd><input type="text" name="fone" value="[% usuario.fone %]" ></dd>-->
+<!--              <dd><input type="text" name="fone" value="[% usuario.fone %]" /></dd>-->
 <!--         </dl>-->
 <!--      </fieldset>-->
 
   <fieldset  class="">
      <legend><img src="[% c.uri_for('/static/img/pass/lock_add.png') %]" alt="Autorizações no Sistema" /> Autorizações no Sistema Ação</legend>
 
-     <dl><dt><input type="checkbox" value="" id="checkAllRegistros" name="checkAllRegistros"> Marcar Todos   </dt>  </dl>
+     <dl><dt><input type="checkbox" value="" id="checkAllRegistros" name="checkAllRegistros" /> Marcar Todos   </dt>  </dl>
      <fieldset class="registro">
         <legend>Volume</legend>
         <dl>
-                <dt><input type="checkbox" value="listar" name="volume[]" [% IF volume.listar %] checked="checked" [% END %]> </dt>
+                <dt><input type="checkbox" value="listar" name="volume[]" [% IF volume.listar %] checked="checked" [% END %] /> </dt>
           <dd>Listar</dd>
-          <dt><input type="checkbox" value="visualizar" name="volume[]" [% IF volume.visualizar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="visualizar" name="volume[]" [% IF volume.visualizar %] checked="checked" [% END %] /> </dt>
           <dd>Visualizar</dd>
-          <dt><input type="checkbox" value="criar" name="volume[]" [% IF volume.criar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="criar" name="volume[]" [% IF volume.criar %] checked="checked" [% END %] /> </dt>
           <dd>Criar</dd>
-          <dt><input type="checkbox" value="alterar" name="volume[]" [% IF volume.alterar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="alterar" name="volume[]" [% IF volume.alterar %] checked="checked" [% END %] /> </dt>
           <dd>Alterar</dd>
-          <dt><input type="checkbox" value="transferir" name="volume[]" [% IF volume.transferir %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="transferir" name="volume[]" [% IF volume.transferir %] checked="checked" [% END %] /> </dt>
           <dd>Transferir</dd>
         </dl>
      </fieldset>
      <fieldset class="registro">
         <legend>Prontuário</legend>
         <dl>
-          <dt><input type="checkbox" value="listar" name="dossie[]" [% IF dossie.listar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="listar" name="dossie[]" [% IF dossie.listar %] checked="checked" [% END %] /> </dt>
           <dd>Listar</dd>
-          <dt><input type="checkbox" value="visualizar" name="dossie[]" [% IF dossie.visualizar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="visualizar" name="dossie[]" [% IF dossie.visualizar %] checked="checked" [% END %] /> </dt>
           <dd>Visualizar</dd>
-          <dt><input type="checkbox" value="criar" name="dossie[]" [% IF dossie.criar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="criar" name="dossie[]" [% IF dossie.criar %] checked="checked" [% END %] /> </dt>
           <dd>Criar</dd>
-          <dt><input type="checkbox" value="alterar" name="dossie[]" [% IF dossie.alterar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="alterar" name="dossie[]" [% IF dossie.alterar %] checked="checked" [% END %] /> </dt>
           <dd>Alterar</dd>
-          <dt><input type="checkbox" value="transferir" name="dossie[]" [% IF dossie.transferir %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="transferir" name="dossie[]" [% IF dossie.transferir %] checked="checked" [% END %] /> </dt>
           <dd>Transferir</dd>
         </dl>
      </fieldset>
      <fieldset class="registro">
         <legend>Documento</legend>
         <dl>
-          <dt><input type="checkbox" value="listar" name="documento[]" [% IF documento.listar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="listar" name="documento[]" [% IF documento.listar %] checked="checked" [% END %] /> </dt>
           <dd>Listar</dd>
-          <dt><input type="checkbox" value="visualizar" name="documento[]" [% IF documento.visualizar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="visualizar" name="documento[]" [% IF documento.visualizar %] checked="checked" [% END %] /> </dt>
           <dd>Visualizar</dd>
-          <dt><input type="checkbox" value="criar" name="documento[]" [% IF documento.criar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="criar" name="documento[]" [% IF documento.criar %] checked="checked" [% END %] /> </dt>
           <dd>Criar</dd>
-          <dt><input type="checkbox" value="alterar" name="documento[]" [% IF documento.alterar %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="alterar" name="documento[]" [% IF documento.alterar %] checked="checked" [% END %] /> </dt>
           <dd>Alterar</dd>
-          <dt><input type="checkbox" value="transferir" name="documento[]" [% IF documento.transferir %] checked="checked" [% END %]> </dt>
+          <dt><input type="checkbox" value="transferir" name="documento[]" [% IF documento.transferir %] checked="checked" [% END %] /> </dt>
           <dd>Transferir</dd>
         </dl>
      </fieldset>
   </fieldset>
 
-<input type="checkbox" value="super" name="super"  [% IF usuario.admin == '1' %] checked="checked" [% END %]><img src="[% c.uri_for('/static/img/user/user_suit.png') %]" alt=" Super Administrador" /> Poderes de Super Administrador
+<input type="checkbox" value="super" name="super"  [% IF usuario.admin == '1' %] checked="checked" [% END %] /><img src="[% c.uri_for('/static/img/user/user_suit.png') %]" alt=" Super Administrador" /> Poderes de Super Administrador
 <br/><br/>
-<input type="hidden" name="delete" value="sim">
-<input type="submit" value="Confimar">
-<input type="reset" value="Cancelar">
+<input type="hidden" name="delete" value="sim"/>
+<input type="submit" value="Confimar"/>
+<input type="reset" value="Cancelar"/>
 
 </form>
 

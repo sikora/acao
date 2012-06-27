@@ -69,12 +69,12 @@
 
      </tr>
   </thead>
-    <TBODY>
+    <tbody>
        [% FOREACH member IN usuario.memberOf %]
         <tr><td> [% c.model('LDAP').decompose_dn_grupos(member).reverse.join(' - ') %] <a src="" class=excluir></a></td>        </tr>
        [% END %]
 
-    </TBODY>
+    </tbody>
    </table>
    </div>
 

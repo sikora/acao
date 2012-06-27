@@ -37,7 +37,7 @@
         <option value="" selected="selected">Todos</option>
         <option value="admin">Administradores</option>
 
-        <input type="submit" value="buscar">
+        <input type="submit" value="buscar"/>
 
       </select>
 
@@ -54,7 +54,7 @@
 
  </tr>
 </thead>
-<TBODY>
+<tbody>
     [% FOREACH key IN usuarios.keys %]
     [% cont = cont + 1%]
 
@@ -91,7 +91,7 @@
      </td>
    </tr>
     [% END %]
-</TBODY>
+</tbody>
 </table>
 
 <div id="legenda">
