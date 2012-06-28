@@ -19,24 +19,38 @@
 %]
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
-    <head onload="document.focus()">
-
-  	<script type="text/javascript">
-    		function onload_focus(){
-      			document.getElementById('user').focus();
-    		}
-  	</script>
+    <head>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
         <title>Ação - Sistema de Acompanhamentos de Projetos Sociais</title>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery.ui-1.8.6.custom.min.js') %]'></script>
         <link href='[% c.uri_for('/static/css/ui-lightness/jquery-ui-1.7.2.custom.css') %]' rel='stylesheet' type='text/css' />
         <link href='[% c.uri_for('/static/css/estilo.css') %]' rel='stylesheet' type='text/css' />
-		<script type="text/javascript" src="Scripts/picnet.table.filter.js"></script>
+        <script type="text/javascript" src="Scripts/picnet.table.filter.js"></script>
 
+        <script type="text/javascript">
+            function onload_focus(){
+               console.log($.browser);
+                if( !$.browser.mozilla && !$.browser.webkit)  {
+                    $('body').append('<div id="dialog-modal" title="Navegador incompatível" style="display:none;">' +
+                            '	<p>Este sistema não está homologado para funcionar no seu navegador. Escolha um dos navegadores abaixo:</p>'+
+                            '                <p><a href="http://www.getfirefox.com/">Mozilla Firefox</a> ou <a href="http://chrome.google.com/">Google Chrome</a></p>' +
+                            '</div>');
+                        $( "#dialog-modal" ).dialog({
+                                height: 140,
+                                modal: true,
+                                closeOnEscape: false,
+                            open: function(event, ui) { $(".ui-dialog-titlebar-close", this.parentNode).hide(); }
+                        });
+
+                }
+                document.getElementById('user').focus();
+            }
+        </script>
     </head>
-
     <body onload="onload_focus();">
         <div id='topo'>
-            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]">
+            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]" alt="Brasão da Prefeitura Municipal de Fortaleza"/>
             <div id='topoTitulo'>
                 Ação - Sistema de Acompanhamento de Projetos Sociais
             </div>

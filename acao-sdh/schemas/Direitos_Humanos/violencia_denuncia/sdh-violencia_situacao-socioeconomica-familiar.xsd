@@ -40,7 +40,7 @@
 			<xs:element name="recbensoc" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>09.2 Rece Algum Benefício Social</xhtml:label>
+						<xhtml:label>09.2 Recebe Algum Benefício Social</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>

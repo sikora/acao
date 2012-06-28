@@ -1,6 +1,6 @@
 use Sedna;
 use warnings;
-use lib '/home/claudio/devel/acao/Acao/lib';
+use lib '/home/sikora/devel/acao/Acao/lib';
 use Acao;
 use Data::Dumper;
 use strict;
@@ -299,7 +299,7 @@ inserirDocumento( $xml, $controle);
 }
 
 #conexao com o banco sedna de uso
-my $sedna = Sedna->connect('127.0.0.1', 'acao', 'acao', 'acao');
+#my $sedna = Sedna->connect('172.31.2.12', 'AcaoDbHom', 'acao', 'acao');
 #$sedna->setConnectionAttr(AUTOCOMMIT => Sedna::SEDNA_AUTOCOMMIT_OFF() );
 
 {   package DumbUser;
@@ -314,12 +314,11 @@ my $sedna = Sedna->connect('127.0.0.1', 'acao', 'acao', 'acao');
 sub criaProntuario{
         my($nome, $representaVolumeFisico, $classificacoes,$autorizacoes) = (shift , 0, {'classificacao' => ["cn=Juventude,dc=assuntos,dc=diretorio,dc=fortaleza,dc=ce,dc=gov,dc=br"]}, $auth );
         my $ip = '127.0.0.1';
-		my $localizacao = 'dc=local,dc=diretorio,dc=fortaleza,dc=ce,dc=gov,dc=br';	
-        my $id_volume = 'volume-FE6F7D4E-AF1A-11E1-B6DD-798906AD0966';
+	my $localizacao = 'dc=local,dc=diretorio,dc=fortaleza,dc=ce,dc=gov,dc=br';	
+        my $id_volume = 'volume-6EA87E3A-B18C-11E1-AC28-A36EE91B6C0F';
         my $herdar_author = '1';
         my $dossie_fisico = 0;
-		$nome =~ tr/a-zàáâãäåæçèéêëìíîïðñòóôõöøùúûüý/A-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝ/;
-		#my $octets_nome = decode("utf8", $nome);
+	$nome =~ tr/a-zàáâãäåæçèéêëìíîïðñòóôõöøùúûüý/A-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝ/;
         my $octets_nome =  $nome;
 
         
@@ -335,11 +334,11 @@ sub inserirDocumento{
 	    my($xml, $controle) = @_;
         my ($representaVolumeFisico, $classificacoes,$autorizacoes) = ( 0, {'classificacao' => ["cn=Juventude,dc=assuntos,dc=diretorio,dc=fortaleza,dc=ce,dc=gov,dc=br"]}, $auth );
         my $ip = '127.0.0.1';
-        my $id_volume = 'volume-FE6F7D4E-AF1A-11E1-B6DD-798906AD0966';
+        my $id_volume = 'volume-6EA87E3A-B18C-11E1-AC28-A36EE91B6C0F';
         my $xsdDocumento ='http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cad-org_mov_est.xsd';
         my $representaDocumentoFisico = 0;
         my $herdar_author = '1';
-		my $localizacao = 'dc=local,dc=diretorio,dc=fortaleza,dc=ce,dc=gov,dc=br';	
+	my $localizacao = 'dc=local,dc=diretorio,dc=fortaleza,dc=ce,dc=gov,dc=br';	
         my $id_Prontuario ='$collection';
         my $id_documento ='';       
         my $dossie_fisico = 0;

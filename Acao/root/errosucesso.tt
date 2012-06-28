@@ -69,15 +69,13 @@
 
 [% IF erro %]
 
-<div id="voltar">
-	<a href="[%c.uri_for_action('/auth/administracao')%]" title="Voltar">Voltar</a>
-</div>
+
 
    <span class="erro">
      [% IF mensagens_erro.exists(codigo_erro) %]
           [% mensagens_erro.item(codigo_erro) %]
      [% ELSE %]
-       <script language="javascript">
+       <script type="text/javascript">
          function show_error_dialog() {
             var w = window.open(null,'erro',"status=0,toolbar=0,height=600,width=800,scrollbars=1,location=0,menubar=0");
             w.document.write("<HMTL><BODY><PRE>[% erro.replace('"','\\"').replace("\\n",'\\n') | html %]</PRE></BODY></HTML>");

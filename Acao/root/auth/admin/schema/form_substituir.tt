@@ -28,9 +28,9 @@
   <strong>XSD a ser substituido: </strong>[% c.req.param('XSDSchemaTNS') %]
   </br>
   </br>
-  <input type="hidden" name="form_submit" value="yes">
-  <input type="file" name="uploadSchema">
-  <input type="submit" value="Substituir">
+  <input type="hidden" name="form_submit" value="yes"/>
+  <input type="file" name="uploadSchema"/>
+  <input type="submit" value="Substituir"/>
   </form>
 </fieldset>
 [% INCLUDE 'footer.tt' %]

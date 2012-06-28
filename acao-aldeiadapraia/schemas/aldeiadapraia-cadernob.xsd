@@ -204,13 +204,19 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="cpf" type="xs:integer" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>10 - CPF</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-						</xs:element>
+                        <xs:element name="cpf" minOccurs="0">
+                               <xs:annotation>
+                                       <xs:appinfo>
+                                               <xhtml:label>CPF</xhtml:label>
+                                       </xs:appinfo>
+                               </xs:annotation>
+                               <xs:simpleType>
+                                       <xs:restriction base="xs:string">
+                                               <xs:maxLength value="255" />
+                                               <xs:pattern value="[0-9]+"/>
+                                       </xs:restriction>
+                               </xs:simpleType>
+                       </xs:element>
 
 						<xs:element name="nis" type="xs:integer" minOccurs="0">
 							<xs:annotation>
@@ -492,6 +498,7 @@
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>22 - Histórico de Doenças</xhtml:label>
+
 								</xs:appinfo>
 							</xs:annotation>
 

@@ -38,7 +38,7 @@
         <div class="alterar_senha" ><a href="javascript:void(0)" class="bt_alter_pass alterar_pass"   >Alterar Senha</a></div>
         <div id="alter_pass" class="alter_pass_div"  alt="[% dn_usuario %]">
           <input type="password" class="senha_pass inputsenha" alt="[% c.uri_for_action('/auth/admin/usuario/store_alterar_senha',[ dn_usuario ])%]"  name="senha" />
-          <input type="button" class="submit_button" id="submit"   value="ok">
+          <input type="button" class="submit_button" id="submit"   value="ok"/>
         </div>
         <div id="msg"></div>
 
@@ -92,12 +92,12 @@
 
      </tr>
   </thead>
-    <TBODY>
+    <tbody>
        [% FOREACH member IN usuario.memberOf %]
         <tr><td> [% c.model('LDAP').decompose_dn_grupos(member).reverse.join(' - ') %] </td>        </tr>
        [% END %]
 
-    </TBODY>
+    </tbody>
    </table>
    </div>
 
@@ -114,12 +114,12 @@
 
      </tr>
   </thead>
-    <TBODY>
+    <tbody>
        [% FOREACH member IN usuario_sistema.memberOf %]
         <tr><td> [% c.model('LDAP').decompose_dn_grupos(member).reverse.join(' - ') %] </td>        </tr>
        [% END %]
 
-    </TBODY>
+    </tbody>
    </table>
    </div>
 
