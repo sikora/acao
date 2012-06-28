@@ -47,8 +47,8 @@
 						<xs:enumeration value="Masculino" />
 						<xs:enumeration value="Feminino" />
 						<xs:enumeration value="Travesti" />
-						<xs:enumeration value="Transsexual masculino" />
-						<xs:enumeration value="Transsexual feminino" />
+						<xs:enumeration value="Transexual masculino" />
+						<xs:enumeration value="Transexual feminino" />
 						<xs:enumeration value="Transgênero" />
 						<xs:enumeration value="Outro" />
 					</xs:restriction>
@@ -106,7 +106,7 @@
 						<xs:enumeration value="Evangélico" />
 						<xs:enumeration value="Espírita" />
 						<xs:enumeration value="Testemunha de Jeová" />
-						<xs:enumeration value="Candoblé" />
+						<xs:enumeration value="Candomblé" />
 						<xs:enumeration value="Umbanda" />
 						<xs:enumeration value="Não possui religião" />
 						<xs:enumeration value="Outros" />
@@ -198,7 +198,7 @@
 			<xs:element name="acompinstespec" minOccurs="0" type="xs:string">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>7.7.1 Se SIM, Qual</xhtml:label>
+						<xhtml:label>7.9.1 Se SIM, Qual</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

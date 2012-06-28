@@ -137,7 +137,7 @@
 			    <xs:element name="assitJuridicamente" minOccurs="0">
 				    <xs:annotation>
 					    <xs:appinfo>
-						    <xhtml:label>Assitido juridicamente</xhtml:label>
+						    <xhtml:label>Assistido juridicamente</xhtml:label>
 					    </xs:appinfo>
 				    </xs:annotation>
 				    <xs:simpleType>
