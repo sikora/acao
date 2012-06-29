@@ -15,6 +15,13 @@
                 <class:classificacoes>
                     <class:classificacao>cn=Vitima,cn=Direitos Humanos</class:classificacao>
                 </class:classificacoes>
+				<idx:index>
+					<idx:hint key="pessoa.nome" xpath="dadosPessoaisVitima/nomeuser" />
+					<idx:hint key="pessoa.nome" xpath="dadosPessoaisVitima/nomesoc" />
+                    <idx:hint key="pessoa.rg" xpath="dadosPessoaisVitima/documentos/numRg" />
+                    <idx:hint key="pessoa.cpf" xpath="dadosPessoaisVitima/documentos/numCpf" />
+                    <idx:hint key="form.protocolo" xpath="dadosPessoaisVitima/protocolo" />
+				</idx:index>
             </xs:appinfo>
         </xs:annotation>
     </xs:element>
@@ -356,7 +363,7 @@
                             </xs:simpleType>
                         </xs:element>
 
-                        <xs:element name="numrg" minOccurs="0">
+                        <xs:element name="possuirg" minOccurs="0">
                             <xs:annotation>
                                 <xs:appinfo>
                                     <xhtml:label>RG</xhtml:label>
@@ -382,7 +389,7 @@
                             </xs:simpleType>
                         </xs:element>
 
-                        <xs:element name="cpf" minOccurs="0">
+                        <xs:element name="possuicpf" minOccurs="0">
                             <xs:annotation>
                                 <xs:appinfo>
                                     <xhtml:label>CPF</xhtml:label>
@@ -396,7 +403,7 @@
                             </xs:simpleType>
                         </xs:element>
 
-                        <xs:element name="numCPF" minOccurs="0">
+                        <xs:element name="numCpf" minOccurs="0">
                             <xs:annotation>
                                 <xs:appinfo>
                                     <xhtml:label>Se SIM, informe o número CPF</xhtml:label>
