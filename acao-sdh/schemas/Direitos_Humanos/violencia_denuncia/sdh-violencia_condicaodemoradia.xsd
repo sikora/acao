@@ -95,7 +95,7 @@
 						<xs:enumeration value="Taipa Revestida" />
 						<xs:enumeration value="Taipa não revestida" />
 					    <xs:enumeration value="Madeira" />
-			            <xs:enumeration value="Matrial aproveitada" />
+			            <xs:enumeration value="Material aproveitada" />
 						<xs:enumeration value="Outros" />
 					</xs:restriction>
 				</xs:simpleType>
@@ -195,7 +195,7 @@
 					<xs:restriction base="xs:string">
 						<xs:enumeration value="Filtração" />
 						<xs:enumeration value="Fervida" />
-						<xs:enumeration value="Cloração" />
+						<xs:enumeration value="Clorada" />
 						<xs:enumeration value="Sem tratamento"/>
 						<xs:enumeration value="Outros" />
 					</xs:restriction>

@@ -2,7 +2,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh-violencia_perfildenuncia.xsd"
     xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh-violencia_perfildenuncia.xsd"
 	elementFormDefault="qualified">
 
@@ -13,6 +15,10 @@
                 <class:classificacoes>
                     <class:classificacao>cn=Denuncia,cn=Direitos Humanos</class:classificacao>
                 </class:classificacoes>
+				<idx:index>
+					<idx:hint key="pessoa.nome" xpath="perfildenuncia/nomedodenunciante" />
+                    <idx:hint key="form.protocolo" xpath="perfildenuncia/protocolo" />
+				</idx:index>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
@@ -77,12 +83,17 @@
 				</xs:simpleType>
 			</xs:element>
 
-			<xs:element name="nomedodenunciante" minOccurs="0" type="xs:string">
+			<xs:element name="nomedodenunciante" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>1.3 Nome do denunciante</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
 			</xs:element>
 
 			<xs:element name="telefone" minOccurs="0" type="xs:string">
