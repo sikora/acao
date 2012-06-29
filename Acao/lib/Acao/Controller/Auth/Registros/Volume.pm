@@ -207,6 +207,9 @@ sub alterar_volume : Chained('get_volume') : PathPart('alterar') : Args(0) {
     $c->stash->{local_basedn} = ($c->stash->{localizacao} eq $c->model('LDAP')->local_dn or
                                 $c->stash->{localizacao} eq '') ? $c->model('LDAP')->local_dn : $c->stash->{localizacao} ;
     #$c->stash->{local_basedn} =~ s/^.+?,//;
+    $c->stash->{local_basedn} =~ s/\n//g;
+    
+
 
     $c->stash->{basedn}       = $c->model("LDAP")->grupos_dn;
     $c->stash->{class_basedn} = $c->req->param('class_basedn')

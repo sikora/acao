@@ -28,7 +28,7 @@
 <script src="[% c.uri_for('/static/js/xsdForm.js') %]" type="text/javascript"></script>
 <script src="[% c.uri_for('/static/js/xsdForm-ui.js') %]" type="text/javascript"></script>
 
-<form id="form" name="form" action="[% c.uri_for_action('/auth/registros/volume/dossie/store', [ id_volume ]) %]" method="post" onsubmit="">
+<form id="form" name="form" action="[% c.uri_for_action('/auth/registros/volume/dossie/store', [ id_volume ]) %]" method="post">
   <input type="hidden" name="id_volume" value="[% id_volume %]"/>
 
   [% INCLUDE 'auth/registros/volume/dossie/_formDossie.tt' %]
@@ -74,6 +74,7 @@
       return false;
     }
 
+
     if(document.getElementById('classificacoes').value == '<x0:classificacoes xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd" xmlns:x0="http://schemas.fortaleza.ce.gov.br/acao/volume.xsd"/>'){
       alert('Informe a classificação do volume.');
       document.getElementById('classificacoes').focus();
@@ -81,15 +82,17 @@
       return false;
     }
 
-    if( (document.getElementById('autorizacoes').value == '<autorizacoes xmlns="http://schemas.fortaleza.ce.gov.br/acao/dossie.xsd" xmlns:author="http://schemas.fortaleza.ce.gov.br/acao/autorizacoes.xsd"/>') && (!document.getElementById('herdar_author').checked) ){
-      if(confirm('O volume não possue autorização(ções). Deseja criá-lo assim mesmo?')){
+    if( ($('*[name=autorizacoes]').val() == '<autorizacoes xmlns="http://schemas.fortaleza.ce.gov.br/acao/dossie.xsd" xmlns:author="http://schemas.fortaleza.ce.gov.br/acao/autorizacoes.xsd"/>') && (!$('#herdar_author').attr('checked') ) ){
+   
+    if(confirm('O volume não possue autorização(ções). Deseja criá-lo assim mesmo?')){
       }
       else {
       $('#btcriar').removeAttr('disabled');
         return false;
       }
     }
-
+    $('#form').submit();
+    return true;
   }
 
    $("documment").ready(function(){
