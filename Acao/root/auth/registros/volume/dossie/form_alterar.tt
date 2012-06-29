@@ -68,6 +68,8 @@
       document.getElementById('classificacoes').focus();
       return false;
     }
+    $('#form').submit();
+    return true;
 
   }
  $("documment").ready(function(){

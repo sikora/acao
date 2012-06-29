@@ -75,8 +75,7 @@
   //    $('#btcriar').removeAttr('disabled');
   //    return false;
   //  }
-
-    if(document.getElementById('autorizacoes').value == '<autorizacoes xmlns="http://schemas.fortaleza.ce.gov.br/acao/volume.xsd" xmlns:author="http://schemas.fortaleza.ce.gov.br/acao/autorizacoes.xsd"/>'){
+    if( ($('*[name=autorizacoes]').val() == '<autorizacoes xmlns="http://schemas.fortaleza.ce.gov.br/acao/dossie.xsd" xmlns:author="http://schemas.fortaleza.ce.gov.br/acao/autorizacoes.xsd"/>') ){
       if(confirm('O volume não possue autorização(ções). Deseja criá-lo assim mesmo?')){
       }
       else {
@@ -84,6 +83,9 @@
         return false;
       }
     }
+
+    $('#formVolume').submit();
+    return true;
 
   }
 
