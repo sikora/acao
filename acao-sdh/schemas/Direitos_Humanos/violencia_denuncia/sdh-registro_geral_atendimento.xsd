@@ -1,0 +1,483 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh_registro_geral_atendimento.xsd"
+	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh_registro_geral_atendimento.xsd"
+	elementFormDefault="qualified">
+		
+		<!-- Begin  -->	
+		<xs:element name="regGeralAtendimento" type="regGeralAtendimento">
+			<xs:annotation>
+				<xs:appinfo>
+					<xhtml:label>REGISTRO GERAL DE ATENDIMENTOS</xhtml:label>
+					<class:classificacoes>
+		                <class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+					</class:classificacoes>
+					<indices>
+						<idx:index>
+			                <idx:hint key="pessoa.nome" xpath="regGeralAtendimento/dadosPessoa/nomeCivil"/>
+			                <idx:hint key="pessoa.nome" xpath="regGeralAtendimento/dadosPessoa/nomeSocial"/>
+			            </idx:index>
+		        	</indices>
+		           </xs:appinfo>
+			</xs:annotation>
+		</xs:element>
+		
+		<xs:complexType name="regGeralAtendimento">
+			<xs:sequence>
+				
+				<!-- Begin field selectBox -->	
+				<xs:element name="horaAtendimento"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Hora do atendimento</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Manhã" />
+							<xs:enumeration value="Tarde" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+
+				<!-- Begin field selectBox -->	
+				<xs:element name="diaSemana"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Dia da semana</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Segunda-feira" />
+							<xs:enumeration value="Terça-feira" />
+							<xs:enumeration value="Quarta-feira" />
+							<xs:enumeration value="Quinta-feira" />
+							<xs:enumeration value="Sexta-feira" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+
+				<!-- Begin field selectBox -->	
+				<xs:element name="tipoProcura"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Tipo de procura</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Denúcia" />
+							<xs:enumeration value="Orientações Jurídicas" />
+							<xs:enumeration value="Orientações Psicológicas" />
+							<xs:enumeration value="Orientações Sociais" />
+							<xs:enumeration value="Informação" />
+							<xs:enumeration value="Reclamação" />
+							<xs:enumeration value="Solicitação" />
+							<xs:enumeration value="Sugestão" />
+							<xs:enumeration value="Trote" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+
+				<!-- Begin  complexType -->
+				<xs:element name="tipodemanda">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Tipo de demanda</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+
+							<!-- Begin field checkbox -->		
+							<xs:element name="civel" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Cível</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->	
+							<!-- Begin field checkbox -->		
+							<xs:element name="trabalhista" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Trabalhista</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->							
+							<!-- Begin field checkbox -->		
+							<xs:element name="criminal" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Criminal</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->											
+							<!-- Begin field checkbox -->		
+							<xs:element name="admistrativa" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Admistrativa</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->	
+							<!-- Begin field checkbox -->		
+							<xs:element name="violaDireitos" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Violação de direitos</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->		
+							<!-- Begin field checkbox -->		
+							<xs:element name="discriminacao" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Discriminação</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->												
+							<!-- Begin field checkbox -->		
+							<xs:element name="trabalhoEscolar" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Trabalho escolar</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->	
+							<!-- Begin field checkbox -->		
+							<xs:element name="trabalhoUnivers" minOccurs="0" type="xs:boolean">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Trabalho universitário</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field checkbox-->	
+							<!-- Begin field textarea  -->	
+							<xs:element name="espTipDem" minOccurs="0" type="xs:string">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Especificar tipo de demanda</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field textarea  -->
+																					
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- End  complexType-->
+
+				<!-- Begin field selectBox -->	
+				<xs:element name="origProcura"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Origem da procura</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Sociedade Civil" />
+							<xs:enumeration value="Disque Direitos Humanos – DISK 100" />
+							<xs:enumeration value="Disque Direitos Humanos – Fortaleza (0800)" />
+							<xs:enumeration value="Mídia" />
+							<xs:enumeration value="Rede Social/ E-mail" />
+							<xs:enumeration value="Órgão Público" />																				
+							<xs:enumeration value="Movimento Social/ Comunidade" />		
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+				<!-- Begin field textarea  -->	
+				<xs:element name="espOrigProc" minOccurs="0" type="xs:string">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Especificar origem da procura</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<!-- End field textarea  -->	
+
+
+				<!-- Begin  complexType -->
+				<xs:element name="dadosPessoa">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Dados da pessoa usuária</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<!-- Begin field Input Text -->	
+							<xs:element name="nomeCivil" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Nome civil</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+		
+							<!-- Begin field Input Text -->	
+							<xs:element name="nomeSocial" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Nome social</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+
+							<!-- Begin field Integer -->	
+							<xs:element name="idd" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Idade</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:maxLength value="11"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Integer -->
+
+							<!-- Begin field date -->		
+							<xs:element name="dtNasc" minOccurs="0" type="xs:date">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Data de nascimento</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field date-->		
+							
+							<!-- Begin  autocomplete -->
+							<xs:element name="bairro" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Bairro</xhtml:label>
+									</xs:appinfo>
+									<xsdext:extensions>
+										<xsdext:engine>autoComplete</xsdext:engine>
+										<xsdext:service>/bairros</xsdext:service>
+									</xsdext:extensions>								
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End  autocomplete-->
+									
+							<!-- Begin field Input Text -->	
+							<xs:element name="municipio" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Município</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+
+							<!-- Begin field Input Text -->	
+							<xs:element name="estado" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Estado</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+
+							<!-- Begin field Input Text -->	
+							<xs:element name="foneRes" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Fone residencial</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+
+
+							<!-- Begin field Input Text -->	
+							<xs:element name="foneTrab" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Fone do trabalho</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+
+
+							<!-- Begin field Input Text -->	
+							<xs:element name="cel" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Celular</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+
+
+							<!-- Begin field Input Text -->	
+							<xs:element name="email" minOccurs="0">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Email</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<!-- End field Input Text -->
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- End  complexType-->							
+							
+							<!-- Begin  complexType -->
+							<xs:element name="tomouConhec">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Como tomou conhecimento deste serviço</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+
+										<!-- Begin field checkbox -->		
+										<xs:element name="net" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:appinfo>
+													<xhtml:label>Internet</xhtml:label>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<!-- End field checkbox-->
+
+										<!-- Begin field checkbox -->		
+										<xs:element name="amigos" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:appinfo>
+													<xhtml:label>Amigos</xhtml:label>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<!-- End field checkbox-->
+
+										<!-- Begin field checkbox -->		
+										<xs:element name="tvRad" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:appinfo>
+													<xhtml:label>Tv/rádio</xhtml:label>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<!-- End field checkbox-->
+
+										<!-- Begin field checkbox -->		
+										<xs:element name="matGraf" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:appinfo>
+													<xhtml:label>Material gráfico</xhtml:label>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<!-- End field checkbox-->		
+												
+										<!-- Begin field Input Text -->	
+										<xs:element name="partAtv" minOccurs="0">
+											<xs:annotation>
+												<xs:appinfo>
+													<xhtml:label>Participação de atividades da PMF</xhtml:label>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="255" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<!-- End field Input Text -->
+										
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<!-- End  complexType-->
+							
+							<!-- Begin field textarea  -->	
+							<xs:element name="obs" minOccurs="0" type="xs:string">
+								<xs:annotation>
+									<xs:appinfo>
+										<xhtml:label>Observaçoes</xhtml:label>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<!-- End field textarea  -->
+										
+				
+			</xs:sequence>
+		</xs:complexType>
+		<!-- End  -->	
+		
+</xs:schema>	

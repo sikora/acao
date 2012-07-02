@@ -1,0 +1,107 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh_evolucao_caso_social.xsd"
+	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh_evolucao_caso_social.xsd"
+	elementFormDefault="qualified">
+		
+		<!-- Begin  -->	
+		<xs:element name="evolucaoCasoSocial" type="evolucaoCasoSocial">
+			<xs:annotation>
+				<xs:appinfo>
+					<xhtml:label>EVOLUÇÃO DO CASO SOCIAL</xhtml:label>
+					<class:classificacoes>
+                        <class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+					</class:classificacoes>
+					<!--  indices  
+					<idx:index>
+		                <idx:hint key="pessoa.numeronis" xpath="evolucaoCasoSocial/numeronis"/>
+		                <idx:hint key="pessoa.nome" xpath="evolucaoCasoSocial/responsavel/nomresp"/>
+		                <idx:hint key="pessoa.numerocpf" xpath="evolucaoCasoSocial/numerocpf"/>
+		                <idx:hint key="pessoa.numnismembro" xpath="evolucaoCasoSocial/compfamiliar/numnismembro"/>
+		                <idx:hint key="pessoa.nomemembro" xpath="evolucaoCasoSocial/compfamiliar/nommembro"/>
+		                <idx:hint key="pessoa.rgmembro" xpath="evolucaoCasoSocial/compfamiliar/rgmembro"/>
+		                <idx:hint key="pessoa.cpfmembro" xpath="evolucaoCasoSocial/compfamiliar/cpfmembro"/>
+		            </idx:index>
+		            -->
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:element>
+		
+		<xs:complexType name="evolucaoCasoSocial">
+			<xs:sequence>
+				
+				<!-- Begin field date -->		
+				<xs:element name="data" minOccurs="0" type="xs:date">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Data</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<!-- End field date-->		
+				
+				<!-- Begin field selectBox -->	
+				<xs:element name="setor"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Setor</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Jurídico" />
+							<xs:enumeration value="Social" />
+							<xs:enumeration value="Psicológico" />							
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+				
+				<!-- Begin field selectBox -->	
+				<xs:element name="social"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Social</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Visita domiciliar" />
+							<xs:enumeration value="Encaminhado para outra política social" />
+							<xs:enumeration value="Reunião institucional com outros órgãos/políticas psicossociais e jurídicas" />
+							<xs:enumeration value="Acompanhamento a alguma política social" />	
+							<xs:enumeration value="Atendimento encerrado" />																		
+							<xs:enumeration value="Outros" />			
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+				
+				<!-- Begin field textarea  -->	
+				<xs:element name="espOutros" minOccurs="0" type="xs:string">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Especifique outros</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<!-- End field textarea  -->
+				
+								<!-- Begin field textarea  -->	
+				<xs:element name="sitenseCaso" minOccurs="0" type="xs:string">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Síntese do caso</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<!-- End field textarea  -->
+
+			</xs:sequence>
+		</xs:complexType>
+		<!-- End  -->	
+		
+</xs:schema>	
