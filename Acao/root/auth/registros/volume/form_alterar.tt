@@ -81,6 +81,9 @@
       }
     }
 
+    $('#form').submit();
+    return true;
+
   }
   $("documment").ready(function(){
     $(function(){
