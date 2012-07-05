@@ -11,9 +11,9 @@
         <xs:element name="evolCasoPsicologico" type="evolCasoPsicologico">
             <xs:annotation>
                 <xs:appinfo>
-                    <xhtml:label>FORM EVOLUÇÃO DO CASO PSICOLÓGICO</xhtml:label>
+                    <xhtml:label>17. EVOLUÇÃO DO CASO PSICOLÓGICO</xhtml:label>
                     <class:classificacoes>
-                        <class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+                        <class:classificacao>cn=Vitima,cn=Direitos Humanos</class:classificacao>
                     </class:classificacoes>
                     <!--  indices  
                     <idx:index>
@@ -45,49 +45,28 @@
                 <!-- End field date-->  
 
 
-                <!-- Begin  complexType -->
-                <xs:element name="setor">
+            <!-- Begin field selectBox -->	
+				<xs:element name="setor"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Setor</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Jurídico" />
+							<xs:enumeration value="Social" />
+							<xs:enumeration value="Psicológico" />							
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+  
+                  <!-- Begin field checkbox -->        
+                <xs:element name="especificarPsicologico"  minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
-                            <xhtml:label>Setor</xhtml:label>
-                        </xs:appinfo>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence>
-
-                            <!-- Begin field checkbox -->        
-                            <xs:element name="juridico" minOccurs="0" type="xs:boolean">
-                                <xs:annotation>
-                                    <xs:appinfo>
-                                        <xhtml:label>Jurídico</xhtml:label>
-                                    </xs:appinfo>
-                                </xs:annotation>
-                            </xs:element>
-                            <!-- End field checkbox-->    
-                            <!-- Begin field checkbox -->        
-                            <xs:element name="social" minOccurs="0" type="xs:boolean">
-                                <xs:annotation>
-                                    <xs:appinfo>
-                                        <xhtml:label>Social</xhtml:label>
-                                    </xs:appinfo>
-                                </xs:annotation>
-                            </xs:element>
-                            <!-- End field checkbox-->                            
-                            <!-- Begin field checkbox -->        
-                            <xs:element name="psicologico" minOccurs="0" type="xs:boolean">
-                                <xs:annotation>
-                                    <xs:appinfo>
-                                        <xhtml:label>Psicológico</xhtml:label>
-                                    </xs:appinfo>
-                                </xs:annotation>
-                            </xs:element>
-                           
-                            <!-- End field checkbox-->    
-                            <!-- Begin field checkbox -->        
-                            <xs:element name="especificarPsicologico"  minOccurs="0">
-                    <xs:annotation>
-                        <xs:appinfo>
-                            <xhtml:label>Especificar Jurídico</xhtml:label>
+                            <xhtml:label>Especificar Psicológico</xhtml:label>
                         </xs:appinfo>
                     </xs:annotation>
                     <xs:simpleType>
@@ -103,32 +82,28 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                            <!-- End field checkbox-->    
-                            <!-- Begin field textarea  -->    
-                            <xs:element name="outros" minOccurs="0" type="xs:string">
-                                <xs:annotation>
-                                    <xs:appinfo>
-                                        <xhtml:label>Especificar Outros</xhtml:label>
-                                    </xs:appinfo>
-                                </xs:annotation>
-                            </xs:element>
-                            <!-- End field textarea  -->
-                            
-                            <!-- Begin field textarea  -->    
-                            <xs:element name="sinteseEvolucao" minOccurs="0" type="xs:string">
-                                <xs:annotation>
-                                    <xs:appinfo>
-                                        <xhtml:label>Sintese da Evolução</xhtml:label>
-                                    </xs:appinfo>
-                                </xs:annotation>
-                            </xs:element>
-                            <!-- End field textarea  -->
+                <!-- End field checkbox-->    
+                <!-- Begin field textarea  -->    
+                <xs:element name="outros" minOccurs="0" type="xs:string">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Especificar Outros</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+                <!-- End field textarea  -->
+                
+                <!-- Begin field textarea  -->    
+                <xs:element name="sinteseEvolucao" minOccurs="0" type="xs:string">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Sintese da Evolução</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+                <!-- End field textarea  -->
                                                            
 
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <!-- End  complexType-->
                 
             </xs:sequence>
         </xs:complexType>

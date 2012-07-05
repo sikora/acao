@@ -11,9 +11,9 @@
 		<xs:element name="evolucaoCasoSocial" type="evolucaoCasoSocial">
 			<xs:annotation>
 				<xs:appinfo>
-					<xhtml:label>EVOLUÇÃO DO CASO SOCIAL</xhtml:label>
+					<xhtml:label>18. EVOLUÇÃO DO CASO SOCIAL</xhtml:label>
 					<class:classificacoes>
-                        <class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+                        <class:classificacao>cn=Vitima,cn=Direitos Humanos</class:classificacao>
 					</class:classificacoes>
 					<!--  indices  
 					<idx:index>
