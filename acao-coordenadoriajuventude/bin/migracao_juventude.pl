@@ -181,9 +181,9 @@ while($valor ne ''){
     $qtdJo =lc($qtdJo);
 	
 		
-		if ($qtdJo eq '10 a 20'and 
-	        $qtdJo eq '20 a 40'and
-	        $qtdJo eq 'mais de 40' and 
+		if ($qtdJo eq '10 a 20'or 
+	        $qtdJo eq '20 a 40'or
+	        $qtdJo eq 'mais de 40' or 
 	        $qtdJo  eq ""){
 				
 				$tegQtdJo =  "<jovensParticipAtividOrganiz>".$qtdJo."</jovensParticipAtividOrganiz> "; 
@@ -192,7 +192,11 @@ while($valor ne ''){
 	    } else {	
 
 			    $tegQtdJo =  "";		         
-		 }      
+		 }  
+		 
+		 if ($qtdJo eq ''){
+			  $tegQtdJo =  "";
+			 }    
 	      	           
 										
 # campo 4.1. Onde acontecem as atividades da Organização esse bloco sera feito um tratamento nos valores para que possa ficar no padrao do formulario
