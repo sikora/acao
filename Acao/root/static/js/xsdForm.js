@@ -46,7 +46,7 @@ function returnRequiredItems(divx) {
         $("#" + divx).html( empties + ' campos obrigatórios não foram preenchidos.')
             .addClass('fieldRequired');
     }else {
-        $("#" + divx).html('')
+        $("#" + divx).html('') 
             .removeClass('fieldRequired');
     }
     return empties;
