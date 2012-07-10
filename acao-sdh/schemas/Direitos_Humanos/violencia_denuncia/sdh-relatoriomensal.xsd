@@ -11,7 +11,7 @@
 	<xs:element name="sistemacordenadoria" type="sistemacordenadoria">
 		<xs:annotation>
 			<xs:appinfo>
-				<xhtml:label>SISTEMA COORDENADORIA</xhtml:label>
+				<xhtml:label>RELATÓRIO MENSAL</xhtml:label>
 				<class:classificacoes>
 					<class:classificacao>cn=Relatórios,cn=Direitos Humanos</class:classificacao>
 				</class:classificacoes>
@@ -345,12 +345,17 @@
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:maxLength value="255" />
+						<xs:enumeration value="SER I" />
+						<xs:enumeration value="SER II" />
+						<xs:enumeration value="SER III" />
+						<xs:enumeration value="SER IV" />
+						<xs:enumeration value="SER V" />
+						<xs:enumeration value="SER VI" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
 
-			<xs:element name="publicoAfetado">
+			<xs:element name="publicoAfetado"  minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>5.0 Quantidade de pessoas presente</xhtml:label>

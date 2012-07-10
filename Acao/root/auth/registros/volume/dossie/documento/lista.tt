@@ -124,7 +124,7 @@
        <a href="[% c.uri_for_action('/auth/registros/volume/alterar_estado', [ id_volume ],'fechado') %]" class="_fechar" title="Fechar" onClick="return confirmaFechamentoVolume()"> Fechar </a>
     [% END %]
 </div>
-<br>
+<br/>
 
 <div id="caixaAcoes">
      <h3 class="titulo-form_">Gerenciar Documentos</h3>
@@ -138,7 +138,7 @@
   <legend>Filtrar Documentos</legend>
   <form>
     <strong>Incluir Documentos Inativos:</strong>
-    <input type="checkbox" name="documentos_validos" id="documentos_validos">
+    <input type="checkbox" name="documentos_validos" id="documentos_validos" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <strong>Tipo de Documento:</strong>
     <select name="tipo_documento" id="tipo_documento">
@@ -146,12 +146,12 @@
       [%c.model('XSD').options_xsd(id_volume, controle, c.model('LDAP').assuntos_dn)%]
     </select>
     &nbsp;&nbsp;&nbsp;
-    <input type="submit" name="submit_form" id="submit_form" value="Pesquisar">
+    <input type="submit" name="submit_form" id="submit_form" value="Pesquisar"/>
   </form>
 
   <br/>
 <form action="[% c.uri_for_action('/auth/registros/volume/dossie/documento/form',[ id_volume, controle ]) %]" id="form" name="form" method="post" onSubmit="return validaDropDonw()"></form>
-<br>
+<br/>
   <table class="wide-table">
   <thead>
    <tr>
@@ -163,7 +163,7 @@
     <th colspan="2">Ação</th>
    </tr>
   </thead>
-  <TBODY>
+  <tbody>
 
  [% # O foreach abaixo vai buscar diretamente no model por estar livre de contexto %]
  [% # (nao recebe argumento pela url) %]
@@ -207,7 +207,7 @@
   <PRE>[% error.info %]</PRE>
  </div>
 [% END %]
-</TBODY>
+</tbody>
 </table>
 
 <br/>
@@ -256,7 +256,7 @@
 
 </style>
 
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
 
     function confirmaFechamentoVolume(){
         if (!confirm('Deseja realmente fechar este volume?')){

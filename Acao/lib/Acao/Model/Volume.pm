@@ -346,7 +346,41 @@ sub pode_listar_volume {
     $self->sedna->commit;
     return $res;
 }
+=item nega_acesso_aba_autorizacoes()
 
+=cut
+
+sub nega_acesso_aba_autorizacoes {
+    my ( $self, $id_volume ) = @_;
+    return 
+    $self->_checa_autorizacao_volume( $id_volume, 'NaoModificaAutorizacoes' )
+      && $role_ver ~~ @{ $self->user->memberof };
+
+}
+
+=item nega_acesso_aba_localizacao()
+
+=cut
+
+sub nega_acesso_aba_localizacao {
+    my ( $self, $id_volume ) = @_;
+    return 
+    $self->_checa_autorizacao_volume( $id_volume, 'NaoModificaLocalizacao' )
+      && $role_ver ~~ @{ $self->user->memberof };
+
+}
+
+=item nega_acesso_aba_classificacao()
+
+=cut
+
+sub nega_acesso_aba_classificacao {
+    my ( $self, $id_volume ) = @_;
+    return 
+    $self->_checa_autorizacao_volume( $id_volume, 'NaoModificaClassificacao' )
+      && $role_ver ~~ @{ $self->user->memberof };
+
+}
 =item pode_criar_volume()
 
 Esté método realiza a validação de autorização, verificando se o

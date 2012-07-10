@@ -28,9 +28,9 @@
 <form name="" method="post" action="[% c.uri_for_action('/auth/admin/schema/store')%]" enctype="multipart/form-data">
 <fieldset>
   <legend> Escolha o Arquivo</legend>
-  <input type="hidden" name="form_submit" value="yes">
-    <input type="file" name="uploadSchema">
-    <input type="submit" value="Enviar">
+  <input type="hidden" name="form_submit" value="yes"/>
+    <input type="file" name="uploadSchema"/>
+    <input type="submit" value="Enviar"/>
   </form>
 </fieldset>
 [% INCLUDE 'footer.tt' %]

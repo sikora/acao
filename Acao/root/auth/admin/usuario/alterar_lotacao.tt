@@ -66,10 +66,10 @@
 
 
 </fieldset>
-<input type="submit" value="Salvar">
-<input type="reset" value="Cancelar">
-<input type="hidden" name="dn" value="[% usuario.dn %]">
-<input type="hidden" name="lotacaoAnterior" value="[% lotacao | html %]">
+<input type="submit" value="Salvar"/>
+<input type="reset" value="Cancelar"/>
+<input type="hidden" name="dn" value="[% usuario.dn %]"/>
+<input type="hidden" name="lotacaoAnterior" value="[% lotacao | html %]"/>
 </form>
 
 <script type="text/javascript">
@@ -132,10 +132,6 @@ function remove(action, posicao) {
 
 
 </script>
-
-
-
-
 
 
 [% INCLUDE 'footer.tt' %]

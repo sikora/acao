@@ -18,7 +18,7 @@
 # Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor,
 %]
 [% INCLUDE 'auth/registros/volume/header_criar.tt' %]
-<br>
+<br/>
 <h1 class="titulo-form">Criar Volume</h1>
 
  <form id="formVolume" name="form" action="[% c.uri_for_action('/auth/registros/volume/store') %]" method="post" onsubmit="">
@@ -29,7 +29,9 @@
   <ul id="abas">
         <li><a href="#tab1">Classificação</a></li>
         <li  class="tabLocalizacao"><a href="#tab2">Localização</a></li>
+        [% # IF modificarAutorizacoes %]
         <li><a href="#tab3">Autorização</a></li>
+        [% # END %]
   </ul>
 <!-- conteudo das abas -->
 
@@ -39,16 +41,21 @@
   <div id="tab2" class="contaba">
          [% INCLUDE 'auth/registros/volume/_formLocalizacao.tt' %]
   </div>
+  [% # IF modificarAutorizacoes %]
   <div id="tab3" class="contaba">
            [% INCLUDE 'auth/registros/volume/_formPermissoes.tt' %]
   </div>
+  [% # ELSE %]
+    <script type="text/javascript">
+      //$('#abas').css('width','322px');      
+    </script>
+  [% # END %]
+  <input type="submit" id="btcriar" name="opcao" onClick="javascript:return validaForm();" value="Criar"/>
 
-  <input type="submit" id="btcriar" name="opcao" onClick="javascript:return validaForm();" value="Criar">
-
-  <input type="button" name="Cancelar" onClick="javascript:history.go(-1);" value="Cancelar">
+  <input type="button" name="Cancelar" onClick="javascript:history.go(-1);" value="Cancelar"/>
  </form>
 
- <script language="javascript">
+ <script type="text/javascript">
   function validaForm(){
    	if (!check_auths()) {
 		alert('Número mínimo de permissões não atingido.');
@@ -75,8 +82,7 @@
   //    $('#btcriar').removeAttr('disabled');
   //    return false;
   //  }
-
-    if(document.getElementById('autorizacoes').value == '<autorizacoes xmlns="http://schemas.fortaleza.ce.gov.br/acao/volume.xsd" xmlns:author="http://schemas.fortaleza.ce.gov.br/acao/autorizacoes.xsd"/>'){
+    if( ($('*[name=autorizacoes]').val() == '<autorizacoes xmlns="http://schemas.fortaleza.ce.gov.br/acao/dossie.xsd" xmlns:author="http://schemas.fortaleza.ce.gov.br/acao/autorizacoes.xsd"/>') ){
       if(confirm('O volume não possue autorização(ções). Deseja criá-lo assim mesmo?')){
       }
       else {
@@ -84,6 +90,9 @@
         return false;
       }
     }
+
+    $('#formVolume').submit();
+    return true;
 
   }
 
@@ -95,6 +104,8 @@
 
 
       $(function(){
+          
+          
           // abas
           // oculta todas as abas
           $("div.contaba").hide();

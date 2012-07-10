@@ -19,7 +19,7 @@
 %]
 
 
- <fieldset id="grupos">
+ <fieldset id="grupos" [% IF !modificarAutorizacoes %] style="display:none !important; height: 0px !important" [% END %]>
 <!--    <legend> Autorizações: </legend>-->
      <div id="help">
        <img src="[% c.uri_for('/static/img/Help_24x24.png') %]" class="help_perm" /></br>
@@ -30,12 +30,13 @@
      </div>
      <input type="hidden" name="basedn" value="[% basedn %]" />
      <dt>
-     <dt><input type="checkbox" name="herdar_author" id="herdar_author" [% IF herdar == 1 %] checked [% END %] /> Herdar Autorizações do Prontuário</dt>
+     <dt><input type="checkbox" name="herdar_author" id="herdar_author" [% IF herdar == 1 %] checked="checked" [% END %] /> Herdar Autorizações do Prontuário</dt>
 [% SET labels_roles = {
         "alterar" => "Alterar este Documento",
         "listar" => "Listar este Documento",
         "visualizar" => "Ver este Documento",
         "transferir" => "Transferir este Documento",
+        "NaoModificaAutorizacoes" => "Não pode Modificar Autorizações neste Documento",
    } %]
 
 <br/>
@@ -55,7 +56,7 @@
           Marcar Todas
           [% FOREACH r IN labels_roles.keys %]
              <li>
-                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]"/>
+                <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]" />
           [% labels_roles.item(r) %]
              </li>
           [% END %]
@@ -63,7 +64,7 @@
       </div>
      </div>
 
-    <div id="grid-autorizacoes">
+ <!--    <div id="grid-autorizacoes">
 
    <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes">
 
@@ -95,8 +96,65 @@
             [% END %]
           </tbody>
          </table>
-  [% # END %]
-
+  [% # END %] -->
+     <!-- Fazendo merge dos Hash's  -->   
+    <div id="grid-autorizacoes"  >
+   
+   <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes"/>
+         [% SET lotacoes = [] %]
+         
+         [% USE Dumper %]
+         [% FOREACH a IN c.model('Documento').desserialize_autorizacoes(autorizacoes).autorizacao %]
+            [% lotacoes.push(a.principal) %]                      
+         [% END %]
+         
+         [% # Dumper.dump(lotacoes.unique) %]
+         
+         
+         
+         <table  >
+             <thead>
+               <tr>
+                   <th>Grupo de Lotação</th>                   
+                   <th class="permissoes">Permissão</th>                   
+               </tr>
+             </thead>
+             <tbody>
+               [% SET count = 0 %]
+               [% IF autorizacoes %]
+                 [% FOREACH lotacao IN lotacoes.unique %]
+                 <tr>                               
+                   <td>
+                        <a href="javascript:void(0);"  
+                          class="bt_remove_right" 
+                          name="remover"
+                          onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]',
+                                                        '[% count %]', '[% lotacao %]','todos')" >
+                                               Remover</a>  
+                        <span rel="[% lotacao %]">[% c.model('LDAP').decompose_dn_grupos(lotacao).reverse.join(' - ') %]</span>
+                   </td>
+                   <td>
+                    [% FOREACH a IN c.model('Documento').desserialize_autorizacoes(autorizacoes).autorizacao %]
+                    <!-- Selecionando permissões para as lotacoes -->
+                      [% IF c.model('LDAP').decompose_dn_grupos(lotacao).reverse.join(' - ') 
+                          == c.model('LDAP').decompose_dn_grupos(a.principal).reverse.join(' - ') %]
+                           <li><a href="javascript:void(0);"  name="remover"
+                           onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]',
+                                    '[% count %]', '[% a.principal %]','[% a.role %]')" >
+                           Remover</a>    
+                           <span class="label" rel="[% a.principal %]">[% labels_roles.item(a.role) %]</span>                                             
+                           [% SET count = count + 1 %]
+                           </li>  
+                     [% END %]                   
+                   [% END %]
+                   </td>
+                 </tr>
+                 
+                 [% END %]
+               [% END %]
+             </tbody>
+            </table>
+  
   </div>
 
 </div>
@@ -221,35 +279,35 @@ function remover_autorizacoes(action,posicao) {
 }
 
 function check_auths() {
-	var qtd_auths = $("#grid-autorizacoes tr").length-1;
-	var secs=[];
-    // armazenando em um array todas as lotacoes/secretarias
-	$("#grid-autorizacoes tr").each(function() {
-	    secs.push($(this).find("td:first").html());
-
-    });
-    // criando um array com os valores unicos de  lotacoes/secretarias
-    var secsUnique = secs.filter(function(sec,i,secs){
-    	 if ((i==secs.indexOf(sec)) && (i !== null)) {
-    	 	return i;
-    	 }
-	});
+  var qtd_auths = $("#grid-autorizacoes li").length;  
+  var secs=[];   
+  var count ; 
     // Verificando se as secretarias possuem as devidas autorizações minima para poder salvar o volume
-    for (var i in secsUnique){
-         var count = 0;
-     	$("#grid-autorizacoes tr").each(function() {
-     			var permissao = $(this).find("td:first").next().html();
-     			if ((secsUnique[i] == $(this).find("td:first").html()) &&
-	     			 (permissao == 'Alterar este Volume' ||
-	     			  permissao == 'Listar este Volume'  ||
-	     			  permissao == 'Ver este Volume' ))  {
-	     			  	count++;
-    			}
-   		 });
-   		 if (count>=3) break;
-    }
-    return count>=3;
+  $("#grid-autorizacoes span").each(function() {      
+       count = 0;
+       var lotacao = $(this).attr('rel');        
+        $("#grid-autorizacoes .label").each(function() {
+            var permissao = $(this).html();       
+            var checklotacao = $(this).attr('rel');
 
+            if (  (lotacao == checklotacao)  &&  
+               (
+                permissao == 'Alterar este Volume' ||
+                permissao == 'Listar este Volume'  ||
+                permissao == 'Ver este Volume' ))  {
+                  count++;
+            }    
+
+            if ((lotacao == checklotacao) && 
+              (permissao == 'Negar Acesso a aba Autorizações'))  count--;        
+            // if (permissao == 'Acesso a aba Localização')  count--;        
+            // if (permissao == 'Acesso a aba Classificação')  count--;        
+
+         });         
+        if (count>=3) return false;  
+    }); 
+  
+  return (count>=3)  || $('#herdar_author').is(':checked');
 }
 
 

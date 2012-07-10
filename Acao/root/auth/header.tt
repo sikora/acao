@@ -21,9 +21,10 @@
 <html xmlns='http://www.w3.org/1999/xhtml'>
     <head>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
-        <title>Ação - Sistema de Acompanhamentos de Projetos Sociais </title>
-  <link rel="stylesheet" href='[% c.uri_for('/static/css/jquery.ui-1.8.6.custom.thema.css') %]' type="text/css" media="all" />
+        <title>Ação - Sistema de Acompanhamentos de Projetos Sociais</title>
+        <link rel="stylesheet" href='[% c.uri_for('/static/css/jquery.ui-1.8.6.custom.thema.css') %]' type="text/css" media="all" />
         <link href='[% c.uri_for('/static/css/estilo.css') %]' rel='stylesheet' type='text/css' />
+<<<<<<< HEAD
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery.ui-1.8.6.custom.min.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/funcoes.js') %]'></script>
@@ -32,17 +33,25 @@
         <script language='javascript' src='[% c.uri_for('/static/js/libs/sprintf.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/jspdf.js') %]'></script>
 
+=======
+        <link href="[% c.uri_for('/static/css/tipsy.css') %]" rel="stylesheet" type="text/css"/>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery.ui-1.8.6.custom.min.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/funcoes.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/jquery.tipsy.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/picnet.table.filter.min.js') %]'></script>
+>>>>>>> 4c65c7c531c2a5118dee5e155c3d524f7bb40bc9
 
     <!--Instituto Atlântico-->
         <link href='[% c.uri_for('/static/css/estilo_ia.css') %]' rel='stylesheet' type='text/css' />
 
     <!--Scripts IA-->
-        <script language='javascript' src='[% c.uri_for('/static/js/plugins/date-format.js') %]'></script>
-      <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery.meio.mask.js') %]'></script>
-      <script language='javascript' src='[% c.uri_for('/static/js/funcoes_ia.js') %]'></script>
-        <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery.collapsible-v.1.3.0.js') %]'></script>
-        <script language='javascript' src='[% c.uri_for('/static/js/jquery.validate.js') %]'></script>
-        <script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/date-format.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery.meio.mask.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/funcoes_ia.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery.collapsible-v.1.3.0.js') %]'></script>
+        <script type='text/javascript' src='[% c.uri_for('/static/js/jquery.validate.js') %]'></script>
+        <script type='text/javascript'>
           $(document).ready(function(){
             $("#form").validate();
           });
@@ -52,7 +61,7 @@
     </head>
     <body>
         <div id='topo'>
-            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]">
+            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]" alt="Brasão da Prefeitura Municipal de Fortaleza"/>
             <div id='topoTitulo'>
                 Ação - Sistema de Acompanhamento de Projetos Sociais
                 <table>
@@ -63,7 +72,7 @@
                         <th>Operador:</th>
                       [% END %]
 
-                        <td><a href="[% c.uri_for_action('/auth/usuario/ver_user') %]" alt="Editar Conta" title="Alterar Senha">[% c.user.cn %]</a></td>
+                        <td><a href="[% c.uri_for_action('/auth/usuario/ver_user') %]" title="Alterar Senha">[% c.user.cn %]</a></td>
                         <th style="padding-left:60px">Lotação:</th>
 							[%  USE Dumper %]
 							[% lotacao = c.model('Usuario').getDadosUsuarioLdap(c.user.dn, 'adm').memberOf.first %]
@@ -90,11 +99,6 @@
 
 [% END %]
 <br/>
-
-
-
-
-
 
         </div>
         <div id="conteudo">

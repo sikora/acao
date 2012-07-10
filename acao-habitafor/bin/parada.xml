@@ -1,0 +1,456 @@
+<formBoletimInformacaoCadastral xmlns="http://schemas.fortaleza.ce.gov.br/acao/habitafor-boletiminformacaocadastral-bic.xsd">
+<identificacao>
+{return "<numeroFormulario>$NrFormulario</numeroFormulario>" if($NrFormulario ne "")}
+{return "<data>$DtCadastro</data>" if($DtCadastro ne "")}
+{return "<orgaoCadastrador>$NmOrgao</orgaoCadastrador>" if($NmOrgao ne "")}
+{return "<entrevistador>$NmEntrevistador</entrevistador>" if($NmEntrevistador ne "")}
+{return "<assentamento>$NmAssentamento</assentamento>" if($NmAssentamento ne "")}
+{return "<condicaoOcupacao>$DsCondicaoCadastro</condicaoOcupacao>" if($DsCondicaoCadastro ne "")}
+</identificacao>
+<enderecoImovel>
+{return "<logradouro>$NmLogradouro</logradouro>" if($NmLogradouro ne "")}
+{return "<cep>$cep</cep>" if($cep ne "")}
+{return "<numero>$NrEndereco</numero>" if($NrEndereco ne "")}
+{return "<complemento>$DsComplemento</complemento>" if($DsComplemento ne "")}
+{return "<quadra>$NrQuadra</quadra>" if($NrQuadra ne "")}
+{return "<lote>$NrLote</lote>" if($NrLote ne "")}
+{return "<bairro>$NmBairro</bairro>" if($NmBairro ne "")}
+{return "<fone>$NrTelefone</fone>" if($NrTelefone ne "")}
+{return "<localizacaoCartografica>$localizacaoCartografica</localizacaoCartografica>" if($localizacaoCartografica ne "")}
+</enderecoImovel>
+<dadosSocioEconomico>
+{return "<titularidade>$DsTitularidade</titularidade>" if($DsTitularidade ne "")}
+{return "<condicaoMoradia>$DsCondicaoMoradia</condicaoMoradia>" if($DsCondicaoMoradia ne "")}
+{return "<tipoCoabitacao>$DsCoabitacao</tipoCoabitacao>" if($DsCoabitacao ne "")}
+{return "<procedenciaFamilia>$DsProcedenciaFamilia</procedenciaFamilia>" if($DsProcedenciaFamilia ne "")}
+{return "<tempoMoradia>$NrTempoMoradia</tempoMoradia>" if($NrTempoMoradia ne "")}
+{return "<nrFamilias>$NrFamilias</nrFamilias>" if($NrFamilias ne "")}
+{return "<nrMoradores>$NrMoradores</nrMoradores>" if($NrMoradores ne "")}
+{return "<nrMoradoresTrabalhando>$NrMoradoresTrabalham</nrMoradoresTrabalhando>" if($NrMoradoresTrabalham ne "")}
+{return "<nrMoradoresEstudando>$NrMoradoresEstudam</nrMoradoresEstudando>" if($NrMoradoresEstudam ne "")}
+{return "<nrMenores>$NrMenores</nrMenores>" if($NrMenores ne "")}
+{return "<nrMenoresTrabalhando>$NrMenoresTrabalham</nrMenoresTrabalhando>" if($NrMenoresTrabalham ne "")}
+{return "<nrMenoresEstudando>$NrMenoresEstudam</nrMenoresEstudando>" if($NrMenoresEstudam ne "")}
+{return "<vinculoAssociacaoComunitaria>$FgAssociacaoComunitaria</vinculoAssociacaoComunitaria>" if($FgAssociacaoComunitaria ne "")}
+{return "<nomeAssociacao>A$nomeAssociacao</nomeAssociacao>" if($nomeAssociacao ne "")}
+<nrPessoaCasaFaixaEtaria>
+{return "<_0a4>$fx0a4</_0a4>" if($fx0a4 ne "")}
+{return "<_5a9>$fx5a9</_5a9>" if($fx5a9 ne "")}
+{return "<_10a14>$fx10a14</_10a14>" if($fx10a14 ne "")}
+{return "<_15a17>$fx15a17</_15a17>" if($fx15a17 ne "")}
+{return "<_18a21>$fx18a21</_18a21>" if($fx18a21 ne "")}
+{return "<_22a24>$fx22a24</_22a24>" if($fx22a24 ne "")}
+{return "<_25a29>$fx25a29</_25a29>" if($fx25a29 ne "")}
+{return "<_30a39>$fx30a39</_30a39>" if($fx30a39 ne "")}
+{return "<_40a49>$fx40a49</_40a49>" if($fx40a49 ne "")}
+{return "<_50a59>$fx50a59</_50a59>" if($fx50a59 ne "")}
+{return "<_60a65>$fx60a65</_60a65>" if($fx60a65 ne "")}
+</nrPessoaCasaFaixaEtaria>
+{return "<rendaMensalCasa>$DsRendaDespesa</rendaMensalCasa>" if($DsRendaDespesa ne "")}
+<nrDeficientesCasa>
+{return "<deficienciaAuditiva>$DefAuditiva</deficienciaAuditiva>" if($DefAuditiva ne "")}
+{return "<deficienciaVisual>$DefVisual</deficienciaVisual>" if($DefVisual ne "")}
+{return "<deficienciaMotora>$DefMotora</deficienciaMotora>" if($DefMotora ne "")}
+{return "<deficienciaMental>$DefMental</deficienciaMental>" if($DefMental ne "")}
+</nrDeficientesCasa>
+{return "<tipoDeficienciaMotora>$tipoDeficienciaMotora</tipoDeficienciaMotora>" if($tipoDeficienciaMotora ne "")}
+<nrMoradoresAssistidosProgramasSociais>
+{return "<governoFederal>$NrMoradoresAssistidosFed</governoFederal>" if($NrMoradoresAssistidosFed ne "")}
+{return "<governoEstadual>$NrMoradoresAssistidosEst</governoEstadual>" if($NrMoradoresAssistidosEst ne "")}
+{return "<governoMunicipal>$NrMoradoresAssistidosMun</governoMunicipal>" if($NrMoradoresAssistidosMun ne "")}
+{return "<governoOutros>$outrosMoradores</governoOutros>" if($outrosMoradores ne "")}
+{#return "<nis></nis>" if( ne "")}
+</nrMoradoresAssistidosProgramasSociais>
+{#<observacoes>123</observacoes>}
+</dadosSocioEconomico>
+<caracteristicaImovel>
+{return "<tipologiaImovel>$IdTipologiaImovel</tipologiaImovel>" if($IdTipologiaImovel ne "")}
+{return "<localizacaoImovel>$localizacaoImovel</localizacaoImovel>" if($localizacaoImovel ne "")}
+{return "<tipologiaUso>$DsTipologiaUso</tipologiaUso>" if($DsTipologiaUso ne "")}
+{return "<especifiqueTipologiaUso>$especifiqueTipologiaUso</especifiqueTipologiaUso>" if($especifiqueTipologiaUso ne "")}
+{return "<condicaoFundiaria>$DsCondicaoFundiaria</condicaoFundiaria>" if($DsCondicaoFundiaria ne "")}
+{return "<tiporegularizacao>$tiporegularizacao</tiporegularizacao>" if($tiporegularizacao ne "")}
+{return "<matricula>$matricula</matricula>" if($matricula ne "")}
+{return "<cartorio>$cartorio</cartorio>" if($cartorio ne "")}
+{return "<proprietario>$proprietario</proprietario>" if($proprietario ne "")}
+{return "<divisaoEdificacao>$DsTipologiaEdificacao</divisaoEdificacao>" if($DsTipologiaEdificacao ne "")}
+{return "<areaEstimadaLote>$DsFaixaArea</areaEstimadaLote>" if($DsFaixaArea ne "")}
+{return "<tipologiaConstrucao>$DsTipologiaConstrucao</tipologiaConstrucao>" if($DsTipologiaConstrucao ne "")}
+{return "<tipoCobertura>$tipoCobertura</tipoCobertura>" if($tipoCobertura ne "")}
+{return "<tipoPiso>$tipoPiso</tipoPiso>" if($tipoPiso ne "")}
+{return "<tipoParede>$tipoParede</tipoParede>" if($tipoParede ne "")}
+<composicaoMoradia>
+{return "<qtQuartos>$NrQuarto</qtQuartos>" if($NrQuarto ne "")}
+{return "<qtSalas>$NrSala</qtSalas>" if($NrSala ne "")}
+{return "<qtCozinhas>$NrCozinha</qtCozinhas>" if($NrCozinha ne "")}
+{return "<qtBanheiros>$NrBanheiro</qtBanheiros>" if($NrBanheiro ne "")}
+{return "<qtOutros>$NrOutros</qtOutros>" if($NrOutros ne "")}
+{return "<especiqueOutros>$especiqueOutrosComodos</especiqueOutros>" if( $especiqueOutrosComodos ne "")}
+</composicaoMoradia>
+{return "<casaSituacaoRisco>$SituacaoRisco</casaSituacaoRisco>" if($SituacaoRisco ne "")}
+<tipoRisco>
+<alagamento>{$RiscoAlagamento}</alagamento>
+<inundacao>{$RiscoInundacao}</inundacao>
+<deslizamentoSoterramento>{$RiscoDeslizamento}</deslizamentoSoterramento>
+<viaFerreaRodovia>{$RiscoViaFerrea}</viaFerreaRodovia>
+{#<erosao></erosao>}
+<linhaAltaTensao>{$RiscoLinhaAltaTensao}</linhaAltaTensao>
+{#<estrutural></estrutural>}
+{#<insalubridade></insalubridade>}
+{return "<outro>$RiscoOutro</outro>" if($RiscoOutro ne "")}
+{return "<especiqueOutros>$especiqueOutrosRiscos</especiqueOutros>" if($especiqueOutrosRiscos ne "")}
+</tipoRisco>
+<beneficioRecebido>
+{return "<kitSanitario>$KitSanitario</kitSanitario>" if($KitSanitario ne "")}
+{#<casaBela></casaBela>}
+{return "<melhoriaHabitacional>$MelhoriaHab</melhoriaHabitacional>" if($MelhoriaHab ne "")}
+{#<especiqueQual>AAA</especiqueQual>}
+{#<indenizacao>$</indenizacao>}
+{#<valorIndenizacao>1.23</valorIndenizacao>}
+</beneficioRecebido>
+{return "<observacoes>$observacoesBeneficio</observacoes>" if($observacoesBeneficio ne "")}
+</caracteristicaImovel>
+<infraEstrutura>
+{return "<ligacaoRedeAgua>{$ligacaoRedeAgua}</ligacaoRedeAgua>" if($ligacaoRedeAgua ne "")}
+<outrosTiposAbastecimentoAgua>
+<poco>{$poco}</poco>
+<chafariz>{$chafariz}</chafariz>
+<outro>{$outroRedeAgua}</outro>
+{return "<especiqueOutro>$especiqueOutro</especiqueOutro>" if($especiqueOutro ne "")}
+</outrosTiposAbastecimentoAgua>
+{return "<ligacaoRedeEsgoto>$ligacaoRedeEsgoto</ligacaoRedeEsgoto>" if($ligacaoRedeEsgoto ne "")}
+<outrosTiposColetaEsgoto>
+<fossaSumidouro>{$fossaSumidouro}</fossaSumidouro>
+<viaPublica>{$viaPublica}</viaPublica>
+<redeDrenagemRecursoHidrico>{$redeDrenagemRecursoHidrico}</redeDrenagemRecursoHidrico>
+{return "<outro>$outroColeta</outro>" if($outroColeta ne "")}
+{return "<especiqueOutro>$especiqueOutro</especiqueOutro>" if($especiqueOutro ne "")}
+</outrosTiposColetaEsgoto>
+{return "<ligacaoRedeEnergiaElétrica>$RedeEletrica</ligacaoRedeEnergiaElétrica>" if($RedeEletrica ne "")}
+{return "<pavimentacao>$Pavimentacao</pavimentacao>" if($Pavimentacao ne "")}
+{return "<especifiqueOutro>$especifiqueOutroInfra</especifiqueOutro>" if($especifiqueOutroInfra ne "")}
+{#<ligacaoTelefonica>$TelefoniaFixa</ligacaoTelefonica>}
+<tipoDrenagem>
+<galeriaSubterranea>{$drenGal}</galeriaSubterranea>
+<sargeta>{$drenSarj}</sargeta>
+<cursoAguaCanalizado>{$drenAg}</cursoAguaCanalizado>
+<cursoAguaNaoCanalizado>{$drenNAg}</cursoAguaNaoCanalizado>
+<outro>{$drenOut}</outro>
+{return "<especiqueOutro>$outrTipDren</especiqueOutro>" if($outrTipDren ne "")}
+</tipoDrenagem>
+{return "<destinacaoLixo>$destLixo</destinacaoLixo>" if($destLixo ne "")}
+{return "<observacoes>$obs</observacoes>" if($obs ne "")}
+</infraEstrutura>
+<dadosChefeDaFamilia>
+{return "<nome>$chefe</nome>" if($chefe ne "")}
+{return "<apelido>$apelido</apelido>" if($apelido ne "")}
+{return "<titularDoImovel>$titularImovel</titularDoImovel>" if($titularImovel ne "")}
+{return "<sexo>$sexochf</sexo>" if($sexochf ne "")}
+{return "<dataNascimento>$DtNascimento</dataNascimento>" if($DtNascimento ne "")}
+{return "<estadoCivil>$estcivchf</estadoCivil>" if($estcivchf ne "")}
+{return "<rg>$rgchf</rg>" if($rgchf ne "")}
+{return "<orgaoExp>$exprgchf</orgaoExp>" if($exprgchf ne "")}
+{return "<cpf>$cpfch</cpf>" if($cpfch ne "")}
+{return "<tituloEleitor>$titchf</tituloEleitor>" if($titchf ne "")}
+{return "<zona>$zntitch</zona>" if($zntitch ne "")}
+{return "<secao>$sectitchf</secao>" if($sectitchf ne "")}
+{return "<faixaEtaria>$faixetariachf</faixaEtaria>" if($faixetariachf ne "")}
+{return "<estudando>$estchf</estudando>" if($estchf ne "")}
+{return "<profissao>$prfch</profissao>" if($prfch ne "")}
+{return "<ocupacao>$occh</ocupacao>" if($occh ne "")}
+{return "<vinculoEmpregaticio>$vincempchf</vinculoEmpregaticio>" if($vincempchf ne "")}
+{return "<bairroEmpregoOuTrabalho>$baitrbch</bairroEmpregoOuTrabalho>" if($baitrbch ne "")}
+{return "<grauDeEscolaridade>$escchf</grauDeEscolaridade>" if($escchf ne "")}
+{return "<condicaoFuncional>$funcch</condicaoFuncional>" if($funcch ne "")}
+{return "<nomeDoPai>$paich</nomeDoPai>" if($paich ne "")}
+{return "<nomeDaMae>$maech</nomeDaMae>" if($maech ne "")}
+{return "<observacoes>$obsch</observacoes>" if($obsch ne "")}
+</dadosChefeDaFamilia>
+<uniaoHomoafetiva>{$homo}</uniaoHomoafetiva>
+<dadosCompanheiro> 
+{return "<nomeCompanheiro>$comp</nomeCompanheiro>" if($comp ne "")}
+{return "<apelidoCompanheiro>$apelidocomp</apelidoCompanheiro>" if($apelidocomp ne "")}
+{return "<titularDoImovelCompanheiro>$titularImovelcomp</titularDoImovelCompanheiro>" if($titularImovelcomp ne "")}
+{return "<sexoCompanheiro>$sexocomp</sexoCompanheiro>" if($sexocomp ne "")}
+{return "<dataNascimentoCompanheiro>$Nsccomp</dataNascimentoCompanheiro>" if($Nsccomp ne "")}
+{return "<estadoCivilCompanheiro>$estcivcomp</estadoCivilCompanheiro>" if($estcivcomp ne "")}
+{return "<rgCompanheiro>$rgcomp</rgCompanheiro>" if($rgcomp ne "")}
+{return "<orgaoExpCompanheiro>$exprgcomp</orgaoExpCompanheiro>" if($exprgcomp ne "")}
+{return "<cpfCompanheiro>$cpfcomp</cpfCompanheiro>" if($cpfcomp ne "")}
+{return "<tituloEleitorCompanheiro>$titcomp</tituloEleitorCompanheiro>" if($titcomp ne "")}
+{return "<zonaCompanheiro>$zntitcomp</zonaCompanheiro>" if($zntitcomp ne "")}
+{return "<secaoCompanheiro>$sectitcomp</secaoCompanheiro>" if($sectitcomp ne "")}
+{return "<faixaEtariaCompanheiro>$faixetariacomp</faixaEtariaCompanheiro>" if($faixetariacomp ne "")}
+{return "<estudandoCompanheiro>$estcomp</estudandoCompanheiro>" if($estcomp ne "")}
+{return "<profissaoCompanheiro>$prfcomp </profissaoCompanheiro>" if($prfcomp ne "")}
+{return "<ocupacaoCompanheiro>$occomp</ocupacaoCompanheiro>" if($occomp ne "")}
+{return "<vinculoEmpregaticioCompanheiro>$vincempcomp</vinculoEmpregaticioCompanheiro>" if($vincempcomp ne "")}
+{return "<bairroEmpregoOuTrabalhoCompanheiro>$baitrbcomp</bairroEmpregoOuTrabalhoCompanheiro>" if($baitrbcomp ne "")}
+{return "<grauDeEscolaridadeCompanheiro>$esccomp</grauDeEscolaridadeCompanheiro>" if($esccomp ne "")}
+{return "<condicaoFuncionalCompanheiro>$funccomp</condicaoFuncionalCompanheiro>" if($funccomp ne "")}
+{return "<nomeDoPaiCompanheiro>$paicomp</nomeDoPaiCompanheiro>" if($paicomp ne "")}
+{return "<nomeDaMaeCompanheiro>$maecomp</nomeDaMaeCompanheiro>" if($maecomp ne "")}
+{return "<observacoesCompanheiro>$obscomp</observacoesCompanheiro>" if($obscomp ne "")}
+</dadosCompanheiro>
+	<dadosDoInformante>
+		{return "<nomeInformante>$inform</nomeInformante>" if($inform ne "")}
+		{return "<rgInformante>$rginf</rgInformante>" if($rginf ne "")}
+		{return "<orgaoExpInformante>$exprginf</orgaoExpInformante>" if($exprginf ne "")}
+		{return "<dataNascimentoInformante>$NscInf</dataNascimentoInformante>" if($NscInf ne "")}
+		{return "<relacaoComTitularDoImovel>$reltit</relacaoComTitularDoImovel>" if($reltit ne "")}
+		{return "<observacoesInformante>$obsinf</observacoesInformante>" if($obsinf ne "")}
+	</dadosDoInformante>
+	<copiasEmAnexo>
+		<RG>{$copiaRG}</RG>
+		<CPF>{$copiaCPF}</CPF>
+		<comprovanteResidência>{$copiaComprovanteResidencia}</comprovanteResidência>
+		<outros>{$copiaOutros}</outros>
+	</copiasEmAnexo>
+	{#<aguaBeber>$aguaBeber</aguaBeber>}
+	<doecasFrequente>
+		<colera>{$DoencaColera}</colera>
+		<dengeu>{$DoencaDengue}</dengeu>
+		<diarréia>{$DoencaDiarreia}</diarréia>
+		<doencaRespiratorias>{$DoencaDoencaRespiratorias}</doencaRespiratorias>
+		<verminoses>{$DoencaVerminoses}</verminoses>
+		<viroses>{$DoencaViroses}</viroses>
+		<hipertensao>{$DoencaHipertensao}</hipertensao>
+		<diabetes>{$DoencaDiabetes}</diabetes>
+		<drogas>{$DoencaDrogas}</drogas>
+		<nenhuma>{$DoencaNenhuma}</nenhuma>
+		{#<outros>$DoencaOutros</outros>}
+	</doecasFrequente>
+	<doecasFrequenteCriacas>
+		<colera>{$DoencaColeraCrianca}</colera>
+		<dengeu>{$DoencaDengueCrianca}</dengeu>
+		<diarréia>{$DoencaDiarreiaCrianca}</diarréia>
+		<doencaRespiratorias>{$DoencaRespiratoriasCrianca}</doencaRespiratorias>
+		<verminoses>{$DoencaVerminosesCrianca}</verminoses>
+		<viroses>{$DoencaVirosesCrianca}</viroses>
+		<hipertensao>{$DoencaHipertensaoCrianca}</hipertensao>
+		<diabetes>{$DoencaDiabetesCrianca}</diabetes>
+		<drogas>{$DoencaDrogasCrianca}</drogas>
+		<nenhuma>{$DoencaNenhumaCrianca}</nenhuma>
+		{#<outros>$DoencaOutrosCrianca</outros>}
+	</doecasFrequenteCriacas>
+	{#<participaAtividadeCulturais>$participaAtividadeCulturais</participaAtividadeCulturais>}
+	{#<qualAtividadeCultural>$qualAtividadeCultural</qualAtividadeCultural>}
+    {#<interesseParticipar>$interesseParticipar</interesseParticipar>}
+	{#<qualInteresse>$qualInteresse</qualInteresse>}
+	<opcoesLazer>
+		<praca>{$praca}</praca>
+		<vizinho>{$vizinho}</vizinho>
+		<tv>{$tv}</tv>
+		<esportes>{$esportes}</esportes>
+		<bar>{$bar}</bar>
+		<radio>{$radio}</radio>
+		{#<outro>$outro</outro>}
+	</opcoesLazer>
+	{#<qtdCriacasTemCertidoes>$qtdCriacasTemCertidoes</qtdCriacasTemCertidoes>}
+	{#<qtdCriacasNaoTemCertidoes>$qtdCriacasNaoTemCertidoes</qtdCriacasNaoTemCertidoes>}
+	<informacoesComplementares>
+		<dadosTrabalhistaTitular>
+			{#<trabalhouSemanaPassada>$trabalhouSemanaPassada</trabalhouSemanaPassada>}
+			{#<ondetrabalhouSemanaPassada>$ondetrabalhouSemanaPassada</ondetrabalhouSemanaPassada>}
+			{#<rendaTitular>$rendaTitular</rendaTitular>}
+			{#<rendaCompanheiro>$rendaCompanheiro</rendaCompanheiro>}
+			{#<valorRecebeBCP>$valorRecebeBCP</valorRecebeBCP>}
+			{#<valorRecebeBolsaFamilia>$valorRecebeBolsaFamilia</valorRecebeBolsaFamilia>}
+			{#<valorRecebeOutroBeneficio>$valorRecebeOutroBeneficio</valorRecebeOutroBeneficio>}
+			{#<quantoTempoExerceTrabalhoAtual>$quantoTempoExerceTrabalhoAtual</quantoTempoExerceTrabalhoAtual>}
+		</dadosTrabalhistaTitular>
+		<despesasFamiliares>
+			{#<despesaEnergiaEletrica>$despesaEnergiaEletrica</despesaEnergiaEletrica>}
+			{#<despesaAguaEsgoto>$despesaAguaEsgoto</despesaAguaEsgoto>}
+			{#<despesaGasCarvaoLenha>$despesaGasCarvaoLenha</despesaGasCarvaoLenha>}
+			{#<despesaAlimentacaoHigieneLimpeza>$despesaAlimentacaoHigieneLimpeza</despesaAlimentacaoHigieneLimpeza>}
+			{#<despesaTransporte>$despesaTransporte</despesaTransporte>}
+			{#<despesaAluguel>$despesaAluguel</despesaAluguel>}
+			{#<despesaMedicamentos>$despesaMedicamentos</despesaMedicamentos>}
+		</despesasFamiliares>
+		<caracteristicasDomicilio>
+			{#<pisoPredominante>$pisoPredominante</pisoPredominante>}
+			{#<nrComodos>123</nrComodos>}
+		</caracteristicasDomicilio>
+		<equipamentosUsoComun>
+			<transporteAlternativo>
+				<onibusTopic>{$FgTransporteAlternativo}</onibusTopic>
+				<trem>{$FgTrem}</trem>
+				<carro>{$TransporteCarro}</carro>
+				<moto>{$TransporteMoto}</moto>
+				<bicicleta>{$TransporteBicicleta}</bicicleta>
+				<outro>{$TransporteOutro}</outro>
+				{#<especifiqueOutro>$TransporteEspecifiqueOutro</especifiqueOutro>}
+			</transporteAlternativo>
+			<educacao>
+				<creche>{$Creche}</creche>
+				{return "<crecheFacilAcesso>$crecheFacilAcesso</crecheFacilAcesso>" if($crecheFacilAcesso ne "")}
+				<escolaEnsinoFundamental>{$ensinoFundamental}</escolaEnsinoFundamental>
+				{return "<escolaEnsinoFundamentalFacilAcesso>$escolaEnsinoFundamentalFacilAcesso</escolaEnsinoFundamentalFacilAcesso>" if($escolaEnsinoFundamentalFacilAcesso ne "")}
+				<escolaEnsinoMedio>{$ensinoMedio}</escolaEnsinoMedio>
+				{return "<escolaEnsinoMedioFacilAcesso>$escolaEnsinoMedioFacilAcesso</escolaEnsinoMedioFacilAcesso>" if($escolaEnsinoMedioFacilAcesso ne "")}
+				<ensinoProfissionalizante>{$ensinoProfissionalizante}</ensinoProfissionalizante>
+				{return "<ensinoProfissionalizanteFacilAcesso>$ensinoProfissionalizanteFacilAcesso</ensinoProfissionalizanteFacilAcesso>" if($ensinoProfissionalizanteFacilAcesso ne "")}
+				<ensinoSuperior>{$ensinoSuperior}</ensinoSuperior>
+				{return "<ensinoSuperiorFacilAcesso>$ensinoSuperiorFacilAcesso</ensinoSuperiorFacilAcesso>" if($ensinoSuperiorFacilAcesso ne "")}
+			</educacao>
+			<saude>
+				<hospital>{$Hospital}</hospital>
+				{return "<hospitalFacilAcesso>$hospitalFacilAcesso</hospitalFacilAcesso>" if($hospitalFacilAcesso ne "")}
+				<postoSaude>{$PostoSaude}</postoSaude>
+				{return "<postoSaudeFacilAcesso>$hospitalFacilAcesso</postoSaudeFacilAcesso>" if($hospitalFacilAcesso ne "")}
+				<ambulatorio>{$Ambulatorio}</ambulatorio>
+				{return "<ambulatorioFacilAcesso>$ambulatorioFacilAcesso</ambulatorioFacilAcesso>" if($ambulatorioFacilAcesso ne "")}
+				<caps>false</caps>
+				{#<capsFacilAcesso></capsFacilAcesso>}
+			</saude>
+			<social>
+				<cras>{$cras}</cras>
+				{return "<crasFacilAcesso>$crasFacilAcesso</crasFacilAcesso>" if($crasFacilAcesso ne "")}
+				<associacaoComunitaria>{$associacaoComunitaria}</associacaoComunitaria>
+				{return "<associacaoComunitariaFacilAcesso>$associacaoComunitariaFacilAcesso</associacaoComunitariaFacilAcesso>" if($associacaoComunitariaFacilAcesso ne "")}
+				<centroComunitario>{$centroComunitario}</centroComunitario>
+				{return "<centroComunitarioFacilAcesso>$centroComunitarioFacilAcesso</centroComunitarioFacilAcesso>" if($centroComunitarioFacilAcesso ne "")}
+				<ong>{$ONG}</ong>
+				{return "<ongFacilAcesso>$ongFacilAcesso</ongFacilAcesso>" if($ongFacilAcesso ne "")}
+				<instituicaoReligiosa>{$instituicaoReligiosa}</instituicaoReligiosa>
+				{return "<instituicaoReligiosaFacilAcesso>$instituicaoReligiosaFacilAcesso</instituicaoReligiosaFacilAcesso>" if($instituicaoReligiosaFacilAcesso ne "")}
+			</social>
+			<alimentacao>
+				<mercadinho>false</mercadinho>
+				{return "<mercadinhoFacilAcesso>$mercadinhoFacilAcesso</mercadinhoFacilAcesso>" if($mercadinhoFacilAcesso ne "")}
+				<barLanchonete>false</barLanchonete>
+				{return "<barLanchoneteFacilAcesso>$barLanchoneteFacilAcesso</barLanchoneteFacilAcesso>" if($barLanchoneteFacilAcesso ne "")}
+				<padaria>false</padaria>
+				{return "<padariaFacilAcesso>$padariaFacilAcesso</padariaFacilAcesso>" if($padariaFacilAcesso ne "")}
+				<acougue>false</acougue>
+				{return "<acougueFacilAcesso>$acougueFacilAcesso</acougueFacilAcesso>" if($acougueFacilAcesso ne "")}
+				<supermercado>false</supermercado>
+				{return "<supermercadoFacilAcesso>$supermercadoFacilAcesso</supermercadoFacilAcesso>" if($supermercadoFacilAcesso ne "")}
+				<restaurante>false</restaurante>
+			{return "<restauranteFacilAcesso>$restauranteFacilAcesso</restauranteFacilAcesso>" if($restauranteFacilAcesso ne "")}
+			</alimentacao>
+		</equipamentosUsoComun>
+		<adesaoProjeto>
+			{return "<satisfeitoMoradiaAtual>$satisfeitoMoradiaAtual</satisfeitoMoradiaAtual>" if($satisfeitoMoradiaAtual ne "")}
+			<porqueSatisfeitoMoradiaAtual>
+				<localizacao>{$localizacao}</localizacao>
+				<valorAluguel>{$valorAluguel}</valorAluguel>
+				<vizinhanca>{$vizinhanca}</vizinhanca>
+				<servicoPublico>{$servicoPublico}</servicoPublico>
+				<infraestrutura>{$infraestrutura}</infraestrutura>
+				<cedida>{$cedida}</cedida>
+			</porqueSatisfeitoMoradiaAtual>
+			{return "<conheceConjuntoHabitacional>$conheceConjuntoHabitacional</conheceConjuntoHabitacional>" if($conheceConjuntoHabitacional ne "")}
+			{return "<dispostoMudarConjuntoHabitacional>$dispostoMudarConjuntoHabitacional</dispostoMudarConjuntoHabitacional>" if($dispostoMudarConjuntoHabitacional ne "")}
+		</adesaoProjeto>
+		<doencasCronicas>
+			{return "<qtdeMoradoresCancer>$qtdeMoradoresCancer</qtdeMoradoresCancer>" if($qtdeMoradoresCancer ne "")}
+			<familiarMoradoresCancer>
+				<titular>{$titular}</titular>
+				<companheiro>{$companheiro}</companheiro>
+				<filho>{$filho}</filho>
+				<neto>{$neto}</neto>
+				<sobrinho>{$sobrinho}</sobrinho>
+				<primo>{$primo}</primo>
+				<tio>{$tio}</tio>
+				<cunhado>{$cunhado}</cunhado>
+				<sogro>{$sogro}</sogro>
+				<genroNora>{$genroNora}</genroNora>
+				<irmao>{$irmao}</irmao>
+				<amigo>{$amigo}</amigo>
+			</familiarMoradoresCancer>
+	{return "<qtdeMoradoresInsufucienciaRenal>$qtdeMoradoresInsufucienciaRenal</qtdeMoradoresInsufucienciaRenal>" if($qtdeMoradoresInsufucienciaRenal ne "")}
+			<familiarMoradoresInsufucienciaRenal>
+				<titular>{$titularRenal}</titular>
+				<companheiro>{$companheiroRenal}</companheiro>
+				<filho>{$filhoRenal}</filho>
+				<neto>{$netoRenal}</neto>
+				<sobrinho>{$sobrinhoRenal}</sobrinho>
+				<primo>{$primoRenal}</primo>
+				<tio>{$tioRenal}</tio>
+				<cunhado>{$cunhadoRenal}</cunhado>
+				<sogro>{$sogroRenal}</sogro>
+				<genroNora>{$genroNoraRenal}</genroNora>
+				<irmao>{$irmaoRenal}</irmao>
+				<amigo>{$amigoRenal}</amigo>
+			</familiarMoradoresInsufucienciaRenal>
+			{return "<qtdeMoradoresEpilepsia>$qtdeMoradoresEpilepsia</qtdeMoradoresEpilepsia>" if($qtdeMoradoresEpilepsia ne "")}
+			<familiarMoradoresEpilepsia>
+				<titular>{$titularEpilepsia}</titular>
+				<companheiro>{$companheiroEpilepsia}</companheiro>
+				<filho>{$filhoEpilepsia}</filho>
+				<neto>{$netoEpilepsia}</neto>
+				<sobrinho>{$sobrinhoEpilepsia}</sobrinho>
+				<primo>{$primoEpilepsia}</primo>
+				<tio>{$tioEpilepsia}</tio>
+				<cunhado>{$cunhadoEpilepsia}</cunhado>
+				<sogro>{$sogroEpilepsia}</sogro>
+				<genroNora>{$genroNoraEpilepsia}</genroNora>
+				<irmao>{$irmaoEpilepsia}</irmao>
+				<amigo>{$amigoEpilepsia}</amigo>
+			</familiarMoradoresEpilepsia>
+			{return "<qtdeMoradoresHiv>$qtdeMoradoresHiv</qtdeMoradoresHiv>" if($qtdeMoradoresHiv ne "")}
+			<familiarMoradoresHIV>
+				<titular>{$titularHiv}</titular>
+				<companheiro>{$companheiroHiv}</companheiro>
+				<filho>{$filhoHiv}</filho>
+				<neto>{$netoHiv}</neto>
+				<sobrinho>{$sobrinhoHiv}</sobrinho>
+				<primo>{$primoHiv}</primo>
+				<tio>{$tioHiv}</tio>
+				<cunhado>{$cunhadoHiv}</cunhado>
+				<sogro>{$sogroHiv}</sogro>
+				<genroNora>{$genroNoraHiv}</genroNora>
+				<irmao>{$irmaoHiv}</irmao>
+				<amigo>{$amigoHiv}</amigo>
+			</familiarMoradoresHIV>
+			{return "<qtdeMoradoresDiabetes>$qtdeMoradoresDiabetes</qtdeMoradoresDiabetes>" if($qtdeMoradoresDiabetes ne "")}
+			<familiarMoradoresDiabetes>
+				<titular>{$titularDiabetes}</titular>
+				<companheiro>{$companheiroDiabetes}</companheiro>
+				<filho>{$filhoDiabetes}</filho>
+				<neto>{$netoDiabetes}</neto>
+				<sobrinho>{$sobrinhoDiabetes}</sobrinho>
+				<primo>{$primoDiabetes}</primo>
+				<tio>{$tioDiabetes}</tio>
+				<cunhado>{$cunhadoDiabetes}</cunhado>
+				<sogro>{$sogroDiabetes}</sogro>
+				<genroNora>{$genroNoraDiabetes}</genroNora>
+				<irmao>{$irmaoDiabetes}</irmao>
+				<amigo>{$amigoDiabetes}</amigo>
+			</familiarMoradoresDiabetes>
+			{return "<qtdeMoradoresHipertensao>$qtdeMoradoresHipertensao</qtdeMoradoresHipertensao>" if($qtdeMoradoresHipertensao ne "")}
+			<familiarMoradoresHipertensao>
+				<titular>{$titularHipertensao}</titular>
+				<companheiro>{$companheiroHipertensao}</companheiro>
+				<filho>{$filhoHipertensao}</filho>
+				<neto>{$netoHipertensao}</neto>
+				<sobrinho>{$sobrinhoHipertensao}</sobrinho>
+				<primo>{$primoHipertensao}</primo>
+				<tio>{$tioHipertensao}</tio>
+				<cunhado>{$cunhadoHipertensao}</cunhado>
+				<sogro>{$sogroHipertensao}</sogro>
+				<genroNora>{$genroNoraHipertensao}</genroNora>
+				<irmao>{$irmaoHipertensao}</irmao>
+				<amigo>{$amigoHipertensao}</amigo>
+			</familiarMoradoresHipertensao>
+			{return "<qtdeMoradoresOutraDoenca>$qtdeMoradoresOutraDoenca</qtdeMoradoresOutraDoenca>" if($qtdeMoradoresOutraDoenca ne "")}
+			{#<especifiqueOutraDoenca>123</especifiqueOutraDoenca>}
+			<familiarMoradoresOutraDoenca>
+				<titular>{$titularOutraDoenca}</titular>
+				<companheiro>{$companheiroOutraDoenca}</companheiro>
+				<filho>{$filhoOutraDoenca}</filho>
+				<neto>{$netoOutraDoenca}</neto>
+				<sobrinho>{$sobrinhoOutraDoenca}</sobrinho>
+				<primo>{$primoOutraDoenca}</primo>
+				<tio>{$tioOutraDoenca}</tio>
+				<cunhado>{$cunhadoOutraDoenca}</cunhado>
+				<sogro>{$sogroOutraDoenca}</sogro>
+				<genroNora>{$genroNoraOutraDoenca}</genroNora>
+				<irmao>{$irmaoOutraDoenca}</irmao>
+				<amigo>{$amigoOutraDoenca}</amigo>
+			</familiarMoradoresOutraDoenca>
+		</doencasCronicas>
+	</informacoesComplementares>
+</formBoletimInformacaoCadastral>

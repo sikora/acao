@@ -2,8 +2,7 @@
 <fieldset class="lotacao"><legend><img
   src="[% c.uri_for('/static/img/workplace/building.png') %]"
   alt="Lista de Lotação" />Lotação</legend>
-<div id="gridLotacao"><input type="hidden"
-  value="[% lotacao | html %]" name="lotacao">
+<div id="gridLotacao"><input type="hidden"  value="[% lotacao | html %]" name="lotacao"/>
   [% IF usuario %]
 <table id="grid_lotacao">
   <thead>

@@ -34,7 +34,7 @@
   <th width="20%">Documentos</th>
  </tr>
 </thead>
-<TBODY>
+<tbody>
  [% FOREACH entrie IN entries.all %]
     <tr>
         <td>
@@ -44,7 +44,7 @@
         </td>
     </tr>
  [% END %]
-</TBODY>
+</tbody>
 </table>
 
 [% paginacao = PROCESS 'auth/registros/volume/paginacao.tt' %]

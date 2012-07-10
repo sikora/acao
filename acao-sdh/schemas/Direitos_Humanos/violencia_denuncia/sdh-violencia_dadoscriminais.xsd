@@ -204,7 +204,7 @@
 						    <xs:element name="abandonoDeIncapaz" type="xs:boolean">
 							    <xs:annotation>
 								    <xs:appinfo>
-									    <xhtml:label>Art.133 do CPB – Abando de Incapaz</xhtml:label>
+									    <xhtml:label>Art.133 do CPB – Abandono de Incapaz</xhtml:label>
 								    </xs:appinfo>
 							    </xs:annotation>
 						    </xs:element>	
@@ -230,10 +230,10 @@
 					                </xs:appinfo>
 				                </xs:annotation>
                             </xs:element>                           
-			    <xs:element name="estatudoDoIdoso" minOccurs="0">
+			    <xs:element name="estatutodoDoIdoso" minOccurs="0">
 				    <xs:annotation>
 					    <xs:appinfo>
-						    <xhtml:label>Estatudo do Idoso</xhtml:label>
+						    <xhtml:label>Estatuto do Idoso</xhtml:label>
 					    </xs:appinfo>
 				    </xs:annotation>
 				    <xs:simpleType>
@@ -333,7 +333,7 @@
 			    <xs:element name="bolOcorrencia" minOccurs="0">
 				    <xs:annotation>
 					    <xs:appinfo>
-						    <xhtml:label>Regitro de Boletim de Ocorrência</xhtml:label>
+						    <xhtml:label>Registro de Boletim de Ocorrência</xhtml:label>
 					    </xs:appinfo>
 				    </xs:annotation>
 				    <xs:simpleType>

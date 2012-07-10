@@ -18,43 +18,70 @@
 # Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor,
 %]
 [% INCLUDE 'auth/registros/volume/header_alterar.tt' %]
-<br>
+<br/>
 <h3 class="titulo-form_">Alterar Volume:</h3>
 [% SET vol = ( c.model('Volume').getDadosVolumeId(id_volume) ) %]
 [% SET nome = vol.nome %]
  <form id="form" name="form" action="[% c.uri_for_action('/auth/registros/volume/store_alterar', [ id_volume ]) %]" method="post" onsubmit="">
 
   [% INCLUDE 'auth/registros/volume/_formVolume.tt' %]
-
+  [% COUNT = 0 %]    
+  [% IF modificarClassificacao %][% COUNT = COUNT + 1 %][% END %]
+  [% IF modificarLocalizacao %][% COUNT = COUNT + 1 %][% END %]  
+  [% IF modificarAutorizacoes %] [% COUNT = COUNT + 1 %][% END %]  
   <!-- a lista de abas -->
-  <ul id="abas">
-        <li><a href="#tab1">Classificação</a></li>
-        <li class="tabLocalizacao"><a href="#tab2">Localização</a></li>
-        <li><a href="#tab3">Autorização</a></li>
+  <ul id="abas">       
+        [% IF modificarClassificacao %]
+          <li > <a href="#tab1" >Classificação</a></li>       
+        [% END %]
+        [% IF modificarLocalizacao %]
+         <li class="tabLocalizacao"><a href="#tab2">Localização</a> </li>    
+        [% END %]       
+        [% IF modificarAutorizacoes %] 
+          <li  ><a href="#tab3" >Autorização</a></li>
+        [% END %]        
   </ul>
+  
 <!-- conteudo das abas -->
-
-  <div id="tab1" class="contaba">
-         [% INCLUDE 'auth/registros/volume/_formClassificacoes.tt' %]
+   
+  <div id="tab1"  [% IF modificarClassificacao %] class="contaba" [% ELSE %] style="visibility:hidden; height: 0px !important" [% END %] >       
+           [% INCLUDE 'auth/registros/volume/_formClassificacoes.tt' %]    
   </div>
-  <div id="tab2" class="contaba">
-         [% INCLUDE 'auth/registros/volume/_formLocalizacao.tt' %]
+  
+  <div id="tab2" [% IF modificarLocalizacao %] class="contaba" [% ELSE %] style="visibility:hidden; height: 0px !important" [% END %]>       
+           [% INCLUDE 'auth/registros/volume/_formLocalizacao.tt' %]       
   </div>
-  <div id="tab3" class="contaba">
-           [% INCLUDE 'auth/registros/volume/_formPermissoes.tt' %]
+  
+  <div id="tab3" [% IF modificarAutorizacoes %] class="contaba" [% ELSE %] style="visibility:hidden; height : 0px !important"  [% END %]>
+           [% INCLUDE 'auth/registros/volume/_formPermissoes.tt' %]        
+  
   </div>
+  
 
-  <input type="submit" name="opcao" onClick="javascript:return validaForm();" value="Salvar">
+  [% SWITCH COUNT %]
+      [% CASE "0" %]
+          <script type="text/javascript">$('#abas').css('width','0px');$('#abas').css('border','0px solid ');</script>
+      [% CASE "2" %]
+          <script type="text/javascript">$('#abas').css('width','322px');</script>
+      [% CASE "1" %]
+          <script type="text/javascript">$('#abas').css('width','161px');</script>      
+      [% CASE %]
+          <script type="text/javascript">$('#abas').css('width','483px');</script>
+  [% END %]
 
-  <input type="button" name="Cancelar" onClick="javascript:history.go(-1);" value="Cancelar">
+
+  <input type="submit" name="opcao" onClick="javascript:return validaForm();" value="Salvar"/>
+
+  <input type="button" name="Cancelar" onClick="javascript:history.go(-1);" value="Cancelar"/>
  </form>
 
- <script language="javascript">
-  function validaForm(){
- 	if (!check_auths()) {
-		alert('Número mínimo de permissões não atingido.');
-		return false;
-	}
+ <script type="text/javascript">
+  function validaForm(){      
+   	if (!check_auths()) {
+  		alert('Número mínimo de permissões não atingido.');
+  		return false;
+  	}
+
     if(document.getElementById('nome').value == ''){
       alert('Informe o nome do volume.');
       document.getElementById('nome').focus();
@@ -80,6 +107,9 @@
         return false;
       }
     }
+
+    $('#form').submit();
+    return true;
 
   }
   $("documment").ready(function(){
@@ -123,29 +153,6 @@
      }
 
     });
-
-//      if (!$('#representaVolumeFisico').is(':checked')) {
-//         $('.tabLocalizacao').hide();
-//         $('#abas').css('width','322px');
-//
-//      }
-//        $('#representaVolumeFisico').click(function() {
-//        if ($('#representaVolumeFisico').is(':checked')) {
-//           $('.tabLocalizacao').show();
-//
-//           $('#abas').css('width','483px');
-//        } else {
-//           $("div.contaba").hide()
-//           $("#abas a").removeClass("selected");
-//           $("div.contaba:first").show()
-//           $("#abas a:first").addClass("selected");
-//           $($("#abas a:first").attr('href')).show;
-//           $('.tabLocalizacao').hide();
-//           $('#abas').css('width','322px');
-//
-//        }
-//      });
-
 });
  </script>
 
