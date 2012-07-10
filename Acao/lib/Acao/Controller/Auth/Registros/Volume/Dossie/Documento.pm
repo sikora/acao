@@ -242,6 +242,9 @@ sub visualizar : Chained('get_documento') : PathPart('') : Args(0) {
                                                              $c->stash->{id_documento}
                                                              );
     $c->stash->{basedn}       = $c->model("LDAP")->grupos_dn;
+    # Acrescentando class no formulário retirando a aparencia de formulário, deixando-o parecido com relatório.
+    $c->stash->{classVisualizar} = 'class="styleFormLikeReport"';
+
 
 }
 

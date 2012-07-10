@@ -122,7 +122,7 @@
    [%  END %]
 <br/><br/>
 
- <div id="form_container"></div>
+ <div id="form_container" [% classVisualizar %]></div>
   <input type="hidden" name="view" value="visualizar"/>
   [% IF c.model('Documento').pode_alterar_documento(id_volume,controle,id_documento) %]
 
@@ -137,7 +137,46 @@
     [%# END %]
 [%# END %]
 
+[% IF classVisualizar %]
+  <script type="text/javascript">
+  $(document).ready(function() {
+      $('select').each(function () {              
+                $(this).replaceWith('<input type="text"  value="' + $(this).children('option:selected').val() + '" > ' );
+              });
 
+      $('textarea').each(function () {     
+          if (!$(this).val()) {            
+            $(this).css('height','');               
+          }  else {
+            $(this).elastic();  
+          }
+
+        });
+      $('.styleFormLikeReport dt').each(function () {     
+        
+          if ($(this).next().children().is("textarea")) {
+            console.log($(this).next().children());    
+            dt = $(this);
+            textarea = $(this).next().children();
+            altura = $(this).next().children().height();
+            dt.css('padding-bottom',altura);
+            textarea.css('margin-top',-altura);
+
+
+
+          }
+
+
+        });
+
+      // Desabilitar os campos inputs & selects da visualização do formulário
+
+      $('input, select, textarea').attr('disabled', 'disabled');
+
+      });
+  </script>
+
+[% END %]
 
 <style rel="stylesheet" type="text/css">
   .text {
@@ -171,11 +210,6 @@
 
    generateXsdFormUI();
 
-// Desabilitar os campos inputs & selects da visualização do formulário
-
-   $(document).ready(function() {
-   		$('input, select, textarea').attr('disabled', 'disabled');
-   });
 
  </script>
 
