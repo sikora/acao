@@ -4,6 +4,9 @@
         "listar" => "Listar este Documento",
         "visualizar" => "Ver este Documento",
         "transferir" => "Transferir este Documento",
+        "NaoModificaAutorizacoes" => "Negar Acesso a aba Autorizações",
+        "NaoModificaLocalizacao" => "Negar Acesso a aba Localização",
+        "NaoModificaClassificacao" => "Negar Acesso a aba Classificação",
        } %]
 [% #  END %]
 
@@ -14,6 +17,9 @@
 	        "listar" => "Listar este Volume",
 	        "visualizar" => "Ver este Volume",
 	        "transferir" => "Transferir Prontuários neste Volume",
+          "NaoModificaAutorizacoes" => "Negar Acesso a aba Autorizações",
+          "NaoModificaLocalizacao" => "Negar Acesso a aba Localização",
+          "NaoModificaClassificacao" => "Negar Acesso a aba Classificação",
 	   } %]
 
 [%   END %]
@@ -24,6 +30,9 @@
 	        "listar" => "Listar este Prontuário",
 	        "visualizar" => "Ver este Prontuário",
 	        "transferir" => "Transferir este Prontuário",
+          "NaoModificaAutorizacoes" => "Negar Acesso a aba Autorizações",
+          "NaoModificaLocalizacao" => "Negar Acesso a aba Localização",
+          "NaoModificaClassificacao" => "Negar Acesso a aba Classificação",
 	   } %]
 [%   END %]
 
@@ -31,30 +40,55 @@
 
 
 <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes"/>
-     <table id="grid_autorizacoes">
-      <thead>
-        <tr>
-            <th>Grupo</th>
-            <th>Permissão</th>
-            <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        [% SET count = 0 %]
-        [% IF autorizacoes %]
-          [% FOREACH a IN c.model(model).desserialize_autorizacoes(autorizacoes).autorizacao %]
-          <tr>
-            <td>[% c.model('LDAP').decompose_dn_grupos(a.principal).reverse.join(' - ') %]</td>
-            <td>[% labels_roles.item(a.role) %]</td>
-            <td>
-               <a href="javascript:void(0);"  name="remover"
-                onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]','[% count %]')" >
-                Remover</a>
 
-            </td>
-          </tr>
-          [% SET count = count + 1 %]
-          [% END %]
-        [% END %]
-      </tbody>
-     </table>
+        [% SET lotacoes = [] %]
+         
+         [% USE Dumper %]
+         [% FOREACH a IN c.model(model).desserialize_autorizacoes(autorizacoes).autorizacao %]
+            [% lotacoes.push(a.principal) %]                      
+         [% END %]         
+         
+         <table >
+             <thead>
+               <tr>
+                   <th>Grupo de Lotação</th>                   
+                   <th class="permissoes">Permissão</th>                   
+               </tr>
+             </thead>
+             <tbody>
+               [% SET count = 0 %]
+               [% IF autorizacoes %]
+                 [% FOREACH lotacao IN lotacoes.unique %]
+                 <tr>                               
+                   <td>
+                       <a href="javascript:void(0);"  
+                          class="bt_remove_right" 
+                          name="remover"
+                          onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]',
+                                                        '[% count %]', '[% lotacao %]','todos')" >
+                                               Remover</a> 
+                        <span rel="[% lotacao %]">[% c.model('LDAP').decompose_dn_grupos(lotacao).reverse.join(' - ') %]</span>
+                  </td>
+                   <td>
+                    [% FOREACH a IN c.model(model).desserialize_autorizacoes(autorizacoes).autorizacao %]
+                    <!-- Selecionando permissões para as lotacoes -->
+                      [% IF c.model('LDAP').decompose_dn_grupos(lotacao).reverse.join(' - ') 
+                          == c.model('LDAP').decompose_dn_grupos(a.principal).reverse.join(' - ') %]
+                        <li>
+                           <a href="javascript:void(0);"  name="remover"
+                           onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]',
+                                    '[% count %]', '[% a.principal %]','[% a.role %]')" >
+                           Remover</a>  
+                           <span class="label" rel="[% a.principal %]" >[% labels_roles.item(a.role) %]</span> 
+                           [% SET count = count + 1 %]             
+                        </li>  
+                     [% END %]                   
+                   [% END %]
+                   </td>
+                 </tr>
+              
+                 [% END %]
+               [% END %]
+             </tbody>
+            </table>
+  

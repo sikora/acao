@@ -85,6 +85,9 @@ sub lista : Chained('base') : PathPart('') : Args(0) {
 
 sub form : Chained('base') : PathPart('inserirdocumento') : Args(0) {
     my ( $self, $c ) = @_;
+    $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nega_acesso_aba_autorizacoes($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarLocalizacao} = $c->model('Volume')->nega_acesso_aba_localizacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarClassificacao} = $c->model('Volume')->nega_acesso_aba_classificacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
     #   Checa se user logado tem autorização para Criar Documento
     if (!$c->model('Documento')->pode_criar_documento($c->stash->{id_volume},$c->stash->{controle})) {
       $c->flash->{autorizacao} = 'dossie-criar';
@@ -305,6 +308,9 @@ sub xml : Chained('get_documento') : PathPart : Args(0) {
 
 sub alterar : Chained('get_documento') : PathPart('alterar_documento') : Args(0) {
     my ($self, $c) = @_;
+    $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nega_acesso_aba_autorizacoes($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarLocalizacao} = $c->model('Volume')->nega_acesso_aba_localizacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarClassificacao} = $c->model('Volume')->nega_acesso_aba_classificacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
 
      #   Checa se user logado tem autorização para Alterar Documento
     if (!$c->model('Documento')->pode_alterar_documento($c->stash->{id_volume},

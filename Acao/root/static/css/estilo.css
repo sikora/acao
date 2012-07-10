@@ -1,4 +1,4 @@
-html
+html 
 {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
@@ -18,7 +18,12 @@ h2 {
 }
 a, a:active, a:hover, a:visited {
   color: #CC0000;
-  text-decoration: underline;
+  text-decoration: underline;  
+  border-radius: 2px;
+}
+li {
+  list-style: none;
+
 }
 
 #topo
@@ -819,9 +824,51 @@ body.relatorio thead th { background-color: white; color: black; }
   margin-right: 5px;
 
 }
+.consultaLdap_new li {
+  height: 25px;
+
+}
+
+.consultaLdap_new fieldset {
+  padding: 5px 5px 0px 0px !important;
+
+}
 
 .dnLdap, .dnAssunto, .dnLocal {
-  width: 274px !important;
+  width: 410px !important;
+}
+span.authLegenda {
+  font-size: 10px !important;
+  color: #666;
+
+}
+#grid-autorizacoes .permissoes {
+  width: 250px;
+
+}
+#grid-autorizacoes .bt_remove_right {
+    background-image: url('../img/cross.png');
+    background-repeat: no-repeat;
+    z-index: 99999999;
+    width: 20px !important;
+    text-indent: 10015px !important;
+    float: left;
+}
+
+#grid-autorizacoes li {
+    list-style: none;
+    height: 18px;
+}
+#grid-autorizacoes li:hover {
+    background-color: #FFFFAF;
+}
+#grid-autorizacoes a {
+    background-image: url('../img/cross.png');
+    background-repeat: no-repeat;
+    z-index: 99999999;
+    width: 20px !important;
+    text-indent: 10015px !important;
+    float: right;
 }
 
 #grid-autorizacoes table {

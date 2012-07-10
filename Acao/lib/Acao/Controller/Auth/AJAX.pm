@@ -22,6 +22,7 @@ use strict;
 use warnings;
 use List::MoreUtils qw(pairwise);
 use parent 'Catalyst::Controller';
+use Data::Dumper;
 
 
 
@@ -53,7 +54,7 @@ sub add_autorizacoes_grid : Local
     my ( $self, $c ) = @_;
     $c->stash->{template} = 'auth/ajax/grid_autorizacoes.tt';
     my @principal  = split /-/, $c->req->param('grupos');
-    my @role       = $c->req->param('role[]');
+    my @role       = $c->req->param('role[]');    
     my $permissoes =
       $c->model($c->req->param('model'))->build_autorizacao_AoH( \@principal, \@role );
     $c->stash->{autorizacoes} =
@@ -64,18 +65,37 @@ sub add_autorizacoes_grid : Local
 
 }
 
+# sub remover_autorizacoes_grid : Local
+# {
+#     my ( $self, $c ) = @_;
+#     $c->stash->{template} = 'auth/ajax/grid_autorizacoes.tt';
+#     my ($pos) = $c->req->param('posicao');
+#     if ( $pos or $pos == 0 ) {
+#         $c->stash->{autorizacoes} = $c->model($c->req->param('model'))
+#           ->remove_autorizacoes( $c->req->param('autorizacoes_ldap'), $pos );
+#     }
+#     else {
+#         $c->stash->{autorizacoes} = $c->req->param('autorizacoes_ldap');
+#     }
+#     $c->stash->{model} = $c->req->param('model');
+#     return 1;
+
+# }
+
 sub remover_autorizacoes_grid : Local
 {
     my ( $self, $c ) = @_;
     $c->stash->{template} = 'auth/ajax/grid_autorizacoes.tt';
     my ($pos) = $c->req->param('posicao');
+    my ($lotacao) = $c->req->param('lotacao');
+    my ($role) = $c->req->param('role');    
     if ( $pos or $pos == 0 ) {
         $c->stash->{autorizacoes} = $c->model($c->req->param('model'))
-          ->remove_autorizacoes( $c->req->param('autorizacoes_ldap'), $pos );
+          ->remove_autorizacoes( $c->req->param('autorizacoes_ldap'), $pos, $lotacao, $role );
     }
     else {
         $c->stash->{autorizacoes} = $c->req->param('autorizacoes_ldap');
-    }
+    }    
     $c->stash->{model} = $c->req->param('model');
     return 1;
 
