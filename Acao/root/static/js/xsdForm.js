@@ -30,9 +30,15 @@ function starVerify( txt ) {
 function returnRequiredItems(divx) {
     var empties = 0;
     $('input[need], select[need], textarea[need]').each( function() {
-        if( $(this).val() == null || $(this).val() == undefined || $(this).val() == '')
-            empties++;
+        var este = $(this);
+        if( este.hasClass('inflated') ) {
+            este = $(this).prev();
+        }
+        
+        if( este.val() == null || este.val() == undefined || este.val() == '')
+                empties++;
     });
+    
     if( empties == 1 ) {
         $("#" + divx).html(empties + ' campo obrigatório não foi preenchido.')
             .addClass('fieldRequired');
@@ -40,7 +46,7 @@ function returnRequiredItems(divx) {
         $("#" + divx).html( empties + ' campos obrigatórios não foram preenchidos.')
             .addClass('fieldRequired');
     }else {
-        $("#" + divx).html('')
+        $("#" + divx).html('') 
             .removeClass('fieldRequired');
     }
     return empties;
@@ -768,7 +774,7 @@ function generateForm(xsdFile,containerId) {
 function updateRequired() {
         $('input[need], select[need], textarea[need]').tipsy({trigger: 'focus', gravity: 'w'});
         $('input[need], select[need], textarea[need]').blur( function(){onBlurVerify( this );} );
-        $('input[need], select[need], textarea[need]').change( function(){returnRequiredItems("requireditems");} );
+        $('input[need], select[need], textarea[need]').change( function(){onBlurVerify( this ); returnRequiredItems("requireditems");} );
         returnRequiredItems("requireditems");   
 }
 
@@ -982,8 +988,13 @@ function generateFormField(tagRaiz, xmlNode, type, namePattern, minOccurs, maxOc
 
 function onBlurVerify( el ) {
     var elq = $( el );
+    if( elq.hasClass('inflated')) {
+        elx = elq.prev();
+    } else
+        elx = elq;
+    
     x = elq;
-    if ( ( elq.is ('input') || elq.is ('select') || elq.is ('textarea') )&& (elq.val() == null || elq.val() == undefined || elq.val() == '') ) {
+    if ( ( elq.is ('input') || elq.is ('select') || elq.is ('textarea') )&& (elx.val() == null || elx.val() == undefined || elx.val() == '') ) {
         elq.focus();
         elq.attr('title',  'Atenção! Informe este ítem!');
         elq.tipsy("show");
