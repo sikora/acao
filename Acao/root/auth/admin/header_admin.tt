@@ -28,6 +28,9 @@
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/funcoes.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery.validate.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/libs/base64.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/libs/sprintf.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/jspdf.js') %]'></script>
 
     <!--Instituto Atlântico-->
         <link href='[% c.uri_for('/static/css/estilo_ia.css') %]' rel='stylesheet' type='text/css' />

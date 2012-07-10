@@ -1177,6 +1177,23 @@ a.retirar_acao {
   float: right;
 }
 
+/*a.pdf {
+    -moz-background-clip: border;
+    -moz-background-origin: padding;
+    -moz-background-size: auto auto;
+    background-attachment: scroll;
+    background-color: transparent;
+    background: url(../img/print.png) no-repeat;
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    line-height: 18px;
+    padding-bottom: 5px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 2px !important;
+    text-indent: 1em;
+
+}*/
 
 a.alterar {
     -moz-background-clip: border;
@@ -1248,6 +1265,25 @@ a._buscar {
 
 
 }
+
+a.pdf {
+    -moz-background-clip: border;
+    -moz-background-origin: padding;
+    -moz-background-size: auto auto;
+    background-attachment: scroll;
+    background-color: transparent;
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    line-height: 14px;
+    padding-bottom: 5px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 2px !important;
+    background: url(../img/pdf.png) no-repeat ;
+
+
+}
+
 
 /* END * icones ,Botões e Links by Carlos Wherbet */
 

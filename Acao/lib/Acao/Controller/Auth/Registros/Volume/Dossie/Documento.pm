@@ -363,6 +363,33 @@ sub add_autorizacoes_grid : Chained('base') : PathPart('add_autorizacoes') : Arg
 
 }
 
+
+########## Função que gera PDF
+
+=sub gerar_pdf : Chained('get_documento') : PathPart('pdf') : Args(0){
+
+    # my $htmldoc = new HTML::HTMLDoc('mode'=>'file', 'tmpdir'=>'/tmp');
+    # $htmldoc->set_html_content(qq~<html><body>A PDF file</body></html>~);
+    # $htmldoc->set_input_file($filename); # alternative to use a present file from your fs
+    # my $pdf = $htmldoc->generate_pdf();
+    # $htmldoc->set_charset('iso-8859-1');
+    # $htmldoc->get_html_content();
+    # print $pdf->to_string();
+
+    my $htmldoc = new HTMLDoc::HTMLDoc();
+
+    $htmldoc->set_html_content($prontuario);
+
+    my $pdf = $htmldoc->generate_pdf();   
+
+
+}
+=cut
+#######################################
+
+
+
+
 sub remover_autorizacoes_grid : Chained('base') : PathPart('remover_autorizacoes_ldap') : Args(0){
     my ($self,$c) = @_;
     $c->stash->{template} = 'auth/registros/volume/dossie/documento/grid_autorizacoes.tt';
