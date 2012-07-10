@@ -30,13 +30,30 @@
      </div>
      <input type="hidden" name="basedn" value="[% basedn %]" />
      <dt>
-[% SET labels_roles = {
-        "alterar" => "Alterar este Volume",
-        "criar" => "Criar Prontuários neste Volume",
-        "listar" => "Listar este Volume",
-        "visualizar" => "Ver este Volume",
-        "transferir" => "Transferir Prontuários neste Volume",
-   } %]
+
+
+   [% SET labels_roles = {
+           "alterar" => "Alterar este Volume",
+           "criar" => "Criar Prontuários neste Volume",
+           "listar" => "Listar este Volume",
+           "visualizar" => "Ver este Volume",
+           "transferir" => "Transferir Prontuários neste Volume",           
+    } %]
+
+   [% SET labels_roles_advanced = {         
+           "NaoModificaAutorizacoes" => "Negar Acesso a aba Autorizações",
+           "NaoModificaLocalizacao" => "Negar Acesso a aba Localização",
+           "NaoModificaClassificacao" => "Negar Acesso a aba Classificação",        
+
+    } %]
+    
+    [% SET labels_roles_advanced_negar = {         
+            "NaoModificaAutorizacoes" => "Acesso a aba Autorizações",
+            "NaoModificaLocalizacao" => "Acesso a aba Localização",
+            "NaoModificaClassificacao" => "Acesso a aba Classificação",        
+
+     } %]
+   
 
 <br/>
 
@@ -47,49 +64,100 @@
   <img src="[% c.uri_for('/static/img/magnifier.png') %]" alt=" Super Administrador" />
   <b>Localizar Grupo de Lotação </b> <br/>
     <input type="text" class="dnLdap" name="dnLdap" value=""/>
-      <div id="">
-          <input type="checkbox" name="checkAllAcoes" id="checkAllAcoes" />
-          Marcar Todas
-          [% FOREACH r IN labels_roles.keys %]
+      <div id="boxPermissoes">
+        <li>
+            <input type="checkbox" name="checkAllAcoes" id="checkAllAcoes" />
+            Marcar Todas
+        </li>
+         <fieldset>
+          <legend>Permitir ao grupo</legend>
+         
+          [% FOREACH r IN labels_roles.keys  %]
              <li>
                 <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]" />
           [% labels_roles.item(r) %]
              </li>
-          [% END %]
+          [% END %]    
+            
+          </fieldset>   
+          <fieldset>
+           <legend>Não permitir ao grupo</legend>
+           <!-- <li>
+               <input type="checkbox" name="checkAllAcoes" id="checkAllAcoes" />
+               Marcar Todas
+           </li> -->
+           [% FOREACH r IN labels_roles_advanced_negar.keys  %]
+              <li>
+                 <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]" />
+           [% labels_roles_advanced.item(r) %]
+              </li>              
+           [% END %]    
+           <span class="authLegenda">Permissões se extendem a este <strong>Volume</strong>, seus <strong>Prontuários</strong>
+               e <strong>Documentos</strong>.
+           </span>
+              <!--   -->
+           </fieldset>  
           <a href="javascript:void(0);"  name="adicionar" onclick="add_autorizacoes('[% c.uri_for_action('/auth/ajax/add_autorizacoes_grid') %]')" >Atribuir Permissões</a>
       </div>
      </div>
-
+     <!-- Fazendo merge dos Hash's  -->
+   [%  labels_roles.import(labels_roles_advanced) %]
     <div id="grid-autorizacoes">
    [% # IF c.model('Volume').pode_criar_volume() %]
    <input type="hidden" value="[% autorizacoes | html %]" name="autorizacoes"/>
-      <table >
-          <thead>
-            <tr>
-                <th>Grupo de Lotação</th>
-                <th>Permissão</th>
-                <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            [% SET count = 0 %]
-            [% IF autorizacoes %]
-              [% FOREACH a IN c.model('Volume').desserialize_autorizacoes(autorizacoes).autorizacao %]
-              <tr>
-                <td>[% c.model('LDAP').decompose_dn_grupos(a.principal).reverse.join(' - ') %]</td>
-                <td>[% labels_roles.item(a.role) %]</td>
-                <td>
-                   <a href="javascript:void(0);"  name="remover"
-                    onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]','[% count %]')" >
-                    Remover</a>
-
-                </td>
-              </tr>
-              [% SET count = count + 1 %]
-              [% END %]
-            [% END %]
-          </tbody>
-         </table>
+         [% SET lotacoes = [] %]
+         
+         [% USE Dumper %]
+         [% FOREACH a IN c.model('Volume').desserialize_autorizacoes(autorizacoes).autorizacao %]
+            [% lotacoes.push(a.principal) %]                      
+         [% END %]
+         
+         [% # Dumper.dump(lotacoes.unique) %]
+         
+         
+         
+         <table  >
+             <thead>
+               <tr>
+                   <th>Grupo de Lotação</th>                   
+                   <th class="permissoes">Permissão</th>                   
+               </tr>
+             </thead>
+             <tbody>
+               [% SET count = 0 %]
+               [% IF autorizacoes %]
+                 [% FOREACH lotacao IN lotacoes.unique %]
+                 <tr>                               
+                   <td>
+                        <a href="javascript:void(0);"  
+                          class="bt_remove_right" 
+                          name="remover"
+                          onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]',
+                                                        '[% count %]', '[% lotacao %]','todos')" >
+                                               Remover</a>  
+                        <span rel="[% lotacao %]">[% c.model('LDAP').decompose_dn_grupos(lotacao).reverse.join(' - ') %]</span>
+                   </td>
+                   <td>
+                    [% FOREACH a IN c.model('Volume').desserialize_autorizacoes(autorizacoes).autorizacao %]
+                    <!-- Selecionando permissões para as lotacoes -->
+                      [% IF c.model('LDAP').decompose_dn_grupos(lotacao).reverse.join(' - ') 
+                          == c.model('LDAP').decompose_dn_grupos(a.principal).reverse.join(' - ') %]
+                           <li><a href="javascript:void(0);"  name="remover"
+                           onclick="remover_autorizacoes('[% c.uri_for_action('/auth/ajax/remover_autorizacoes_grid') %]',
+                                    '[% count %]', '[% a.principal %]','[% a.role %]')" >
+                           Remover</a>    
+                           <span class="label" rel="[% a.principal %]">[% labels_roles.item(a.role) %]</span>                                             
+                           [% SET count = count + 1 %]
+                           </li>  
+                     [% END %]                   
+                   [% END %]
+                   </td>
+                 </tr>
+                 
+                 [% END %]
+               [% END %]
+             </tbody>
+            </table>
   [% # END %]
 
   </div>
@@ -181,7 +249,7 @@ function add_autorizacoes(action) {
   }
 }
 
-function remover_autorizacoes(action,posicao) {
+function remover_autorizacoes(action,posicao,lotacao,role) {
 
   var autorizacoes_ldap = $("input[name='autorizacoes']").val();
       $.ajax({
@@ -192,6 +260,8 @@ function remover_autorizacoes(action,posicao) {
              'autorizacoes_ldap':  autorizacoes_ldap,
              'posicao': posicao,
              'model'	 :  'volume',
+             'lotacao'   :  lotacao,
+             'role'   :  role,
              },
           success: function(msg){
              $('#grid-autorizacoes').html(msg);
@@ -205,35 +275,35 @@ function remover_autorizacoes(action,posicao) {
 }
 
 function check_auths() {
-	var qtd_auths = $("#grid-autorizacoes tr").length-1;
-	var secs=[];
-    // armazenando em um array todas as lotacoes/secretarias
-	$("#grid-autorizacoes tr").each(function() {
-	    secs.push($(this).find("td:first").html());
-
-    });
-    // criando um array com os valores unicos de  lotacoes/secretarias
-    var secsUnique = secs.filter(function(sec,i,secs){
-    	 if ((i==secs.indexOf(sec)) && (i !== null)) {
-    	 	return i;
-    	 }
-	});
+  var qtd_auths = $("#grid-autorizacoes li").length;  
+  var secs=[];   
+  var count ; 
     // Verificando se as secretarias possuem as devidas autorizações minima para poder salvar o volume
-    for (var i in secsUnique){
-         var count = 0;
-     	$("#grid-autorizacoes tr").each(function() {
-     			var permissao = $(this).find("td:first").next().html();
-     			if ((secsUnique[i] == $(this).find("td:first").html()) &&
-	     			 (permissao == 'Alterar este Volume' ||
-	     			  permissao == 'Listar este Volume'  ||
-	     			  permissao == 'Ver este Volume' ))  {
-	     			  	count++;
-    			}
-   		 });
-   		 if (count>=3) break;
-    }
-    return count>=3;
+  $("#grid-autorizacoes span").each(function() {      
+       count = 0;
+       var lotacao = $(this).attr('rel');        
+        $("#grid-autorizacoes .label").each(function() {
+            var permissao = $(this).html();       
+            var checklotacao = $(this).attr('rel');
 
+            if (  (lotacao == checklotacao)  &&  
+               (
+                permissao == 'Alterar este Volume' ||
+                permissao == 'Listar este Volume'  ||
+                permissao == 'Ver este Volume' ))  {
+                  count++;
+            }    
+
+            if ((lotacao == checklotacao) && 
+              (permissao == 'Negar Acesso a aba Autorizações'))  count--;        
+            // if (permissao == 'Acesso a aba Localização')  count--;        
+            // if (permissao == 'Acesso a aba Classificação')  count--;        
+
+         });         
+        if (count>=3) return false;  
+    }); 
+  console.log(count);
+  return (count>=3);
 }
 
-   </script>
+</script>

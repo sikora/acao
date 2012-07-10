@@ -24,12 +24,23 @@
         <title>Ação - Sistema de Acompanhamentos de Projetos Sociais</title>
         <link rel="stylesheet" href='[% c.uri_for('/static/css/jquery.ui-1.8.6.custom.thema.css') %]' type="text/css" media="all" />
         <link href='[% c.uri_for('/static/css/estilo.css') %]' rel='stylesheet' type='text/css' />
+<<<<<<< HEAD
+        <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery.ui-1.8.6.custom.min.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/funcoes.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/picnet.table.filter.min.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/libs/base64.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/libs/sprintf.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/jspdf.js') %]'></script>
+
+=======
         <link href="[% c.uri_for('/static/css/tipsy.css') %]" rel="stylesheet" type="text/css"/>
         <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
         <script type='text/javascript' src='[% c.uri_for('/static/js/plugins/jquery.ui-1.8.6.custom.min.js') %]'></script>
         <script type='text/javascript' src='[% c.uri_for('/static/js/funcoes.js') %]'></script>
         <script type='text/javascript' src='[% c.uri_for('/static/js/jquery.tipsy.js') %]'></script>
         <script type='text/javascript' src='[% c.uri_for('/static/js/picnet.table.filter.min.js') %]'></script>
+>>>>>>> 4c65c7c531c2a5118dee5e155c3d524f7bb40bc9
 
     <!--Instituto Atlântico-->
         <link href='[% c.uri_for('/static/css/estilo_ia.css') %]' rel='stylesheet' type='text/css' />

@@ -29,7 +29,9 @@
   <ul id="abas">
         <li><a href="#tab1">Classificação</a></li>
         <li  class="tabLocalizacao"><a href="#tab2">Localização</a></li>
+        [% # IF modificarAutorizacoes %]
         <li><a href="#tab3">Autorização</a></li>
+        [% # END %]
   </ul>
 <!-- conteudo das abas -->
 
@@ -39,10 +41,15 @@
   <div id="tab2" class="contaba">
          [% INCLUDE 'auth/registros/volume/_formLocalizacao.tt' %]
   </div>
+  [% # IF modificarAutorizacoes %]
   <div id="tab3" class="contaba">
            [% INCLUDE 'auth/registros/volume/_formPermissoes.tt' %]
   </div>
-
+  [% # ELSE %]
+    <script type="text/javascript">
+      //$('#abas').css('width','322px');      
+    </script>
+  [% # END %]
   <input type="submit" id="btcriar" name="opcao" onClick="javascript:return validaForm();" value="Criar"/>
 
   <input type="button" name="Cancelar" onClick="javascript:history.go(-1);" value="Cancelar"/>
@@ -97,6 +104,8 @@
 
 
       $(function(){
+          
+          
           // abas
           // oculta todas as abas
           $("div.contaba").hide();

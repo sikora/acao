@@ -50,3 +50,30 @@ var verificaCPF = function(value) {
     if ((cpf.charAt(9) != a[9]) || (cpf.charAt(10) != a[10]) || cpf.match(expReg)) return false;
     return true;
 };
+
+// Função que gera PDF 
+/*function geraPDF() {
+
+    var doc = new jsPDF();
+    //doc.text(20, 20, 'Olá Mundo!');
+    doc.text(20, 20, '#form_container');
+    doc.output('datauri');
+        //alert(doc.output);
+
+}
+
+// Melhor usando jquery
+$(document).ready(function(){
+
+    $('#pdf').click(function(){
+
+        var doc = new jsPDF();
+        console.log();
+        //doc.text(20, 20, 'Olá Mundo!');
+        doc.text(20, 20, $('#form_container'));
+        //createTable(doc, '#form_container');
+        doc.output('datauri');
+
+    });
+
+});*/

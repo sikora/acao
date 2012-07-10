@@ -1,0 +1,116 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh_evolucao_caso_juridico.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh_evolucao_caso_juridico.xsd"
+    elementFormDefault="qualified">
+        
+        <!-- Begin  -->    
+        <xs:element name="evolCasoJuridico" type="evolCasoJuridico">
+            <xs:annotation>
+                <xs:appinfo>
+                    <xhtml:label>19. EVOLUÇÃO DO CASO JURÍDICO</xhtml:label>
+                    <class:classificacoes>
+                        <class:classificacao>cn=Vitima,cn=Direitos Humanos</class:classificacao>
+                    </class:classificacoes>
+                    <!--  indices  
+                    <idx:index>
+                        <idx:hint key="pessoa.numeronis" xpath="regGeralAtendimento/numeronis"/>
+                        <idx:hint key="pessoa.nome" xpath="regGeralAtendimento/responsavel/nomresp"/>
+                        <idx:hint key="pessoa.numerocpf" xpath="regGeralAtendimento/numerocpf"/>
+                        <idx:hint key="pessoa.numnismembro" xpath="regGeralAtendimento/compfamiliar/numnismembro"/>
+                        <idx:hint key="pessoa.nomemembro" xpath="regGeralAtendimento/compfamiliar/nommembro"/>
+                        <idx:hint key="pessoa.rgmembro" xpath="regGeralAtendimento/compfamiliar/rgmembro"/>
+                        <idx:hint key="pessoa.cpfmembro" xpath="regGeralAtendimento/compfamiliar/cpfmembro"/>
+                    </idx:index>
+                    -->
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>        
+        
+        <xs:complexType name="evolCasoJuridico">
+            <xs:sequence>
+
+            	
+                <!-- Begin field date -->        
+                <xs:element name="dataEvolucaCaso" minOccurs="0" type="xs:date">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label> Data </xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+                <!-- End field date-->  
+
+				<!-- Begin field selectBox -->	
+				<xs:element name="setor"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Setor</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Jurídico" />
+							<xs:enumeration value="Social" />
+							<xs:enumeration value="Psicológico" />							
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+
+                          
+                 <!-- Begin field checkbox -->        
+                  <xs:element name="especificarJuridico"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Especificar Jurídico</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Orientações jurídicas" />
+                            <xs:enumeration value="Retorno de atendimentor" />
+                            <xs:enumeration value="Visita institucional" />
+                            <xs:enumeration value="Acompanhamento á delegacia" />
+                            <xs:enumeration value="Acompanhamento á defensoria pública " />
+                            <xs:enumeration value="Consulta processual" />
+                            <xs:enumeration value="Encaminhamento do caso" />
+                            <xs:enumeration value="Reunião institucional com outros órgãos/políticas psicossociais e jurídicas" />
+                            <xs:enumeration value="Atendimento encerrado" />
+                            <xs:enumeration value="Outros" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                            <!-- End field checkbox-->    ]
+
+                <!-- Begin field textarea  -->    
+                <xs:element name="outros" minOccurs="0" type="xs:string">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Especificar Outros</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+                <!-- End field textarea  -->
+                
+                <!-- Begin field textarea  -->    
+                <xs:element name="sinteseEvolucao" minOccurs="0" type="xs:string">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Sintese da Evolução</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+                <!-- End field textarea  -->
+                                                           
+
+
+                
+            </xs:sequence>
+        </xs:complexType>
+        <!-- End  -->    
+        
+</xs:schema>   

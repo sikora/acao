@@ -89,6 +89,11 @@ sub form : Chained('base') : PathPart('criarvolume') : Args(0) {
     $c->stash->{basedn}         = $c->model("LDAP")->grupos_dn;
     $c->stash->{class_basedn}   = $c->model("LDAP")->assuntos_dn;
     $c->stash->{local_basedn}   = $c->model("LDAP")->local_dn;
+    # Verificando se o usuário tem permissão de modificar as autorizações
+    # $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nao_pode_modificar_autorizacoes() ? 0 : 1;
+    # warn '************************';
+    # warn $c->stash->{modificarAutorizacoes};
+
 
     #   Checa se user logado tem autorização para criar volumes
     if ( !$c->model('Volume')->pode_criar_volume() ) {
@@ -187,6 +192,10 @@ sub alterar_estado : Chained('get_volume') : PathPart('alterar_estado')
 
 sub alterar_volume : Chained('get_volume') : PathPart('alterar') : Args(0) {
     my ( $self, $c ) = @_;
+    $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nega_acesso_aba_autorizacoes($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarLocalizacao} = $c->model('Volume')->nega_acesso_aba_localizacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarClassificacao} = $c->model('Volume')->nega_acesso_aba_classificacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+
 
     #   Checa se user logado tem autorização para executar a ação 'Alterar'
     #

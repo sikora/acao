@@ -98,6 +98,9 @@ sub lista : Chained('base') : PathPart('') : Args(0) {
 
 sub form : Chained('base') : PathPart('criardossie') : Args(0) {
     my ( $self, $c ) = @_;
+    $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nega_acesso_aba_autorizacoes($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarLocalizacao} = $c->model('Volume')->nega_acesso_aba_localizacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarClassificacao} = $c->model('Volume')->nega_acesso_aba_classificacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
         #   Checa se user logado tem autorização para criar dossies em Volume
     if ( !$c->model('Dossie')->pode_criar_dossie( $c->stash->{id_volume} ) ) {
         $c->flash->{autorizacao} = 'volume-criar';
@@ -308,7 +311,9 @@ sub transferir : Chained('get_dossie') : PathPart('transferir') : Args(0) {
 
 sub alterar_dossie : Chained('get_dossie') : PathPart('alterar') : Args(0) {
     my ( $self, $c ) = @_;
-
+    $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nega_acesso_aba_autorizacoes($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarLocalizacao} = $c->model('Volume')->nega_acesso_aba_localizacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{modificarClassificacao} = $c->model('Volume')->nega_acesso_aba_classificacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
 #   Checa se user logado tem autorização para executar a ação 'Alterar'
  if (!$c->model('Dossie')->pode_alterar_dossie($c->stash->{id_volume},$c->stash->{controle} )) {
      $c->flash->{autorizacao} = 'dossie-alterar';
@@ -346,6 +351,7 @@ sub alterar_dossie : Chained('get_dossie') : PathPart('alterar') : Args(0) {
 sub store_alterar : Chained('get_dossie') : PathPart('store_alterar') : Args(0)
 {
     my ( $self, $c ) = @_;
+
 
 #   Checa se user logado tem autorização para executar a ação 'Alterar'
     if (!$c->model('Dossie')->pode_alterar_dossie($c->stash->{id_volume},$c->stash->{controle} )) {
