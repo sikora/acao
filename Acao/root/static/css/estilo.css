@@ -1784,7 +1784,7 @@ font-weight: 600;
 }
 
 .filters {
-   height: 30px;
+    height: 30px;
 	}
 
 #voltar {font-size:13px;}
@@ -1801,47 +1801,61 @@ font-weight: 600;
 
 
 /*Visual do formulário como Relatório -  retirando aparecendia de formulário*/
-.styleFormLikeReport span{
-  /*color: #000 !important;*/
-}
+
 .styleFormLikeReport input{
-  height: 19px;
+  margin: 0px ;
+  padding: 0px ;
+  background-color: transparent ;
+  border: medium none ;
+  height: 12px ;
+  margin: 0 ;
+  padding: 0 ;
 
 }
 
 .styleFormLikeReport textarea{
-  margin-top: 1px;
-  border-left: 1px dashed #CCC !important;
-  background-color: #fff !important;
-  padding-top: 19.8px;
-  height: 100%;
-  resize: none !important;
-  height: 9px;
-  overflow: hidden;
+
+  border: none;
+  background: transparent ;
+  margin: 0px ;
+  padding: 0px ;
+  resize: none;
 }
 
 
 
 .styleFormLikeReport select{
-  margin-top: 3px;
-  height: 18px;
-  border: none !important;
-  
+  margin: 0px ;
+  padding: 0px ;
+}
+
+.styleFormLikeReport dl{
+  margin: 0px ;
+  padding: 0px ;
 
 }
-.styleFormLikeReport dl dt {
-  border-bottom: 1px dotted #999 !important;
+.styleFormLikeReport dl dt {    
+  top: 0px ;
+  margin: 0 ;
+
+  
 
 
 }
 .styleFormLikeReport dl dd {
-  /*background-color: #000;*/
-  left: 29.9em !important;
-  border: none;
-  border-bottom: 1px dotted #999;
- 
+  margin: 0px ;
+  margin-top: -1px ;
+  border-bottom: 1px dashed #CCCCCC;  
+  margin-bottom: -24px ;
+
 }
 
+.styleFormLikeReport fieldset{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  resize: none !important;
+
+}
 .styleFormLikeReport input:checked{
   background-color: #fff;
   
@@ -1853,12 +1867,6 @@ font-weight: 600;
 }
 
 .styleFormLikeReport input, .styleFormLikeReport select, .styleFormLikeReport textarea {
-    background-color: #fff;
-    border: none !important;
-    
-    border-color: -moz-use-text-color -moz-use-text-color #CCCCCC;
-    border-style: none none dashed;
-    border-width: medium medium 1px;
-    color: #990000;
-    font-weight: bold;
+      margin: 0px ;
+    padding: 0px ;
 }
