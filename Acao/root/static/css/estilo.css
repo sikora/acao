@@ -1837,6 +1837,7 @@ font-weight: 600;
 .styleFormLikeReport dl dt {    
   top: 0px ;
   margin: 0 ;
+  padding-left: 5px;
 
   
 
