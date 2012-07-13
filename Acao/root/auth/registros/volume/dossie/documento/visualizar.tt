@@ -140,6 +140,10 @@
 [% IF classVisualizar %]
   <script type="text/javascript">
   $(document).ready(function() {
+      $('.styleFormLikeReport dt').css('padding-top','5px');
+      $('.styleFormLikeReport dt').css('padding-bottom','5px');
+      $('.styleFormLikeReport dd').css('padding-top','5px');
+      $('.styleFormLikeReport dd').css('padding-bottom','5px');
       $('select').each(function () {              
                 $(this).replaceWith('<input type="text"  value="' + $(this).children('option:selected').val() + '" > ' );
               });
@@ -153,21 +157,33 @@
 
         });
       $('.styleFormLikeReport dt').each(function () {     
-        
+         
+          dt = $(this);
+          dd = $(this).next();
+          
+          
           if ($(this).next().children().is("textarea")) {
-            console.log($(this).next().children());    
-            dt = $(this);
-            textarea = $(this).next().children();
-            altura = $(this).next().children().height();
-            dt.css('padding-bottom',altura);
-            textarea.css('margin-top',-altura);
-
-
-
+            alturadt = $(this).next().children().height();
+            alturadd = -$(this).next().children().height()+4;          
+           
+            
+            dt.css('padding-bottom',alturadt) ;
+            dd.css('margin-top',alturadd);
+            dd.css('padding-bottom',14);
+          }  
+          if (dt.height() > 18)  {
+            dd.css('height',dt.height());
+            dd.css('margin-top',-(dt.height()-13));              
           }
-
-
+          if ($(this).next().is('dt')) {
+            $('<dd>').css('height',$(this).height()+8).css('margin-top',-4).insertAfter($(this));
+           }
         });
+
+
+      $('.styleFormLikeReport dt:even, .styleFormLikeReport dd:even').css('background-color','#eee');
+      
+
 
       // Desabilitar os campos inputs & selects da visualização do formulário
 
