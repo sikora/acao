@@ -347,8 +347,21 @@ sub alterar : Chained('get_documento') : PathPart('alterar_documento') : Args(0)
                                                              $c->stash->{id_documento}
                                                              );
     $c->stash->{basedn}       = $c->model("LDAP")->grupos_dn;
+}
 
 
+### Criar PDF
+sub pdf : Chained('get_documento') : PathPart('pdf') : Args(0) {
+    my ($self, $c) = @_;
+    $c->stash->{template} = 'auth/registros/volume/dossie/documento/pdf.tt';
+
+    my $pdf = $c->model('Documento')->pdf(
+        $c->stash->{id_volume},    $c->stash->{controle},
+        $c->stash->{id_documento}, $c->req->address,
+    );
+
+    $c->stash->{pdf} = $pdf;
+    $c->forward('View::PDF');
 }
 
 
