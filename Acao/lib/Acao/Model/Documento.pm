@@ -276,7 +276,12 @@ txn_method 'visualizar' => authorized $role_visualizar => sub {
 # ###################################################################################################################### ARTZ
 sub pdf {
     my ( $self, $id_volume, $controle, $id_documento, $ip ) = @_;
-
+    warn "------------------------------------------------------@@@\n";
+    warn $id_volume . "---\n";
+    warn $controle . "---\n";
+    warn $id_documento . "---\n";
+    warn $ip . "---\n";
+    warn "------------------------------------------------------@@@\n";
     # pega o xsd
     my $xsdDoc = $self->obter_xsd_documento( $id_volume, $controle, $id_documento);
     my $xsd = $self->obter_xsd_documento_content ( $xsdDoc );
@@ -285,6 +290,7 @@ sub pdf {
     my $x_c_s    = XML::Compile::Schema->new($xsd);
     my @elements = $x_c_s->elements;
     my $read = $x_c_s->compile( READER => $elements[0] );
+    #warn Dumper $xml;
 
     my $xml_en = encode( 'utf8', $xml );
     my $input_doc = XML::LibXML->load_xml( string => $xml_en );
@@ -292,7 +298,6 @@ sub pdf {
     my $xml_data = $read->($element);
 
     return Acao::Util::GoPDF::genPDF($xsd, $xml_data);
-    #return 1;
 }
 
 txn_method 'obter_xsd_documento' => authorized $role_visualizar => sub {

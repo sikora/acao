@@ -273,7 +273,7 @@
     <th width="110px">Fechamento</th>
     <th width="110px">Arquivamento</th>
     <th width="40px">Estado</th>
-    <th colspan="6" align="center">Ação</th>
+    <th colspan="7" align="center">Ação</th>
    </tr>
   </thead>
 

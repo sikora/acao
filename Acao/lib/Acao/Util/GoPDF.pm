@@ -10,11 +10,6 @@ use constant XSD_NS => 'http://www.w3.org/2001/XMLSchema';
 
 sub genPDF {
     my ( $xsd, $xml ) = @_;
-    #system( 'rm /tmp/logz' );
-    #put_file( Dumper $xsd );
-    #put_file( "-----------------------------------------\n\n\n");
-    #put_file( Dumper $xml );
-    #warn cor('redb') . "<--Entrou no genPdf-->\n" . cor('end');
     my $schemadoc    = XML::LibXML->load_xml( string => $xsd );
     my $schemabaseel = $schemadoc->getDocumentElement;
     my $targetns     = $schemabaseel->getAttribute('targetNamespace');
@@ -23,13 +18,6 @@ sub genPDF {
 
     traverse_schema_to_pdf( $schemabaseel, $targetns,
         $schemabaseel, $xml, $level, $stack, $stelements );
-    #warn Dumper $xml;
-    #put_file( Dumper $stelements );
-    
-    #my $a = set_hash_path( $xml, 'ddddddddddddd', ['informacoesComplementares', 'adesaoProjeto', 'porqueSatisfeitoMoradiaAtual', 'infraestrutura'] );
-    #put_file( Dumper $xml);
-    #put_file( Dumper $a );
-    #warn $xml, $a;
     return create_pdf($stelements);
 }
 
@@ -38,7 +26,6 @@ sub traverse_schema_to_pdf {
     my ( $baseschemael, $targetns, $node, $xml, $level, $stack, $stelements ) = @_;
     return unless ref $node eq 'XML::LibXML::Element';
 
-    #warn cor('redb') . "<--Entrou no traverse -->\n" . cor('end');
     given ( $node->localname ) {
         when ('schema') {
             $baseschemael = $node;
@@ -73,7 +60,7 @@ sub traverse_schema_to_pdf {
                     return;
                 }
                 elsif ( $valuens eq $targetns ) {
-                    # eu tenho que achar o tipo no próprio schema
+                    # tenho que achar o tipo no próprio schema
                     ($innertype) =
                       grep {
                              ref $_ eq 'XML::LibXML::Element'
@@ -94,14 +81,12 @@ sub traverse_schema_to_pdf {
             }
             if ( $innertype->localname eq 'simpleType' ) {
                 my $into = build_xpath( [$node, $stack, $xml, $level ] );
-                #put_file( '-'x$level . $into->{name} . ": " . $into->{value} . "\n");
                 push @$stelements, $into;
                 return;
             }
             else {
                 my $inner = [ $node, $stack ];
                 my $into = build_xpath( [$node, $stack, $xml, $level ] );
-                #put_file( '-'x$level . $into->{name} .  "\n");
                 foreach my $el ( $innertype->childNodes ) {
                     $level++;
                     traverse_schema_to_pdf( $baseschemael, $targetns, $el, $xml, 
@@ -109,24 +94,19 @@ sub traverse_schema_to_pdf {
                     $level--;
                 }
                 push @$stelements, close_xpath();
-                #put_file( '-'x$level . "\n" );
             }
         }
         when ('sequence') {
             my $into = build_xpath( [$node, $stack, $xml, $level ] );
             if( ($into->{maxOccurs} != 0) ) {
-                #warn Dumper $into;
                 my $xml_espec = getValue( $into->{path}, $xml);
-                #warn Dumper $xml_espec;
                 if( defined $xml_espec && scalar @{$xml_espec} > 0) {
-                    #my @xmlspec = @{$xml_espec};
                     for my $ele (@{$xml_espec} ) {
 
                         foreach my $key (keys %{$ele} ) {
                             push @{$stelements}, $into;
                             my $nxml = clone $xml;
                             &t( $nxml, $ele->{$key}[0], $into->{path});
-                            #put_file( Dumper $nxml);
 
                             foreach my $el ( $node->childNodes ) {
                                 $level++;
@@ -172,7 +152,6 @@ sub build_xpath {
     my $stack = shift;
     my ( $node, $outer, $xml, $level ) = @$stack;
     my $outer_info = { path => '' };
-    #warn Dumper @$stack;
     $outer_info = build_xpath($outer) if $outer;
 
     if ( ref $node eq 'XML::LibXML::Element'
@@ -226,10 +205,7 @@ sub t {
     my @p = split /\//o, $path;
     shift @p;
     shift @p;
-    #print "@p\n";
-
     &walk($nxml, $nv, \@p);
-
 }
 
 sub walk {
@@ -318,7 +294,7 @@ sub create_pdf{
     my $textPosY = 810;
     my $textWidth = 220;
     my $textWidthTitle = 200;
-    my $textSize = 16;
+    my $textSize = 12;
     my $txt_space_line = 3;
     my $space_between = 10;
     my $color_even = '#dddddd';
@@ -364,7 +340,7 @@ sub create_pdf{
                 my $count_geral = 0;
                 $count_geral++ while $text_label =~ /\n/g;
 
-                if( ($yPos - ($textSize * ($count_geral+2) )) <= 0 ) {
+                if( ($yPos - ($textSize * ($count_geral+3) )) <= 0 ) {
                     $pdf->newpage();
                     $pdf->openpage;
                     $yPos = $pageheight - $textSize;
@@ -388,7 +364,7 @@ sub create_pdf{
 
                 #criando a linha de fechamento lateral
                 $pdf->drawLine( 3 + ($nivel * 10),      #x1 - larg
-                                $yPos + ($textSize/2),      #y1 - altura
+                                $yPos + ($textSize/2),  #y1 - altura
                                 3 + ($nivel * 10),      #x2
                                 $yPos - ($textSize * $count_geral) ); #y2
 
@@ -432,7 +408,9 @@ sub create_pdf{
                     $text_value = &textWrapper( $pdf, $arr[$i]->{value}, $textWidthValue);
                 } else {
                     my $date = $arr[$i]->{value};
-                    $date =~ s{(\d+)-(\d+)-(\d+)}{$3/$2/$1};
+                    if(defined $date) {
+                        $date =~ s{(\d+)-(\d+)-(\d+)}{$3/$2/$1};
+                    }
                     $text_value = &textWrapper( $pdf, $date, $textWidthValue);
                 }
 
@@ -521,7 +499,7 @@ sub create_pdf{
                 $pdf->drawLine( 3 + ($j * 10),       #x1 - larg
                                 $yPos + $textSize,   #y1 - altura
                                 3 + ($j * 10),       #x2
-                                $yPos ); #y2
+                                $yPos );             #y2
 
                 $pdf->drawLine( $pagewidth - (3 + ($j * 10)), 
                                 $yPos + $textSize, 
@@ -531,7 +509,7 @@ sub create_pdf{
             $nivel--;
 
             #criando a linha de fechamento lateral
-            $pdf->drawLine( 3 + ($nivel * 10),    #x1 - larg
+            $pdf->drawLine( 3 + ($nivel * 10),      #x1 - larg
                             $yPos + ($textSize/2),  #y1 - altura
                             3 + ($nivel * 10),      #x2
                             $yPos + $textSize );    #y2
@@ -552,8 +530,7 @@ sub create_pdf{
             $pdf->setAddTextPos( $textPosX, $yPos - $textSize );
         }
     }
-    return $pdf->Finish();
-    #$pdf->saveAs( $file );
+    return $pdf->Finish();    
 }
 
 sub textWrapper {
