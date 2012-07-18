@@ -1,0 +1,370 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh-encaminhamento-rede-retarguarda-ddh.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh-encaminhamento-rede-retarguarda-ddh.xsd"
+    elementFormDefault="qualified">
+        
+        <!-- Begin  --> 
+        <xs:element name="encaminhamentoRedeRetaguarda" type="encaminhamentoRedeRetaguarda">
+            <xs:annotation>
+                <xs:appinfo>
+                    <xhtml:label>DDH - ENCAMINHAMENTO PARA A REDE DE RETAGUARDA</xhtml:label>
+                    <class:classificacoes>
+                        <class:classificacao>cn=DDH,cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+                    </class:classificacoes>
+                    <!--  indices  
+                    <idx:index>
+                        <idx:hint key="pessoa.numeronis" xpath="encaminhamentoRedeRetaguarda/numeronis"/>
+                        <idx:hint key="pessoa.nome" xpath="encaminhamentoRedeRetaguarda/responsavel/nomresp"/>
+                        <idx:hint key="pessoa.numerocpf" xpath="encaminhamentoRedeRetaguarda/numerocpf"/>
+                        <idx:hint key="pessoa.numnismembro" xpath="encaminhamentoRedeRetaguarda/compfamiliar/numnismembro"/>
+                        <idx:hint key="pessoa.nomemembro" xpath="encaminhamentoRedeRetaguarda/compfamiliar/nommembro"/>
+                        <idx:hint key="pessoa.rgmembro" xpath="encaminhamentoRedeRetaguarda/compfamiliar/rgmembro"/>
+                        <idx:hint key="pessoa.cpfmembro" xpath="encaminhamentoRedeRetaguarda/compfamiliar/cpfmembro"/>
+                    </idx:index>
+                    -->
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>
+        
+        <xs:complexType name="encaminhamentoRedeRetaguarda"><xs:sequence>
+                
+                <!-- Begin fieldset -  -->  
+                <xs:element name="ondeFoiEncaminhamento" minOccurs="0" >
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Para onde foi encaminhado</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            
+                            <!-- Begin field checkbox -->       
+                            <xs:element name="cCCRA" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Centro de Referência da Criança e do Adolescente – CCRA </xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->  
+
+
+                                <!-- Begin field checkbox -->       
+                                <xs:element name="escritorioEDDH" minOccurs="0" type="xs:boolean">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Escritório de Defesa de Direitos Humanos – EDDH </xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                </xs:element>
+                                <!-- End field checkbox-->      
+
+                                <!-- Begin field checkbox -->       
+                                <xs:element name="centroReferenciaCRM" minOccurs="0" type="xs:boolean">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Centro de Referência da Mulher Francisca Clotilde – CRM </xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                </xs:element>
+                                <!-- End field checkbox-->      
+
+                                <!-- Begin field checkbox -->       
+                                <xs:element name="centroReferenciaLGBT" minOccurs="0" type="xs:boolean">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Centro de Referência LGBT Janaína Dutra</xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                </xs:element>
+                                <!-- End field checkbox-->    
+
+                                  <!-- Begin field checkbox -->        
+                                  <xs:element name="conselhoTutelar" minOccurs="0" type="xs:boolean">
+                                      <xs:annotation>
+                                          <xs:appinfo>
+                                              <xhtml:label>Conselho Tutelar</xhtml:label>
+                                          </xs:appinfo>
+                                      </xs:annotation>
+                                  </xs:element>
+                                  <!-- End field checkbox-->   
+
+                                       <!-- Begin field selectBox -->    
+                                       <xs:element name="seConcelhoTutelar"  minOccurs="0">
+                                           <xs:annotation>
+                                               <xs:appinfo>
+                                                   <xhtml:label>Se Concelho Tutelar especifique qual:</xhtml:label>
+                                               </xs:appinfo>
+                                           </xs:annotation>
+                                           <xs:simpleType>
+                                               <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="Conselho Tutelar I" />
+                                                   <xs:enumeration value="Conselho Tutelar II" />
+                                                   <xs:enumeration value="Conselho Tutelar III" />
+                                                   <xs:enumeration value="Conselho Tutelar IV" />
+                                                   <xs:enumeration value="Conselho Tutelar V" />
+                                                   <xs:enumeration value="Conselho Tutelar VI" />
+                                               </xs:restriction>
+                                           </xs:simpleType>
+                                       </xs:element>
+                                       <!-- End field selectBox -->
+
+
+                                       <!-- Begin field checkbox -->        
+                                       <xs:element name="cras" minOccurs="0" type="xs:boolean">
+                                           <xs:annotation>
+                                               <xs:appinfo>
+                                                   <xhtml:label>CRAS</xhtml:label>
+                                               </xs:appinfo>
+                                           </xs:annotation>
+                                       </xs:element>
+                                       <!-- End field checkbox-->  
+
+                                             <!-- Begin field selectBox -->    
+                                             <xs:element name="seCRAS"  minOccurs="0">
+                                                 <xs:annotation>
+                                                     <xs:appinfo>
+                                                         <xhtml:label>Se CRAS especifique qual:</xhtml:label>
+                                                     </xs:appinfo>
+                                                 </xs:annotation>
+                                                 <xs:simpleType>
+                                                     <xs:restriction base="xs:string">
+                                                            <xs:enumeration value="CRAS Pirambu" />
+                                                            <xs:enumeration value="CRAS Barra do Ceará" />
+                                                            <xs:enumeration value="CRAS Mucuripe" />
+                                                            <xs:enumeration value="CRAS Serviluz" />
+                                                            <xs:enumeration value="CRAS Lagamar" />
+                                                            <xs:enumeration value="CRAS Praia do Futuro" />
+                                                            <xs:enumeration value="CRAS Bela Vista" />
+                                                            <xs:enumeration value="CRAS Quintino Cunha" />
+                                                            <xs:enumeration value="CRAS Vila União" />
+                                                            <xs:enumeration value="CRAS Serrinha" />
+                                                            <xs:enumeration value="CRAS Couto Fernandes" />
+                                                            <xs:enumeration value="CRAS Granja Portugal" />
+                                                            <xs:enumeration value="CRAS Bom Jardim" />
+                                                            <xs:enumeration value="CCRAS Mondubim" />
+                                                            <xs:enumeration value="CRAS Genibaú" />
+                                                            <xs:enumeration value="CRAS Conjunto Esperança" />
+                                                            <xs:enumeration value="CRAS Canindezinho" />
+                                                            <xs:enumeration value="CRAS Aracapé" />
+                                                            <xs:enumeration value="CRAS Conjunto Palmeiras" />
+                                                            <xs:enumeration value="CRCAS Jardim das Oliveiras" />
+                                                            <xs:enumeration value="CRAS Castelão" />
+                                                            <xs:enumeration value="CRAS João Paulo II" />
+                                                            <xs:enumeration value="CRAS Dendê" />
+                                                     </xs:restriction>
+                                                 </xs:simpleType>
+                                             </xs:element>
+                                             <!-- End field selectBox -->                                               
+                                       
+                                       <!-- Begin field checkbox -->        
+                                       <xs:element name="creasRegional" minOccurs="0" type="xs:boolean">
+                                           <xs:annotation>
+                                               <xs:appinfo>
+                                                   <xhtml:label>Creas Regional</xhtml:label>
+                                               </xs:appinfo>
+                                           </xs:annotation>
+                                       </xs:element>
+                                       <!-- End field checkbox-->   
+
+                                            <!-- Begin field selectBox -->    
+                                            <xs:element name="seCREAS"  minOccurs="0">
+                                                <xs:annotation>
+                                                    <xs:appinfo>
+                                                        <xhtml:label>Se CREAS Regional especifique qual:</xhtml:label>
+                                                    </xs:appinfo>
+                                                </xs:annotation>
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="CREAS I" />
+                                                        <xs:enumeration value="CREAS II" />
+                                                        <xs:enumeration value="CREAS III" />
+                                                        <xs:enumeration value="CREAS Regional – STDS" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <!-- End field selectBox -->
+
+                                        <!-- Begin field checkbox -->        
+                                        <xs:element name="supervisorConcelhoTutelar" minOccurs="0" type="xs:boolean">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+                                                    <xhtml:label>Supervisão dos Conselhos Tutelares</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <!-- End field checkbox--> 
+
+                                       <!-- Begin field checkbox -->        
+                                       <xs:element name="centroPOP" minOccurs="0" type="xs:boolean">
+                                           <xs:annotation>
+                                               <xs:appinfo>
+                                                   <xhtml:label>Centro POP</xhtml:label>
+                                               </xs:appinfo>
+                                           </xs:annotation>
+                                       </xs:element>
+                                       <!-- End field checkbox-->   
+                                         <!-- Begin field checkbox -->        
+                                        <xs:element name="centroCIAPREVI" minOccurs="0" type="xs:boolean">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+                                                    <xhtml:label>Centro Integrado de Atenção e Prevenção à Violência contra a Pessoa Idosa – CIAPREVI</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <!-- End field checkbox-->  
+
+                                      <!-- Begin field checkbox -->        
+                                      <xs:element name="defensoriaPublica" minOccurs="0" type="xs:boolean">
+                                          <xs:annotation>
+                                              <xs:appinfo>
+                                                  <xhtml:label>Defensoria Pública</xhtml:label>
+                                              </xs:appinfo>
+                                          </xs:annotation>
+                                      </xs:element>
+                                      <!-- End field checkbox-->   
+
+                                        <!-- Begin field selectBox -->    
+                                        <xs:element name="esDefensoriaPublica"  minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+                                                    <xhtml:label>Se Defensoria Pública  especifique qual:</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="Núcleo Central de Atendimento" />
+                                                    <xs:enumeration value="Núcleo de Defesa do Consumidor" />
+                                                    <xs:enumeration value="Núcleo do Idoso" />
+                                                    <xs:enumeration value="Núcleo de Direitos Humanos e Ações  Coletivas" />
+                                                    <xs:enumeration value="Núcleo de Enfrentamento à Violência contra a Mulher" />
+                                                    <xs:enumeration value="Núcleo de Atendimento ao preso provisório" />
+                                                    <xs:enumeration value="Núcleo de Especializado em Execuções Penais – NUDEP " />
+                                                    <xs:enumeration value="Núcleo de Atendimento da Defensoria Pública a Infância e Juventude" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- End field selectBox -->
+
+                                        <!-- Begin field checkbox -->        
+                                        <xs:element name="ministerioPublico" minOccurs="0" type="xs:boolean">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+                                                    <xhtml:label>Ministério Público</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <!-- End field checkbox--> 
+
+
+                                   <!-- Begin field selectBox -->    
+                                   <xs:element name="seMinisterioPublico"  minOccurs="0">
+                                       <xs:annotation>
+                                           <xs:appinfo>
+                                               <xhtml:label>SE Ministério Público</xhtml:label>
+                                           </xs:appinfo>
+                                       </xs:annotation>
+                                       <xs:simpleType>
+                                           <xs:restriction base="xs:string">
+                                                <xs:enumeration value="DECON" />
+                                                <xs:enumeration value="Núcleo de Defesa da Cidadania" />
+                                                <xs:enumeration value="Núcleo de Defesa do Idoso e da Pessoa com Deficiência" />
+                                                <xs:enumeration value="Núcleo de Defesa da Educação" />
+                                                <xs:enumeration value="Promotorias da Infância e Juventude" />
+                                                <xs:enumeration value="Promotoria de Justiça e do Meio Ambiente e Planejamento Urbano" />
+                                                <xs:enumeration value="Promotoria de Defesa e da Saúde Pública" />
+                                                <xs:enumeration value="Promotoria de Justiça do Juizado de Violência Doméstica e Familiar contra a Mulher" />
+                                           </xs:restriction>
+                                       </xs:simpleType>
+                                   </xs:element>
+                                   <!-- End field selectBox -->
+
+                                   <!-- Begin field checkbox -->        
+                                   <xs:element name="cIOPS" minOccurs="0" type="xs:boolean">
+                                       <xs:annotation>
+                                           <xs:appinfo>
+                                               <xhtml:label>Coordenadoria Integrada de Operações de Segurança – CIOPS</xhtml:label>
+                                           </xs:appinfo>
+                                       </xs:annotation>
+                                   </xs:element>
+                                   <!-- End field checkbox-->  
+
+                                 <!-- Begin field checkbox -->        
+                                 <xs:element name="escritorioFreiTitoAlencar" minOccurs="0" type="xs:boolean">
+                                     <xs:annotation>
+                                         <xs:appinfo>
+                                             <xhtml:label>Escritório Frei Tito de Alencar</xhtml:label>
+                                         </xs:appinfo>
+                                     </xs:annotation>
+                                 </xs:element>
+                                 <!-- End field checkbox--> 
+
+                                <!-- Begin field checkbox -->        
+                                <xs:element name="raizesCidadania" minOccurs="0" type="xs:boolean">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Raízes de Cidadania</xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                </xs:element>
+                                <!-- End field checkbox--> 
+
+                                <!-- Begin field checkbox -->        
+                                <xs:element name="ponteEncontro" minOccurs="0" type="xs:boolean">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Ponte de Encontro</xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                </xs:element>
+                                <!-- End field checkbox--> 
+
+
+                                   <!-- Begin field checkbox -->        
+                                   <xs:element name="redeAquarela" minOccurs="0" type="xs:boolean">
+                                       <xs:annotation>
+                                           <xs:appinfo>
+                                               <xhtml:label>Rede Aquarela</xhtml:label>
+                                           </xs:appinfo>
+                                       </xs:annotation>
+                                   </xs:element>
+                                   <!-- End field checkbox-->
+
+                                    <!-- Begin field checkbox -->        
+                                    <xs:element name="outros" minOccurs="0" type="xs:boolean">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Outros</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <!-- End field checkbox-->
+
+                                    <!-- Begin field Input Text -->    
+                                    <xs:element name="seOutros" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Se Outros especifique qual:</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="255" />
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <!-- End field Input Text -->                                                         
+                        </xs:sequence>  
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- End fieldset -  -->    
+            </xs:sequence>
+        </xs:complexType>
+        <!-- End  -->   
+        
+</xs:schema>    
