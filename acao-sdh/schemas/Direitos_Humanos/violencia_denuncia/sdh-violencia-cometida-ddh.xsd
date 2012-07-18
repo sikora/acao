@@ -1,0 +1,616 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh_violencia_cometida_ddh.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh_violencia_cometida_ddh.xsd"
+    elementFormDefault="qualified">
+        
+        <!-- Begin  -->    
+        <xs:element name="violenciaCometida" type="violenciaCometida">
+            <xs:annotation>
+                <xs:appinfo>
+                    <xhtml:label>DDH - VIOLÊNCIA  COMETIDA </xhtml:label>
+                    <class:classificacoes>
+                        <class:classificacao>cn=DDH,cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+                    </class:classificacoes>
+                        <idx:index>
+                            <idx:hint key="pessoa.nome" xpath="dadosVitima/nomeVitima" />
+                            <idx:hint key="pessoa.nome" xpath="dadosVitima/nomeSocial" />
+                        </idx:index>                    
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>        
+        
+        <xs:complexType name="violenciaCometida">
+            <xs:sequence>
+                <!-- Begin  complexType -->
+                <xs:element name="violenciaCometidaContra">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Violência cometida contra </xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="crianca" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Criança</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->    
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="adolescente" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Adolescente</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->                            
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="pessoaDeficiencia" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Pessoa com deficiência</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox-->  
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="negro" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Negro</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="negra" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Negra</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="idoso" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Idoso</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="idosa" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Idosa</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="mulher" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Mulher</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="homem" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Homem</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="jovem" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Jovem</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="lgbt" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>LGBT</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="imigranteAfricano" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Imigrante africano</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="populacaoDeRua" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>População de rua</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="populacaoCarceraria" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>População carcerária</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="outros" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Outros</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+
+
+
+                            <!-- Begin field Input Text -->    
+                            <xs:element name="especifiqueOutros" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Especifique Outros</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- End field Input Text -->                                                        
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- End  complexType-->         
+
+              <!-- Begin  complexType -->
+                <xs:element name="tipificacaoDenuncia ">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Tipificação da denúncia  </xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="abusoSexual" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Abuso Sexual</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->    
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="abandonoIncapaz" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Abandono de incapaz</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->                            
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="abandonoMaterial" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Abandono material</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox-->  
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="abandonoIntelectual" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Abandono intelectual</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="acompanhamentoFamiliar" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Acompanhamento familiar</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="ameaça" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Ameaça</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="autoAgressao" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Auto agressão</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="carcerePrivado" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Cárcere privado</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="conflitoLei" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Conflito com a lei</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="conflitoFamiliar" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Conflito familiar</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="conflitoComunitario" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Conflito comunitário</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="constrangimentoIlegal" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Constrangimento ilegal</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="CorrupcaoMenores" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Corrupção de menores</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="desaparecimento" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Desaparecimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="exploracaoEconômica" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Exploração econômica</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="exploracaSexual" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Exploração Sexual</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="estupro" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Estupro</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="fornecimentoDrogaIlicita" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Fornecimento de Droga Lícita ou Ilícita</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                             <!-- Begin field checkbox -->        
+                            <xs:element name="injuriaRacial" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Injúria racial</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="mausTratos" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Maus tratos</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="mendicancia" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Mendicância</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="negligencia" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Negligência</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="omissaoInstitucional" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Omissão institucional</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="pornografiaInfantil" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Pornografia infantil</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="racismo" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Racismo</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="sequestro" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Sequestro</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="situacaoRua" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Situação de rua</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="traficoDrogas" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Tráfico de drogas</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="traficoOrgaos" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Tráfico de órgãos</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                             <!-- Begin field checkbox -->        
+                            <xs:element name="traficoFinsTrabalhoEscravo" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Tráfico para fins de trabalho escravo</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="trabalhoInfantil" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Trabalho infantil</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox--> 
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="violenciaFisica" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Violência física</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="violenciaInstitucional" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Violência institucional</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="violenciaPpsicologica" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Violência psicológica</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="violenciaDomestica" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Violência doméstica</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="violenciaMoral" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Violência moral</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                             <!-- Begin field checkbox -->        
+                            <xs:element name="outros" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Outros</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+
+
+
+                            <!-- Begin field Input Text -->    
+                            <xs:element name="especifiqueOutros" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Se Outros Especifique Qual</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- End field Input Text -->                                                        
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+        <!-- End  -->    
+        
+</xs:schema>   
