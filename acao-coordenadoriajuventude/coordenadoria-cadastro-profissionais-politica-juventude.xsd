@@ -102,7 +102,7 @@
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="genero" minOccurs="1">
+			<xs:element name="genero" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Gênero:</xhtml:label>
@@ -250,7 +250,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="qualEscolaridade"  minOccurs="1">
+						<xs:element name="qualEscolaridade"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Escolaridade:</xhtml:label>
