@@ -276,12 +276,6 @@ txn_method 'visualizar' => authorized $role_visualizar => sub {
 # ###################################################################################################################### ARTZ
 sub pdf {
     my ( $self, $id_volume, $controle, $id_documento, $ip ) = @_;
-    warn "------------------------------------------------------@@@\n";
-    warn $id_volume . "---\n";
-    warn $controle . "---\n";
-    warn $id_documento . "---\n";
-    warn $ip . "---\n";
-    warn "------------------------------------------------------@@@\n";
     # pega o xsd
     my $xsdDoc = $self->obter_xsd_documento( $id_volume, $controle, $id_documento);
     my $xsd = $self->obter_xsd_documento_content ( $xsdDoc );
