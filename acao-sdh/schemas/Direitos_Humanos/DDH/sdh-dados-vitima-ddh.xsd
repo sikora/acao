@@ -1,0 +1,192 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh-dados-vitima-ddh.xsd"
+	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh-dados-vitima-ddh.xsd"
+	elementFormDefault="qualified">
+		elementInicial
+
+		<!-- Begin  -->	
+		<xs:element name="dadosVitima" type="dadosVitima">
+			<xs:annotation>
+				<xs:appinfo>
+					<xhtml:label>DDH - DADOS DA VITIMA</xhtml:label>
+					<class:classificacoes>
+		                <class:classificacao>cn=DDH,cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+					</class:classificacoes>
+						<idx:index>
+							<idx:hint key="pessoa.nome" xpath="dadosVitima/nomeVitima" />
+							<idx:hint key="pessoa.nome" xpath="dadosVitima/nomeSocial" />
+						</idx:index>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:element>
+		
+		<xs:complexType name="dadosVitima">
+			<xs:sequence>
+						
+				<!-- Begin field Input Text -->	
+				<xs:element name="nomeVitima" minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Nome da Vítima</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field Input Text -->
+
+
+				<!-- Begin field Input Text -->	
+				<xs:element name="nomeSocial" minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Nome Social</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field Input Text -->
+
+
+				<!-- Begin field selectBox -->	
+				<xs:element name="idadeVitima"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Qual a idade da Vítima</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Até 3 anos" />
+							<xs:enumeration value="Entre 4 e 7 anos" />
+							<xs:enumeration value="Entre 8 anos e 12 anos" />
+							<xs:enumeration value="Entre 13 e 17 anos" />
+							<xs:enumeration value="Entre 18 e 25 anos" />
+							<xs:enumeration value="Entre 26 e 35 anos" />
+							<xs:enumeration value="Entre 36 e 45 anos" />
+							<xs:enumeration value="Entre 46 e 57 anos" />
+							<xs:enumeration value="Entre 58 e 65 anos" />
+							<xs:enumeration value="Acima de 66 anos" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+
+				<!-- Begin field selectBox -->	
+				<xs:element name="sexoVitima"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Qual o sexo da Vítima</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Masculino" />
+							<xs:enumeration value="Feminino" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field selectBox -->
+						<!-- Begin field selectBox -->	
+				<xs:element name="regionalMoraVitima"  minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Regional de onde a vítima mora</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="SER I" />
+							<xs:enumeration value="SER II" />
+							<xs:enumeration value="SER III" />
+							<xs:enumeration value="SER IV" />
+							<xs:enumeration value="SER V" />
+							<xs:enumeration value="SER VI" />
+							<xs:enumeration value="SER CENTRO" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element> 	
+				
+				
+						
+				<!-- Begin field Input Text -->	
+				<xs:element name="pontoReferencia" minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Ponto de Referência</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field Input Text -->
+
+
+				<!-- Begin field Input Text -->	
+				<xs:element name="telefoneCasa" minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Telefone Casa</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field Input Text -->
+
+
+				<!-- Begin field Input Text -->	
+				<xs:element name="telefoneTrabalho" minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Telefone Trabalho</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field Input Text -->
+
+				<!-- Begin field Input Text -->	
+				<xs:element name="telefoneCelular" minOccurs="0">
+					<xs:annotation>
+						<xs:appinfo>
+							<xhtml:label>Telefone Celular</xhtml:label>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- End field Input Text -->
+				
+				
+				
+				
+			</xs:sequence>
+		</xs:complexType>
+		<!-- End  -->	
+		
+</xs:schema>	
