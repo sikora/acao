@@ -103,7 +103,6 @@ sub genpdf : Chained('base') : PathPart('genpdf') : Args(0) {
     } else {
         $where_tipo_documento = '1 = 1';
     }
-    #$c->stash->{template} = 'auth/vazio.tt';
     my $num_por_pagina = 30;
     my $interval_ini = $c->req->param('interval_ini');
     if ( !$interval_ini ) {
@@ -132,9 +131,8 @@ sub genpdf : Chained('base') : PathPart('genpdf') : Args(0) {
     }
     $c->model('Sedna')->commit();
 
-    if(scalar @docs <= 1) {
+    if(scalar @docs <= 0) {
         $c->stash->{template} = 'auth/registros/volume/dossie/documento/sem_documentos.tt';
-        warn "oi-------------------------------------------------------------------------------------------------------\n";
         return 1;
     } else {
 
