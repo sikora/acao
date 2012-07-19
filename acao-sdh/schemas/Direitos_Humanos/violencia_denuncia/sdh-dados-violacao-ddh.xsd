@@ -1,0 +1,399 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh_dados_violacao_ddh.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh_dados_violacao_ddh.xsd"
+    elementFormDefault="qualified">
+        
+        <!-- Begin  -->    
+        <xs:element name="dadosViolacao" type="dadosViolacao">
+            <xs:annotation>
+                <xs:appinfo>
+                    <xhtml:label>DDH - DADOS DA VIOLAÇÃO</xhtml:label>
+                    <class:classificacoes>
+                        <class:classificacao>cn=DDH,cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+                    </class:classificacoes>
+                        <idx:index>
+                            <idx:hint key="pessoa.nome" xpath="dadosVitima/nomeVitima" />
+                            <idx:hint key="pessoa.nome" xpath="dadosVitima/nomeSocial" />
+                        </idx:index>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>        
+        
+        <xs:complexType name="dadosViolacao">
+            <xs:sequence> 
+                                   <!-- Begin field textarea  -->    
+                    <xs:element name="horaViolacao" minOccurs="0">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <xhtml:label>Hora Violação</xhtml:label>
+                            </xs:appinfo>
+                        </xs:annotation>
+                            <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="255" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+
+<!-- End field textarea  -->
+
+                <!-- Begin field selectBox -->  
+                <xs:element name="turnoLigacao"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Turno da ligação</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Manhã" />
+                            <xs:enumeration value="Tarde" />
+                            <xs:enumeration value="Noite" />
+                            <xs:enumeration value="Madrugada" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field selectBox -->
+
+                <!-- Begin field selectBox -->  
+                <xs:element name="diasSemana"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Dias da semana</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Segunda-feira" />
+                            <xs:enumeration value="Terça-feira" />
+                            <xs:enumeration value="Quarta-feira" />
+                            <xs:enumeration value="Quita-Feira" />
+                            <xs:enumeration value="Sext-feira" />
+                            <xs:enumeration value="Sábado" />
+                            <xs:enumeration value="Dominto" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field selectBox -->       
+
+                <!-- Begin field selectBox -->  
+                <xs:element name="diasSemana"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Dias da semana</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Denúncia" />
+                            <xs:enumeration value="Elogio" />
+                            <xs:enumeration value="Informação" />
+                            <xs:enumeration value="Reclamação" />
+                            <xs:enumeration value="Solicitação" />
+                            <xs:enumeration value="Sugestão" />
+                            <xs:enumeration value="Trote" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field selectBox --> 
+
+              <!-- Begin  complexType -->
+                <xs:element name="localViolação ">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Local da violação  </xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="casaResidência" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Casa/ residência</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->    
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="vizinhanca" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Vizinhança</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->                            
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="comunidade" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Comunidade</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox-->  
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="escola" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Escola</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="localTrabalho" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Local de trabalho</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="instituicaoPublica" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Instituição Pública</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="pracas" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Praças</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="logradouros" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Logradouros</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="terminalPapicu" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Terminal do Papicu</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="terminalAntonioBezerra" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Terminal Antônio Bezerra</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="terminalParangaba" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Terminal Parangaba</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="terminalLagoa" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Terminal Lagoa</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           
+                            <!-- End field checkbox--> 
+
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="terminalMessejana" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Terminal Messejana</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                                                        <!-- Begin field checkbox -->        
+                            <xs:element name="terminalConjuntoCeara" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Terminal Conjunto Ceará</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+
+                            <!-- End field checkbox--> 
+                             <!-- Begin field checkbox -->        
+                            <xs:element name="outros" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Outros</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+
+
+
+                            <!-- Begin field Input Text -->    
+                            <xs:element name="especifiqueOutros" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Se Outros Especifique Qual</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- End field Input Text -->                                                        
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                                       <!-- Begin field selectBox -->  
+                <xs:element name="tipoComunidade "  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Tipo de comunidade </xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Religiosa" />
+                            <xs:enumeration value="Cooperativa" />
+                            <xs:enumeration value="Território" />
+                            <xs:enumeration value="Outros" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element> 
+
+
+                <!-- Begin field Input Text -->    
+                <xs:element name="especifiqueOutros" minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Especifique Outros</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field Input Text -->
+
+
+                <!-- Begin field Input Text -->    
+                <xs:element name="endereco" minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Endereço</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field Input Text -->
+
+                <!-- Begin  autocomplete -->
+                <xs:element name="bairro" minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>bairro</xhtml:label>
+                        </xs:appinfo>
+                        <xsdext:extensions>
+                            <xsdext:engine>autoComplete</xsdext:engine>
+                            <xsdext:service>/bairros</xsdext:service>
+                        </xsdext:extensions>                                
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End  autocomplete-->
+                
+
+
+                <!-- Begin field Input Text -->    
+                <xs:element name="pontoReferencia" minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Ponto de referência </xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field Input Text -->
+                
+                
+                
+                
+                        <!-- Begin field selectBox -->  
+                <xs:element name="regional"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Regional</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="SER I" />
+                            <xs:enumeration value="SER II" />
+                            <xs:enumeration value="SER III" />
+                            <xs:enumeration value="SER IV" />
+                            <xs:enumeration value="SER V" />
+                            <xs:enumeration value="SER VI" />
+                            <xs:enumeration value="SER CENTRO" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element> 
+            </xs:sequence>
+        </xs:complexType>
+        <!-- End  -->    
+        
+</xs:schema>   

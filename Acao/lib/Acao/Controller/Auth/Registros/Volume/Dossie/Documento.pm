@@ -22,6 +22,7 @@ use Moose;
 use namespace::autoclean;
 use Data::Dumper;
 use utf8;
+use Archive::Zip qw( :ERROR_CODES :CONSTANTS );
 BEGIN { extends 'Catalyst::Controller'; }
 
 with 'Acao::Role::Auditoria' => { category => 'Documento' };
@@ -82,6 +83,88 @@ sub lista : Chained('base') : PathPart('') : Args(0) {
         return;
     }
 }
+#sub pdf : Chained('get_documento') : PathPart('pdf') : Args(0) {
+sub genpdf : Chained('base') : PathPart('genpdf') : Args(0) {
+    my ( $self, $c ) = @_;
+
+    #   Checa se user logado tem autorização para listar documentos (Ver em Dossie)
+    my $documentos_validos = $c->req->param('documentos_validos');
+    my $where_documentos_validos;
+    my $where_tipo_documento;
+    if( $documentos_validos ) {
+        $where_documentos_validos = '1 = 1';
+    } else { 
+        $where_documentos_validos = '$x/dc:invalidacao/text() = \'1970-01-01T00:00:00Z\'';
+    }
+
+    my $tipo_documento = $c->req->param('tipo_documento');
+    if ($tipo_documento) {
+        $where_tipo_documento = '$y/../../../../../@targetNamespace = "' . $tipo_documento . '"';
+    } else {
+        $where_tipo_documento = '1 = 1';
+    }
+    #$c->stash->{template} = 'auth/vazio.tt';
+    my $num_por_pagina = 30;
+    my $interval_ini = $c->req->param('interval_ini');
+    if ( !$interval_ini ) {
+        $interval_ini = 0;
+    }
+    my $xqueryret = '$x/dc:id/text()';
+    my $xquery = $c->model('Documento')->listar_documentos({
+                                                xqueryret                 => $xqueryret,
+                                                ip                        => $c->req->{address} ,
+                                                id_volume                 => $c->stash->{id_volume} ,
+                                                controle                  => $c->stash->{controle} ,
+                                                where_documentos_validos  => $where_documentos_validos,
+                                                where_tipo_documento      => $where_tipo_documento,
+                                                interval_ini              => $interval_ini,
+                                                num_por_pagina            => $num_por_pagina
+                                        });
+
+    $c->model('Sedna')->begin();
+    $c->model('Sedna')->execute( $xquery->{list} );
+
+    my @docs;
+    while (my $id_documento = $c->model('Sedna')->get_item ) {
+        my $id_documento = $c->model('Sedna')->get_item;
+        $id_documento =~ s/\n//g;
+        push (@docs, $id_documento);
+    }
+    $c->model('Sedna')->commit();
+
+    if(scalar @docs <= 1) {
+        $c->stash->{template} = 'auth/registros/volume/dossie/documento/sem_documentos.tt';
+        warn "oi-------------------------------------------------------------------------------------------------------\n";
+        return 1;
+    } else {
+
+        #Criando um zip
+        my $zip = Archive::Zip->new();
+        my $fh = undef;
+        my $string = undef;
+        my $pdf;
+        my $string_member;
+        open($fh, ">",  \$string);
+
+        foreach my $doc(@docs) {
+            if( defined $doc ) {
+                $pdf = $c->model('Documento')->pdf(
+                    $c->stash->{id_volume},    $c->stash->{controle},
+                    $doc, $c->req->{address},
+                );
+                $string_member = $zip->addString( $pdf, $doc . '.pdf' );
+                $string_member->desiredCompressionMethod( COMPRESSION_DEFLATED );        
+            }
+        }
+        unless ( $zip->writeToFileHandle( $fh ) == AZ_OK ) {
+            die 'write error';
+        }
+        $c->stash->{zip} = $string;
+        $c->stash->{filename} = $c->stash->{id_volume} . '_prontuario_' . $c->stash->{controle} . '_pdf.zip';
+        $c->forward('View::ZIP');
+    }
+}
+
 
 sub form : Chained('base') : PathPart('inserirdocumento') : Args(0) {
     my ( $self, $c ) = @_;
@@ -347,8 +430,19 @@ sub alterar : Chained('get_documento') : PathPart('alterar_documento') : Args(0)
                                                              $c->stash->{id_documento}
                                                              );
     $c->stash->{basedn}       = $c->model("LDAP")->grupos_dn;
+}
 
 
+### Criar PDF
+sub pdf : Chained('get_documento') : PathPart('pdf') : Args(0) {
+    my ($self, $c) = @_;
+    my $pdf = $c->model('Documento')->pdf(
+        $c->stash->{id_volume},    $c->stash->{controle},
+        $c->stash->{id_documento}, $c->req->address,
+    );
+
+    $c->stash->{pdf} = $pdf;
+    $c->forward('View::PDF');
 }
 
 

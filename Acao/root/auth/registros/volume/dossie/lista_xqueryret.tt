@@ -99,6 +99,9 @@
         ) else (
           <td></td> )}
 
+          <td>
+            <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/genpdf', [ id_volume,'___id_dossie___' ]).replace('___id_dossie___','{$x/ns:controle/text()}') %]"  class="_pdf" title="Gerar PDF" >Gerar PDF</a>
+          </td>
 
         <input type="hidden" id="id_dossie" name="id_dossie" value="{$x/ns:collection/text()}"/>
 

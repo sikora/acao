@@ -1260,6 +1260,18 @@ a.alterar {
 
 }
 
+a._pdf {
+  display: block;
+  width: 28px;
+  height: 22px;
+  text-indent: -9999px;
+  text-decoration: none;
+  overflow: hidden;
+  border: none;
+  padding: 0px;
+  background: url(../img/pdf.png) no-repeat ;
+}
+
 a._fechar {
     -moz-background-clip: border;
     -moz-background-origin: padding;
@@ -1275,7 +1287,6 @@ a._fechar {
     padding-top: 2px !important;
     text-indent: 1em;
     background: url(../img/application_form_delete.png) no-repeat ;
-
 }
 
 a._criar {
