@@ -313,4 +313,5 @@ function generateXsdFormUI() {
             return false;
 	    }
     });
+    updateRequired(); 
 }

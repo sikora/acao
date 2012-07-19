@@ -66,18 +66,41 @@ role {
 
     method add_autorizacoes => sub {
         my ( $self, $xml_autorizacoes, $AoH_novas_autorizacoes ) = @_;
-        my $hash = $reader->($xml_autorizacoes);
-        push @{ $hash->{autorizacao} }, @$AoH_novas_autorizacoes;
+        my $hash = $reader->($xml_autorizacoes);                
+        my $idxSpliceOffset = 0;  
+        # Copia das novas autorizações para serem checadas e nao ter problemas apos o splice
+        my @AoH_novas_autorizacoes_cp = @$AoH_novas_autorizacoes;    
+        # Adicionar novas autorizações somente se autorização nao existirem no array     
+        for (my $i = 0; $i<@AoH_novas_autorizacoes_cp; $i++) {
+          foreach my $itemArr (@{$hash->{autorizacao}} ) {   
+            if ($itemArr->{principal} eq $AoH_novas_autorizacoes_cp[$i]->{principal}
+                 && $itemArr->{role} eq  $AoH_novas_autorizacoes_cp[$i]->{role})  {                       
+                splice @$AoH_novas_autorizacoes,  $i - $idxSpliceOffset++ , 1 ;                
+            } 
+          }
+        }                  
+        push @{ $hash->{autorizacao} }, @$AoH_novas_autorizacoes;             
         my $doc = XML::LibXML::Document->new( '1.0', 'UTF-8' );
         return $writer->( $doc, $hash )->toString;
     };
 
     method remove_autorizacoes => sub {
-        my ( $self, $xml_autorizacoes, @positions ) = @_;
-        my $hash = $reader->($xml_autorizacoes);
-        splice @{ $hash->{autorizacao} }, $_, 1, () for reverse sort @positions;
+        my ( $self, $xml_autorizacoes, $positions, $lotacao, $role ) = @_;
+        my $hash = $reader->($xml_autorizacoes);                
+        my @array ;
+        my $refHash;
+        foreach my $node (@{ $hash->{autorizacao}}) {        
+            if ($role eq 'todos') {
+               if ($node->{principal} ne $lotacao)   {         
+                   push @array, $node;                           
+               }
+            } elsif (($node->{principal} ne $lotacao) || ($node->{role} ne $role))  {         
+                push @array, $node;                                                          
+            }                  
+        }     
+        $refHash->{autorizacao} = \@array;         
         my $doc = XML::LibXML::Document->new( '1.0', 'UTF-8' );
-        return $writer->( $doc, $hash )->toString;
+        return $writer->( $doc, $refHash )->toString;
     };
 
     method build_autorizacao_AoH => sub {
@@ -85,12 +108,12 @@ role {
         my @cart_p     = sort( (@$principal) x @$role );
         my @cart_r     = (@$role) x @$principal;
         my @permissoes = pairwise { { principal => $a, role => $b } } @cart_p,
-          @cart_r;
+          @cart_r;          
         return \@permissoes;
     };
 
     method desserialize_autorizacoes => sub {
-        my ( $self, $xml_autorizacoes ) = @_;
+        my ( $self, $xml_autorizacoes ) = @_;       
         return $reader->($xml_autorizacoes);
     };
 
@@ -120,7 +143,7 @@ Este método retona um XML das Autorizações do Volume
         $self->sedna->begin;
         $self->sedna->execute($query);
         my $xml = $self->sedna->get_item();
-        $self->sedna->commit;
+        $self->sedna->commit;        
         return $xml;
     };
 

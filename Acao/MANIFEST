@@ -209,6 +209,9 @@ root/static/js/plugins/jquery.ui-1.8.6.custom.min.js
 root/static/js/plugins/jquery.validate.js
 root/static/js/plugins/ui.datepicker-pt-BR.js
 root/static/js/xsdForm.js
+root/static/js/libs/base64.js
+root/static/js/libs/sprintf.js       
+root/static/js/jspdf.js
 schemas/auditoria.xsd
 schemas/controleconsolidacao.xsd
 schemas/controledigitacao.xsd

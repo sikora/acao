@@ -1,4 +1,4 @@
-html
+html 
 {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
@@ -18,7 +18,12 @@ h2 {
 }
 a, a:active, a:hover, a:visited {
   color: #CC0000;
-  text-decoration: underline;
+  text-decoration: underline;  
+  border-radius: 2px;
+}
+li {
+  list-style: none;
+
 }
 
 #topo
@@ -819,9 +824,51 @@ body.relatorio thead th { background-color: white; color: black; }
   margin-right: 5px;
 
 }
+.consultaLdap_new li {
+  height: 25px;
+
+}
+
+.consultaLdap_new fieldset {
+  padding: 5px 5px 0px 0px !important;
+
+}
 
 .dnLdap, .dnAssunto, .dnLocal {
-  width: 274px !important;
+  width: 410px !important;
+}
+span.authLegenda {
+  font-size: 10px !important;
+  color: #666;
+
+}
+#grid-autorizacoes .permissoes {
+  width: 250px;
+
+}
+#grid-autorizacoes .bt_remove_right {
+    background-image: url('../img/cross.png');
+    background-repeat: no-repeat;
+    z-index: 99999999;
+    width: 20px !important;
+    text-indent: 10015px !important;
+    float: left;
+}
+
+#grid-autorizacoes li {
+    list-style: none;
+    height: 18px;
+}
+#grid-autorizacoes li:hover {
+    background-color: #FFFFAF;
+}
+#grid-autorizacoes a {
+    background-image: url('../img/cross.png');
+    background-repeat: no-repeat;
+    z-index: 99999999;
+    width: 20px !important;
+    text-indent: 10015px !important;
+    float: right;
 }
 
 #grid-autorizacoes table {
@@ -1177,6 +1224,23 @@ a.retirar_acao {
   float: right;
 }
 
+/*a.pdf {
+    -moz-background-clip: border;
+    -moz-background-origin: padding;
+    -moz-background-size: auto auto;
+    background-attachment: scroll;
+    background-color: transparent;
+    background: url(../img/print.png) no-repeat;
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    line-height: 18px;
+    padding-bottom: 5px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 2px !important;
+    text-indent: 1em;
+
+}*/
 
 a.alterar {
     -moz-background-clip: border;
@@ -1196,6 +1260,18 @@ a.alterar {
 
 }
 
+a._pdf {
+  display: block;
+  width: 28px;
+  height: 22px;
+  text-indent: -9999px;
+  text-decoration: none;
+  overflow: hidden;
+  border: none;
+  padding: 0px;
+  background: url(../img/pdf.png) no-repeat ;
+}
+
 a._fechar {
     -moz-background-clip: border;
     -moz-background-origin: padding;
@@ -1211,7 +1287,6 @@ a._fechar {
     padding-top: 2px !important;
     text-indent: 1em;
     background: url(../img/application_form_delete.png) no-repeat ;
-
 }
 
 a._criar {
@@ -1248,6 +1323,25 @@ a._buscar {
 
 
 }
+
+a.pdf {
+    -moz-background-clip: border;
+    -moz-background-origin: padding;
+    -moz-background-size: auto auto;
+    background-attachment: scroll;
+    background-color: transparent;
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    line-height: 14px;
+    padding-bottom: 5px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 2px !important;
+    background: url(../img/pdf.png) no-repeat ;
+
+
+}
+
 
 /* END * icones ,Botões e Links by Carlos Wherbet */
 
@@ -1701,7 +1795,7 @@ font-weight: 600;
 }
 
 .filters {
-   height: 30px;
+    height: 30px;
 	}
 
 #voltar {font-size:13px;}
@@ -1713,4 +1807,78 @@ font-weight: 600;
     border: 2px dashed #CC0000;
     padding: 5px;
     margin: 5px;
+}
+
+
+
+/*Visual do formulário como Relatório -  retirando aparecendia de formulário*/
+
+.styleFormLikeReport input{
+  margin: 0px ;
+  padding: 0px ;
+  background-color: transparent ;
+  border: medium none ;
+  height: 12px ;
+  margin: 0 ;
+  padding: 0 ;
+
+}
+
+.styleFormLikeReport textarea{
+
+  border: none;
+  background: transparent ;
+  margin: 0px ;
+  padding: 0px ;
+  resize: none;
+}
+
+
+
+.styleFormLikeReport select{
+  margin: 0px ;
+  padding: 0px ;
+}
+
+.styleFormLikeReport dl{
+  margin: 0px ;
+  padding: 0px ;
+
+}
+.styleFormLikeReport dl dt {    
+  top: 0px ;
+  margin: 0 ;
+  padding-left: 5px;
+
+  
+
+
+}
+.styleFormLikeReport dl dd {
+  margin: 0px ;
+  margin-top: -1px ;
+  border-bottom: 1px dashed #CCCCCC;  
+  margin-bottom: -24px ;
+
+}
+
+.styleFormLikeReport fieldset{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  resize: none !important;
+
+}
+.styleFormLikeReport input:checked{
+  background-color: #fff;
+  
+}
+
+.styleFormLikeReport input[type="checkbox"]{
+  background-color: #fff;
+
+}
+
+.styleFormLikeReport input, .styleFormLikeReport select, .styleFormLikeReport textarea {
+      margin: 0px ;
+    padding: 0px ;
 }

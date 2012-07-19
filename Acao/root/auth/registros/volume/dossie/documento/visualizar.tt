@@ -113,6 +113,7 @@
  <fieldset>
    <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/visualizar_por_tipo', [ id_volume, controle, id_documento ])%]" class="_buscar">Visualizar Todos Deste Tipo</a>
    <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/alterar', [ id_volume, controle, id_documento ]) %]" class="alterar" >Alterar Documento</a>
+   <a href="[% c.uri_for_action('/auth/registros/volume/dossie/documento/pdf', [ id_volume, controle, id_documento ]) %]" class="pdf" >Gerar PDF</a>
  </fieldset>
 
 [% IF invalidacao == '1970-01-01T00:00:00Z' %]
@@ -121,7 +122,7 @@
    [%  END %]
 <br/><br/>
 
- <div id="form_container"></div>
+ <div id="form_container" [% classVisualizar %]></div>
   <input type="hidden" name="view" value="visualizar"/>
   [% IF c.model('Documento').pode_alterar_documento(id_volume,controle,id_documento) %]
 
@@ -136,7 +137,62 @@
     [%# END %]
 [%# END %]
 
+[% IF classVisualizar %]
+  <script type="text/javascript">
+  $(document).ready(function() {
+      $('.styleFormLikeReport dt').css('padding-top','5px');
+      $('.styleFormLikeReport dt').css('padding-bottom','5px');
+      $('.styleFormLikeReport dd').css('padding-top','5px');
+      $('.styleFormLikeReport dd').css('padding-bottom','5px');
+      $('select').each(function () {              
+                $(this).replaceWith('<input type="text"  value="' + $(this).children('option:selected').val() + '" > ' );
+              });
 
+      $('textarea').each(function () {     
+          if (!$(this).val()) {            
+            $(this).css('height','');               
+          }  else {
+            $(this).elastic();  
+          }
+
+        });
+      $('.styleFormLikeReport dt').each(function () {     
+         
+          dt = $(this);
+          dd = $(this).next();
+          
+          
+          if ($(this).next().children().is("textarea")) {
+            alturadt = $(this).next().children().height();
+            alturadd = -$(this).next().children().height()+4;          
+           
+            
+            dt.css('padding-bottom',alturadt) ;
+            dd.css('margin-top',alturadd);
+            dd.css('padding-bottom',14);
+          }  
+          if (dt.height() > 18)  {
+            dd.css('height',dt.height());
+            dd.css('margin-top',-(dt.height()-13));              
+          }
+          if ($(this).next().is('dt')) {
+            $('<dd>').css('height',$(this).height()+8).css('margin-top',-4).insertAfter($(this));
+           }
+        });
+
+
+      $('.styleFormLikeReport dt:even, .styleFormLikeReport dd:even').css('background-color','#eee');
+      
+
+
+      // Desabilitar os campos inputs & selects da visualização do formulário
+
+      $('input, select, textarea').attr('disabled', 'disabled');
+
+      });
+  </script>
+
+[% END %]
 
 <style rel="stylesheet" type="text/css">
   .text {
@@ -170,11 +226,6 @@
 
    generateXsdFormUI();
 
-// Desabilitar os campos inputs & selects da visualização do formulário
-
-   $(document).ready(function() {
-   		$('input, select, textarea').attr('disabled', 'disabled');
-   });
 
  </script>
 

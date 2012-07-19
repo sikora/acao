@@ -28,6 +28,7 @@ use DateTime;
 use Encode;
 use Data::UUID;
 use Data::Dumper;
+use Acao::Util::GoPDF;
 
 
 use constant DOCUMENTO_NS =>
@@ -177,6 +178,7 @@ txn_method 'inserir_documento' => authorized $role_criar => sub {
     my $uuid_str = $ug->to_string($uuid);
 
     my $conteudo_registro = $writ->( $doc, $xml_data );
+
     my $res_xml = $controle_w->(
         $doc,
         {
@@ -271,6 +273,33 @@ txn_method 'visualizar' => authorized $role_visualizar => sub {
     return $xml;
 };
 
+# ###################################################################################################################### ARTZ
+sub pdf {
+    my ( $self, $id_volume, $controle, $id_documento, $ip ) = @_;
+    warn "------------------------------------------------------@@@\n";
+    warn $id_volume . "---\n";
+    warn $controle . "---\n";
+    warn $id_documento . "---\n";
+    warn $ip . "---\n";
+    warn "------------------------------------------------------@@@\n";
+    # pega o xsd
+    my $xsdDoc = $self->obter_xsd_documento( $id_volume, $controle, $id_documento);
+    my $xsd = $self->obter_xsd_documento_content ( $xsdDoc );
+
+    my $xml = $self->visualizar( $id_volume, $controle, $id_documento, $ip );
+    my $x_c_s    = XML::Compile::Schema->new($xsd);
+    my @elements = $x_c_s->elements;
+    my $read = $x_c_s->compile( READER => $elements[0] );
+    #warn Dumper $xml;
+
+    my $xml_en = encode( 'utf8', $xml );
+    my $input_doc = XML::LibXML->load_xml( string => $xml_en );
+    my $element = $input_doc->getDocumentElement;
+    my $xml_data = $read->($element);
+
+    return Acao::Util::GoPDF::genPDF($xsd, $xml_data);
+}
+
 txn_method 'obter_xsd_documento' => authorized $role_visualizar => sub {
     my ( $self, $id_volume, $controle, $id_documento ) = @_;
 
@@ -289,6 +318,20 @@ txn_method 'obter_xsd_documento' => authorized $role_visualizar => sub {
     $self->sedna->execute($xq);
     my $ns = $self->sedna->get_item;
     return $ns;
+};
+
+
+txn_method 'obter_xsd_documento_content' => authorized $role_visualizar => sub {
+    my ( $self, $xsd_documento ) = @_;
+
+    $self->sedna->execute(
+            'for $x in collection("acao-schemas")[xs:schema/@targetNamespace="'
+          . $xsd_documento
+          . '"] return $x' );
+
+    my $xsd = $self->sedna->get_item;
+    my $octets = encode( 'utf8', $xsd );
+    return $octets;
 };
 
 txn_method 'visualizar_por_tipo' => authorized $role_visualizar => sub {
