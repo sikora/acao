@@ -1837,11 +1837,11 @@ font-weight: 600;
 .styleFormLikeReport dl dt {    
   top: 0px ;
   margin: 0 ;
-  padding-left: 5px;
+  padding-left: 5px
+}
 
-  
-
-
+.styleFormLikeReport fieldset legend span input, .styleFormLikeReport fieldset input {    
+  color: #fff;
 }
 .styleFormLikeReport dl dd {
   margin: 0px ;

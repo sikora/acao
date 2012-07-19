@@ -175,7 +175,7 @@
             dd.css('height',dt.height());
             dd.css('margin-top',-(dt.height()-13));              
           }
-          if ($(this).next().is('dt')) {
+          if ($(this).next().is('dt') ||  ($(this).attr('class') == 'dtsemdd')) {
             $('<dd>').css('height',$(this).height()+8).css('margin-top',-4).insertAfter($(this));
            }
         });
