@@ -1852,7 +1852,7 @@ font-weight: 600;
 }
 
 .styleFormLikeReport fieldset legend span input, .styleFormLikeReport fieldset input {    
-  color: #fff;
+  
 }
 .styleFormLikeReport dl dd {
   margin: 0px ;
@@ -1881,4 +1881,21 @@ font-weight: 600;
 .styleFormLikeReport input, .styleFormLikeReport select, .styleFormLikeReport textarea {
       margin: 0px ;
     padding: 0px ;
+}
+
+#grid-autorizacoes table {
+    border: medium none !important;
+}
+#grid-autorizacoes th {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    border: 0 none !important;
+    color: #000000 !important;
+    padding: 0;
+    text-shadow: none !important;
+}
+#grid-autorizacoes tbody tr {
+    border: 1px solid #CCCCCC;
+}
+#grid-autorizacoes {
+    padding-top: 56px;
 }
