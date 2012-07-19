@@ -454,7 +454,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="data" minOccurs="1" type="xs:date">
+						<xs:element name="data" minOccurs="0" type="xs:date">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Data:</xhtml:label>
