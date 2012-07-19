@@ -89,7 +89,7 @@
            [% FOREACH r IN labels_roles_advanced_negar.keys  %]
               <li>
                  <input type="checkbox" name="acoes_autorizacoes[]" value="[% r %]" />
-           [% labels_roles_advanced.item(r) %]
+           [% labels_roles_advanced_negar.item(r) %]
               </li>              
            [% END %]    
            <span class="authLegenda">Permissões se extendem a este <strong>Volume</strong>, seus <strong>Prontuários</strong>
