@@ -115,7 +115,7 @@
 									<xs:enumeration value="SER IV"/>
 									<xs:enumeration value="SER V"/>
 									<xs:enumeration value="SER VI"/>
-									<xs:enumeration value="SER CE FOR"/>
+									<xs:enumeration value="SERCEFOR"/>
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
