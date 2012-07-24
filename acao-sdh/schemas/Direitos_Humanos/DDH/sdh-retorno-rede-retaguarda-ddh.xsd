@@ -1,0 +1,342 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh_retorno_rede_retaguarda_ddh.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh_retorno_rede_retaguarda_ddh.xsd"
+    elementFormDefault="qualified">
+        
+        <!-- Begin  -->    
+        <xs:element name="RetRedeRetag" type="RetRedeRetag">
+            <xs:annotation>
+                <xs:appinfo>
+                    <xhtml:label>7 - RETORNO DA REDE DE RETAGUARDA</xhtml:label>
+                    <class:classificacoes>
+                        <class:classificacao>cn=DDH,cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+                    </class:classificacoes>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>        
+        
+        <xs:complexType name="RetRedeRetag">
+            <xs:sequence> 
+
+                <!-- Begin field selectBox -->  
+                <xs:element name="houveRet"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Houve retorno da rede de Retaguarda</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Sim" />
+                            <xs:enumeration value="Não" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field selectBox -->
+
+                <xs:element name="dtResp"  minOccurs="0" type="xs:date">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Data da resposta</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element name="deQuemResp" >
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>De quem foi a resposta</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:complexType>
+                       <xs:sequence>
+                            <xs:element name="CCRA" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Centro de Referência da Criança e do Adolescente – CCRA</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="EDDH" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Escritório de Defesa de Direitos Humanos – EDDH</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="CRM" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Centro de Referência da Mulher Francisca Clotilde – CRM</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="LGBT" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Centro de Referência LGBT Janaína Dutra</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="consTutelar" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Conselho Tutelar</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="espConsTutelar"  minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Especifique Conselho Tutelar</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Conselho Tutelar I" />
+                                        <xs:enumeration value="Conselho Tutelar II" />
+                                        <xs:enumeration value="Conselho Tutelar III" />
+                                        <xs:enumeration value="Conselho Tutelar IV" />
+                                        <xs:enumeration value="Conselho Tutelar V" />
+                                        <xs:enumeration value="Conselho Tutelar VI" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="CRAS" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>CRAS</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                           <xs:element name="espCRAS"  minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Especifique CRAS</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="CRAS Pirambu" />
+                                        <xs:enumeration value="CRAS Barra do Ceará" />
+                                        <xs:enumeration value="CRAS Mucuripe" />
+                                        <xs:enumeration value="CRAS Serviluz" />
+                                        <xs:enumeration value="CRAS Lagamar" />
+                                        <xs:enumeration value="CRAS Praia do Futuro" />
+                                        <xs:enumeration value="CRAS Bela Vista" />
+                                        <xs:enumeration value="CRAS Quintino Cunha" />
+                                        <xs:enumeration value="CRAS Vila União" />
+                                        <xs:enumeration value="CRAS Serrinha" />
+                                        <xs:enumeration value="CRAS Couto Fernandes" />
+                                        <xs:enumeration value="CRAS Granja Portugal" />
+                                        <xs:enumeration value="CRAS Bom Jardim" />
+                                        <xs:enumeration value="CRAS Mondubim" />
+                                        <xs:enumeration value="CRAS Genibaú" />
+                                        <xs:enumeration value="CRAS Conjunto Esperança" />
+                                        <xs:enumeration value="CRAS Canindezinho" />
+                                        <xs:enumeration value="CRAS Aracapé" />
+                                        <xs:enumeration value="CRAS Conjunto Palmeiras" />
+                                        <xs:enumeration value="CRAS Jardim das Oliveiras" />
+                                        <xs:enumeration value="CRAS Castelão" />
+                                        <xs:enumeration value="CRAS João Paulo II" />
+                                        <xs:enumeration value="CRAS Dendê" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="CREAS" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>CREAS</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="espCREAS"  minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Especifique CREAS</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="CREAS I" />
+                                        <xs:enumeration value="CREAS II" />
+                                        <xs:enumeration value="CREAS III" />
+                                        <xs:enumeration value="CREAS Regional STDS" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="supConsTut" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Supervisão dos Conselhos Tutelares</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="centroPop" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Centro POP</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="CIAPREVI" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>CREAS Centro Integrado de Atenção e Prevenção à Violência contra a Pessoa Idosa CIAPREVI</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="defPub" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Defensoria Pública</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="espDefPub"  minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Especifique Defensoria Pública</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Núcleo Central de Atendimento" />
+                                        <xs:enumeration value="Núcleo de Defesa do Consumidor" />
+                                        <xs:enumeration value="Núcleo do Idoso" />
+                                        <xs:enumeration value="Núcleo de Direitos Humanos e Ações  Coletivas" />
+                                        <xs:enumeration value="Núcleo de Enfrentamento à Violência contra a Mulher" />
+                                        <xs:enumeration value="Núcleo de Atendimento ao preso provisório" />
+                                        <xs:enumeration value="Núcleo de Especializado em Execuções Penais – NUDEP " />
+                                        <xs:enumeration value="Núcleo de Atendimento da Defensoria Pública a Infância e Juventude" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="minPub" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Ministério Público</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="espMinPub"  minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Especifique Ministério Público</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="DECON" />
+                                        <xs:enumeration value="Núcleo de Defesa da Cidadania" />
+                                        <xs:enumeration value="Núcleo de Defesa do Idoso e da Pessoa com Deficiência" />
+                                        <xs:enumeration value="Núcleo de Defesa da Educação" />
+                                        <xs:enumeration value="Promotorias da Infância e Juventude" />
+                                        <xs:enumeration value="Promotoria de Justiça e do Meio Ambiente e Planejamento Urbano" />
+                                        <xs:enumeration value="Promotoria de Defesa e da Saúde Pública" />
+                                        <xs:enumeration value="Promotoria de Justiça do Juizado de Violência Doméstica e Familiar contra a Mulher" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ciops" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Coordenadoria Integrada de Operações de Segurança – CIOPS</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="escFrei" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Escritório Frei Tito de Alencar</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="raizes" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Raízes de Cidadania</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="pontEnc" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Ponte de Encontro</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="redAquar" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Rede Aquarela</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="outros" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Outros</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="especifiqueOutros" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Especifique Outros</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+             
+                <xs:element name="resp" minOccurs="0" type="xs:string">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Qual foi a resposta</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>     
+
+                <xs:element name="estaEmAcomp"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>O caso está em acompanhamento</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Sim" />
+                            <xs:enumeration value="Não" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="estaEncerrado"  minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>O caso está encerrado</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Sim" />
+                            <xs:enumeration value="Não" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+        
+</xs:schema>   
