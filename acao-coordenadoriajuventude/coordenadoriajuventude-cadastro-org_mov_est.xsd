@@ -101,6 +101,24 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
+						<xs:element name="regional" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Regional:</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="SER I"/>
+									<xs:enumeration value="SER II"/>
+									<xs:enumeration value="SER III"/>
+									<xs:enumeration value="SER IV"/>
+									<xs:enumeration value="SER V"/>
+									<xs:enumeration value="SER VI"/>
+									<xs:enumeration value="SERCEFOR"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
 						<xs:element name="fone" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
@@ -454,7 +472,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="data" minOccurs="1" type="xs:date">
+						<xs:element name="data" minOccurs="0" type="xs:date">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Data:</xhtml:label>
