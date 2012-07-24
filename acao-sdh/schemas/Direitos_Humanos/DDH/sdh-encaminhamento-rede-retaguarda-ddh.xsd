@@ -11,7 +11,7 @@
         <xs:element name="encaminhamentoRedeRetaguarda" type="encaminhamentoRedeRetaguarda">
             <xs:annotation>
                 <xs:appinfo>
-                    <xhtml:label>DDH - ENCAMINHAMENTO PARA A REDE DE RETAGUARDA</xhtml:label>
+                    <xhtml:label>6 - ENCAMINHAMENTO PARA A REDE DE RETAGUARDA</xhtml:label>
                     <class:classificacoes>
                         <class:classificacao>cn=DDH,cn=Atendimento,cn=Direitos Humanos</class:classificacao>
                     </class:classificacoes>
