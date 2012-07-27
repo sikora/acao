@@ -13,7 +13,7 @@
 			<xs:appinfo>
 				<xhtml:label> FICHA DE CADASTRO DAS ORGANIZAÇÕES E MOVIMENTOS DE JUVENTUDE</xhtml:label>
 				<class:classificacoes>
-                    <class:classificacao>cn=Juventude</class:classificacao>
+                    <class:classificacao>cn=Mobilização,cn=Juventude</class:classificacao>
 				</class:classificacoes>
 				<idx:index>
 				    <idx:hint key="pessoa.nome" xpath="formPoliticaJuventude/nome" />

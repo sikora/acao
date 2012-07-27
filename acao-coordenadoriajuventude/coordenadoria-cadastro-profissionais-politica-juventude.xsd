@@ -13,7 +13,7 @@
 			<xs:appinfo>
 				<xhtml:label>FICHA DE CADASTRO DOS PROFISSIONAIS DA POLÍTICA DE JUVENTUDE</xhtml:label>
 				<class:classificacoes>
-                    <class:classificacao>cn=Juventude</class:classificacao>
+                    <class:classificacao>cn=Monitoramento,cn=Juventude</class:classificacao>
 				</class:classificacoes>
 				<idx:index>
 				    <idx:hint key="pessoa.nome" xpath="formPoliticaJuventude/nome" />
@@ -399,7 +399,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="orientacaoSexualLabel"  minOccurs="8">
+						<xs:element name="orientacaoSexualLabel"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Sexo:</xhtml:label>
