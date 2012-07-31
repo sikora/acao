@@ -35,19 +35,19 @@
 				</xs:simpleType>
 			</xs:element>
 
-                        <xs:element name="cpf" minOccurs="0">
-                                <xs:annotation>
-                                        <xs:appinfo>
-                                                <xhtml:label>CPF</xhtml:label>
-                                        </xs:appinfo>
-                                </xs:annotation>
-                                <xs:simpleType>
-                                        <xs:restriction base="xs:string">
-                                                <xs:maxLength value="255" />
-                                                <xs:pattern value="[0-9]+"/>
-                                        </xs:restriction>
-                                </xs:simpleType>
-                        </xs:element>
+	        <xs:element name="cpf" minOccurs="0">
+	                <xs:annotation>
+	                        <xs:appinfo>
+	                                <xhtml:label>CPF</xhtml:label>
+	                        </xs:appinfo>
+	                </xs:annotation>
+	                <xs:simpleType>
+	                        <xs:restriction base="xs:string">
+	                                <xs:maxLength value="255" />
+	                                <xs:pattern value="[0-9]+"/>
+	                        </xs:restriction>
+	                </xs:simpleType>
+	        </xs:element>
 
 			<xs:element name="datainsercao" minOccurs="1" type="xs:date">
 				<xs:annotation>
@@ -318,7 +318,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="usoAtualTipSubstPsicoat"  minOccurs="1">
+						<xs:element name="usoAtualTipSubstPsicoat" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>9.2.1 Qual o tipo de substância*</xhtml:label>
@@ -348,20 +348,18 @@
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
-
 						<xs:element name="qtotempo" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>9.3 A quanto tempo faz uso?</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-                                                        <xs:simpleType>
-                                                                <xs:restriction base="xs:string">
-                                                                        <xs:maxLength value="255" />
-                                                                </xs:restriction>
+                                <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255" />
+                                </xs:restriction>
 							</xs:simpleType>
-						</xs:element>
-					
+						</xs:element>					
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -408,13 +406,13 @@
 							</xs:simpleType>
 						</xs:element>
 
-                                                <xs:element name="pratTipoViolOutro" minOccurs="0" type="xs:string">
-                                                        <xs:annotation>
-                                                                <xs:appinfo>
-                                                                        <xhtml:label>Especifique outros</xhtml:label>
-                                                                </xs:appinfo>
-                                                        </xs:annotation>
-                                                </xs:element>
+                        <xs:element name="pratTipoViolOutro" minOccurs="0" type="xs:string">
+                                <xs:annotation>
+                                        <xs:appinfo>
+                                                <xhtml:label>Especifique outros</xhtml:label>
+                                        </xs:appinfo>
+                                </xs:annotation>
+                        </xs:element>
 
 						<xs:element name="sofreuTipoViol"  minOccurs="1">
 							<xs:annotation>

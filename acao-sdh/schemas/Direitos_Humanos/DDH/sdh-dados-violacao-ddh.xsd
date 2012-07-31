@@ -102,7 +102,7 @@
                 <!-- End field selectBox --> 
 
               <!-- Begin  complexType -->
-                <xs:element name="localViolação ">
+                <xs:element name="localViolação">
                     <xs:annotation>
                         <xs:appinfo>
                             <xhtml:label>Local da violação  </xhtml:label>
@@ -286,7 +286,7 @@
                 </xs:element>
 
                                        <!-- Begin field selectBox -->  
-                <xs:element name="tipoComunidade "  minOccurs="0">
+                <xs:element name="tipoComunidade"  minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
                             <xhtml:label>Tipo de comunidade </xhtml:label>
