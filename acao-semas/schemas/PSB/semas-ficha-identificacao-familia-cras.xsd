@@ -43,7 +43,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-				        <xs:element name="codfamiliar" minOccurs="1">
+				        <xs:element name="codfamiliar" minOccurs="0">
 				            <xs:annotation>
 				                <xs:appinfo>
 				                    <xhtml:label>Código Familiar *</xhtml:label>
@@ -133,7 +133,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="origatend"  minOccurs="1">
+						<xs:element name="origatend"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Origem Atendimento *</xhtml:label>
@@ -236,7 +236,7 @@
 				            </xs:simpleType>
 				        </xs:element>
 
-				        <xs:element name="numrgresp" minOccurs="1">
+				        <xs:element name="numrgresp" minOccurs="0">
 				            <xs:annotation>
 				                <xs:appinfo>
 				                    <xhtml:label>1.4 RG *</xhtml:label>
@@ -902,11 +902,18 @@
 							                    <xhtml:label>Escolaridade</xhtml:label>
 							                </xs:appinfo>
 							            </xs:annotation>
-							            <xs:simpleType>
-							                <xs:restriction base="xs:string">
-							                    <xs:maxLength value="255"/>
-							                </xs:restriction>
-							            </xs:simpleType>
+							           <xs:simpleType>
+	           								<xs:restriction base="xs:string">
+	           									<xs:enumeration value="Fundamental completo" />
+	           									<xs:enumeration value="Fundamental incompleto" />
+	           									<xs:enumeration value="Médio completo" />
+	           									<xs:enumeration value="Médio incompleto" />
+	           									<xs:enumeration value="Superior completo" />
+	           									<xs:enumeration value="Superior incompleto" />
+	           									<xs:enumeration value="Não analfabetizado" />
+	           									<xs:enumeration value="Apenas assina o nome" />
+	           								</xs:restriction>
+	           							</xs:simpleType>
 							        </xs:element>
 
 							        <xs:element name="rgmemb" minOccurs="0" type="xs:boolean">
