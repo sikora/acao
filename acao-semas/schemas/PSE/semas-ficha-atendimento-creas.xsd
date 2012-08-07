@@ -1704,7 +1704,7 @@
 						<xs:element name="sitriscoutrosespec" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Especifique</xhtml:label>
+									<xhtml:label>Especifique Outros</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>

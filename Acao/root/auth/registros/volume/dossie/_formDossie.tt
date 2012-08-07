@@ -79,10 +79,102 @@
         </select>
       </dd>
     </dt>-->
+    [% # IF action != 'alterar'  %]
+    <div class="">
+        <strong>Tipo de Prontuário</strong><br/>
+        <input type="radio" name="tipodecampo" value="qualquer" id="qualquer"> Geral <br/>
+        <input type="radio" name="tipodecampo" value="geraProtocolo" id="geraProtocolo"> Protocolo <br/>
+        <input type="radio" name="tipodecampo" value="validaCPF" id="validaCPF"> CPF <br/>
+    </div>
+    [% # END %]
     <br/>
-    <br/>
-  <dd> <input type="checkbox" id="representaDossieFisico" name="representaDossieFisico" evt="representaDossieFisico" [% IF dos.dossie_fisico == 'Sim'  %] checked="checked" [% END %] />
+    
+  <input type="checkbox" id="representaDossieFisico" name="representaDossieFisico" evt="representaDossieFisico" [% IF dos.dossie_fisico == 'Sim'  %] checked="checked" [% END %] />
            <label for="representaDossieFisico"> Representa Prontuário Físico </label>
-  </dd>
+  <br/><br/>
   </dl>
  </fieldset>
+
+ <script type="text/javascript">
+        var nomeProntuario = $('#nome').val();
+        var GeraNovoNumProtocolo = 1 ;
+        // Especificações ao editar prontuário
+        $("documment").ready(function(){          
+          var checkProtocolo = nomeProntuario.match(/^[0-9]{12}-[0-9]{2}$/g)       
+          if ((nomeProntuario.length == 11) && parseInt(nomeProntuario)) {
+              $('#validaCPF').trigger('click');                      
+               verificandoCPF('');               
+          } else if(nomeProntuario == checkProtocolo) {
+              GeraNovoNumProtocolo = 0;              
+              $('#geraProtocolo').trigger('click'); 
+          } else {
+              $("#qualquer").trigger('click');
+          }
+        });
+    
+
+
+
+    
+
+    // Gerando número de protocolo
+     $("#geraProtocolo").click(function(){              
+        if (GeraNovoNumProtocolo == 1 ) {
+          // $('#nome').val('');
+          $('#nome').val('[% protocolo %]');                
+        } else {
+            $('#nome').val(nomeProntuario); 
+        }
+        
+       
+     });
+    
+    
+     
+    
+     $("#validaCPF").click(function(){       
+         // $('#nome').val('');
+         $('#nome').attr('maxlength',11);
+         $('#nome').removeAttr('READONLY');
+         verificandoCPF('');
+         $('#nome').tipsy("show");
+      });
+     $("#qualquer").click(function(){              
+         // $('#nome').val('');
+         $('#nome').removeAttr('maxlength');
+         $('#nome').removeAttr('READONLY');
+         $('#nome').tipsy("hide");
+      });
+     $("#geraProtocolo").click(function(){              
+         $('#nome').attr('READONLY','READONLY');
+         $('#nome').removeAttr('maxlength');
+         $('#nome').tipsy("hide");
+      });
+ 
+      $("#nome").keypress(function(e){ 
+        
+        if ($(":checked").val() == 'validaCPF') {          
+            if ( ((e.which>=48 && e.which<=57) || e.which==8 || e.which==0)) {   
+                 verificandoCPF(e);                                           
+              } else {
+                return false;
+              }
+          }                    
+         
+      });
+
+      var verificandoCPF = function(e) {         
+       if   (verificaCPF($('#nome').val() + String.fromCharCode(e.which) ) ) {              
+                  $('#nome').attr('title','CPF válido'); 
+                  $('#nome').tipsy({trigger: 'manual', gravity: 'w'});
+                  $('#nome').tipsy("show");    
+                }  else {      
+                  $('#nome').attr('title','Atenção! CPF inválido');                   
+                  $('#nome').tipsy({trigger: 'manual', gravity: 'w'});    
+                  $('#nome').tipsy("show");
+                }
+      }
+
+
+
+ </script>

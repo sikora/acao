@@ -23,7 +23,7 @@ use namespace::autoclean;
 BEGIN { extends 'Catalyst::Controller'; }
 use Data::Dumper;
 use List::MoreUtils 'pairwise';
-
+use POSIX qw/strftime/;
 #with 'Acao::Role::Controller::Autorizacao'   => { modelcomponent => 'Dossie' };
 #with 'Acao::Role::Controller::Classificacao' => { modelcomponent => 'Dossie' };
 with 'Acao::Role::Auditoria'                 => { category       => 'Dossie' };
@@ -101,6 +101,9 @@ sub form : Chained('base') : PathPart('criardossie') : Args(0) {
     $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nega_acesso_aba_autorizacoes($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
     $c->stash->{modificarLocalizacao} = $c->model('Volume')->nega_acesso_aba_localizacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
     $c->stash->{modificarClassificacao} = $c->model('Volume')->nega_acesso_aba_classificacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{protocolo} = strftime('%d%m%Y%H%M-%S',localtime);
+
+    
         #   Checa se user logado tem autorização para criar dossies em Volume
     if ( !$c->model('Dossie')->pode_criar_dossie( $c->stash->{id_volume} ) ) {
         $c->flash->{autorizacao} = 'volume-criar';
@@ -314,6 +317,8 @@ sub alterar_dossie : Chained('get_dossie') : PathPart('alterar') : Args(0) {
     $c->stash->{modificarAutorizacoes} = $c->model('Volume')->nega_acesso_aba_autorizacoes($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
     $c->stash->{modificarLocalizacao} = $c->model('Volume')->nega_acesso_aba_localizacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
     $c->stash->{modificarClassificacao} = $c->model('Volume')->nega_acesso_aba_classificacao($c->stash->{id_volume}) eq  '1' ? 0 : 1  ;
+    $c->stash->{action} = 'alterar';
+    $c->stash->{protocolo} = strftime('%d%m%Y%H%M-%S',localtime);
 #   Checa se user logado tem autorização para executar a ação 'Alterar'
  if (!$c->model('Dossie')->pode_alterar_dossie($c->stash->{id_volume},$c->stash->{controle} )) {
      $c->flash->{autorizacao} = 'dossie-alterar';

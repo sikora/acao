@@ -13,7 +13,7 @@
 			<xs:appinfo>
 				<xhtml:label>FICHA DE CADASTRO DOS PROFISSIONAIS DA POLÍTICA DE JUVENTUDE</xhtml:label>
 				<class:classificacoes>
-                    <class:classificacao>cn=Juventude</class:classificacao>
+                    <class:classificacao>cn=Monitoramento,cn=Juventude</class:classificacao>
 				</class:classificacoes>
 				<idx:index>
 				    <idx:hint key="pessoa.nome" xpath="formPoliticaJuventude/nome" />
@@ -102,12 +102,13 @@
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="genero" minOccurs="1">
+			<xs:element name="genero" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Gênero:</xhtml:label>
 					</xs:appinfo>
-				</xs:annotation>
+				</xs:annotation>git commit -a "alterando form 
+
 				<xs:simpleType>
 				<xs:restriction base="xs:string">
 					<xs:enumeration value="Masculino" />
@@ -171,6 +172,24 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element name="regional" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Regional:</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="SER I"/>
+						<xs:enumeration value="SER II"/>
+						<xs:enumeration value="SER III"/>
+						<xs:enumeration value="SER IV"/>
+						<xs:enumeration value="SER V"/>
+						<xs:enumeration value="SER VI"/>
+						<xs:enumeration value="CENTRO"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 
 			<xs:element name="rg" minOccurs="0">
 				<xs:annotation>
@@ -231,7 +250,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="qualEscolaridade"  minOccurs="1">
+						<xs:element name="qualEscolaridade"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Escolaridade:</xhtml:label>
@@ -380,7 +399,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="orientacaoSexualLabel"  minOccurs="8">
+						<xs:element name="orientacaoSexualLabel"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Sexo:</xhtml:label>
