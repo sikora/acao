@@ -31,8 +31,7 @@
 
 
         <script type="text/javascript">
-            function onload_focus(){
-               console.log($.browser);
+            function onload_focus(){               
                 if( !$.browser.mozilla && !$.browser.webkit)  {
                     $('body').append('<div id="dialog-modal" title="Navegador incompatível" style="display:none;">' +
                             '	<p>Este sistema não está homologado para funcionar no seu navegador. Escolha um dos navegadores abaixo:</p>'+
