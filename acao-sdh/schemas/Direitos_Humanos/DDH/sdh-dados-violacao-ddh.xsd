@@ -34,57 +34,20 @@
                         </xs:annotation>
                             <xs:simpleType>
                             <xs:restriction base="xs:string">
-                                <xs:maxLength value="255" />
+                                <xs:maxLength value="5" />
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:element>
 
 <!-- End field textarea  -->
 
-                <!-- Begin field selectBox -->  
-                <xs:element name="turnoLigacao"  minOccurs="0">
-                    <xs:annotation>
-                        <xs:appinfo>
-                            <xhtml:label>Turno da ligação</xhtml:label>
-                        </xs:appinfo>
-                    </xs:annotation>
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:enumeration value="Manhã" />
-                            <xs:enumeration value="Tarde" />
-                            <xs:enumeration value="Noite" />
-                            <xs:enumeration value="Madrugada" />
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <!-- End field selectBox -->
+      
 
                 <!-- Begin field selectBox -->  
-                <xs:element name="diasSemana"  minOccurs="0">
+                <xs:element name="tipoDemanda"  minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
-                            <xhtml:label>Dias da semana</xhtml:label>
-                        </xs:appinfo>
-                    </xs:annotation>
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:enumeration value="Segunda-feira" />
-                            <xs:enumeration value="Terça-feira" />
-                            <xs:enumeration value="Quarta-feira" />
-                            <xs:enumeration value="Quita-Feira" />
-                            <xs:enumeration value="Sext-feira" />
-                            <xs:enumeration value="Sábado" />
-                            <xs:enumeration value="Dominto" />
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <!-- End field selectBox -->       
-
-                <!-- Begin field selectBox -->  
-                <xs:element name="diasSemana"  minOccurs="0">
-                    <xs:annotation>
-                        <xs:appinfo>
-                            <xhtml:label>Dias da semana</xhtml:label>
+                            <xhtml:label>Tipo de Demanda</xhtml:label>
                         </xs:appinfo>
                     </xs:annotation>
                     <xs:simpleType>
@@ -100,6 +63,52 @@
                     </xs:simpleType>
                 </xs:element>
                 <!-- End field selectBox --> 
+
+                <!-- Begin fieldset - seDemandaDenuncia -->    
+                <xs:element name="seDemandaDenuncia" minOccurs="0" >
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label> Se for DENÚNCIA marque uma das opções abaixo:</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="urgente" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Urgente</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->        
+                            
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="Geral" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Geral</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->        
+                            
+                            <!-- Begin field checkbox -->        
+                            <xs:element name="diferenciada" minOccurs="0" type="xs:boolean">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <xhtml:label>Diferenciada</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <!-- End field checkbox-->        
+                            
+                        </xs:sequence>    
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- End fieldset - seDemandaDenuncia -->    
 
               <!-- Begin  complexType -->
                 <xs:element name="localViolação">
@@ -319,29 +328,11 @@
                 <!-- End field Input Text -->
 
 
-                <!-- Begin field selectBox -->    
-                <xs:element name="seComunidade"  minOccurs="0">
-                    <xs:annotation>
-                        <xs:appinfo>
-                            <xhtml:label>Se COMUNIDADE diga o tipo</xhtml:label>
-                        </xs:appinfo>
-                    </xs:annotation>
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:enumeration value="Religiosa" />
-                            <xs:enumeration value="Cooperativa" />
-                            <xs:enumeration value="Território" />
-                            <xs:enumeration value="Outros" />
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <!-- End field selectBox -->
-
                 <!-- Begin field Input Text -->    
-                <xs:element name="seComunidadeOutros" minOccurs="0">
+                <xs:element name="endereco" minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
-                            <xhtml:label>Especifique Outros</xhtml:label>
+                            <xhtml:label>Endereço</xhtml:label>
                         </xs:appinfo>
                     </xs:annotation>
                     <xs:simpleType>
@@ -351,37 +342,12 @@
                     </xs:simpleType>
                 </xs:element>
                 <!-- End field Input Text -->
-                
-                
-
-
-                <!-- Begin  autocomplete -->
-                <xs:element name="endereco" minOccurs="0">
-                    <xs:annotation>
-                        <xs:appinfo>
-                            <xhtml:label>Endereço</xhtml:label>
-                        </xs:appinfo>
-                        <xsdext:extensions>
-                            <xsdext:engine>autoComplete</xsdext:engine>
-                            <xsdext:service>/enderecos</xsdext:service>
-                        </xsdext:extensions>                                
-                    </xs:annotation>
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:maxLength value="255" />
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <!-- End  autocomplete-->
-                
-
-
 
                 <!-- Begin  autocomplete -->
                 <xs:element name="bairro" minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
-                            <xhtml:label>bairro</xhtml:label>
+                            <xhtml:label>Bairro</xhtml:label>
                         </xs:appinfo>
                         <xsdext:extensions>
                             <xsdext:engine>autoComplete</xsdext:engine>
@@ -394,9 +360,27 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End  autocomplete-->
+                <!-- End  autocomplete-->    
                 
-
+                <!-- Begin  autocomplete -->
+                <xs:element name="comunidadeOndeVitMora" minOccurs="0">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Comunidade onde a vítima mora </xhtml:label>
+                        </xs:appinfo>
+                        <xsdext:extensions>
+                            <xsdext:engine>autoComplete</xsdext:engine>
+                            <xsdext:service>/comunidades</xsdext:service>
+                        </xsdext:extensions>                                
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End  autocomplete-->
+                                
 
                 <!-- Begin field Input Text -->    
                 <xs:element name="pontoReferencia" minOccurs="0">
@@ -411,12 +395,9 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End field Input Text -->
+                <!-- End field Input Text -->               
                 
-                
-                
-                
-                        <!-- Begin field selectBox -->  
+                 <!-- Begin field selectBox -->  
                 <xs:element name="regional"  minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>

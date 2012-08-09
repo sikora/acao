@@ -26,11 +26,52 @@
         <xs:complexType name="resumoViolacao">
             <xs:sequence>
 
+           
+                    <!-- Begin field selectBox -->  
+                    <xs:element name="turnoLigacao"  minOccurs="0">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <xhtml:label>1. Turno da ligação</xhtml:label>
+                            </xs:appinfo>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Manhã" />
+                                <xs:enumeration value="Tarde" />
+                                <xs:enumeration value="Noite" />
+                                <xs:enumeration value="Madrugada" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <!-- End field selectBox -->
+
+
+                    <!-- Begin field selectBox -->  
+                    <xs:element name="diaAtendimento"  minOccurs="0">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <xhtml:label>2. Dia do Atendimento</xhtml:label>
+                            </xs:appinfo>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Segunda-feira" />
+                                <xs:enumeration value="Terça-feira" />
+                                <xs:enumeration value="Quarta-feira" />
+                                <xs:enumeration value="Quinta-Feira" />
+                                <xs:enumeration value="Sexta-feira" />
+                                <xs:enumeration value="Sábado" />
+                                <xs:enumeration value="Dominto" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <!-- End field selectBox --> 
+
                     <!-- Begin field selectBox -->    
                     <xs:element name="denunciaAnonima"  minOccurs="1">
                         <xs:annotation>
                             <xs:appinfo>
-                                <xhtml:label>1. A Denuncia é Anônima</xhtml:label>
+                                <xhtml:label>3. A Denuncia é Anônima</xhtml:label>
                             </xs:appinfo>
                         </xs:annotation>
                         <xs:simpleType>
@@ -47,7 +88,7 @@
                     <xs:element name="dadosDenunciantes" minOccurs="0" >
                         <xs:annotation>
                             <xs:appinfo>
-                                <xhtml:label>* Se Denuncia Anônima, preencha Dados do Denunciante</xhtml:label>
+                                <xhtml:label>* Se NÃO preencha os campos abaixo</xhtml:label>
                             </xs:appinfo>
                         </xs:annotation>
                         <xs:complexType>
@@ -56,7 +97,7 @@
                                 <xs:element name="nome" minOccurs="0">
                                     <xs:annotation>
                                         <xs:appinfo>
-                                            <xhtml:label>1.2 Nome</xhtml:label>
+                                            <xhtml:label>3.1 Nome</xhtml:label>
                                         </xs:appinfo>
                                     </xs:annotation>
                                     <xs:simpleType>
@@ -71,7 +112,7 @@
                                 <xs:element name="nomeSocial" minOccurs="0">
                                     <xs:annotation>
                                         <xs:appinfo>
-                                            <xhtml:label>1.3 Nome Social</xhtml:label>
+                                            <xhtml:label>3.2 Nome Social</xhtml:label>
                                         </xs:appinfo>
                                     </xs:annotation>
                                     <xs:simpleType>
@@ -86,7 +127,7 @@
                                 <xs:element name="sexo"  minOccurs="0">
                                     <xs:annotation>
                                         <xs:appinfo>
-                                            <xhtml:label>1.4 Sexo</xhtml:label>
+                                            <xhtml:label>3.3 Sexo</xhtml:label>
                                         </xs:appinfo>
                                     </xs:annotation>
                                     <xs:simpleType>
@@ -97,6 +138,23 @@
                                     </xs:simpleType>
                                 </xs:element>
                                 <!-- End field selectBox -->
+
+                                <!-- Begin field selectBox -->    
+                                <xs:element name="denunciantePropriaVitima"  minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>3.4  Denunciante é a própria vítima</xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Sim" />
+                                            <xs:enumeration value="Não" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <!-- End field selectBox -->
+                                
                             </xs:sequence>    
                         </xs:complexType>
                     </xs:element>
