@@ -92,17 +92,8 @@
                                     </xs:appinfo>
                                 </xs:annotation>
                             </xs:element>
-                            <!-- End field checkbox-->        
-                            
-                            <!-- Begin field checkbox -->        
-                            <xs:element name="diferenciada" minOccurs="0" type="xs:boolean">
-                                <xs:annotation>
-                                    <xs:appinfo>
-                                        <xhtml:label>Diferenciada</xhtml:label>
-                                    </xs:appinfo>
-                                </xs:annotation>
-                            </xs:element>
-                            <!-- End field checkbox-->        
+                            <!-- End field checkbox-->                                    
+    
                             
                         </xs:sequence>    
                     </xs:complexType>

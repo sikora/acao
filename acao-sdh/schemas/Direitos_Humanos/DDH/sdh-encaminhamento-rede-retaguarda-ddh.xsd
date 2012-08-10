@@ -97,7 +97,7 @@
                                        <xs:element name="seConcelhoTutelar"  minOccurs="0">
                                            <xs:annotation>
                                                <xs:appinfo>
-                                                   <xhtml:label>Se Concelho Tutelar especifique qual:</xhtml:label>
+                                                   <xhtml:label>Se Conselho Tutelar especifique qual:</xhtml:label>
                                                </xs:appinfo>
                                            </xs:annotation>
                                            <xs:simpleType>
@@ -175,7 +175,7 @@
                                             <xs:element name="seCREAS"  minOccurs="0">
                                                 <xs:annotation>
                                                     <xs:appinfo>
-                                                        <xhtml:label>Se CREAS Regional especifique qual:</xhtml:label>
+                                                        <xhtml:label>Se CREAS especifique qual:</xhtml:label>
                                                     </xs:appinfo>
                                                 </xs:annotation>
                                                 <xs:simpleType>
@@ -265,7 +265,7 @@
                                    <xs:element name="seMinisterioPublico"  minOccurs="0">
                                        <xs:annotation>
                                            <xs:appinfo>
-                                               <xhtml:label>SE Ministério Público</xhtml:label>
+                                               <xhtml:label>Se Ministério Público</xhtml:label>
                                            </xs:appinfo>
                                        </xs:annotation>
                                        <xs:simpleType>
