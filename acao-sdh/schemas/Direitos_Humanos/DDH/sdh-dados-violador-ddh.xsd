@@ -26,6 +26,20 @@
         <xs:complexType name="dadosViolador">
             <xs:sequence>
 
+                <!-- Begin field Input Text -->    
+                <xs:element name="protocolo" minOccurs="1">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xhtml:label>Número do Protocolo</xhtml:label>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="15" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- End field Input Text -->
                 
                 <!-- Begin fieldset - fieldsetDadosViolador -->    
                 <xs:element name="fieldsetDadosViolador" minOccurs="0" maxOccurs="10" >
@@ -222,34 +236,44 @@
                               </xs:element> 
 
                             <!-- Begin  complexType -->
-                    <xs:element name="relacaoVitima">
+            
+                    <!-- Begin  complexType -->
+                    <xs:element name="fieldsetRelacaoVitima">
                         <xs:annotation>
                             <xs:appinfo>
-                                <xhtml:label>I.1 Relação com a Vítima se Familiar</xhtml:label>
+                                <xhtml:label>Relação com a Vítima</xhtml:label>
                             </xs:appinfo>
                         </xs:annotation>
                         <xs:complexType>
                             <xs:sequence>
-
-                          
-                                <!-- Begin field checkbox -->        
-                                <xs:element name="rvfamilar" minOccurs="0" type="xs:boolean">
-                                    <xs:annotation>
-                                        <xs:appinfo>
-                                            <xhtml:label>I. Familiar</xhtml:label>
-                                        </xs:appinfo>
-                                    </xs:annotation>
-                                </xs:element>
-                                <!-- End field checkbox--> 
                                 <!-- Begin field selectBox -->    
-                                <xs:element name="selectBox"  minOccurs="0">
+                                <xs:element name="relacaoVitima"  minOccurs="0">
                                     <xs:annotation>
                                         <xs:appinfo>
-                                            <xhtml:label>Se Familiar preencha o campo </xhtml:label>
+                                            <xhtml:label>Relação com a Vítima</xhtml:label>
                                         </xs:appinfo>
                                     </xs:annotation>
                                     <xs:simpleType>
                                         <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Familiar" />
+                                            <xs:enumeration value="Sem parentesco" />
+                                            <xs:enumeration value="Agente Público" />
+                                            <xs:enumeration value="Desconhecido" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <!-- End field selectBox -->
+                                
+                                <!-- Begin field selectBox -->    
+                                <xs:element name="relacaoVitima2"  minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Preencha o campo de acordo com a escolha acima</xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="---- Familiar -----" />
                                             <xs:enumeration value="Mãe" />
                                             <xs:enumeration value="Pai" />
                                             <xs:enumeration value="Responsável Legal" />
@@ -281,104 +305,46 @@
                                             <xs:enumeration value="Enteada" />
                                             <xs:enumeration value="Bisneto" />
                                             <xs:enumeration value="Bisneta" />
+                                            <xs:enumeration value="---- Sem Parentesco -----" />
+                                            <xs:enumeration value="Vizinho" />
+                                            <xs:enumeration value="Vizinha" />                                            
+                                            <xs:enumeration value="Chefe" />
+                                            <xs:enumeration value="Colega Trabalho" />
+                                            <xs:enumeration value="Colega da Escola" />
+                                            <xs:enumeration value="Professor" />
+                                            <xs:enumeration value="Professora" />
+                                            <xs:enumeration value="---- Agente Público -----" />                                            
+                                            <xs:enumeration value="Polícia" />
+                                            <xs:enumeration value="Guarda Municipal" />
+                                            <xs:enumeration value="Segurança Particular" />
+                                            <xs:enumeration value="Outros" />
+                                            <xs:enumeration value="------------------------" />
+                                            <xs:enumeration value="Desconhecido" />
 
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
                                 <!-- End field selectBox -->
 
+                                <!-- Begin field Input Text -->    
+                                <xs:element name="OutrosAgentePublico" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Se Outro Agente Público especifique:</xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="255" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <!-- End field Input Text -->                               
+
                                 </xs:sequence>    
                             </xs:complexType>
                         </xs:element>
     
-
-                                
-                                <!-- Begin fieldset - vizinhoFieldset -->    
-                                <xs:element name="vizinhoFieldset" minOccurs="0" >
-                                    <xs:annotation>
-                                        <xs:appinfo>
-                                            <xhtml:label>II.1 Relação com a Vítima se Sem parentesco</xhtml:label>
-                                        </xs:appinfo>
-                                    </xs:annotation>
-                                    <xs:complexType>
-                                        <xs:sequence>
-                                       
-                                            <xs:element name="semParentesco" minOccurs="0" type="xs:boolean">
-                                                <xs:annotation>
-                                                    <xs:appinfo>
-                                                        <xhtml:label>II. Sem parentesco</xhtml:label>
-                                                    </xs:appinfo>
-                                                </xs:annotation>
-                                            </xs:element>
-                                            <!-- End field checkbox-->    
-                                       <!-- Begin field selectBox -->    
-                                       <xs:element name="selectBox"  minOccurs="0">
-                                           <xs:annotation>
-                                               <xs:appinfo>
-                                                   <xhtml:label>Se Sem parentesco preencha o campo</xhtml:label>
-                                               </xs:appinfo>
-                                           </xs:annotation>
-                                           <xs:simpleType>
-                                               <xs:restriction base="xs:string">
-                                                  <xs:enumeration value="Vizinho" />
-                                                  <xs:enumeration value="Vizinha" />
-                                                  <xs:enumeration value="Chefe" />
-                                                  <xs:enumeration value="Colega Trabalho" />
-                                                  <xs:enumeration value="Colega da Escola" />
-                                                  <xs:enumeration value="Professor" />
-                                                  <xs:enumeration value="Professora" />
-                                               </xs:restriction>
-                                           </xs:simpleType>
-                                       </xs:element>
-                                       <!-- End field selectBox -->
-                                        </xs:sequence>    
-                                    </xs:complexType>
-                                </xs:element>
-                                
-                                <!-- End fieldset - vizinhoFieldset -->    
-
- 
-
-                                <!-- Begin fieldset -  -->    
-                                <xs:element name="agentePublicoFieldset" minOccurs="0" >
-                                    <xs:annotation>
-                                        <xs:appinfo>
-                                            <xhtml:label>III.1 Relação com a Vítima se Agente Público</xhtml:label>
-                                        </xs:appinfo>
-                                    </xs:annotation>
-                                    <xs:complexType>
-                                        <xs:sequence>
-                                            <!-- Begin field checkbox -->        
-                                            <xs:element name="agentePublico" minOccurs="0" type="xs:boolean">
-                                                <xs:annotation>
-                                                    <xs:appinfo>
-                                                        <xhtml:label>III. Agente Públicos</xhtml:label>
-                                                    </xs:appinfo>
-                                                </xs:annotation>
-                                            </xs:element>
-                                            <!-- End field checkbox-->
-                                            <!-- Begin field selectBox -->    
-                                            <xs:element name="selectBox"  minOccurs="0">
-                                                <xs:annotation>
-                                                    <xs:appinfo>
-                                                        <xhtml:label>Se Agente Públicos preencha o campo</xhtml:label>
-                                                    </xs:appinfo>
-                                                </xs:annotation>
-                                                <xs:simpleType>
-                                                    <xs:restriction base="xs:string">
-                                                    <xs:enumeration value="Polícia" />
-                                                    <xs:enumeration value="Guarda Municipal" />
-                                                    <xs:enumeration value="Segurança Particular" />
-                                                    <xs:enumeration value="Desconhecido" />
-                                                    </xs:restriction>
-                                                </xs:simpleType>
-                                            </xs:element>
-                                            <!-- End field selectBox -->
-                                            
-                                        </xs:sequence>    
-                                    </xs:complexType>
-                                </xs:element>
-                                
                                 <!-- End fieldset -  -->    
                         </xs:sequence>    
                     </xs:complexType>

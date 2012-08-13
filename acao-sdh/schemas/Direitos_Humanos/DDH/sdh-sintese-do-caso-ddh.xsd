@@ -180,7 +180,7 @@
 
 
                     <!-- Begin  complexType -->
-                    <xs:element name="relacaoVitima">
+                    <xs:element name="fieldsetRelacaoVitima">
                         <xs:annotation>
                             <xs:appinfo>
                                 <xhtml:label>5. Relação com a Vítima</xhtml:label>
@@ -189,7 +189,7 @@
                         <xs:complexType>
                             <xs:sequence>
                                 <!-- Begin field selectBox -->    
-                                <xs:element name="selectBox"  minOccurs="0">
+                                <xs:element name="relacaoVitima"  minOccurs="0">
                                     <xs:annotation>
                                         <xs:appinfo>
                                             <xhtml:label>Relação com a Vítima</xhtml:label>
@@ -199,14 +199,15 @@
                                         <xs:restriction base="xs:string">
                                             <xs:enumeration value="Familiar" />
                                             <xs:enumeration value="Sem parentesco" />
-                                            <xs:enumeration value="Agente Públicos" />
+                                            <xs:enumeration value="Agente Público" />
+                                            <xs:enumeration value="Desconhecido" />
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
                                 <!-- End field selectBox -->
                                 
                                 <!-- Begin field selectBox -->    
-                                <xs:element name="selectBox"  minOccurs="0">
+                                <xs:element name="relacaoVitima2"  minOccurs="0">
                                     <xs:annotation>
                                         <xs:appinfo>
                                             <xhtml:label>Preencha o campo de acordo com a escolha acima</xhtml:label>
@@ -254,16 +255,34 @@
                                             <xs:enumeration value="Colega da Escola" />
                                             <xs:enumeration value="Professor" />
                                             <xs:enumeration value="Professora" />
-                                            <xs:enumeration value="---- Agente Públicos -----" />                                            
+                                            <xs:enumeration value="---- Agente Público -----" />                                            
                                             <xs:enumeration value="Polícia" />
                                             <xs:enumeration value="Guarda Municipal" />
                                             <xs:enumeration value="Segurança Particular" />
+                                            <xs:enumeration value="Outros" />
+                                            <xs:enumeration value="------------------------" />
                                             <xs:enumeration value="Desconhecido" />
 
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
                                 <!-- End field selectBox -->
+
+                                <!-- Begin field Input Text -->    
+                                <xs:element name="OutrosAgentePublico" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:appinfo>
+                                            <xhtml:label>Se Outro Agente Público especifique:</xhtml:label>
+                                        </xs:appinfo>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="255" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <!-- End field Input Text -->
+                                
 
                                 </xs:sequence>    
                             </xs:complexType>
