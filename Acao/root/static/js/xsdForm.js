@@ -65,6 +65,9 @@ function createInput(type, name, id, maxlength, valorPadrao) {
     if (valorPadrao == '[0-9]+[0-9]+') {
          newInput.setAttribute('class', 'xsdForm__rg');
     }
+    if (valorPadrao == '[0-9]+[0-9]+[0-9]+') {        
+         newInput.setAttribute('class', 'xsdForm__cpf_validate');
+    }
     newInput.id    = ( id != undefined )? id: name;
     return newInput;
 }
@@ -554,12 +557,21 @@ function generateFormFromSimpleTypeNodeRestrictionMaxLength(tagRaiz, xmlNode, na
     var dt = document.createElement('dt');
     var dd = document.createElement('dd');
     dt.appendChild(newLabel);
+
+
     
     if(nameBase == 'xs:string'){
         field = createInput('text' ,inputName, inputName, maxLength, valorPadrao);
     }
    else {
         field = createFieldInteger(inputName, minOccurs, maxLength);
+   }
+
+   if (minOccurs > 0) {
+       $(field).addClass('xsdForm__mandatory');
+       
+       field.setAttribute('title', 'Este ítem é obrigatório!');
+       field.setAttribute('need', '1');
    }
 
     if (engine) {
@@ -571,11 +583,7 @@ function generateFormFromSimpleTypeNodeRestrictionMaxLength(tagRaiz, xmlNode, na
         field.setAttribute('rel', service);
     }
 
-    if (minOccurs > 0) {
-        field.setAttribute('class', 'xsdForm__mandatory');       
-        field.setAttribute('title', 'Este ítem é obrigatório!');
-        field.setAttribute('need', '1');
-    }
+
 
     dd.appendChild(field);
 
@@ -804,8 +812,10 @@ function generateXml(xsdFile, input_to_set) {
     var type;
     var firstFieldError = null;
 
+
     try {
         var xml = xmlLoader(xsdFile);
+
         var tagRaiz  = xml.getElementsByTagNameNS('http://www.w3.org/2001/XMLSchema','schema')[0];
         var elemRoot = getNodeByTagName(tagRaiz, 'xs:element'); // elemento raiz
 
@@ -819,6 +829,8 @@ function generateXml(xsdFile, input_to_set) {
 
         if (generated) odoc.appendChild(generated);
         input_to_set.value = ((new XMLSerializer()).serializeToString(odoc));
+
+        
 
     } catch (myError) {
         if (myError.name != null) {
@@ -1081,14 +1093,22 @@ function insereValor(nameField,valor) {
     }
 }
 
+
 function validateMandatory() {
     var error = 0;
     $('.xsdForm__mandatory').each(function() {
         if ($(this).val() == null ||
             $(this).val() == "") {
             $(this).addClass('xsd__validationfailed');
-            error = 1;
+            error = 1;        
         } else {
+            if ($('input.xsdForm__cpf_validate.inflated').attr('rel') == 'invalido') {
+                $(this).addClass('xsd__validationfailed');
+                $(this).attr('title','Atenção! CPF inválido');                   
+                $(this).tipsy({trigger: 'manual', gravity: 'w'});    
+                $(this).tipsy("show");
+                throw "Atenção! CPF Inválido";                
+            }
             $(this).removeClass('xsd__validationfailed');
         }
     });

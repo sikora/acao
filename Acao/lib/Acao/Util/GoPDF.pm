@@ -103,10 +103,11 @@ sub traverse_schema_to_pdf {
                 if( defined $xml_espec && scalar @{$xml_espec} > 0) {
                     for my $ele (@{$xml_espec} ) {
 
-                        foreach my $key (keys %{$ele} ) {
+                        if( not defined $ele->{'seq_nome'} ) {
+                            print Dumper $ele;
                             push @{$stelements}, $into;
                             my $nxml = clone $xml;
-                            &t( $nxml, $ele->{$key}[0], $into->{path});
+                            &t( $nxml, $ele, $into->{path});
 
                             foreach my $el ( $node->childNodes ) {
                                 $level++;
@@ -115,6 +116,21 @@ sub traverse_schema_to_pdf {
                                 $level--;
                             }
                             push @$stelements, close_xpath();
+                        }
+                        else {
+                            foreach my $key (keys %{$ele} ) {
+                                push @{$stelements}, $into;
+                                my $nxml = clone $xml;
+                                &t( $nxml, $ele->{$key}[0], $into->{path});
+
+                                foreach my $el ( $node->childNodes ) {
+                                    $level++;
+                                    traverse_schema_to_pdf( $baseschemael, $targetns, $el, $nxml, 
+                                        $level, [ $node, $stack ], $stelements );
+                                    $level--;
+                                }
+                                push @$stelements, close_xpath();
+                            }
                         }
                     }
                 }

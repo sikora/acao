@@ -50,8 +50,8 @@
 				                </xs:appinfo>
 				            </xs:annotation>
 				            <xs:simpleType>
-				                <xs:restriction base="xs:integer">
-				                    <xs:maxLength value="11"/>
+				                <xs:restriction base="xs:string">
+				                    <xs:maxLength value="255"/>
 				                </xs:restriction>
 				            </xs:simpleType>
 				        </xs:element>
@@ -63,7 +63,7 @@
 				                </xs:appinfo>
 				            </xs:annotation>
 				            <xs:simpleType>
-				                <xs:restriction base="xs:integer">
+				                <xs:restriction base="xs:string">
 				                    <xs:maxLength value="11"/>
 				                </xs:restriction>
 				            </xs:simpleType>

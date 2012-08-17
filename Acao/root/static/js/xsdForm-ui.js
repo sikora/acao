@@ -296,7 +296,51 @@ function generateXsdFormUI() {
         deflate: convert_cpf_ptbr2xsd,
         addClass: 'inflated'
     });
+    
     $('input.xsdForm__cpf.inflated').setMask('cpf');
+
+    $('input.xsdForm__cpf_validate').inputDeflate({
+        inflate: convert_cpf_xsd2ptbr,
+        deflate: convert_cpf_ptbr2xsd,
+        addClass: 'inflated'
+    });
+    $('input.xsdForm__cpf_validate.inflated').setMask('cpf');
+    
+    var verificandoCPF = function(campo,e) {    
+       
+     if   (verificaCPF(campo.val() + String.fromCharCode(e.which) ) ) {                              
+                // campo.attr('title','CPF válido'); 
+                // campo.tipsy({trigger: 'manual', gravity: 'w'});
+                // campo.tipsy("show");    
+                campo.attr('rel','valido');
+              }  else {      
+                
+                campo.attr('title','Atenção! CPF inválido');                   
+                campo.tipsy({trigger: 'manual', gravity: 'w'});    
+                campo.tipsy("show");
+                campo.attr('rel','invalido');
+                
+              }
+    }
+
+    $('input.xsdForm__cpf_validate.inflated').keypress(function(e){                  
+           verificandoCPF($(this),e);              
+    });
+
+
+    $('input.xsdForm__cpf_validate.inflated').change(function(){        
+        verificandoCPF($(this),$(this).val());                  
+    });
+
+    $('#form_container *').focus(function(){        
+        $('input.xsdForm__cpf_validate.inflated').each(function(){  
+            
+                if ($(this).val() != "") {
+                     verificandoCPF($(this),'');       
+                }          
+         });
+    });
+    
 
     $('input.xsdForm__rg').inputDeflate({
         inflate: convert_rg,
