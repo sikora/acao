@@ -24,6 +24,9 @@
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
+
+
+
 	<xs:complexType name="cadastroBeneficiados">
 		<xs:sequence>
 			<xs:element name="beneficiado">
@@ -78,8 +81,9 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<!-- Begin  input CPF com Mascara -->
-						<xs:element name="cpf" minOccurs="0">
+						
+						<!-- Begin  input CPF com Mascara e validado -->
+						<xs:element name="cpf" minOccurs="1">
 						        <xs:annotation>
 						                <xs:appinfo>
 						                        <xhtml:label>CPF</xhtml:label>
@@ -88,11 +92,11 @@
 						        <xs:simpleType>
 						                <xs:restriction base="xs:string">
 						                        <xs:maxLength value="255" />
-						                        <xs:pattern value="[0-9]+"/>
+						                        <xs:pattern value="[0-9]+[0-9]+[0-9]+"/>
 						                </xs:restriction>
 						        </xs:simpleType>
 						</xs:element>
-						<!-- End input CPF com Mascara  -->
+						<!-- End input CPF com Mascara e validado  -->
 						
 						<xs:element name="sexo" minOccurs="0">
 							<xs:annotation>

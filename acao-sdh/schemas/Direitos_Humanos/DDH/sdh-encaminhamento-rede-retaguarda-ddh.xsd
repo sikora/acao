@@ -30,7 +30,23 @@
             </xs:annotation>
         </xs:element>
         
-        <xs:complexType name="encaminhamentoRedeRetaguarda"><xs:sequence>
+        <xs:complexType name="encaminhamentoRedeRetaguarda">
+          <xs:sequence>
+            
+            <!-- Begin field Input Text -->    
+            <xs:element name="protocolo" minOccurs="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Número do Protocolo</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <!-- End field Input Text -->
                 
                 <!-- Begin fieldset -  -->  
                 <xs:element name="ondeFoiEncaminhamento" minOccurs="0" >
@@ -97,7 +113,7 @@
                                        <xs:element name="seConcelhoTutelar"  minOccurs="0">
                                            <xs:annotation>
                                                <xs:appinfo>
-                                                   <xhtml:label>Se Concelho Tutelar especifique qual:</xhtml:label>
+                                                   <xhtml:label>Se Conselho Tutelar especifique qual:</xhtml:label>
                                                </xs:appinfo>
                                            </xs:annotation>
                                            <xs:simpleType>
@@ -175,7 +191,7 @@
                                             <xs:element name="seCREAS"  minOccurs="0">
                                                 <xs:annotation>
                                                     <xs:appinfo>
-                                                        <xhtml:label>Se CREAS Regional especifique qual:</xhtml:label>
+                                                        <xhtml:label>Se CREAS especifique qual:</xhtml:label>
                                                     </xs:appinfo>
                                                 </xs:annotation>
                                                 <xs:simpleType>
@@ -265,7 +281,7 @@
                                    <xs:element name="seMinisterioPublico"  minOccurs="0">
                                        <xs:annotation>
                                            <xs:appinfo>
-                                               <xhtml:label>SE Ministério Público</xhtml:label>
+                                               <xhtml:label>Se Ministério Público</xhtml:label>
                                            </xs:appinfo>
                                        </xs:annotation>
                                        <xs:simpleType>

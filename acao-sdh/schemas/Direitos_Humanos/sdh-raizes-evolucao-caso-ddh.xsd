@@ -11,9 +11,9 @@
 		<xs:element name="formEvolucaoDoCaso" type="formEvolucaoDoCaso">
 			<xs:annotation>
 				<xs:appinfo>
-					<xhtml:label>8 - EVOLUÇÃO DO CASO</xhtml:label>
+					<xhtml:label>EVOLUÇÃO DO CASO</xhtml:label>
 					<class:classificacoes>
-		                <class:classificacao>cn=DDH,cn=Atendimento,cn=Direitos Humanos</class:classificacao>
+		                <class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
 					</class:classificacoes>
 					<!--  indices  
 					<idx:index>
