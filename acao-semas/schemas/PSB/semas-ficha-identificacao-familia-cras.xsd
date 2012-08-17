@@ -820,7 +820,7 @@
 										</xs:appinfo>
 									    </xs:annotation>
 									    <xs:simpleType>
-											<xs:restriction base="xs:integer">
+											<xs:restriction base="xs:string">
 												<xs:maxLength value="11"/>
 											</xs:restriction>
 									    </xs:simpleType>
