@@ -103,8 +103,7 @@ sub traverse_schema_to_pdf {
                 if( defined $xml_espec && scalar @{$xml_espec} > 0) {
                     for my $ele (@{$xml_espec} ) {
 
-                        if( not defined $ele->{'seq_nome'} ) {
-                            print Dumper $ele;
+                        if( not defined $ele->{'seq_nome'} ) {                            
                             push @{$stelements}, $into;
                             my $nxml = clone $xml;
                             &t( $nxml, $ele, $into->{path});

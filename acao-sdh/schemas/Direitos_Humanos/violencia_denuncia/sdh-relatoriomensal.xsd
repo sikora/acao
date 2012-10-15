@@ -36,6 +36,8 @@
 						<xs:enumeration value="CDS" />
 						<xs:enumeration value="FUNCI" />
 						<xs:enumeration value="EIXO DE PROMOÇÃO" />
+						<xs:enumeration value="EIXO DE DIFUSÃO" />
+						<xs:enumeration value="EIXO DE EDUCAÇÃO EM DIREITOS HUMANOS" />
 						<xs:enumeration value="RAIZ PIRAMBU" />
 						<xs:enumeration value="RAIZ FLORESTA" />
 						<xs:enumeration value="RAIZ MUCURIPE" />
@@ -237,8 +239,21 @@
 						<xs:element name="cicloMult" type="xs:boolean">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Clico de Multiplicadores em Direitos Humanos
-									</xhtml:label>
+									<xhtml:label>Clico de Multiplicadores em Direitos Humanos</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="intervencao" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Intervenção Pública</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="dtAlusiva" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Data alusiva</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
@@ -363,7 +378,11 @@
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="Até 50 Pessoas" />
+						<xs:enumeration value="Até 10 Pessoas" />
+                        <xs:enumeration value="Entre 11 e 20 pessoas" />
+                        <xs:enumeration value="Entre 21 e 30 pessoas" />
+                        <xs:enumeration value="Entre 31 e 40 pessoas" />
+                        <xs:enumeration value="Entre 41 e 50 pessoas" />
 						<xs:enumeration value="Entre 51 e 100 Pessoas" />
 						<xs:enumeration value="Entre 101 e 200 Pessoas" />
 						<xs:enumeration value="Entre 201 e 300 Pessoas" />

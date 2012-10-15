@@ -11,7 +11,7 @@
 	<xs:element name="formAcessoJustica" type="formAcessoJustica">
 		<xs:annotation>
 			<xs:appinfo>
-				<xhtml:label>RAIZ ACESSO À JUSTIÇA ATENDIMENTO</xhtml:label>
+				<xhtml:label>RAIZ ATENDIMENTO PSICOSSOCIAL JURÍDICO</xhtml:label>
 				<class:classificacoes>
 					<class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
 				</class:classificacoes>

@@ -34,6 +34,17 @@ no stash sob a chave "csv".
 
 use base qw( Catalyst::View::Download::CSV );
 
+__PACKAGE__->config(			
+    'quote_char' => '"',
+    'escape_char' => '"',
+    'sep_char' => ";",
+    'eol' => "\n",
+    'binary' => 1,
+	 'allow_loose_quotes' => 1,
+	 'allow_loose_escapes' => 1,
+	 'allow_whitespace' => 1,
+	 'always_quote' => 1
+);
 
 =head1 COPYRIGHT AND LICENSING
 

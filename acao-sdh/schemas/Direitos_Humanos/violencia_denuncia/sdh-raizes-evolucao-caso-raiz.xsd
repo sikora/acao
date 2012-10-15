@@ -1,10 +1,10 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh-evolucao-caso-ddh.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/sdh-evolucao-caso-raiz.xsd"
 	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
 	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
 	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
-	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh-evolucao-caso-ddh.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh-evolucao-caso-raiz.xsd"
 	elementFormDefault="qualified">
 		
 		<!-- Begin  -->	
@@ -15,17 +15,6 @@
 					<class:classificacoes>
 		                <class:classificacao>cn=Atendimento,cn=Direitos Humanos</class:classificacao>
 					</class:classificacoes>
-					<!--  indices  
-					<idx:index>
-		                <idx:hint key="pessoa.numeronis" xpath="formEvolucaoDoCaso/numeronis"/>
-		                <idx:hint key="pessoa.nome" xpath="formEvolucaoDoCaso/responsavel/nomresp"/>
-		                <idx:hint key="pessoa.numerocpf" xpath="formEvolucaoDoCaso/numerocpf"/>
-		                <idx:hint key="pessoa.numnismembro" xpath="formEvolucaoDoCaso/compfamiliar/numnismembro"/>
-		                <idx:hint key="pessoa.nomemembro" xpath="formEvolucaoDoCaso/compfamiliar/nommembro"/>
-		                <idx:hint key="pessoa.rgmembro" xpath="formEvolucaoDoCaso/compfamiliar/rgmembro"/>
-		                <idx:hint key="pessoa.cpfmembro" xpath="formEvolucaoDoCaso/compfamiliar/cpfmembro"/>
-		            </idx:index>
-		            -->
 				</xs:appinfo>
 			</xs:annotation>
 		</xs:element>

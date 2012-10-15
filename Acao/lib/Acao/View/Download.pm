@@ -20,7 +20,9 @@ no stash sob a chave "csv".
 
 
 __PACKAGE__->config(
-    content_type => {'text/csv' => { 'outfile' => 'relatorio_'.time.'.csv' } }
+    content_type => {'text/csv' => { 'outfile' => 'relatorio_'.time.'.csv',								    
+								    'module' => 'Acao::View::Download::CSV' } 
+					}
 );
 
 =head1 COPYRIGHT AND LICENSING

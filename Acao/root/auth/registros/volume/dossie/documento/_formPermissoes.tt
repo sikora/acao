@@ -292,9 +292,9 @@ function check_auths() {
 
             if (  (lotacao == checklotacao)  &&  
                (
-                permissao == 'Alterar este Volume' ||
-                permissao == 'Listar este Volume'  ||
-                permissao == 'Ver este Volume' ))  {
+                permissao == 'Alterar este Documento' ||
+                permissao == 'Listar este Documento'  ||
+                permissao == 'Ver este Documento' ))  {
                   count++;
             }    
 

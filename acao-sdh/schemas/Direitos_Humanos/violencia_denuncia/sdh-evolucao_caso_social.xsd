@@ -69,7 +69,8 @@
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
-							<xs:enumeration value="Visita domiciliar" />
+							<xs:enumeration value="Atendimento individual" />
+                            <xs:enumeration value="Visita domiciliar" />
 							<xs:enumeration value="Encaminhado para outra política social" />
 							<xs:enumeration value="Reunião institucional com outros órgãos/políticas psicossociais e jurídicas" />
 							<xs:enumeration value="Acompanhamento a alguma política social" />	

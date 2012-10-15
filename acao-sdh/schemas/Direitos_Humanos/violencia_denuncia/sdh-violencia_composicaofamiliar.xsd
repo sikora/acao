@@ -37,6 +37,7 @@
 				            </xs:annotation>
 				            <xs:simpleType>
 				                <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Sozinho" />
 											<xs:enumeration value="Amigo" />
 											<xs:enumeration value="Conhecido" />
 											<xs:enumeration value="Pai" />
