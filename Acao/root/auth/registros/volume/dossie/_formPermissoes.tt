@@ -276,9 +276,9 @@ function check_auths() {
 
             if (  (lotacao == checklotacao)  &&  
                (
-                permissao == 'Alterar este Volume' ||
-                permissao == 'Listar este Volume'  ||
-                permissao == 'Ver este Volume' ))  {
+                permissao == 'Alterar este Prontuário' ||
+                permissao == 'Listar este Prontuário'  ||
+                permissao == 'Ver este Prontuário' ))  {
                   count++;
             }    
 
