@@ -133,6 +133,13 @@
 				</xs:annotation>
 			</xs:element>
 
+			<xs:element name="outrasInfo" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Outras informações</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
 
 
 		</xs:sequence>

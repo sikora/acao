@@ -198,7 +198,8 @@
 							<xs:enumeration value="Mídia" />
 							<xs:enumeration value="Rede Social/ E-mail" />
 							<xs:enumeration value="Órgão Público" />																				
-							<xs:enumeration value="Movimento Social/ Comunidade" />		
+							<xs:enumeration value="Movimento Social/ Comunidade" />	
+                            <xs:enumeration value="Outros" />	
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
