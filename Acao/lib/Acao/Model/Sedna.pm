@@ -106,6 +106,7 @@ sub execute {
 				$config->{login},
 				$config->{password}
 		);
+		$self->{conn}->setConnectionAttr(AUTOCOMMIT => Sedna::SEDNA_AUTOCOMMIT_OFF());
 
 		$self->{conn}->setConnectionAttr(%{$config->{attr}}) if exists $config->{attr} && ref $config->{attr} eq 'HASH';
 
@@ -131,6 +132,7 @@ sub begin {
 				$config->{password}
 		);
 
+		$self->{conn}->setConnectionAttr(AUTOCOMMIT => Sedna::SEDNA_AUTOCOMMIT_OFF());
 		$self->{conn}->setConnectionAttr(%{$config->{attr}}) if exists $config->{attr} && ref $config->{attr} eq 'HASH';
 
 		$ret = $self->SUPER::begin(@_);
