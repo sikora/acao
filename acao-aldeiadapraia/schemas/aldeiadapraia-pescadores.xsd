@@ -1,0 +1,210 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia-pescadores.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia-pescadores.xsd"
+	elementFormDefault="qualified">
+
+	<xs:element name="pescadores" type="pescadores">
+		<xs:annotation>
+			<xs:appinfo>
+				<xhtml:label>GRUPO DE PESCADORES</xhtml:label>
+				<class:classificacoes>
+					<class:classificacao>cn=Aldeia da Praia,cn=Habitação
+					</class:classificacao>
+				</class:classificacoes>
+				<idx:index>
+				</idx:index>
+
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="pescadores">
+		<xs:sequence>
+
+			<xs:element name="possuiExpProf" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Já teve alguma outra experiência profissional
+						</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="localExpProf" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Onde teve experiência profissional</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cargoExpProf" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Cargo que teve experiência profissional</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="atvDesemp" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Atividade desempenhada</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Pescador" />
+						<xs:enumeration value="Marisqueiro(a)" />
+						<xs:enumeration value="Lagosteiro" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tpPesca" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Tipo de Pesca</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Artesanal" />
+						<xs:enumeration value="Industrial" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tpEmbarc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Tipo de embarcação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Paquete" />
+						<xs:enumeration value="Jangada" />
+						<xs:enumeration value="Lancha" />
+                        <xs:enumeration value="Bote" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="condEmbarc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Condição da embarcação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Própria" />
+						<xs:enumeration value="Alugada" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="vincZOito" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Possui vinculação com a Colônia Z8</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cursoPesc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Já fez algum curso de aperfeiçoamento na área de pesca
+						</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="espCursPesc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Especifique curso de aperfeiçoamento na área de pesca</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="renda" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Renda média mensal</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="1/2 a 1 salário mínimo" />
+						<xs:enumeration value="1 a 2  salários mínimos" />
+						<xs:enumeration value="Acima de 2 salários mínimos" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="interessCurso" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Possui interesse em realizar algum curso/oficina
+						</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cursoInter" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Curso que tem interesse</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="evolucao" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>EVOLUÇÃO DO ACOMPANHAMENTO – EIXO EMPREENDEDORISMO</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
