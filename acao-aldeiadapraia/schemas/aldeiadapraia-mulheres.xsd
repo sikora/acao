@@ -1,18 +1,19 @@
 <?xml version="1.0" standalone="yes"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
-	xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_profissional_sexo.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_mulheres.xsd"
 	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
 	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
-	targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_profissional_sexo.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_mulheres.xsd"
 	elementFormDefault="qualified">
 
-	<xs:element name="profissionalSexo" type="profissionalSexo">
+	<xs:element name="mulheres" type="mulheres">
 		<xs:annotation>
 			<xs:appinfo>
-				<xhtml:label>GRUPO DE PROFISSIONAIS DO SEXO</xhtml:label>
+				<xhtml:label>GRUPO DE MULHERES</xhtml:label>
 				<class:classificacoes>
-					<class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
+					<class:classificacao>cn=Aldeia da Praia,cn=Habitação
+					</class:classificacao>
 				</class:classificacoes>
 				<idx:index>
 				</idx:index>
@@ -21,7 +22,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:complexType name="profissionalSexo">
+	<xs:complexType name="mulheres">
 		<xs:sequence>
 
 			<xs:element name="possuiFilhos" minOccurs="0">
@@ -51,6 +52,39 @@
 						<xs:enumeration value="4" />
 						<xs:enumeration value="5" />
 						<xs:enumeration value="Mais de 5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tema" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Qual tema gostaria de discutir nas palestras e
+							oficinas</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Cursos Profissionalizantes" />
+						<xs:enumeration value="Drogas" />
+						<xs:enumeration value="Sexualidade" />
+						<xs:enumeration value="Violência doméstica" />
+						<xs:enumeration value="Cidadania" />
+						<xs:enumeration value="Meio Ambiente" />
+						<xs:enumeration value="Família" />
+						<xs:enumeration value="Saúde da mulher" />
+						<xs:enumeration value="Outros" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="espTema" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Especique que outro tema</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -101,10 +135,35 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element name="trab" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Trabalha atualmente</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 			<xs:element name="localTrab" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Onde trabalha</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ocupacao" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Qual ocupação</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
@@ -125,6 +184,31 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element name="clt" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Possui carteira assinada</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="pqNaoClt" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Porque não tem cartera assinada</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 			<xs:element name="renda" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
@@ -136,20 +220,6 @@
 						<xs:enumeration value="1/2 a 1 salário mínimo" />
 						<xs:enumeration value="1 a 2  salários mínimos" />
 						<xs:enumeration value="Acima de 2 salários mínimos" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="origemRrenda" minOccurs="0">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Origem renda</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:enumeration value="Prestação de serviço como profissional do sexo" />
-						<xs:enumeration value="Auxílio de familiares" />
-						<xs:enumeration value="Benefícios sociais (Bolsa família, pensão, etc)" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -178,10 +248,10 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="usaContracep" minOccurs="0">
+			<xs:element name="cursoOutrAreas" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Faz uso de algum método contraceptivo</xhtml:label>
+						<xhtml:label>Tem interesse em profissionalizar-se em outras áreas</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
@@ -191,27 +261,27 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="tpContracep" minOccurs="0">
+			<xs:element name="espCursoOutrAreas" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Tipo de contraceptivo que usa</xhtml:label>
+						<xhtml:label>Curso com interesse em profissionalizar-se</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="Coito interrompido" />
-						<xs:enumeration value="Camisinha" />
-						<xs:enumeration value="Diafragma" />
-						<xs:enumeration value="Laqueadura" />
-						<xs:enumeration value="Contraceptivos orais" />
+						<xs:enumeration value="Higiene e Beleza" />
+						<xs:enumeration value="Artesanato em geral" />
+						<xs:enumeration value="Culinária" />
+						<xs:enumeration value="Turismo" />
+						<xs:enumeration value="Informática" />
 						<xs:enumeration value="Outros" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="espContracp" minOccurs="0">
+			<xs:element name="espOutrosCursoOutrAreas" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
-						<xhtml:label>Especique que outro contaceptivo usa</xhtml:label>
+						<xhtml:label>Especique que outro curso com interesse em profissionalizar-se</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:simpleType>
@@ -220,39 +290,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="tema" minOccurs="0">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Qual tema gostaria de discutir nas palestras e
-							oficinas</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:enumeration value="Cursos Profissionalizantes" />
-						<xs:enumeration value="Drogas" />
-						<xs:enumeration value="Sexualidade" />
-						<xs:enumeration value="Violência doméstica" />
-						<xs:enumeration value="Cidadania" />
-						<xs:enumeration value="Meio Ambiente" />
-						<xs:enumeration value="Família" />
-						<xs:enumeration value="Saúde da mulher" />
-						<xs:enumeration value="Outros" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="espTema" minOccurs="0">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Especique que outro tema</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:maxLength value="255" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
+
 
 			<xs:element name="cursoMerc">
 				<xs:annotation>
