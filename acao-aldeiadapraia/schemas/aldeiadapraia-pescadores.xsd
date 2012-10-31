@@ -10,7 +10,7 @@
 	<xs:element name="pescadores" type="pescadores">
 		<xs:annotation>
 			<xs:appinfo>
-				<xhtml:label>Grupo de Pescadores</xhtml:label>
+				<xhtml:label>GRUPO DE PESCADORES</xhtml:label>
 				<class:classificacoes>
 					<class:classificacao>cn=Aldeia da Praia,cn=Habitação
 					</class:classificacao>
@@ -63,6 +63,100 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element name="atvDesemp" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Atividade desempenhada</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Pescador" />
+						<xs:enumeration value="Marisqueiro(a)" />
+						<xs:enumeration value="Lagosteiro" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tpPesca" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Tipo de Pesca</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Artesanal" />
+						<xs:enumeration value="Industrial" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tpEmbarc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Tipo de embarcação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Paquete" />
+						<xs:enumeration value="Jangada" />
+						<xs:enumeration value="Lancha" />
+                        <xs:enumeration value="Bote" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="condEmbarc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Condição da embarcação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Própria" />
+						<xs:enumeration value="Alugada" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="vincZOito" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Possui vinculação com a Colônia Z8</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cursoPesc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Já fez algum curso de aperfeiçoamento na área de pesca
+						</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="espCursPesc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Especifique curso de aperfeiçoamento na área de pesca</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 			<xs:element name="renda" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
@@ -97,8 +191,13 @@
 						<xhtml:label>Curso que tem interesse</xhtml:label>
 					</xs:appinfo>
 				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
 			</xs:element>
-			<xs:element name="evolucao" minOccurs="0">
+			<xs:element name="evolucao" minOccurs="0" type="xs:string">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>EVOLUÇÃO DO ACOMPANHAMENTO – EIXO EMPREENDEDORISMO</xhtml:label>
