@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_grupogmes.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_grupogmes.xsd"
+    elementFormDefault="qualified">
+
+    <xs:element name="formAldeiaPraiaGrupoGMES" type="formAldeiaPraiaGrupoGMES">
+        <xs:annotation>
+            <xs:appinfo>
+                <xhtml:label>Grupo GMES</xhtml:label>
+                <class:classificacoes>
+                    <class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
+                </class:classificacoes>
+            </xs:appinfo>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:complexType name="formAldeiaPraiaGrupoGMES">
+        <xs:sequence>
+            <xs:element name="fichaAcompanhamento">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Grupo GMES:</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="participaAldeiaPraia" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Participa ou já participou de algum grupo ou atividades desenvolvidas pelo Programa Aldeia da Praia?</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />                                  
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+            <xs:element name="seSimQualPrograma" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se sim, Qual Programa</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="seNaoPorque" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se Não, Porque</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+                          <xs:element name="participaAtiviEducaSanit" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Participa ou já participou de alguma atividade na área de Educação Sanitária e/ou Ambiental?</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />                                  
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+            <xs:element name="seSimQualAtividade" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se sim, Qual Atividade</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="seNaoPorqueAtivi" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se Não, Porque</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+                        <xs:element name="surgesTematiAbordadas" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Sugestões de temática a serem abordadas</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Preservação do Meio Ambiente" />
+                                    <xs:enumeration value="Cuidados com a saúde" />
+                                    <xs:enumeration value="Saneamento básico e Recursos hídricos" />
+                                    <xs:enumeration value="Coleta seletiva" />
+                                    <xs:enumeration value="Reciclagem" />
+                                    <xs:enumeration value="Lixo" /> 
+                                    <xs:enumeration value="Arborização de ruas" />
+                                    <xs:enumeration value="Prevenção de doenças" />
+                                    <xs:enumeration value="Eficiência energética" /> 
+                                    <xs:enumeration value="Preservação e limpeza das praias" />
+                                    <xs:enumeration value="Outros" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+            <xs:element name="seOutrosQualSugrestoes" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se Outros, Quais sugestões?</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="evolucao"  type="xs:string" minOccurs="0"  >
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Evolução</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
