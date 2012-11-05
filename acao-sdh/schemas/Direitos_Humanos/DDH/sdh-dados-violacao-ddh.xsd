@@ -7,7 +7,7 @@
     targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh_dados_violacao_ddh.xsd"
     elementFormDefault="qualified">
         
-        <!-- Begin  -->    
+        
         <xs:element name="dadosViolacao" type="dadosViolacao">
             <xs:annotation>
                 <xs:appinfo>
@@ -26,7 +26,7 @@
         <xs:complexType name="dadosViolacao">
             <xs:sequence> 
 
-                    <!-- Begin field Input Text -->    
+                        
                     <xs:element name="protocolo" minOccurs="1">
                         <xs:annotation>
                             <xs:appinfo>
@@ -39,9 +39,9 @@
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:element>
-                    <!-- End field Input Text -->
                     
-                 <!-- Begin field textarea  -->    
+                    
+                    
                     <xs:element name="horaViolacao" minOccurs="0">
                         <xs:annotation>
                             <xs:appinfo>
@@ -55,11 +55,11 @@
                         </xs:simpleType>
                     </xs:element>
 
-                    <!-- End field textarea  -->
+                   
 
       
 
-                <!-- Begin field selectBox -->  
+                  
                 <xs:element name="tipoDemanda"  minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -78,9 +78,9 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End field selectBox --> 
+                 
 
-                <!-- Begin fieldset - seDemandaDenuncia -->    
+                    
                 <xs:element name="seDemandaDenuncia" minOccurs="0" >
                     <xs:annotation>
                         <xs:appinfo>
@@ -90,7 +90,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             
-                            <!-- Begin field checkbox -->        
+                                    
                             <xs:element name="urgente" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -98,9 +98,9 @@
                                     </xs:appinfo>
                                 </xs:annotation>
                             </xs:element>
-                            <!-- End field checkbox-->        
+                                    
                             
-                            <!-- Begin field checkbox -->        
+                                    
                             <xs:element name="Geral" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -108,16 +108,16 @@
                                     </xs:appinfo>
                                 </xs:annotation>
                             </xs:element>
-                            <!-- End field checkbox-->                                    
+                                                                
     
                             
                         </xs:sequence>    
                     </xs:complexType>
                 </xs:element>
                 
-                <!-- End fieldset - seDemandaDenuncia -->    
+                    
 
-              <!-- Begin  complexType -->
+              
                 <xs:element name="localViolação">
                     <xs:annotation>
                         <xs:appinfo>
@@ -127,7 +127,7 @@
                     <xs:complexType>
                         <xs:sequence>
 
-                            <!-- Begin field checkbox -->        
+                                    
                             <xs:element name="casaResidência" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -135,8 +135,8 @@
                                     </xs:appinfo>
                                 </xs:annotation>
                             </xs:element>
-                            <!-- End field checkbox-->    
-                            <!-- Begin field checkbox -->        
+                                
+                                    
                             <xs:element name="vizinhanca" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -144,8 +144,8 @@
                                     </xs:appinfo>
                                 </xs:annotation>
                             </xs:element>
-                            <!-- End field checkbox-->                            
-                            <!-- Begin field checkbox -->        
+                                                        
+                                    
                             <xs:element name="comunidade" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -154,8 +154,8 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox-->  
-                            <!-- Begin field checkbox -->        
+                              
+                                    
                             <xs:element name="escola" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -164,9 +164,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="localTrabalho" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -175,9 +175,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="instituicaoPublica" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -186,9 +186,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="pracas" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -197,9 +197,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="logradouros" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -208,9 +208,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="terminalPapicu" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -219,8 +219,8 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
-                            <!-- Begin field checkbox -->        
+                             
+                                    
                             <xs:element name="terminalAntonioBezerra" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -229,9 +229,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="terminalParangaba" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -240,9 +240,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="terminalLagoa" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -251,9 +251,9 @@
                                 </xs:annotation>
                             </xs:element>
                            
-                            <!-- End field checkbox--> 
+                             
 
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="terminalMessejana" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -261,7 +261,7 @@
                                     </xs:appinfo>
                                 </xs:annotation>
                             </xs:element>
-                                                        <!-- Begin field checkbox -->        
+                                                                
                             <xs:element name="terminalConjuntoCeara" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -270,8 +270,8 @@
                                 </xs:annotation>
                             </xs:element>
 
-                            <!-- End field checkbox--> 
-                             <!-- Begin field checkbox -->        
+                             
+                                     
                             <xs:element name="outros" minOccurs="0" type="xs:boolean">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -282,7 +282,7 @@
 
 
 
-                            <!-- Begin field Input Text -->    
+                                
                             <xs:element name="especifiqueOutros" minOccurs="0">
                                 <xs:annotation>
                                     <xs:appinfo>
@@ -295,13 +295,13 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <!-- End field Input Text -->                                                        
+                                                                                    
 
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
 
-                                       <!-- Begin field selectBox -->  
+                                         
                 <xs:element name="tipoComunidade"  minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -317,9 +317,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element> 
-
-
-                <!-- Begin field Input Text -->    
+   
                 <xs:element name="especifiqueOutros" minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -332,10 +330,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End field Input Text -->
-
-
-                <!-- Begin field Input Text -->    
+                      
                 <xs:element name="endereco" minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -348,9 +343,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End field Input Text -->
-
-                <!-- Begin  autocomplete -->
+  
                 <xs:element name="bairro" minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -367,9 +360,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End  autocomplete-->    
-                
-                <!-- Begin  autocomplete -->
+         
                 <xs:element name="comunidadeOndeVitMora" minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -386,10 +377,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End  autocomplete-->
-                                
-
-                <!-- Begin field Input Text -->    
+                    
                 <xs:element name="pontoReferencia" minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -402,9 +390,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <!-- End field Input Text -->               
-                
-                 <!-- Begin field selectBox -->  
+      
                 <xs:element name="regional"  minOccurs="0">
                     <xs:annotation>
                         <xs:appinfo>
@@ -425,6 +411,6 @@
                 </xs:element> 
             </xs:sequence>
         </xs:complexType>
-        <!-- End  -->    
+  
         
 </xs:schema>   

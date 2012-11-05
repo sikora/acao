@@ -1,0 +1,190 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_crianca.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_crianca.xsd"
+    elementFormDefault="qualified">
+
+    <xs:element name="criancaAdolescente" type="criancaAdolescente">
+        <xs:annotation>
+            <xs:appinfo>
+                <xhtml:label>GRUPO CRIANÇA E ADOLESCENTE</xhtml:label>
+                <class:classificacoes>
+                    <class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
+                </class:classificacoes>
+            </xs:appinfo>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:complexType name="criancaAdolescente">
+        <xs:sequence>
+            <xs:element name="atividadesParticipacaoSocial">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Grupo de criança e adolecentes:</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="problemaSaude" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Possui algum problema de saúde?</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />                                  
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+                        <xs:element name="qualDoenca" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Se sim, Qual a doença</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Doenças Respiratórias" />
+                                    <xs:enumeration value="Eplepsia" />
+                                    <xs:enumeration value="Tabagismo" />
+                                    <xs:enumeration value="Doença de Chagas" />
+                                    <xs:enumeration value="DST" />
+                                    <xs:enumeration value="HIV/ AIDS" /> 
+                                    <xs:enumeration value="Hanseníase" />
+                                    <xs:enumeration value="Transtorno psicológico" />
+                                    <xs:enumeration value="Maus Tratos" /> 
+                                    <xs:enumeration value="Diabetes" />
+                                    <xs:enumeration value="Outros" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="fazTratamentoSaude" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Faz tratamento? </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />                                  
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ondeFazTratamento" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Se sim, onde? </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Unidade de Saúde " />
+                                    <xs:enumeration value="Hospital" />                                  
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="possuiOpcaoLazer" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Possui  alguma opção de lazer? </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+                        <xs:element name="qualOpcaoLazer" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Se sim, qual sual opção de lazer?  </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Futebol / outros esportes" />
+                                    <xs:enumeration value="Festas" />
+                                    <xs:enumeration value="Assistir TV " />
+                                    <xs:enumeration value="Sair com vizinhos / amigos" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+
+                        <xs:element name="temAtividadeEsportiva" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Realiza alguma atividade esportiva e/ou cultural ? </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+                        <xs:element name="qualAtividadeEsporticaCultural" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Qual atividade esportica esportiva e/ou cultural que realiza?  </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Futebol" />
+                                    <xs:enumeration value="Surf" />
+                                    <xs:enumeration value="Karatê" />
+                                    <xs:enumeration value="Dança" />
+                                    <xs:enumeration value="Natação" />
+                                    <xs:enumeration value="Toca Violão" />
+                                    <xs:enumeration value="Canto " />
+                                    <xs:enumeration value="Voley" />
+                                    <xs:enumeration value="Outros" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                           <xs:element name="temAtividadeEsportiva" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Disponibilidade para participar das atividades do projeto ? </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Manhã" />
+                                    <xs:enumeration value="Tarde" />
+                                    <xs:enumeration value="Noite" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+
+                        <xs:element name="evolucao"  type="xs:string" minOccurs="0"  >
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Evolução do acompanhamento</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                        </xs:element>
+             </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

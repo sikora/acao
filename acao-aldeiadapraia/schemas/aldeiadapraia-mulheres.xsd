@@ -12,8 +12,7 @@
 			<xs:appinfo>
 				<xhtml:label>GRUPO DE MULHERES</xhtml:label>
 				<class:classificacoes>
-					<class:classificacao>cn=Aldeia da Praia,cn=Habitação
-					</class:classificacao>
+					<class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
 				</class:classificacoes>
 				<idx:index>
 				</idx:index>
@@ -261,23 +260,68 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="espCursoOutrAreas" minOccurs="0">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Curso com interesse em profissionalizar-se</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:enumeration value="Higiene e Beleza" />
-						<xs:enumeration value="Artesanato em geral" />
-						<xs:enumeration value="Culinária" />
-						<xs:enumeration value="Turismo" />
-						<xs:enumeration value="Informática" />
-						<xs:enumeration value="Outros" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
+            <xs:element name="pergunta">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Cursos com interesse em profissionalizar-se</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="higieneBeleza" type="xs:boolean" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Higiene e Beleza</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="artesanatoGeral" type="xs:boolean" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Artesanato em geral</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+
+                                    <xs:element name="culinaria" type="xs:boolean" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Culinária
+                                                </xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="turismo" type="xs:boolean" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Turismo</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="informatica" type="xs:boolean" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Informática</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="outras" type="xs:boolean" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Outras</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="nenhum" type="xs:boolean" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:appinfo>
+                                                <xhtml:label>Nenhum</xhtml:label>
+                                            </xs:appinfo>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
 			<xs:element name="espOutrosCursoOutrAreas" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
