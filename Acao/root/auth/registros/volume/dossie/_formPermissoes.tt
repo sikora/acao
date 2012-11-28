@@ -239,7 +239,7 @@ function add_autorizacoes(action) {
   }
 }
 
-function remover_autorizacoes(action,posicao) {
+function remover_autorizacoes(action,posicao,lotacao,role) {
 
   var autorizacoes_ldap = $("input[name='autorizacoes']").val();
       $.ajax({
@@ -250,6 +250,8 @@ function remover_autorizacoes(action,posicao) {
              'autorizacoes_ldap':  autorizacoes_ldap,
              'posicao': posicao,
              'model'	 :  'dossie',
+             'lotacao'   :  lotacao,
+             'role' :   role,
              },
           success: function(msg){
              $('#grid-autorizacoes').html(msg);
