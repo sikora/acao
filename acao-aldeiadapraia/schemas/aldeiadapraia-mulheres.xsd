@@ -12,8 +12,7 @@
 			<xs:appinfo>
 				<xhtml:label>GRUPO DE MULHERES</xhtml:label>
 				<class:classificacoes>
-					<class:classificacao>cn=Aldeia da Praia,cn=Habitação
-					</class:classificacao>
+					<class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
 				</class:classificacoes>
 				<idx:index>
 				</idx:index>

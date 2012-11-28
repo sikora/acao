@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_evolucao.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_evolucao.xsd"
+	elementFormDefault="qualified">
+
+	<xs:element name="evolucao" type="evolucao">
+		<xs:annotation>
+			<xs:appinfo>
+				<xhtml:label>EVOLUÇÃO ATENDIMENTO</xhtml:label>
+				<class:classificacoes>
+					<class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
+				</class:classificacoes>
+				<idx:index>
+				</idx:index>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+				
+	<xs:complexType name="evolucao">
+        <xs:sequence>
+            <xs:element name="data" minOccurs="1" type="xs:date">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Data</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:element>
+              <xs:element name="evolucaoAtendimento" minOccurs="1" maxOccurs="20" type="xs:string">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Evolução Atendimento</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

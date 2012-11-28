@@ -8,10 +8,10 @@
     targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_grupogmes.xsd"
     elementFormDefault="qualified">
 
-    <xs:element name="formAldeiaPraiaGrupoGMES" type="formAldeiaPraiaGrupoGMES">
+    <xs:element name="grupoGMES" type="grupoGMES">
         <xs:annotation>
             <xs:appinfo>
-                <xhtml:label>Grupo GMES</xhtml:label>
+                <xhtml:label>GRUPO GMES</xhtml:label>
                 <class:classificacoes>
                     <class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
                 </class:classificacoes>
@@ -19,7 +19,7 @@
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="formAldeiaPraiaGrupoGMES">
+    <xs:complexType name="grupoGMES">
         <xs:sequence>
             <xs:element name="fichaAcompanhamento">
                 <xs:annotation>

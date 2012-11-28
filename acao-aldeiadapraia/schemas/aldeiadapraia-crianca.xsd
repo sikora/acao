@@ -8,10 +8,10 @@
     targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_crianca.xsd"
     elementFormDefault="qualified">
 
-    <xs:element name="formAldeiaPraiaCrianca" type="formAldeiaPraiaCrianca">
+    <xs:element name="criancaAdolescente" type="criancaAdolescente">
         <xs:annotation>
             <xs:appinfo>
-                <xhtml:label>01. Projeto Aldeia da Praia Criança e adolecente</xhtml:label>
+                <xhtml:label>GRUPO CRIANÇA E ADOLESCENTE</xhtml:label>
                 <class:classificacoes>
                     <class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
                 </class:classificacoes>
@@ -19,7 +19,7 @@
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="formAldeiaPraiaCrianca">
+    <xs:complexType name="criancaAdolescente">
         <xs:sequence>
             <xs:element name="atividadesParticipacaoSocial">
                 <xs:annotation>

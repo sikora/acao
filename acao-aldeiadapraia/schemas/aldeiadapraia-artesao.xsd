@@ -8,10 +8,10 @@
     targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_artesao.xsd"
     elementFormDefault="qualified">
 
-    <xs:element name="formAldeiaPraia" type="formAldeiaPraia">
+    <xs:element name="artesao" type="artesao">
         <xs:annotation>
             <xs:appinfo>
-                <xhtml:label>01. Projeto Aldeia da Praia</xhtml:label>
+                <xhtml:label>GRUPO ARTESÃO</xhtml:label>
                 <class:classificacoes>
                     <class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
                 </class:classificacoes>
@@ -19,7 +19,7 @@
         </xs:annotation>
     </xs:element>
 
-    <xs:complexType name="formAldeiaPraia">
+    <xs:complexType name="artesao">
         <xs:sequence>
             <xs:element name="atividadesParticipacaoSocial">
                 <xs:annotation>
