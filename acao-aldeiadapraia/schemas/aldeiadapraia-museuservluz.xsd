@@ -1,0 +1,268 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_museuserviluz.xsd"
+    xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+    xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+    xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_museuserviluz.xsd"
+    elementFormDefault="qualified">
+
+    <xs:element name="museuServiluz" type="museuServiluz">
+        <xs:annotation>
+            <xs:appinfo>
+                <xhtml:label>GRUPO MUSEU COMUNITARIO SERVILUZ</xhtml:label>
+                <class:classificacoes>
+                    <class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
+                </class:classificacoes>
+            </xs:appinfo>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:complexType name="museuServiluz">
+        <xs:sequence>
+            <xs:element name="atividadesParticipacaoSocial">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Grupo Museu Comunitário do Serviluz:</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="participaAldeiaPraia" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Participa ou já participou de algum grupo ou atividades desenvolvidas pelo Programa Aldeia da Praia?</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />                                  
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+            <xs:element name="seSimQualPrograma" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se sim, Qual Programa</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="seNaoPorque" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se Não, Porque</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+                          <xs:element name="participaAtividadeMuseu" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Participa ou já participou de alguma atividade semelhante ao Museu comunitário?</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Sim" />
+                                    <xs:enumeration value="Nao" />                                  
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+            <xs:element name="seSimQualAtividade" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se sim, Qual Atividade</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="seNaoPorqueAtivi" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se Não, Porque</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+                        <xs:element name="partAtiviAreaTuris" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Participa ou já participou de alguma atividade voltada para a área do turismo?</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Guia de turismo" />
+                                    <xs:enumeration value="Hotelaria" />
+                                    <xs:enumeration value="Recepcionista de hotel" />
+                                    <xs:enumeration value="Garçom" />
+                                    <xs:enumeration value="Barman" />
+                                    <xs:enumeration value="Planejamento e organização de eventos" /> 
+                                    <xs:enumeration value="Administração hotelaria" />
+                                    <xs:enumeration value="Governança" />
+                                    <xs:enumeration value="Gastronomia" /> 
+                                    <xs:enumeration value="Animação e recreação" />
+                                    <xs:enumeration value="Nunca participou." />
+                                    <xs:enumeration value="Outros" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+            <xs:element name="sePartAtiviAreaTuris" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se Outros, Qual?</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="temInterePartAtiviAreaTuris" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Tem interesse em participar de algum curso voltado para a área do turismo?</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Guia de turismo" />
+                                    <xs:enumeration value="Hotelaria" />
+                                    <xs:enumeration value="Recepcionista de hotel" />
+                                    <xs:enumeration value="Garçom" />
+                                    <xs:enumeration value="Barman" />
+                                    <xs:enumeration value="Planejamento e organização de eventos" /> 
+                                    <xs:enumeration value="Administração hotelaria" />
+                                    <xs:enumeration value="Governança" />
+                                    <xs:enumeration value="Gastronomia" /> 
+                                    <xs:enumeration value="Animação e recreação" />
+                                    <xs:enumeration value="Não tem interesse" />
+                                    <xs:enumeration value="Outros" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+            <xs:element name="seTemInterePartAtiviAreaTuris" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Se Outros, Quais?</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+                       <xs:element name="conheciLinguaInglesa" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Conhecimento em Língua  Ingles </xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Básico" />
+                                    <xs:enumeration value="Intermediário" />
+                                    <xs:enumeration value="Avançado" />
+                                    <xs:enumeration value="Não tem" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+                       <xs:element name="conheciLinguaEspanhol" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Conhecimento em Língua  Espanhol</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Básico" />
+                                    <xs:enumeration value="Intermediário" />
+                                    <xs:enumeration value="Avançado" />
+                                    <xs:enumeration value="Não tem" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+                       <xs:element name="conheciLinguaFrances" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Conhecimento em Língua Francês</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Básico" />
+                                    <xs:enumeration value="Intermediário" />
+                                    <xs:enumeration value="Avançado" />
+                                    <xs:enumeration value="Não tem" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+                       <xs:element name="conheciLinguaItaliano" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Conhecimento em Língua Italiano</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Básico" />
+                                    <xs:enumeration value="Intermediário" />
+                                    <xs:enumeration value="Avançado" />
+                                    <xs:enumeration value="Não tem" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                       <xs:element name="conheciLinguaAlemao" minOccurs="0">
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Conhecimento em Língua Alemão</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Básico" />
+                                    <xs:enumeration value="Intermediário" />
+                                    <xs:enumeration value="Avançado" />
+                                    <xs:enumeration value="Não tem" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="evolucao"  type="xs:string" minOccurs="0"  >
+                            <xs:annotation>
+                                <xs:appinfo>
+                                    <xhtml:label>Evolução</xhtml:label>
+                                </xs:appinfo>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

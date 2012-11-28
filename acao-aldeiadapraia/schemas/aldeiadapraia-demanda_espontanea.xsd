@@ -1,0 +1,129 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_demanda_espontanea.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/habitafor/aldeiadapraia_demanda_espontanea.xsd"
+	elementFormDefault="qualified">
+
+	<xs:element name="demanda" type="demanda">
+		<xs:annotation>
+			<xs:appinfo>
+				<xhtml:label>DEMANDA ESPONTANEA</xhtml:label>
+				<class:classificacoes>
+					<class:classificacao>cn=Aldeia da Praia,cn=Habitação</class:classificacao>
+				</class:classificacoes>
+				<idx:index>
+				</idx:index>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+				
+	<xs:complexType name="demanda">
+        <xs:sequence>
+
+            <xs:element name="data" minOccurs="1" type="xs:date">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Data</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="responAtendimento" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Responsável pelo Atendimento</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="motivoAtendimento" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Motivo do Atendimento</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Orientação/informação Programa Aldeia da praia" />
+                        <xs:enumeration value="Inclusão nas atividades e/ou grupos desenvolvidos pelo Projeto" />
+                        <xs:enumeration value="Atualização de dados cadastrais ( BIC )" />
+                        <xs:enumeration value="Participar de cursos e/ou capacitação profissionalizante" />
+                        <xs:enumeration value="Outros" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="outrosMotivoAtendim" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Especificar Outros</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="houveEncaminhamento" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Houve Encaminhamento </xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Sim" />
+                        <xs:enumeration value="Não" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+
+            <xs:element name="localEncaminhado" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label> Local que foi encaminhado</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Rede Municipal de Assistência Social" />
+                        <xs:enumeration value="Rede Municipal de Saúde" />
+                        <xs:enumeration value="Rede Municipal de Educação" />
+                        <xs:enumeration value="Rede Estadual de Assistência Social" />
+                        <xs:enumeration value="Rede Estadual de Saúde" />
+                        <xs:enumeration value="Rede Estadual de Educação(a) " />
+                        <xs:enumeration value="Outros" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="outrosLocalEncaminh" minOccurs="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xhtml:label>Especificar Outros</xhtml:label>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

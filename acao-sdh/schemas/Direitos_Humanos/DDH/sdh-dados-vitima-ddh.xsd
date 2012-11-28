@@ -6,7 +6,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/sdh-dados-vitima-ddh.xsd"
   elementFormDefault="qualified">
-    elementInicial
+    
 
     <!-- Begin  --> 
     <xs:element name="dadosVitima" type="dadosVitima">
