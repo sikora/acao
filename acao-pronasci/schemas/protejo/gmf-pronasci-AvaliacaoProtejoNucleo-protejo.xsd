@@ -20,46 +20,7 @@
 
 	<xs:complexType name="formProtejoAvaliacaoProtejoNucleo">
 		<xs:sequence>
-			<xs:element name="dadosInscricao">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Dados de inscrição</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="numeroInscricao" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Número de inscrição</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-						<xs:element name="nucleo" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Núcleo</xhtml:label>
-								</xs:appinfo>
-								<xsdext:extensions>
-									<xsdext:engine>autoComplete</xsdext:engine>
-									<xsdext:service>/nucleos</xsdext:service>
-								</xsdext:extensions>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-
+			
 			<xs:element name="dadosJovem1">
 
 				<xs:annotation>
@@ -678,6 +639,47 @@
 				</xs:complexType>
 
 			</xs:element>
+
+			<!-- Begin field textarea  -->	
+			<xs:element name="observacoes" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Observações Gerais</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<!-- End field textarea  -->
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respaplicacaoquest" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respdigitacao" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela Digitação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
+
 
 		</xs:sequence>
 	</xs:complexType>

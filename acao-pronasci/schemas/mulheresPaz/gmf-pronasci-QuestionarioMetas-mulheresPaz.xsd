@@ -35,7 +35,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="numeroInscricao" minOccurs="0">
+						<!-- <xs:element name="numeroInscricao" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Número de inscrição:</xhtml:label>
@@ -46,11 +46,11 @@
 									<xs:maxLength value="255" />
 								</xs:restriction>
 							</xs:simpleType>
-						</xs:element>
+						</xs:element> -->
 						<xs:element name="dadosdaMulher">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>1. Dados da Mulher</xhtml:label>
+									<xhtml:label>Dados da Mulher</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
@@ -116,7 +116,7 @@
 						<xs:element name="dadosJovem">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>2. Dados do Jovem</xhtml:label>
+									<xhtml:label>Dados do Jovem</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
@@ -154,6 +154,56 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
+
+									<!-- Begin field Input Text -->	
+									<xs:element name="numero" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Número</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="255" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<!-- End field Input Text -->
+													
+
+									<!-- Begin field Input Text -->	
+									<xs:element name="complemento" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Complemento</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="255" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<!-- End field Input Text -->
+									
+									
+									<xs:element name="bairro" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Bairro</xhtml:label>
+											</xs:appinfo>
+											<xsdext:extensions>
+												<xsdext:engine>autoComplete</xsdext:engine>
+												<xsdext:service>/bairros</xsdext:service>
+											</xsdext:extensions>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="255" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									
 
 									<xs:element name="telefoneJovem" minOccurs="0">
 										<xs:annotation>
@@ -337,22 +387,63 @@
 							</xs:complexType>
 						</xs:element>
 
-						<xs:element name="projetoJovem">
-							<xs:annotation>
+						<xs:element name="projetoJovem" minOccurs="0"  maxOccurs="24">
+							<xs:annotation> 
 								<xs:appinfo>
-									<xhtml:label>3. Projeto do Jovem</xhtml:label>
+									<xhtml:label>Projeto do Jovem por mês e ano</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 
-									<xs:element name="projeto" minOccurs="0" type="xs:boolean">
+
+									<!-- Begin field selectBox -->	
+									<xs:element name="mesMetas"  minOccurs="1">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Protejo</xhtml:label>
+												<xhtml:label>Mês</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Janeiro" />
+												<xs:enumeration value="Fevereiro" />
+												<xs:enumeration value="Março" />
+												<xs:enumeration value="Abril" />
+												<xs:enumeration value="Maio" />
+												<xs:enumeration value="Junho" />
+												<xs:enumeration value="Julho" />
+												<xs:enumeration value="Agosto" />
+												<xs:enumeration value="Setembro" />
+												<xs:enumeration value="Outubro" />
+												<xs:enumeration value="Novembro" />
+												<xs:enumeration value="Dezembro
+													" />
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
+									<!-- End field selectBox -->
+
+
+									<!-- Begin field selectBox -->	
+									<xs:element name="anoMetas"  minOccurs="1">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Ano</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="2010" />
+												<xs:enumeration value="2011" />
+												<xs:enumeration value="2012" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<!-- End field selectBox -->									
+									
+
+<!-- 								
 
 									<xs:element name="nucleo" minOccurs="0">
 										<xs:annotation>
@@ -365,7 +456,7 @@
 												<xs:maxLength value="255" />
 											</xs:restriction>
 										</xs:simpleType>
-									</xs:element>
+									</xs:element>									
 
 									<xs:element name="turnoNucleo" minOccurs="0">
 										<xs:annotation>
@@ -397,8 +488,8 @@
 												<xs:enumeration value="Desistiu" />
 											</xs:restriction>
 										</xs:simpleType>
-									</xs:element>
-
+									</xs:element> -->
+<!-- 
 									<xs:element name="motivosFaltas1" type="xs:string"
 										minOccurs="0">
 										<xs:annotation>
@@ -406,16 +497,23 @@
 												<xhtml:label>Motivo</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
-									</xs:element>
+									</xs:element> -->
 
 									<xs:element name="informacoes" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label></xhtml:label>
+												<xhtml:label>Projeto do Jovem</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
+												<xs:element name="projeto" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Protejo</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
 												<xs:element name="trilhosUrbanos" type="xs:boolean">
 													<xs:annotation>
 														<xs:appinfo>
@@ -473,6 +571,23 @@
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
+
+
+												<!-- Begin field Input Text -->	
+												<xs:element name="outrosprojetos" minOccurs="0">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Outros</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="255" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<!-- End field Input Text -->
+												
 												<xs:element name="lugarDoProjeto" type="xs:string"
 													minOccurs="0">
 													<xs:annotation>
@@ -486,20 +601,17 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="situacaoJovem" minOccurs="0">
+
+									<!-- Begin field textarea  -->	
+									<xs:element name="situacaoJovem" minOccurs="0" type="xs:string">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Qual a situação do Jovem?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="Drogadição" />
-												<xs:enumeration value="??" />
-												<xs:enumeration value="??" />
-											</xs:restriction>
-										</xs:simpleType>
 									</xs:element>
+									<!-- End field textarea  -->
+									
 
 									<xs:element name="frequenciaProjeto2" minOccurs="0">
 										<xs:annotation>
@@ -526,36 +638,66 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-
-						<xs:element name="relatoVisita">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>4. Relato da visita domiciliar (destaque os
-										pricipais pontos)</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="descricaoVisita" type="xs:string"
-										minOccurs="0">
+									<xs:element name="relatoVisita">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>
-												</xhtml:label>
+												<xhtml:label>Relato da visita domiciliar (destaque os
+													pricipais pontos)</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="descricaoVisita" type="xs:string"
+													minOccurs="0">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>
+															</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
 									</xs:element>
+
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+
+				
 
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<!-- Begin field Input Text -->	
+			<xs:element name="respaplicacaoquest" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respdigitacao" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela Digitação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
 
 		</xs:sequence>
 	</xs:complexType>

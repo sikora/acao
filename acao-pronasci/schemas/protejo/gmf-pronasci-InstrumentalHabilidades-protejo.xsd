@@ -26,29 +26,7 @@
 	<xs:complexType name="formProtejoInstrumentalHabilidades">
 		<xs:sequence>
 
-			<xs:element name="dadosInscricao">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>DADOS INSCRIÇÃO</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="numeroInscricao" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Número de inscrição</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+		
 
 			<xs:element name="dadosJovem">
 				<xs:annotation>
@@ -92,16 +70,16 @@
 						<xs:element name="redeSocial" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Rede social/orkut</xhtml:label>
+									<xhtml:label>Rede social/orkut,Facebook</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
-								<xs:restriction base="xs:string">
+								<xs:restriction base="xs:string" minOccurs="0">
 									<xs:maxLength value="255" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="racaEtnia">
+						<xs:element name="racaEtnia" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Raça/etnia</xhtml:label>
@@ -135,26 +113,58 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="turno">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Turno</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Manhã" />
-									<xs:enumeration value="Tarde" />
-									<xs:enumeration value="Noite" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
+					<!-- Begin fieldset -  -->	
+					<xs:element name="turno" minOccurs="0" >
+						<xs:annotation>
+							<xs:appinfo>
+								<xhtml:label>Turno</xhtml:label>
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								
+								<!-- Begin field checkbox -->		
+								<xs:element name="manha" minOccurs="0" type="xs:boolean">
+									<xs:annotation>
+										<xs:appinfo>
+											<xhtml:label>Manhã</xhtml:label>
+										</xs:appinfo>
+									</xs:annotation>
+								</xs:element>
+								<!-- End field checkbox-->		
 
+								<!-- Begin field checkbox -->		
+								<xs:element name="tarde" minOccurs="0" type="xs:boolean">
+									<xs:annotation>
+										<xs:appinfo>
+											<xhtml:label>Tarde</xhtml:label>
+										</xs:appinfo>
+									</xs:annotation>
+								</xs:element>
+								<!-- End field checkbox-->		
+								
+								<!-- Begin field checkbox -->		
+								<xs:element name="noite" minOccurs="0" type="xs:boolean">
+									<xs:annotation>
+										<xs:appinfo>
+											<xhtml:label>Noite</xhtml:label>
+										</xs:appinfo>
+									</xs:annotation>
+								</xs:element>
+								<!-- End field checkbox-->		
+								
+								
+							</xs:sequence>	
+						</xs:complexType>
+					</xs:element>
+
+					<!-- End fieldset -  -->	
+					
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="dadosTrabalho">
+			<xs:element name="dadosTrabalho" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>1. TRABALHO</xhtml:label>
@@ -162,7 +172,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="estaTrabalhando">
+						<xs:element name="estaTrabalhando" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Esta trabalhando atualmente?</xhtml:label>
@@ -188,7 +198,7 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="carteiraAssinada">
+						<xs:element name="carteiraAssinada" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Trabalha com carteira assinada.</xhtml:label>
@@ -225,7 +235,7 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="trabalhaInformal">
+						<xs:element name="trabalhaInformal" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Trabalho informal</xhtml:label>
@@ -252,7 +262,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="empreendimentoInformal">
+						<xs:element name="empreendimentoInformal" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Empreendimento individual ou coletivo.</xhtml:label>
@@ -279,7 +289,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="horarioTrabalho">
+						<xs:element name="horarioTrabalho" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Quais os dias e o horário de trabalho?</xhtml:label>
@@ -306,7 +316,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="horario">
+						<xs:element name="horario" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Turno</xhtml:label>
@@ -344,7 +354,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="estudando">
+						<xs:element name="estudando" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Esta estudando atualmente?</xhtml:label>
@@ -357,7 +367,7 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="horario">
+						<xs:element name="horario" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Horário</xhtml:label>
@@ -399,7 +409,7 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="voltarEstudar">
+						<xs:element name="voltarEstudar" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Tem interesse em retornar para a escola:
@@ -418,7 +428,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="dadosDocumentacao">
+			<xs:element name="dadosDocumentacao" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>3. DOCUMENTAÇÃO</xhtml:label>
@@ -430,7 +440,7 @@
 						<xs:element name="documentos">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Marque com X a documentacao que possue</xhtml:label>
+									<xhtml:label>Marque com X a documentacao que possui</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
@@ -603,7 +613,7 @@
 							<xs:complexType>
 								<xs:sequence>
 
-									<xs:element name="disponibilidadeSegunda">
+									<xs:element name="disponibilidadeSegunda" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Segunda</xhtml:label>
@@ -611,21 +621,21 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="manha" type="xs:boolean">
+												<xs:element name="manha" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Manhã</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="tarde" type="xs:boolean">
+												<xs:element name="tarde" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Tarde</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="noite" type="xs:boolean">
+												<xs:element name="noite" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Noite</xhtml:label>
@@ -636,7 +646,7 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="disponibilidadeTerca">
+									<xs:element name="disponibilidadeTerca" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Terça</xhtml:label>
@@ -644,21 +654,21 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="manha" type="xs:boolean">
+												<xs:element name="manha" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Manhã</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="tarde" type="xs:boolean">
+												<xs:element name="tarde" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Tarde</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="noite" type="xs:boolean">
+												<xs:element name="noite" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Noite</xhtml:label>
@@ -669,7 +679,7 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="disponibilidadeQuarta">
+									<xs:element name="disponibilidadeQuarta" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Quarta</xhtml:label>
@@ -677,21 +687,21 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="manha" type="xs:boolean">
+												<xs:element name="manha" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Manhã</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="tarde" type="xs:boolean">
+												<xs:element name="tarde" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Tarde</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="noite" type="xs:boolean">
+												<xs:element name="noite" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Noite</xhtml:label>
@@ -702,7 +712,7 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="disponibilidadeQuinta">
+									<xs:element name="disponibilidadeQuinta" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Quinta</xhtml:label>
@@ -710,21 +720,21 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="manha" type="xs:boolean">
+												<xs:element name="manha" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Manhã</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="tarde" type="xs:boolean">
+												<xs:element name="tarde" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Tarde</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="noite" type="xs:boolean">
+												<xs:element name="noite" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Noite</xhtml:label>
@@ -735,7 +745,7 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="disponibilidadeSexta">
+									<xs:element name="disponibilidadeSexta" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Sexta</xhtml:label>
@@ -743,21 +753,21 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="manha" type="xs:boolean">
+												<xs:element name="manha" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Manhã</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="tarde" type="xs:boolean">
+												<xs:element name="tarde" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Tarde</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="noite" type="xs:boolean">
+												<xs:element name="noite" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Noite</xhtml:label>
@@ -768,7 +778,7 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="disponibilidadeSabado">
+									<xs:element name="disponibilidadeSabado" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Sábado</xhtml:label>
@@ -776,21 +786,21 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="manha" type="xs:boolean">
+												<xs:element name="manha" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Manhã</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="tarde" type="xs:boolean">
+												<xs:element name="tarde" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Tarde</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="noite" type="xs:boolean">
+												<xs:element name="noite" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Noite</xhtml:label>
@@ -806,7 +816,7 @@
 						</xs:element>
 						<!-- INTRERESSES -->
 
-						<xs:element name="interesses">
+						<xs:element name="interesses" minOccurs="0">
 
 							<xs:annotation>
 								<xs:appinfo>
@@ -817,7 +827,7 @@
 							<xs:complexType>
 
 								<xs:sequence>
-									<xs:element name="marque">
+									<xs:element name="marque" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Marque as temáticas que você tem interesse de
@@ -828,7 +838,7 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="monitorEsporte" type="xs:boolean">
+												<xs:element name="monitorEsporte" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Monitor de esporte</xhtml:label>
@@ -849,14 +859,14 @@
 												</xs:element>
 
 
-												<xs:element name="grafite" type="xs:boolean">
+												<xs:element name="grafite" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Grafite</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="prioridadeGrafite" minOccurs="0">
+												<xs:element name="prioridadeGrafite" minOccurs="0" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Nº prioridade </xhtml:label>
@@ -868,7 +878,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="monitorDancaDeRua" type="xs:boolean">
+												<xs:element name="monitorDancaDeRua" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Dança de rua</xhtml:label>
@@ -888,7 +898,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="dJ" type="xs:boolean">
+												<xs:element name="dJ" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>DJ </xhtml:label>
@@ -927,7 +937,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="construçãoServente" type="xs:boolean">
+												<xs:element name="construçãoServente" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Construção/servente </xhtml:label>
@@ -947,7 +957,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="bombeiroHidráulico" type="xs:boolean">
+												<xs:element name="bombeiroHidráulico" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Bombeiro Hidráulico</xhtml:label>
@@ -968,7 +978,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element name="monitoriaProjetosSociais"
-													type="xs:boolean">
+													type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Monitoria de projetos sociais </xhtml:label>
@@ -989,7 +999,7 @@
 													</xs:simpleType>
 												</xs:element>
 
-												<xs:element name="projetosArteCultura" type="xs:boolean">
+												<xs:element name="projetosArteCultura" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Projetos de Arte e cultura</xhtml:label>
@@ -1009,7 +1019,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="turismHotelaria" type="xs:boolean">
+												<xs:element name="turismHotelaria" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Turismo e hotelaria</xhtml:label>
@@ -1030,7 +1040,7 @@
 													</xs:simpleType>
 												</xs:element>
 
-												<xs:element name="corteCabelo" type="xs:boolean">
+												<xs:element name="corteCabelo" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Corte de cabelo </xhtml:label>
@@ -1050,7 +1060,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="manicure" type="xs:boolean">
+												<xs:element name="manicure" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Manicure</xhtml:label>
@@ -1069,7 +1079,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="depilacao" type="xs:boolean">
+												<xs:element name="depilacao" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Depilação </xhtml:label>
@@ -1089,7 +1099,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element name="educadorSocialSaúdeRedutoresDanos"
-													type="xs:boolean">
+													type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Educador social em saúde/Redutores de danos
@@ -1098,7 +1108,7 @@
 													</xs:annotation>
 												</xs:element>
 												<xs:element name="prioridadeEducadorSocialSaúdeRedutoresDanos"
-													minOccurs="0">
+													minOccurs="0" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Nº prioridade </xhtml:label>
@@ -1110,7 +1120,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="informatica" type="xs:boolean">
+												<xs:element name="informatica" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Informática </xhtml:label>
@@ -1130,7 +1140,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="producaoAlimentosPadaria" type="xs:boolean">
+												<xs:element name="producaoAlimentosPadaria" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Produção de Alimentos – Padaria
@@ -1152,7 +1162,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element name="producaoAlimentosSalgados"
-													type="xs:boolean">
+													type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Produção de Alimentos - salgados
@@ -1174,7 +1184,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element name="atendimentoPublicoFormacaoGarcons"
-													type="xs:boolean">
+													type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Atendimento ao público/Formação de Garçons
@@ -1195,7 +1205,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="serigrafia" type="xs:boolean">
+												<xs:element name="serigrafia" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Serigrafia </xhtml:label>
@@ -1215,7 +1225,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element name="corteCostura" type="xs:boolean">
+												<xs:element name="corteCostura" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Corte e costura</xhtml:label>
@@ -1354,6 +1364,7 @@
 										</xs:complexType>
 									</xs:element>
 
+
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1362,6 +1373,45 @@
 				</xs:complexType>
 
 			</xs:element>
+			<!-- Begin field textarea  -->	
+			<xs:element name="observacoes" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Observações Gerais</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<!-- End field textarea  -->
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respaplicacaoquest" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respdigitacao" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela Digitação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
 
 		</xs:sequence>
 	</xs:complexType>

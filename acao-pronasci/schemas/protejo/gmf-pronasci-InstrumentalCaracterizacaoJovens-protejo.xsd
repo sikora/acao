@@ -28,49 +28,7 @@
 
 		<xs:sequence>
 
-			<xs:element name="dadosInscricao">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Identificação</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="numeroInscricao" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Número de inscrição</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-						<xs:element name="dataEntrevista" type="xs:date" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Data da entrevista</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="nomeEntrevistador" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Responsável pela entrevista</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			
 
 			<xs:element name="identificacaoDadosSocioeconimicos">
 				<xs:annotation>
@@ -135,6 +93,38 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="numero" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Número</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+										
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="complemento" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Complemento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+				
 						<xs:element name="bairro" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
@@ -151,18 +141,7 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="complemento" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Complemento</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
+	
 						<xs:element name="sexo" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
@@ -217,8 +196,8 @@
 									<xs:enumeration value="Solteiro(a)" />
 									<xs:enumeration value="União estável" />
 									<xs:enumeration value="Divorciado(a)" />
-									<xs:enumeration value="Separado(a)" />
-									<xs:enumeration value="Divorciado(a)" />
+									<xs:enumeration value="Separado(a)" />									
+									<xs:enumeration value="Viuvo(a)" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
@@ -269,6 +248,7 @@
 									<xs:enumeration value="Superior incompleto" />
 									<xs:enumeration value="Superior completo" />
 									<xs:enumeration value="Pós-Graduação" />
+									<xs:enumeration value="Supletivo" />
 								</xs:restriction>
 							</xs:simpleType>
 
@@ -638,10 +618,28 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Está em liberdade condicional" />
 									<xs:enumeration value="Não" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
+
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="liberdadeCondicional" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Se está em liberdade condicional, há quanto tempo?</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+						
 						<xs:element name="quandoFoiPreso" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
@@ -678,20 +676,7 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="esteveLiberdadeCondicional"
-							minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Já cumpriu medida sócioeducativa:</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="Sim" />
-									<xs:enumeration value="Não" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
+
 						<xs:element name="seEsteveLiberdadeCondicional"
 							minOccurs="0">
 							<xs:annotation>
@@ -923,7 +908,7 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="outros" type="xs:string">
+									<xs:element name="outros" type="xs:string" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Outros</xhtml:label>
@@ -934,6 +919,57 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+					
+						<!-- Begin field textarea  -->	
+						<xs:element name="observacoes" minOccurs="0" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Observações Gerais</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<!-- End field textarea  -->
+
+						<!-- Begin field date -->		
+						<xs:element name="datainsercao" minOccurs="0" type="xs:date">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Data da aplicação do questionário</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<!-- End field date-->		
+						
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="respaplicacaoquest" minOccurs="1">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="respdigitacao" minOccurs="1">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Responsável pela Digitação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
 
 					</xs:sequence>
 				</xs:complexType>

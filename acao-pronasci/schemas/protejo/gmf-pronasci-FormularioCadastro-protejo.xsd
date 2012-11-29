@@ -27,7 +27,7 @@
 	<xs:complexType name="formProtejoFormularioCadastro">
 		<xs:sequence>
 
-			<xs:element name="dadosInscricao">
+			<!-- <xs:element name="dadosInscricao">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>DADOS INSCRIÇÃO</xhtml:label>
@@ -49,7 +49,7 @@
 						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
-			</xs:element>
+			</xs:element> -->
 
 			<xs:element name="dadosPessoais">
 				<xs:annotation>
@@ -179,13 +179,22 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="numero" type="xs:string" minOccurs="0">
+											
+									<!-- Begin field Input Text -->	
+									<xs:element name="numero" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Número</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="255" />
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
+									<!-- End field Input Text -->
+									
 									<xs:element name="bairro" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
@@ -378,7 +387,7 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="estadoCivil">
+									<xs:element name="estadoCivil" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Estado civil</xhtml:label>
@@ -389,13 +398,12 @@
 												<xs:enumeration value="Solteiro(a)" />
 												<xs:enumeration value="Casado(a)" />
 												<xs:enumeration value="Divorciado(a)" />
-												<xs:enumeration value="Separado(a)" />
-												<xs:enumeration value="Divorciado(a)" />
+												<xs:enumeration value="Separado(a)" />												
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
 
-									<xs:element name="etnia">
+									<xs:element name="etnia" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Etnia</xhtml:label>
@@ -570,7 +578,7 @@
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="servicoMilitar">
+						<xs:element name="servicoMilitar" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Serviço militar obrigatório
@@ -601,21 +609,22 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="situacaoEscolar">
+						<xs:element name="situacaoEscolar" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Situação Escolar*</xhtml:label>
+									<xhtml:label>Situação Escolar</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:enumeration value="Nunca frequentou" />
 									<xs:enumeration value="Está frequentando" />
+									<xs:enumeration value="Já frequentou" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="frequentandoEscola">
+						<xs:element name="frequentandoEscola" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Se está freqüentando ou já freqüentou a escola,
@@ -633,7 +642,7 @@
 										</xs:annotation>
 									</xs:element>
 									
-									<xs:element name="ensinoFundamentalEscolha" type="xs:boolean">
+									<xs:element name="ensinoFundamentalEscolha" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Ensino fundamental ou 1º grau:</xhtml:label>
@@ -641,7 +650,7 @@
 										</xs:annotation>
 									</xs:element>
 									
-									<xs:element name="ensinoFundamentalSerie">
+									<xs:element name="ensinoFundamentalSerie" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Série</xhtml:label>
@@ -661,7 +670,7 @@
 										</xs:simpleType>
 									</xs:element>
 									
-									<xs:element name="ensinoMedioEscolha" type="xs:boolean">
+									<xs:element name="ensinoMedioEscolha" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Ensino médio ou 2º grau:</xhtml:label>
@@ -669,7 +678,7 @@
 										</xs:annotation>
 									</xs:element>
 									
-									<xs:element name="ensinoMedioSerie">
+									<xs:element name="ensinoMedioSerie" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Série</xhtml:label>
@@ -684,7 +693,7 @@
 										</xs:simpleType>
 									</xs:element>
 
-									<xs:element name="supletivoEnsinoFundamental" type="xs:boolean">
+									<xs:element name="supletivoEnsinoFundamental" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Supletivo de ensino fundamental ou de 1º grau: </xhtml:label>
@@ -692,7 +701,7 @@
 										</xs:annotation>
 									</xs:element>
 									
-									<xs:element name="supletivoEnsinoMedio" type="xs:boolean">
+									<xs:element name="supletivoEnsinoMedio" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Supletivo de ensino médio ou de 2º grau:</xhtml:label>
@@ -700,7 +709,7 @@
 										</xs:annotation>
 									</xs:element>
 									
-									<xs:element name="prevestibular" type="xs:boolean">
+									<xs:element name="prevestibular" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Pré-vestibular:</xhtml:label>
@@ -708,7 +717,7 @@
 										</xs:annotation>
 									</xs:element>
 
-									<xs:element name="superior">
+									<xs:element name="superior" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Superior</xhtml:label>
@@ -716,12 +725,7 @@
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
-												<xs:enumeration value="1ª" />
-												<xs:enumeration value="2ª" />
-												<xs:enumeration value="3ª" />
-												<xs:enumeration value="4ª" />
-												<xs:enumeration value="5ª" />
-												<xs:enumeration value="6ª" />
+												<xs:enumeration value="Em conclusão" />												
 												<xs:enumeration value="Concluído" />
 											</xs:restriction>
 										</xs:simpleType>
@@ -742,10 +746,10 @@
 							<xs:complexType>
 								<xs:sequence>
 
-									<xs:element name="trabalhou">
+									<xs:element name="trabalhou" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Já trabalhou?*</xhtml:label>
+												<xhtml:label>Já trabalhou?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -755,15 +759,34 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="exerceuTrabalhoVoluntario" type="xs:boolean">
+									<xs:element name="exerceuTrabalhoVoluntario" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Já exerceu trabalho voluntário não remunerado?
+												<xhtml:label>Já exerceu trabalho voluntário 
 												</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Sim" />
+												<xs:enumeration value="Não" />
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
-
+									<xs:element name="exerceuTrabalhoVoluntariorem" type="xs:boolean" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Já exerceu trabalho voluntário remunerado?
+												</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Sim" />
+												<xs:enumeration value="Não" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -921,7 +944,7 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="dadosResponsavel">
+						<xs:element name="dadosResponsavel" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Dados da mãe ou principal responsável</xhtml:label>
@@ -929,10 +952,10 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="moraMaeResponsavel">
+									<xs:element name="moraMaeResponsavel" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Mora com a mãe ou outro responsável?*</xhtml:label>
+												<xhtml:label>Mora com a mãe ou outro responsável?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -943,7 +966,7 @@
 										</xs:simpleType>
 									</xs:element>
 
-									<xs:element name="escolaridadeMaeResponsavel">
+									<xs:element name="escolaridadeMaeResponsavel" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Qual a escolaridade da mãe ou principal responsável? (curso e série mais elevado)</xhtml:label>
@@ -959,7 +982,7 @@
 													</xs:annotation>
 													<xs:complexType>
 														<xs:sequence>
-															<xs:element name="ensinoMedioEscolha">
+															<xs:element name="ensinoMedioEscolha" minOccurs="0">
 																<xs:annotation>
 																	<xs:appinfo>
 																		<xhtml:label>Ensino Fundamental ou 1o grau:</xhtml:label>
@@ -989,7 +1012,7 @@
 													</xs:annotation>
 													<xs:complexType>
 														<xs:sequence>
-															<xs:element name="ensinoMedioEscolha">
+															<xs:element name="ensinoMedioEscolha" minOccurs="0">
 																<xs:annotation>
 																	<xs:appinfo>
 																		<xhtml:label>Ensino Médio ou 2º grau:</xhtml:label>
@@ -1008,14 +1031,14 @@
 													</xs:complexType>
 												</xs:element>
 												<xs:element name="supletivoEnsinoFundamental"
-													type="xs:boolean">
+													type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Supletivo de Ensino Fundamental ou de 1º grau:</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="supletivoEnsinoMedio" type="xs:boolean">
+												<xs:element name="supletivoEnsinoMedio" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Supletivo de Ensino Médio ou de 2º grau:
@@ -1023,7 +1046,7 @@
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="prevestibular" type="xs:boolean">
+												<xs:element name="prevestibular" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Pré-vestibular:</xhtml:label>
@@ -1031,7 +1054,7 @@
 													</xs:annotation>
 												</xs:element>
 
-												<xs:element name="superior">
+												<xs:element name="superior" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label></xhtml:label>
@@ -1039,7 +1062,7 @@
 													</xs:annotation>
 													<xs:complexType>
 														<xs:sequence>
-															<xs:element name="superiorEscolha">
+															<xs:element name="superiorEscolha" minOccurs="0">
 																<xs:annotation>
 																	<xs:appinfo>
 																		<xhtml:label>Superior:</xhtml:label>
@@ -1047,12 +1070,7 @@
 																</xs:annotation>
 																<xs:simpleType>
 																	<xs:restriction base="xs:string">
-																		<xs:enumeration value="1º" />
-																		<xs:enumeration value="2º" />
-																		<xs:enumeration value="3º" />
-																		<xs:enumeration value="4º" />
-																		<xs:enumeration value="5º" />
-																		<xs:enumeration value="6º" />
+																		<xs:enumeration value="Em conclusão" />							
 																		<xs:enumeration value="Concluído" />
 																	</xs:restriction>
 																</xs:simpleType>
@@ -1062,7 +1080,7 @@
 													</xs:complexType>
 												</xs:element>
 
-												<xs:element name="alfabetizacaoAdultos" type="xs:boolean">
+												<xs:element name="alfabetizacaoAdultos" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Alfabetização de Adultos</xhtml:label>
@@ -1088,10 +1106,10 @@
 							<xs:complexType>
 								<xs:sequence>
 
-									<xs:element name="numeroFilhos">
+									<xs:element name="numeroFilhos" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Número de filhos*</xhtml:label>
+												<xhtml:label>Número de filhos</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -1106,10 +1124,10 @@
 										</xs:simpleType>
 									</xs:element>
 
-									<xs:element name="viveComFilhos">
+									<xs:element name="viveComFilhos" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Vive com os filhos no mesmo domicílio?*</xhtml:label>
+												<xhtml:label>Vive com os filhos no mesmo domicílio?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -1120,10 +1138,10 @@
 										</xs:simpleType>
 									</xs:element>
 
-									<xs:element name="principalResponsavel">
+									<xs:element name="principalResponsavel" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>É o principal responsável pelo sustento da	família?*</xhtml:label>
+												<xhtml:label>É o principal responsável pelo sustento da	família?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -1134,25 +1152,55 @@
 										</xs:simpleType>
 									</xs:element>
 									<xs:element name="membrosFamiliaMesmoDomicilio"
-										type="xs:integer">
+										type="xs:integer" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Número de membros da família que moram no mesmo domicílio*</xhtml:label>
+												<xhtml:label>Número de membros da família que moram no mesmo domicílio</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="rendaPropriaMensal" type="xs:float"
-										minOccurs="0">
+									<!-- Begin field selectBox -->	
+									<xs:element name="rendaDamiciliarMensal"  minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Renda própria mensal*</xhtml:label>
+												<xhtml:label>Renda domiciliar mensal</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Até um quarto de salário mínimo" />
+												<xs:enumeration value="Até meio salário mínimo" />
+												<xs:enumeration value="Até um salário mínimo" />
+												<xs:enumeration value="Até dois salários mínimo" />
+												<xs:enumeration value="Até três salários mínimo" />
+												<xs:enumeration value="Acima de três salários mínimo" />
+											</xs:restriction>										
+										</xs:simpleType>
 									</xs:element>
-									<xs:element name="recebeAuxilioGoverno">
+									<!-- End field selectBox -->
+									<!-- Begin field selectBox -->	
+									<xs:element name="rendaPropriaMensal"  minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Alguém da família recebe algum auxílio do governo?*</xhtml:label>
+												<xhtml:label>Renda própria mensal</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Até um quarto de salário mínimo" />
+												<xs:enumeration value="Até meio salário mínimo" />
+												<xs:enumeration value="Até um salário mínimo" />
+												<xs:enumeration value="Até dois salários mínimo" />
+												<xs:enumeration value="Até três salários mínimo" />
+												<xs:enumeration value="Acima de três salários mínimo" />
+											</xs:restriction>										
+										</xs:simpleType>
+									</xs:element>
+									<!-- End field selectBox -->
+									<xs:element name="recebeAuxilioGoverno" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Alguém da família recebe algum auxílio do governo?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -1163,7 +1211,7 @@
 										</xs:simpleType>
 									</xs:element>
 
-									<xs:element name="recebeSimAuxilioGoverno">
+									<xs:element name="recebeSimAuxilioGoverno" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Se sim, qual programa?</xhtml:label>
@@ -1171,7 +1219,7 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="projovem" type="xs:boolean">
+												<xs:element name="projovem" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Programa Integrado de Juventude (Projovem)
@@ -1179,28 +1227,28 @@
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="bolsaAtleta" type="xs:boolean">
+												<xs:element name="bolsaAtleta" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Programa Bolsa-Atleta</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="brasilAlfabetizado" type="xs:boolean">
+												<xs:element name="brasilAlfabetizado" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Programa Brasil Alfabetizado</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="escolaAberta" type="xs:boolean">
+												<xs:element name="escolaAberta" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Programa Escola Aberta</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="primeiroEmprego" type="xs:boolean">
+												<xs:element name="primeiroEmprego" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Programa Nacional de Estímulo ao Primeiro
@@ -1208,7 +1256,7 @@
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="universidadeParaTodos" type="xs:boolean">
+												<xs:element name="universidadeParaTodos" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Programa Universidade para todos (ProUni)
@@ -1216,21 +1264,21 @@
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="segundoTempo" type="xs:boolean">
+												<xs:element name="segundoTempo" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Programa Segundo Tempo</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="soldadoCidade" type="xs:boolean">
+												<xs:element name="soldadoCidade" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Projeto Soldado Cidadão</xhtml:label>
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="responsavelCartao" type="xs:boolean">
+												<xs:element name="responsavelCartao" type="xs:boolean" minOccurs="0">
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Marque se o jovem é o responsável pelo
@@ -1260,7 +1308,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="cumprindoMedidasSocioEducativas"
-							type="xs:boolean">
+							type="xs:boolean" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Está cumprindo medidas sócio-educativas
@@ -1269,7 +1317,7 @@
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="esteveConflitoCumpriuMedidasSocioEducativas"
-							type="xs:boolean">
+							type="xs:boolean" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Já esteve em conflito com a lei ou cumpriu medidas
@@ -1286,7 +1334,19 @@
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="niveisExposicaoViolencia">
+						<!-- Begin field checkbox -->		
+						<xs:element name="nuncacompriumedidas" minOccurs="0" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Nunca cumpriu medidas sócio-educativas</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<!-- End field checkbox-->		
+						
+
+
+						<xs:element name="niveisExposicaoViolencia" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Níveis de exposição à violência</xhtml:label>
@@ -1295,21 +1355,21 @@
 
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="agressaoVerbal" type="xs:boolean">
+									<xs:element name="agressaoVerbal" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Você já vivenciou agressão verbal</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="agressaoFisica" type="xs:boolean">
+									<xs:element name="agressaoFisica" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Você já vivenciou agressão física</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="viciadoQualquerDroga" type="xs:boolean">
+									<xs:element name="viciadoQualquerDroga" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Alguém próximo a você foi ou é viciado em
@@ -1317,7 +1377,7 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="proximoVocePreso" type="xs:boolean">
+									<xs:element name="proximoVocePreso" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Alguém próximo a você já foi preso
@@ -1325,7 +1385,15 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="egressoSistemaEducativo" type="xs:boolean">
+									<xs:element name="proximoVoceAssass" type="xs:boolean" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Alguém próximo a você já assassinado
+												</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="egressoSistemaEducativo" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Você é egresso do Sistema Sócio Educativo
@@ -1333,7 +1401,7 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="egressoSistemaPrisional" type="xs:boolean">
+									<xs:element name="egressoSistemaPrisional" type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Você é egresso do Sistema Prisional
@@ -1342,7 +1410,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="sentenciadoPenasAlternativas"
-										type="xs:boolean">
+										type="xs:boolean" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Você é sentenciado a Penas Alternativas
@@ -1393,7 +1461,7 @@
 									</xs:element>
 
 									<xs:element name="responsavelIdentificacao" type="xs:string"
-										minOccurs="0">
+										minOccurs="1">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Responsável pela identificação do jovem (Nome
@@ -1582,6 +1650,31 @@
 					<xs:sequence></xs:sequence>
 				</xs:complexType>
 			</xs:element>
+
+			<!-- Begin field textarea  -->	
+			<xs:element name="observacoes" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Observações Gerais</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<!-- End field textarea  -->
+
+												<!-- Begin field Input Text -->	
+			<xs:element name="respdigitacao" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela Digitação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
 
 		</xs:sequence>
 

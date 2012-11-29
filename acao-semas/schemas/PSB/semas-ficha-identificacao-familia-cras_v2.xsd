@@ -1,17 +1,17 @@
 <?xml version="1.0" standalone="yes"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns="http://schemas.fortaleza.ce.gov.br/acao/semas-ficha-identificacao-familia-cras.xsd"
+    xmlns="http://schemas.fortaleza.ce.gov.br/acao/semas-ficha-identificacao-familia-cras_v2.xsd"
     xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
     xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
     xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/semas-ficha-identificacao-familia-cras.xsd"
+    targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/semas-ficha-identificacao-familia-cras_v2.xsd"
     elementFormDefault="qualified">
 
     <xs:element name="formFichaIdentificacaoFamilia" type="formFichaIdentificacaoFamilia">
         <xs:annotation>
             <xs:appinfo>
-                <xhtml:label>FICHA DE IDENTIFICAÇÃO DA FAMÍLIA</xhtml:label>
+                <xhtml:label>FICHA DE IDENTIFICAÇÃO DA FAMÍLIA V.2</xhtml:label>
                 <class:classificacoes>
                     <class:classificacao>cn=Proteção Social Básica,cn=Assistencia Social</class:classificacao>
                 </class:classificacoes>
@@ -46,12 +46,12 @@
 				        <xs:element name="codfamiliar" minOccurs="1">
 				            <xs:annotation>
 				                <xs:appinfo>
-				                    <xhtml:label>Código Familiar </xhtml:label>
+				                    <xhtml:label>Código Familiar *</xhtml:label>
 				                </xs:appinfo>
 				            </xs:annotation>
 				            <xs:simpleType>
-				                <xs:restriction base="xs:string">
-				                    <xs:maxLength value="255"/>
+				                <xs:restriction base="xs:integer">
+				                    <xs:maxLength value="11"/>
 				                </xs:restriction>
 				            </xs:simpleType>
 				        </xs:element>
@@ -59,44 +59,28 @@
 				        <xs:element name="numeronis" minOccurs="1">
 				            <xs:annotation>
 				                <xs:appinfo>
-				                    <xhtml:label>NIS </xhtml:label>
+				                    <xhtml:label>NIS *</xhtml:label>
 				                </xs:appinfo>
 				            </xs:annotation>
 				            <xs:simpleType>
-				                <xs:restriction base="xs:string">
+				                <xs:restriction base="xs:integer">
 				                    <xs:maxLength value="11"/>
 				                </xs:restriction>
 				            </xs:simpleType>
 				        </xs:element>
 
-<!-- 						<xs:element name="datapreenchi" minOccurs="1" type="xs:date">
+						<xs:element name="datapreenchi" minOccurs="1" type="xs:date">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Data preenchimento </xhtml:label>
+									<xhtml:label>Data preenchimento *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-						</xs:element> -->
-
-						<!-- Begin field Input Text -->	
-						<xs:element name="datapreenchi" minOccurs="1">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Data preenchimento</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="10" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
-						<!-- End field Input Text -->
-						
 
 						<xs:element name="regionalident"  minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Regional </xhtml:label>
+									<xhtml:label>Regional *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -114,7 +98,7 @@
 						<xs:element name="identcras"  minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>CRAS </xhtml:label>
+									<xhtml:label>CRAS *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -149,10 +133,10 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="origatend"  minOccurs="0">
+						<xs:element name="origatend"  minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Origem Atendimento </xhtml:label>
+									<xhtml:label>Origem Atendimento *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -164,7 +148,7 @@
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="origencam"  minOccurs="0">
+						<xs:element name="origencam"  minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Origem Encaminhamento</xhtml:label>
@@ -216,7 +200,7 @@
 				        <xs:element name="nomresp" minOccurs="1">
 				            <xs:annotation>
 				                <xs:appinfo>
-				                    <xhtml:label>1.1 Nome </xhtml:label>
+				                    <xhtml:label>1.1 Nome *</xhtml:label>
 				                </xs:appinfo>
 				            </xs:annotation>
 				            <xs:simpleType>
@@ -354,7 +338,7 @@
 						<xs:element name="regionalresp"  minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>SER </xhtml:label>
+									<xhtml:label>SER *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -425,7 +409,7 @@
 						<xs:element name="sexoresp"  minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>1.8 Sexo </xhtml:label>
+									<xhtml:label>1.8 Sexo *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -806,7 +790,7 @@
 							        <xs:element name="nummemb" minOccurs="1">
 							            <xs:annotation>
 							                <xs:appinfo>
-							                    <xhtml:label>Nº </xhtml:label>
+							                    <xhtml:label>Nº *</xhtml:label>
 							                </xs:appinfo>
 							            </xs:annotation>
 							            <xs:simpleType>
@@ -819,7 +803,7 @@
 							        <xs:element name="nommemb" minOccurs="1">
 							            <xs:annotation>
 							                <xs:appinfo>
-							                    <xhtml:label>Nome </xhtml:label>
+							                    <xhtml:label>Nome *</xhtml:label>
 							                </xs:appinfo>
 							            </xs:annotation>
 							            <xs:simpleType>
@@ -832,11 +816,11 @@
 									<xs:element name="numnismembro" minOccurs="1">
 									    <xs:annotation>
 										<xs:appinfo>
-										    <xhtml:label>NIS </xhtml:label>
+										    <xhtml:label>NIS *</xhtml:label>
 										</xs:appinfo>
 									    </xs:annotation>
 									    <xs:simpleType>
-											<xs:restriction base="xs:string">
+											<xs:restriction base="xs:integer">
 												<xs:maxLength value="11"/>
 											</xs:restriction>
 									    </xs:simpleType>
@@ -876,7 +860,7 @@
 									<xs:element name="sexomembro"  minOccurs="1">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Sexo </xhtml:label>
+												<xhtml:label>Sexo *</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -2193,7 +2177,7 @@
 						<xs:element name="nomtecresp" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Técnico(a) Responsável </xhtml:label>
+									<xhtml:label>Técnico(a) Responsável *</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
@@ -2201,94 +2185,20 @@
 									<xs:maxLength value="255" />
 								</xs:restriction>
 							</xs:simpleType>
-						</xs:element>						
+						</xs:element>
 
-<!-- 						<xs:element name="datadocumento" minOccurs="1" type="xs:date">
+						<xs:element name="datadocumento" minOccurs="0" type="xs:date">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Data </xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-						</xs:element> -->
-
-						<!-- Begin field Input Text -->	
-						<xs:element name="datadocumento" minOccurs="1">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Data</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="10" />
-								</xs:restriction>
-							</xs:simpleType>
 						</xs:element>
-						<!-- End field Input Text -->
-						
 
 					</xs:sequence>
 				</xs:complexType>
+
 			</xs:element>
-
-				<!-- Begin fieldset - obsDigitacao -->	
-				<xs:element name="obsDigitacao" minOccurs="0" >
-					<xs:annotation>
-						<xs:appinfo>
-							<xhtml:label>11. Observações sobre a digitação</xhtml:label>
-						</xs:appinfo>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<!-- Begin field Input Text -->	
-								<xs:element name="nomeDigitador" minOccurs="1">
-									<xs:annotation>
-										<xs:appinfo>
-											<xhtml:label>Nome do Digitador</xhtml:label>
-										</xs:appinfo>
-									</xs:annotation>
-									<xs:simpleType>
-										<xs:restriction base="xs:string">
-											<xs:maxLength value="255" />
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-						<!-- End field Input Text -->
-
-						<!-- Begin field date -->		
-<!-- 						<xs:element name="dataDigitacao" minOccurs="1" type="xs:date">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Data da Digitação</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-						</xs:element> -->
-						<!-- End field date-->	
-
-							<!-- Begin field Input Text -->	
-							<xs:element name="dataDigitacao" minOccurs="1">
-								<xs:annotation>
-									<xs:appinfo>
-										<xhtml:label>Data da Digitação</xhtml:label>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:maxLength value="10" />
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<!-- End field Input Text -->
-								
-						
-						</xs:sequence>	
-					</xs:complexType>
-				</xs:element>
-				
-				<!-- End fieldset - obsDigitacao -->	
-				
-
-			
 
 		</xs:sequence>
 	</xs:complexType>
