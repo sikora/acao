@@ -647,18 +647,18 @@
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
-											<xs:enumeration value="A própria" />
-											<xs:restriction base="xs:string">
-											<xs:enumeration value="Companheiro(a)" />
-											<xs:enumeration value="Enteado(a)" />
-											<xs:enumeration value="Genro/Nora" />
-											<xs:enumeration value="Neto(a)" />
-											<xs:enumeration value="Filho(a)" />
-											<xs:enumeration value="Pai/Mãe" />
-											<xs:enumeration value="Sogro(a)" />
-											<xs:enumeration value="Irmão/Irmã" />
-											<xs:enumeration value="Outros Familiares" />
-											<xs:enumeration value="Outros não Familiares" />
+											<xs:restriction base="xs:string" >
+											    <xs:enumeration value="A própria"/>
+											    <xs:enumeration value="Companheiro(a)" />
+											    <xs:enumeration value="Enteado(a)" />
+											    <xs:enumeration value="Genro/Nora" />
+											    <xs:enumeration value="Neto(a)" />
+											    <xs:enumeration value="Filho(a)" />
+											    <xs:enumeration value="Pai/Mãe" />
+											    <xs:enumeration value="Sogro(a)" />
+											    <xs:enumeration value="Irmão/Irmã" />
+											    <xs:enumeration value="Outros Familiares" />
+											    <xs:enumeration value="Outros não Familiares" />
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
