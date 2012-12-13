@@ -26,8 +26,6 @@
 	<xs:complexType name="formProtejoInstrumentalHabilidades">
 		<xs:sequence>
 
-		
-
 			<xs:element name="dadosJovem">
 				<xs:annotation>
 					<xs:appinfo>
@@ -74,7 +72,7 @@
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
-								<xs:restriction base="xs:string" minOccurs="0">
+								<xs:restriction base="xs:string" >
 									<xs:maxLength value="255" />
 								</xs:restriction>
 							</xs:simpleType>
@@ -866,7 +864,7 @@
 														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="prioridadeGrafite" minOccurs="0" minOccurs="0">
+												<xs:element name="prioridadeGrafite" minOccurs="0" >
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Nº prioridade </xhtml:label>
@@ -1108,7 +1106,7 @@
 													</xs:annotation>
 												</xs:element>
 												<xs:element name="prioridadeEducadorSocialSaúdeRedutoresDanos"
-													minOccurs="0" minOccurs="0">
+													minOccurs="0" >
 													<xs:annotation>
 														<xs:appinfo>
 															<xhtml:label>Nº prioridade </xhtml:label>
