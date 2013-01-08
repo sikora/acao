@@ -17,7 +17,7 @@ h2 {
   margin-bottom: 5px;
 }
 a, a:active, a:hover, a:visited {
-  color: #CC0000;
+  color: #666;
   text-decoration: underline;  
   border-radius: 2px;
 }
@@ -26,6 +26,7 @@ li {
 
 }
 
+
 #topo
 {
     font-family: Arial, Helvetica, sans-serif;
@@ -33,7 +34,8 @@ li {
     padding-top: 0px;
     height: 100px;
     /*width: 760px;*/
-    background: #D40000 url(../img/bg_topo2.png) top left repeat-x;
+    background-image: url('../images/topo_body_novo.jpg');
+    background-position: 0px -41px;
 }
 #topo a {
   background: url(../img/user/user_edit.png) no-repeat left center;
@@ -45,16 +47,19 @@ li {
   margin:2px;
   float:left;
 }
+#topoTitulo a {
+  color: #000;
 
+}
 #topoTitulo
 {
     padding-top: 20px;
     font-size: 100%;
     font-weight: bold;
     text-transform: uppercase;
-    text-shadow: 1px 1px #CC0000;
+    
     letter-spacing: 1px;
-    color: #FFFFFF;
+    color: #000;
     float: right;
     margin-right: 30px;
 }
@@ -69,15 +74,38 @@ li {
     text-transform: none;
 }
 
+#logo {
+  background: url('../images/logo-acao-p.png') no-repeat left center;
+  height: 100px;
+  float: left;
+  width: 184px;
+  margin-top: 6px;
+
+}
+#brasaoPmf {  
+  float: right;
+  text-indent: -99999px !important;
+  background-image: url('http://www.fortaleza.ce.gov.br/sites/all/themes/framework/imagens/logo.png');
+  background-repeat: no-repeat;
+  height: 105px;
+  width: 258px;
+  background-position: 0px 10px;
+  margin-top: 5px;
+
+}
 #barraTopo
 {
-    margin: 0px auto 0px;
-    text-shadow: 0 2px 3px #FFFFFF;
+     margin: 0px auto 0px;
+    text-shadow: 0 2px 3px #999;
     height: 30px;
-    background: #FFD214 url(../img/bgRodape.png) top left repeat-x;
+    background: #905302 url(../img/bgRodape.png) top left repeat-x;
     z-index: 10;
     font-weight: bold;
     color: #000000;
+      background-image: url('../images/topo_body_novo.jpg');
+    background-position: 0px -177px
+
+
 }
 
 #barraTopo ul
@@ -106,15 +134,20 @@ li {
     margin-right: 20px;
 }
 
+#barraTopo ul li a {
+  color:#999;
+
+}
+
 #barraTopo ul li a
 {
-    color:#6C3600;
+    color:#000;
     text-decoration:none;
 }
 
 #barraTopo ul li a:hover
 {
-    color:#CC6600;
+    color:#fff;
 }
 
 #barraTopo ul li ul
@@ -225,14 +258,16 @@ a.voltar {
 {
     font-size: 12px;
     font-weight: normal;
-    text-transform:none;
-    background: #FFD214 url(../img/bgRodape.png) top left repeat-x;
-    color:#CC0000;
+    text-transform:none;    
+    color:#fff;
      position:fixed;
      left:0px;
      bottom:0px;
-     height:30px;
+     height:20px;
      width:100%;
+      background-image: url('../images/topo_body_novo.jpg');
+    background-position: 0px -177px;
+    padding-top: 10px
 
 
 }
@@ -308,25 +343,25 @@ legend {
 .textoPequeno
 {
     width: 120px;
-    color:#CC0000;
+    color:#999999;
 }
 
 .textoMedio
 {
     width: 240px;
-    color:#CC0000;
+    color:#999999;
 }
 
 .textoGrande
 {
     width: 500px;
-    color:#CC0000;
+    color:#999999;
 }
 
 .textoSimbolo
 {
     width: 50px;
-    color:#CC0000;
+    color:#999999;
 }
 
 input[type=submit], input[type=button], input[type=reset], input[type=password], button,
@@ -337,7 +372,7 @@ input[type=submit], input[type=button], input[type=reset], input[type=password],
     font-family: Sans-Serif;
     font-size: 11px;
     font-weight: bold;
-    color: #CC0000;
+    color: #999999;
     background: #FFFF99;
     padding: 2px 4px;
     border-color: #E6B800;
@@ -348,11 +383,11 @@ input[type=submit], input[type=button], input[type=reset], input[type=password],
 table thead tr th
 {
   color: #FFFFFF;
-  background: #CC0000;
+  background: #999999;
   padding: 5px;
   font-size: 1.1em;
-  text-shadow: -1px 1px 0px #990000;
-  border-bottom: #990000 solid 2px;
+  text-shadow: -1px 1px 0px #666;
+  border-bottom: #666 solid 2px;
   white-space: nowrap;
 }
 
@@ -360,7 +395,7 @@ table tbody tr td
 {
   padding: 3px;
   font-size: 1em;
-  border-bottom: #EAAB15 solid 1px;
+  border-bottom: #999 solid 1px;
   white-space: nowrap;
   text-align: center;
 }
@@ -464,7 +499,7 @@ a.visualizar
     font-family: Sans-Serif;
     font-size: 11px;
     font-weight: bold;
-    color: #CC0000;
+    color: #999999;
     background: #FFFF99;
     line-height: 24px;
     border-color: #E6B800;
@@ -480,7 +515,7 @@ input[type=text]
     border:1px solid #E6B800;
     background-position: #FFFFFF;
     font: normal 1.0em Sans-Serif;
-    color: #CC0000;
+    color: #666;
     background: #FFFFAF;
     height: 18px;
 }
@@ -490,7 +525,7 @@ textarea
     border:1px solid #E6B800;
     background-position: #FFFFFF;
     font: normal 1.0em Sans-Serif;
-    color: #CC0000;
+    color: #666;
     background: #FFFFAF;
 }
 
@@ -499,7 +534,7 @@ select
     border:1px solid #E6B800;
     background-position: #FFFFFF;
     font: normal 1.0em Sans-Serif;
-    color: #CC0000;
+    color: #666;
     background: #FFFFAF;
     height: 2em;
 }
@@ -517,7 +552,7 @@ button {
 
 .grid th
 {
-    background-color: #CC0000;
+    background-color: #999999;
     font-weight: bold;
     color: #FFFFFF;
     text-align: left;
@@ -527,7 +562,7 @@ button {
 {
     background-color: #FFFFFF;
     font-weight: normal;
-    /*color: #CC0000;*/
+    /*color: #999999;*/
     text-align: left;
 }
 
@@ -536,7 +571,7 @@ button {
 }
 
 .grid tfoot td, .grid tfoot th {
-  background-color: #CC0000;
+  background-color: #999999;
   color: #FFF;
 }
 
@@ -735,7 +770,7 @@ body.relatorio thead th { background-color: white; color: black; }
 
 .xsd__validationfailed {
     background-color: #FFF0F0 !important;
-    border: 1px solid #CC0000;
+    border: 1px solid #999999;
 }
 
 /* Adicionar Usuário e Navegação LDAP */
@@ -1517,9 +1552,9 @@ width: auto !important;
     color: #000000;
     float: left;
     font-size: 19px;
-    margin-left: 10px;
+    margin-left: -179px;
     margin-top: 4px;
-    text-shadow: 0 2px 3px #FFFFFF;
+    text-shadow: 0 2px 3px #999;
 
 }
 
@@ -1532,7 +1567,7 @@ width: auto !important;
     padding-right: 6px;
     padding-top: 6px;
     width: 250px;
-    background: #FFFFAF;
+    background: #eee;
     margin-bottom: 40px !important;
     padding-bottom: 30px;
     width: 99%;
@@ -1706,7 +1741,7 @@ margin-top: 100px;
 
 
 #accordion a {
-  color: #CC0000;
+  color: #999999;
   text-decoration: none;
 }
 
@@ -1764,7 +1799,7 @@ font-weight: 600;
 }
 
 .boxAdm {
- background-color: #FFFFAF;
+ background-color: #eee;
  padding: 10px;
  border: 1px solid #cccccc;
 
@@ -1804,7 +1839,7 @@ font-weight: 600;
 
 .fieldRequired {
     background-color: #FFF0F0 !important;
-    border: 2px dashed #CC0000;
+    border: 2px dashed #999999;
     padding: 5px;
     margin: 5px;
 }

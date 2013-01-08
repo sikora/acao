@@ -24,21 +24,8 @@
 
 	<xs:complexType name="formMulheresDaPazEntrevistaIndividual">
 		<xs:sequence>
-		
-			<xs:element name="numeroInscricao" minOccurs="0">
-				<xs:annotation>
-					<xs:appinfo>
-						<xhtml:label>Número de inscrição:</xhtml:label>
-					</xs:appinfo>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:maxLength value="255" />
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
 
-			<xs:element name="estabilidade">
+			<xs:element name="estabilidade" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>1.1 ESTABILIDADE</xhtml:label>
@@ -196,14 +183,65 @@
 									<xhtml:label>Quem da família mora do bairro?</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-						</xs:element>
-						<xs:element name="quemTrabalha" type="xs:string" minOccurs="0">
+						</xs:element>						
+
+						<!-- Begin fieldset - quemTrabalhaFam -->	
+						<xs:element name="quemTrabalhaFam" minOccurs="0" maxOccurs="10">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Quem trabalha na sua família e quanto ganha?</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="membroFamiliaTrab"  minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Membro da família</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="A própria" />
+												<xs:enumeration value="Companheiro(a)" />
+												<xs:enumeration value="Enteado(a)" />
+												<xs:enumeration value="Genro/Nora" />
+												<xs:enumeration value="Neto(a)" />
+												<xs:enumeration value="Filho(a)" />
+												<xs:enumeration value="Pai/Mãe" />
+												<xs:enumeration value="Sogro(a)" />
+												<xs:enumeration value="Irmão/Irmã" />
+												<xs:enumeration value="Outros Familiares" />
+												<xs:enumeration value="Outros não Familiares" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>				
+									
+									<!-- Begin field selectBox -->	
+									<xs:element name="faixaSalarialFam"  minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Faixa Salárial</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Até um quarto de salário mínimo" />
+												<xs:enumeration value="Até meio salário mínimo" />
+												<xs:enumeration value="Até um salário mínimo" />
+												<xs:enumeration value="Até dois salários mínimo" />
+												<xs:enumeration value="Até três salários mínimo" />
+												<xs:enumeration value="Acima de três salários mínimo" />
+											</xs:restriction>										
+										</xs:simpleType>
+									</xs:element>
+									<!-- End field selectBox -->
+									
+								</xs:sequence>
+							</xs:complexType>
 						</xs:element>
+						<!-- END quemTrabalhaFam  -->
+
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -372,8 +410,29 @@
 									<xs:element name="auxiliouEventosEscola" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Você já auxiliou algum evento na escola em que
-													estudava?</xhtml:label>
+												<xhtml:label>Você já auxiliou algum evento na escola dos seus filhos?</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Sim" />
+												<xs:enumeration value="Não" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>									
+									<xs:element name="eventosEscola" type="xs:string" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Qual?</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+
+									<xs:element name="auxiliouEventosEsportes" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Você já auxiliou algum evento de Esportes?
+									</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
@@ -383,7 +442,7 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="eventosEscola" type="xs:string" minOccurs="0">
+									<xs:element name="eventosEsportes" type="xs:string" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Qual?</xhtml:label>
@@ -627,76 +686,301 @@
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="quandoAlguemFicaDoente" minOccurs="0">
+								<xs:sequence>	
+									<xs:element name="quandoAlguemFicaDoente" minOccurs="0" >
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Quando alguém fica doente na sua rua, você sabe
 													como ela faz?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="Procura posto de saúde" />
-												<xs:enumeration value="Liga para a ambulância" />
-												<xs:enumeration value="Procura você" />
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
+										<xs:complexType>
+											<xs:sequence>
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="procurapostosaude" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Procura posto de saúde</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="ligaparaambulancia" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Liga para a ambulância</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="procuravoce1" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Procura você</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="naosabequemprocurar" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Não sabe</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->	
 
-									<xs:element name="quandoPrecisaAdvogado" minOccurs="0">
+
+													<!-- Begin field Input Text -->	
+													<xs:element name="outrasDoenteRua" minOccurs="0">
+														<xs:annotation>
+															<xs:appinfo>
+																<xhtml:label>Outros</xhtml:label>
+															</xs:appinfo>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="255" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<!-- End field Input Text -->
+														
+												
+											</xs:sequence>	
+										</xs:complexType>
+									</xs:element>
+									
+									<!-- End fieldset - quandoAlguemFicaDoente -->	
+
+									<!-- Begin fieldset - quandoPrecisaAdvogado -->	
+									<xs:element name="quandoPrecisaAdvogado" minOccurs="0" >
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Quando alguém precisa de advogado, você sabe
-													como
-													ela faz?</xhtml:label>
+												<xhtml:label>Quando alguém precisa de advogado, você sabe como ela faz?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="Procura a defensoria" />
-												<xs:enumeration value="Procura você" />
-												<xs:enumeration value="Não sabe" />
-											</xs:restriction>
-										</xs:simpleType>
+										<xs:complexType>
+											<xs:sequence>
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="procuraDefensoria" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Procura a defensoria</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="procuraVocePrecisaAdvogado" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Procura você</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="naosabeQuandoPrecisaAdvog" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Não Sabe</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+														<!-- Begin field Input Text -->	
+													<xs:element name="outrosPrecisaAdvogado" minOccurs="0">
+														<xs:annotation>
+															<xs:appinfo>
+																<xhtml:label>Outros</xhtml:label>
+															</xs:appinfo>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="255" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<!-- End field Input Text -->
+												
+											</xs:sequence>	
+										</xs:complexType>
 									</xs:element>
+									
+									<!-- End fieldset - quandoPrecisaAdvogado -->	
 
-									<xs:element name="resolveBrigaRua" minOccurs="0">
+
+									<!-- Begin fieldset - resolveBrigaRua -->	
+									<xs:element name="resolveBrigaRua" minOccurs="0" >
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Quando há uma briga na sua rua, você sabe como
 													as pessoas resolvem?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="Entre elas" />
-												<xs:enumeration value="Chamam a polícia" />
-												<xs:enumeration value="Vão para a delegacia" />
-												<xs:enumeration value="Chamam você" />
-											</xs:restriction>
-										</xs:simpleType>
+										<xs:complexType>
+											<xs:sequence>
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="entreElas" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Entre Elas</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="chamamPolicia" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Chamam a polícia</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="paraDelegacoa" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Vão para Delegacia</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="brigasChamamVoce" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Chamam você</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="brigasNaoSabem" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Não Sabem</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->	
+													<!-- Begin field Input Text -->	
+												<xs:element name="outrosresolveBrigaRua" minOccurs="0">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Outros</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="255" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<!-- End field Input Text -->	
+												
+											</xs:sequence>	
+										</xs:complexType>
 									</xs:element>
-
-									<xs:element name="resolveBrigaFamilia" minOccurs="0">
+									
+									<!-- End fieldset - resolveBrigaRua -->	
+	
+									<xs:element name="resolveBrigaRuaFamilia" minOccurs="0" >
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Quando há uma briga de família na sua rua, você
 													sabe como se resolve?</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="Entre elas" />
-												<xs:enumeration value="Chamam a polícia" />
-												<xs:enumeration value="Vão para a delegacia" />
-												<xs:enumeration value="Chamam você" />
-											</xs:restriction>
-										</xs:simpleType>
+										<xs:complexType>
+											<xs:sequence>
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="entreElasFamilia" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Entre Elas</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="chamamPoliciaFamilia" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Chamam a polícia</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="paraDelegacoaFamilia" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Vão para Delegacia</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="brigasChamamVoceFamilia" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Chamam você</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+												
+												<!-- Begin field checkbox -->		
+												<xs:element name="brigasNaoSabemFamilia" minOccurs="0" type="xs:boolean">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Não Sabem</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:element>
+												<!-- End field checkbox-->		
+													<!-- Begin field Input Text -->	
+												<xs:element name="outrosresolBrigaRuaFam" minOccurs="0">
+													<xs:annotation>
+														<xs:appinfo>
+															<xhtml:label>Outros</xhtml:label>
+														</xs:appinfo>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="255" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<!-- End field Input Text -->	
+												
+											</xs:sequence>	
+										</xs:complexType>
 									</xs:element>
-
-									<xs:element name="procuradaResolverConflito"
-										minOccurs="0">
+									
+									<xs:element name="procuradaResolverConflito" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Você já foi procurada para resolver algum tipo
@@ -879,6 +1163,28 @@
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
+
+
+									<!-- Begin field checkbox -->		
+									<xs:element name="situacaodeRua" minOccurs="0" type="xs:boolean">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Situação de Rua</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+									<!-- End field checkbox-->		
+									
+									<!-- Begin field checkbox -->		
+									<xs:element name="violenciaUrbana" minOccurs="0" type="xs:boolean">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Violência Urbana</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+									<!-- End field checkbox-->		
+									
 
 								</xs:sequence>
 
@@ -1302,7 +1608,7 @@
 									<xs:element name="naoSeImporta">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Pimenta nos olhos dos outros, pra mim, é refresco</xhtml:label>
+												<xhtml:label>Pimenta nos olhos dos outros, pra mim, é refresco(Se não é com ela, não se importa)</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:complexType>
@@ -1356,7 +1662,7 @@
 									<xs:element name="relacaoTrabalhoInfantil" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Cabeça vazia, oficina do diabo</xhtml:label>
+												<xhtml:label>Cabeça vazia, oficina do diabo(A ociosidade leva à mudança de comportamento)</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:complexType>
@@ -1461,62 +1767,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
-
-									<xs:element name="melhoraSeAdaptar">
-										<xs:annotation>
-											<xs:appinfo>
-												<xhtml:label>Em terra de sapos, de cócoras com eles(é melhor se adaptar)</xhtml:label>
-											</xs:appinfo>
-										</xs:annotation>
-										<xs:complexType>
-											<xs:sequence>
-
-												<xs:element name="melhoraSeAdaptar">
-													<xs:annotation>
-														<xs:appinfo>
-															<xhtml:label></xhtml:label>
-														</xs:appinfo>
-													</xs:annotation>
-													<xs:complexType>
-														<xs:sequence>
-
-															<xs:element name="compreensao" minOccurs="0">
-																<xs:annotation>
-																	<xs:appinfo>
-																		<xhtml:label>Compreende</xhtml:label>
-																	</xs:appinfo>
-																</xs:annotation>
-																<xs:simpleType>
-																	<xs:restriction base="xs:string">
-																		<xs:enumeration value="Sim" />
-																		<xs:enumeration value="Não" />
-																	</xs:restriction>
-																</xs:simpleType>
-															</xs:element>
-
-															<xs:element name="concorda" minOccurs="0">
-																<xs:annotation>
-																	<xs:appinfo>
-																		<xhtml:label>Concorda</xhtml:label>
-																	</xs:appinfo>
-																</xs:annotation>
-																<xs:simpleType>
-																	<xs:restriction base="xs:string">
-																		<xs:enumeration value="Sim" />
-																		<xs:enumeration value="Não" />
-																	</xs:restriction>
-																</xs:simpleType>
-															</xs:element>
-
-														</xs:sequence>
-													</xs:complexType>
-												</xs:element>
-
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
-
 									<xs:element name="sobreInfluencias">
 										<xs:annotation>
 											<xs:appinfo>
@@ -1626,25 +1876,17 @@
 										</xs:complexType>
 									</xs:element>
 
-									<xs:element name="capacidadeFinalizacao">
+
+									<!-- Begin fieldset - olhoporolho -->	
+									<xs:element name="olhoporolho" minOccurs="0" >
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Quem não pode com o pote, não pega na rodia(capacidade de finalizar um trabalho)</xhtml:label>
+												<xhtml:label>Olho por olho, dente por dente. (Vingança e não justiça)</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-
-												<xs:element name="capacidadeFinalizacao">
-													<xs:annotation>
-														<xs:appinfo>
-															<xhtml:label></xhtml:label>
-														</xs:appinfo>
-													</xs:annotation>
-													<xs:complexType>
-														<xs:sequence>
-
-															<xs:element name="compreensao" minOccurs="0">
+												<xs:element name="compreensao" minOccurs="0">
 																<xs:annotation>
 																	<xs:appinfo>
 																		<xhtml:label>Compreende</xhtml:label>
@@ -1671,14 +1913,94 @@
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
-
-														</xs:sequence>
-													</xs:complexType>
-												</xs:element>
-
-											</xs:sequence>
+											</xs:sequence>	
 										</xs:complexType>
 									</xs:element>
+									
+									<!-- End fieldset - olhoporolho -->	
+
+
+									<!-- Begin fieldset - unidasVenceremos -->	
+									<xs:element name="unidasVenceremos" minOccurs="0" >
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Unidas Venceremos. (Necessidade de União para conquistar algo)</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="compreensao" minOccurs="0">
+														<xs:annotation>
+															<xs:appinfo>
+																<xhtml:label>Compreende</xhtml:label>
+															</xs:appinfo>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="Sim" />
+																<xs:enumeration value="Não" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+
+													<xs:element name="concorda" minOccurs="0">
+														<xs:annotation>
+															<xs:appinfo>
+																<xhtml:label>Concorda</xhtml:label>
+															</xs:appinfo>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="Sim" />
+																<xs:enumeration value="Não" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+											</xs:sequence>	
+										</xs:complexType>
+									</xs:element>								
+									
+
+									<!-- Begin field textarea  -->	
+									<xs:element name="observacoes" minOccurs="0" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Observações Gerais</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+									<!-- End field textarea  -->
+
+									<!-- Begin field Input Text -->	
+									<xs:element name="respaplicacaoquest" minOccurs="1">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="255" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<!-- End field Input Text -->
+
+									<!-- Begin field Input Text -->	
+									<xs:element name="respdigitacao" minOccurs="1">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Responsável pela Digitação</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="255" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<!-- End field Input Text -->
+									
 
 								</xs:sequence>
 							</xs:complexType>

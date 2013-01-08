@@ -28,7 +28,7 @@
 
 		<xs:sequence>
 
-			<xs:element name="numeroInscricao" minOccurs="0">
+<!-- 			<xs:element name="numeroInscricao" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Número inscrição</xhtml:label>
@@ -39,7 +39,7 @@
 						<xs:maxLength value="255" />
 					</xs:restriction>
 				</xs:simpleType>
-			</xs:element>
+			</xs:element> -->
 
 			<xs:element name="dadosPessoais">
 				<xs:annotation>
@@ -130,6 +130,21 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
+						<!-- Begin field Input Text -->	
+						<xs:element name="complemento" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Complemento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->						
+						
 
 						<xs:element name="bairro" minOccurs="0">
 							<xs:annotation>
@@ -500,26 +515,14 @@
 						<xs:element name="diasTrabalho" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Quais os dias e horários de trabalho?</xhtml:label>
+									<xhtml:label>Quais os dias de trabalho?</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:enumeration value="A semana inteira"/>
 									<xs:enumeration value="Finais de semana"/>
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-
-						<xs:element name="listaDiasTrabalho" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Se trabalha alguns dias da semana, quais?</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:maxLength value="255"/>
+									<xs:enumeration value="Dias alternados"/>
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
@@ -527,17 +530,76 @@
 						<xs:element name="horarioTrabalho" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Horário</xhtml:label>
+									<xhtml:label>Se trabalha alguns dias da semana, quais?</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
-									<xs:enumeration value="Manhã"/>
-									<xs:enumeration value="Tarde"/>
-									<xs:enumeration value="Noite"/>
+									<xs:enumeration value="Semana inteira" />
+									<xs:enumeration value="Finais de semana" />
+									<xs:enumeration value="Alguns dias da semana" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
+						<xs:element name="diasDeTrabalho" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Quais dias?</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+
+
+						<!-- Begin fieldset - horariodetrabalho -->	
+						<xs:element name="horariodetrabalho" minOccurs="0" >
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Horário de Trabalho</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									
+									<!-- Begin field checkbox -->		
+									<xs:element name="trabalhaManha" minOccurs="0" type="xs:boolean">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Manhã</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+									<!-- End field checkbox-->		
+									
+									<!-- Begin field checkbox -->		
+									<xs:element name="trabalhatarde" minOccurs="0" type="xs:boolean">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Tarde</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+									<!-- End field checkbox-->		
+									
+									<!-- Begin field checkbox -->		
+									<xs:element name="trabalhanoite" minOccurs="0" type="xs:boolean">
+										<xs:annotation>
+											<xs:appinfo>
+												<xhtml:label>Noite</xhtml:label>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+									<!-- End field checkbox-->		
+									
+								</xs:sequence>	
+							</xs:complexType>
+						</xs:element>
+						
+						<!-- End fieldset - horariodetrabalho -->	
 
 						<xs:element name="remuneracao" type="xs:float" minOccurs="0">
 							<xs:annotation>
@@ -836,7 +898,7 @@
 				</xs:complexType>
 			</xs:element>
 			
-			<xs:element name="segurancaComunidade">
+			<xs:element name="segurancaComunidade" minOccurs="0" >
 
 				<xs:annotation>
 					<xs:appinfo>
@@ -917,6 +979,46 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
+
+			<!-- Begin field textarea  -->	
+			<xs:element name="observacoes" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Observações Gerais</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<!-- End field textarea  -->
+			
+			<!-- Begin field Input Text -->	
+			<xs:element name="respaplicacaoquest" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respdigitacao" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela Digitação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
 
 		</xs:sequence>
 	</xs:complexType>

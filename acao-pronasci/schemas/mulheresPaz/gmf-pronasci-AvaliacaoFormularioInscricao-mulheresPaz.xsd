@@ -23,7 +23,7 @@
 
 	<xs:complexType name="formMulheresDaPazAvaliacaoFormularioInscricao">
 		<xs:sequence>
-			<xs:element name="numeroInscricao" minOccurs="0">
+<!-- 			<xs:element name="numeroInscricao" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Número de inscrição:</xhtml:label>
@@ -34,7 +34,7 @@
 						<xs:maxLength value="255" />
 					</xs:restriction>
 				</xs:simpleType>
-			</xs:element>
+			</xs:element> -->
 
 			<xs:element name="candidata" minOccurs="0">
 				<xs:annotation>
@@ -123,6 +123,7 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:enumeration value="+1" />
+									<xs:enumeration value="0" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
@@ -140,6 +141,7 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:enumeration value="-1" />
+									<xs:enumeration value="0" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
@@ -156,12 +158,15 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:enumeration value="+2" />
+									<xs:enumeration value="0" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
 
-						<xs:element name="atuaComunidade" minOccurs="0" type="xs:float">
 
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="atuaComunidade" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>2.4 Atuação na comunidade realiza ou realizou
@@ -170,14 +175,19 @@
 										continuidade;
 										Possui experiência em trabalho com juventude
 										Possui
-										experiência em trabalho com drogadição.(0 a 10)
-									</xhtml:label>
+										experiência em trabalho com drogadição.(0 a 10)</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
 						</xs:element>
-						<xs:element name="porqueSerMulherdapaz" minOccurs="0"
-							type="xs:float">
-
+						<!-- End field Input Text -->
+						
+											<!-- Begin field Input Text -->	
+						<xs:element name="porqueSerMulherdapaz" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>2.5 Resposta à questão Nº, 08 ("Por que razão
@@ -198,7 +208,15 @@
 										(drogas,crime,rua,violência)</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
 						</xs:element>
+						<!-- End field Input Text -->
+						
+
 						<xs:element name="total" minOccurs="0" type="xs:float">
 							<xs:annotation>
 								<xs:appinfo>
@@ -206,6 +224,37 @@
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="respaplicacaoquest" minOccurs="1">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="respdigitacao" minOccurs="1">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Responsável pela Digitação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+						
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>

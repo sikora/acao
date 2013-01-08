@@ -9,7 +9,7 @@
 	<xs:element name="formMulhesDaPazAvaliacaoEntrevistaIndividual" type="formMulhesDaPazAvaliacaoEntrevistaIndividual">
 		<xs:annotation>
 			<xs:appinfo>
-				<xhtml:label>04. AVALIAÇÃO ENTREVISTA INDIVIDUAL</xhtml:label>
+				<xhtml:label>05. AVALIAÇÃO ENTREVISTA INDIVIDUAL</xhtml:label>
 				<class:classificacoes>
 					<class:classificacao>cn=Mulheres da Paz,cn=Infância e Adolescência,cn=Segurança Pública</class:classificacao>
 				</class:classificacoes>
@@ -21,7 +21,7 @@
 
 		<xs:sequence>
 
-			<xs:element name="numeroInscricao" minOccurs="0">
+<!-- 			<xs:element name="numeroInscricao" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Número de inscrição:</xhtml:label>
@@ -32,7 +32,7 @@
 						<xs:maxLength value="255" />
 					</xs:restriction>
 				</xs:simpleType>
-			</xs:element>
+			</xs:element> -->
 
 			<xs:element name="escolaridade"  minOccurs="0">
 				<xs:annotation>
@@ -97,86 +97,61 @@
 				<xs:complexType>
 					<xs:sequence>
 
-						<xs:element name="tempoBairro" >
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Tempo no bairro(mais de 5 anos) ou residência
-										própria:(+2 pontos) - Peso 2</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
-										<xs:annotation>
-											<xs:appinfo>
-												<xhtml:label>Pontos</xhtml:label>
-											</xs:appinfo>
-										</xs:annotation>
-									</xs:element>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
 
-						<xs:element name="familiaresBairro">
+						<!-- Begin fieldset - tempoBairro -->	
+						<xs:element name="tempoBairro" minOccurs="0" >
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Familiares no bairro:(+1ponto) - Peso 2
-									</xhtml:label>
+									<xhtml:label>Tempo no bairro.
+										- mais de 5 anos ou residência própria:(+2 pontos) 
+										- Familiares no bairro:(+1ponto) 
+										- Pretensão de mudar-se do bairro:(zerar item) - Peso 2 </xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
+									<!-- Begin field selectBox -->	
+									<xs:element name="tempoBairro"  minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Pontos</xhtml:label>
-											</xs:appinfo>
-										</xs:annotation>
-									</xs:element>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-
-						<xs:element name="pretensaoMudar" >
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Pretensão de mudar-se do bairro:(zerar item) -
-										Peso 2
-									</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="pontos" minOccurs="0">
-										<xs:annotation>
-											<xs:appinfo>
-												<xhtml:label>Pontos</xhtml:label>
+												<xhtml:label>Pontos </xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
-												<xs:maxLength value="255" />
+												<xs:enumeration value="0" />
+												<xs:enumeration value="1" />
+												<xs:enumeration value="2" />
+												<xs:enumeration value="3" />
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-								</xs:sequence>
+									<!-- End field selectBox -->
+								</xs:sequence>	
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="somaPontos" type="xs:float" minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Soma dos pontos</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-						</xs:element>
+						
+						<!-- End fieldset - tempoBairro -->	
 
-						<xs:element name="somaTotal" type="xs:float" minOccurs="0">
+						
+						
+
+			
+						<xs:element name="somaPontos" type="xs:float" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Total</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
+<!-- 
+						<xs:element name="somaTotal" type="xs:float" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Total</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element> -->
 
 					</xs:sequence>
 				</xs:complexType>
@@ -196,62 +171,97 @@
 						<xs:element name="iniciatica" >
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Iniciativa/Capacidade de articulaçãi(Pontual: +1
-										ponto; Eventual:+2 pontos) - Peso 2</xhtml:label>
+									<xhtml:label>Iniciativa/Capacidade de articulação (Pontual: +1
+										ponto; Eventual:+2 pontos; Frequente:+ 3 pontos ) - Peso 2</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
+									<xs:element name="pontos" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Pontos</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="0" />
+												<xs:enumeration value="1" />
+												<xs:enumeration value="2" />
+												<xs:enumeration value="3" />
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
 
-						<xs:element name="frequente" >
+									<!-- Begin field Input Text -->	
+						<xs:element name="totalIniciativa" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Frequente:(+1ponto por item) - Peso 3
-									</xhtml:label>
+									<xhtml:label>Total</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
-										<xs:annotation>
-											<xs:appinfo>
-												<xhtml:label>Pontos</xhtml:label>
-											</xs:appinfo>
-										</xs:annotation>
-									</xs:element>
-								</xs:sequence>
-							</xs:complexType>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
 						</xs:element>
+						<!-- End field Input Text -->
+
+						
 
 						<xs:element name="engajamento" >
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Engajamento:(+1ponto por item) - Peso 2
+									<xhtml:label>Engajamento:(+1ponto por item) - Peso 3
 									</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
+									<xs:element name="pontos"  minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Pontos</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="0" />
+												<xs:enumeration value="1" />
+												<xs:enumeration value="2" />
+												<xs:enumeration value="3" />
+												<xs:enumeration value="4" />
+												<xs:enumeration value="5" />
+												<xs:enumeration value="6" />
+												<xs:enumeration value="7" />
+												<xs:enumeration value="8" />
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="totalengajamento" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Total</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+						
 
 						<xs:element name="referenciada" >
 							<xs:annotation>
@@ -263,32 +273,47 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
+									<xs:element name="pontos" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Pontos</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="0" />
+												<xs:enumeration value="1" />
+												<xs:enumeration value="2" />									
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
 
-						<xs:element name="somaPontos" type="xs:float"  minOccurs="0">
-							<xs:annotation>
-								<xs:appinfo>
-									<xhtml:label>Soma dos pontos</xhtml:label>
-								</xs:appinfo>
-							</xs:annotation>
-						</xs:element>
 
-						<xs:element name="somaTotal" type="xs:float"  minOccurs="0">
+						<!-- Begin field Input Text -->	
+						<xs:element name="totalreferenciada" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Total</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
 						</xs:element>
+						<!-- End field Input Text -->
+
+<!-- 						<xs:element name="somaTotal" type="xs:float"  minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Total</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element> -->
 
 					</xs:sequence>
 				</xs:complexType>
@@ -314,16 +339,39 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
+									<xs:element name="pontos"  minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Pontos</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">												
+												<xs:enumeration value="0" />
+												<xs:enumeration value="1" />
+												<xs:enumeration value="2" />									
+												<xs:enumeration value="3" />	
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="totalrececimentoSituacao" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Total</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
 
 						<xs:element name="casoPratico" >
 							<xs:annotation>
@@ -335,31 +383,46 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="pontos" type="xs:float" minOccurs="0">
+									<xs:element name="pontos"  minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
 												<xhtml:label>Pontos</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">												
+												<xs:enumeration value="0" />
+												<xs:enumeration value="1" />
+												<xs:enumeration value="2" />									
+												<xs:enumeration value="3" />	
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="somaPontos" type="xs:float"  minOccurs="0">
+						<!-- Begin field Input Text -->	
+						<xs:element name="totalcasoPratico" minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Soma dos pontos</xhtml:label>
+									<xhtml:label>Total</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
 						</xs:element>
-
+						<!-- End field Input Text -->
+<!-- 
 						<xs:element name="somaTotal" type="xs:float"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Total</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
-						</xs:element>
+						</xs:element> -->
 
 					</xs:sequence>
 				</xs:complexType>
@@ -427,7 +490,7 @@
 									<xs:element name="sim" type="xs:boolean">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Sim:0</xhtml:label>
+												<xhtml:label>Sim:-1</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -460,7 +523,7 @@
 									<xs:element name="sim" type="xs:boolean">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Sim:0</xhtml:label>
+												<xhtml:label>Sim:-1</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -541,7 +604,7 @@
 							</xs:complexType>
 						</xs:element>
 
-						<xs:element name="resposta6">
+						<!-- <xs:element name="resposta6">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>"Em terra de sapo..."</xhtml:label>
@@ -572,7 +635,7 @@
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
-						</xs:element>
+						</xs:element> -->
 
 						<xs:element name="resposta7">
 							<xs:annotation>
@@ -640,7 +703,7 @@
 							</xs:complexType>
 						</xs:element>
 
-						<xs:element name="resposta9">
+						<!-- <xs:element name="resposta9">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>"Quem não pode..."</xhtml:label>
@@ -671,7 +734,7 @@
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
-						</xs:element>
+						</xs:element> -->
 
 						<xs:element name="resposta10">
 							<xs:annotation>
@@ -691,7 +754,7 @@
 									<xs:element name="sim" type="xs:boolean">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Sim:0</xhtml:label>
+												<xhtml:label>Sim:-1</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -724,14 +787,14 @@
 									<xs:element name="sim" type="xs:boolean">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Sim:0</xhtml:label>
+												<xhtml:label>Sim:+1</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="nao" type="xs:boolean">
 										<xs:annotation>
 											<xs:appinfo>
-												<xhtml:label>Não: +1</xhtml:label>
+												<xhtml:label>Não: -1</xhtml:label>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -739,25 +802,27 @@
 							</xs:complexType>
 						</xs:element>
 
-						<xs:element name="somaPontos" type="xs:float"  minOccurs="0">
+						<xs:element name="flexibilidadePontos" type="xs:float"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Soma dos pontos</xhtml:label>
+									<xhtml:label>Pontos</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="somaTotal" type="xs:float"  minOccurs="0">
+
+						<xs:element name="flexibilidadeTotal" type="xs:float"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Total</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
-
+						
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+
 
 			<xs:element name="pontuacaoEntrevista">
 				<xs:annotation>
@@ -771,7 +836,7 @@
 						<xs:element name="totalEntrevista" type="xs:float"  minOccurs="0">
 							<xs:annotation>
 								<xs:appinfo>
-									<xhtml:label>Total da entrevista</xhtml:label>
+									<xhtml:label>Total da entrevista (Total Geral) X 2</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
 						</xs:element>
@@ -781,7 +846,15 @@
 									<xhtml:label>Total da dinâmica</xhtml:label>
 								</xs:appinfo>
 							</xs:annotation>
+						</xs:element>						
+						<xs:element name="notaFinal" type="xs:float"  minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Nota Final (Total da entrevista + Total da dinâmica)</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
 						</xs:element>
+
 
 					</xs:sequence>
 				</xs:complexType>
@@ -829,9 +902,39 @@
 							</xs:annotation>
 						</xs:element>
 
+
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<!-- Begin field Input Text -->	
+						<xs:element name="respaplicacaoquest" minOccurs="1">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
+
+						<!-- Begin field Input Text -->	
+						<xs:element name="respdigitacao" minOccurs="1">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Responsável pela Digitação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<!-- End field Input Text -->
 
 		</xs:sequence>
 	</xs:complexType>

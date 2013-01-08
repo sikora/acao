@@ -10,7 +10,7 @@
 	<xs:element name="formMulheresDaPazAvaliacaoDinamica" type="formMulheresDaPazAvaliacaoDinamica">
 		<xs:annotation>
 			<xs:appinfo>
-				<xhtml:label>05. AVALIAÇÃO DINÂMICA</xhtml:label>
+				<xhtml:label>04. AVALIAÇÃO DINÂMICA</xhtml:label>
 				<class:classificacoes>
 					<class:classificacao>cn=Mulheres da Paz,cn=Infância e Adolescência,cn=Segurança Pública</class:classificacao>
 				</class:classificacoes>
@@ -24,7 +24,7 @@
 	<xs:complexType name="formMulheresDaPazAvaliacaoDinamica">
 
 		<xs:sequence>
-			<xs:element name="numeroInscricao" minOccurs="0">
+<!-- 			<xs:element name="numeroInscricao" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Número de Inscrição:</xhtml:label>
@@ -35,7 +35,7 @@
 						<xs:maxLength value="255" />
 					</xs:restriction>
 				</xs:simpleType>
-			</xs:element>
+			</xs:element> -->
 
 			<xs:element name="avaliacaoDinamica">
 				<xs:annotation>
@@ -296,6 +296,36 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respaplicacaoquest" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela aplicação do questionário</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
+
+			<!-- Begin field Input Text -->	
+			<xs:element name="respdigitacao" minOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Responsável pela Digitação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!-- End field Input Text -->
 
 		</xs:sequence>
 	</xs:complexType>
