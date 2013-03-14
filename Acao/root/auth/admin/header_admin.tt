@@ -65,7 +65,7 @@
     </head>
     <body onload="onload_focus();">
         <div id='topo'>
-            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]" alt="Brasão da Prefeitura Municipal de Fortaleza"/>
+            <h1 id="logo" alt="Ação - Sistema de Acompanhamento de Projetos Sociais"></h1>
             <div id='topoTitulo'>
                 Ação - Sistema de Acompanhamento de Projetos Sociais
                 <table>

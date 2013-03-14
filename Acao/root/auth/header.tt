@@ -52,11 +52,11 @@
 
 
     </head>
-    <body>
+    <body> 
+            
         <div id='topo'>
-            <img src="[% c.uri_for('/static/img/logoBrasaoPMF.png') %]" alt="Brasão da Prefeitura Municipal de Fortaleza"/>
-            <div id='topoTitulo'>
-                Ação - Sistema de Acompanhamento de Projetos Sociais
+            <h1 id="logo" alt="Ação - Sistema de Acompanhamento de Projetos Sociais"></h1>
+            <div id='topoTitulo'>                
                 <table>
                     <tr>
                       [% IF sysAdmin %]
@@ -73,6 +73,7 @@
                         <td>[% lotacoes.0 %]</td>
                     </tr>
                 </table>
+                
             </div>
         </div>
         <div id='barraTopo'>
