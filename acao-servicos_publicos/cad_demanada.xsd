@@ -1,0 +1,1231 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/sv_publicos/cad_demanda.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/sv_publicos/cad_demanda.xsd"
+	elementFormDefault="qualified">
+
+	<xs:element name="cad_demanda" type="cad_demanda">
+		<xs:annotation>
+			<xs:appinfo>
+				<xhtml:label>CADASTROS DE DEMANDAS GERAIS</xhtml:label>
+				<class:classificacoes>
+					<class:classificacao>cn=Serviços Públicos</class:classificacao>
+				</class:classificacoes>
+				<idx:index>
+
+				</idx:index>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="cad_demanda">
+		<xs:sequence>
+			<xs:element name="dtSolicitacao" minOccurs="0" type="xs:date">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Data solicitação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+            <xs:element name="cestAliment" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Cesta de alimentos</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtCestAliment" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendCestAlm" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusCestAlm" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+            <xs:element name="lona" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Lonas</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtLona" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendLona" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusLona" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+            <xs:element name="filtros" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Filtros</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtFiltro" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendFiltro" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusFiltro" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+            <xs:element name="lencol" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Lençol</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtLencol" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendLencol" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusLencol" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="rede" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Rede</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtRede" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendRede" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusRede" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="colchonete" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Colchonete</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtColchonete" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendColchonet" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusColchonete" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="cadRoda" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Cadeira de Roda</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtCadRoda" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendCadRoda" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusCadRoda" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="oculos" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Óculos</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="qtOculos" minOccurs="0" type="xs:integer">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Quantidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendOculos" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusOculos" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="regAss" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Regularização da associação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="tpRegAss" minOccurs="0" type="xs:string">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Tipo de regularização</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendRegAss" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusRegAss" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="advg" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Advogado</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="tpAdvg" minOccurs="0" type="xs:string">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Especialidade</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendAdvg" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusAdvg" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="refPraca" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Reforma da praça</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="EndRefPraca" minOccurs="0" type="xs:string">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Especifique praça</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendRefPraca" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusRefPraca" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="asfalto" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Asfalto para a rua</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="EndRuaAsfalto" minOccurs="0" type="xs:string">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Especifique a rua</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendAsfalto" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusAsfalto" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+           <xs:element name="calcamento" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Calçamento para a rua</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			                <xs:element name="EndRuaCalcamento" minOccurs="0" type="xs:string">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Especifique a rua</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+			                </xs:element>
+                            <xs:element name="dtAtendCalcamento" minOccurs="0" type="xs:date">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Data atendimento</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="statusCalcamento" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:appinfo>
+	                                    <xhtml:label>Status</xhtml:label>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+	                                    <xs:enumeration value="Aguardando atendimento" />
+	                                    <xs:enumeration value="Atendido" />
+	                                    <xs:enumeration value="Negado" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+            <xs:element name="saude" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Saúde</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+                            <xs:element name="consulta" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Consulta</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="tpConsulta" minOccurs="0" type="xs:string">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Especifique a consulta</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendConsulta" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusConsulta" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                            <xs:element name="cirurgia" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Cirurgia</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="tpCirurgia" minOccurs="0" type="xs:string">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Especifique a Cirurgia</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendCirug" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusCirug" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                            <xs:element name="exame" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Exame</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="tpExame" minOccurs="0" type="xs:string">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Especifique o exame</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendExame" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusExame" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                            <xs:element name="medicamento" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Medicamento</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qualMedicamento" minOccurs="0" type="xs:string">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Especifique o medicamento</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendMedic" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusMedic" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="transp" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Transporte</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+                            <xs:element name="onibus" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Ônibus</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="tpOnibus" minOccurs="0" type="xs:string">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Especifique o ônibus</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendOnibus" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusOnibus" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                            <xs:element name="passagem" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Passagem</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qtPassagem" minOccurs="0" type="xs:integer">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Quantidade</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+			                            <xs:element name="EspPassagem" minOccurs="0" type="xs:string">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Especifique</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendPassagem" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusPassagem" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+
+            <xs:element name="projSoc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Projetos Sociais</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+			            <xs:element name="cursoInfo" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Curso de informática</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+			            <xs:element name="cursoEltPred" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Curso de eletricista predial</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+			            <xs:element name="cursoCostura" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Curso de corte e costura</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+			            <xs:element name="cursoBomHid" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Curso de bombeiro hidráulico</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+			            <xs:element name="cursoCabeleir" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Curso de cabeleireiro</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+			            <xs:element name="cursoNntComp" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Curso de manutenção de computador</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+			            <xs:element name="cursoEmpreed" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Curso de empreendedorismo</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+			            <xs:element name="ginastica" minOccurs="0" type="xs:boolean">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Ginastica para 3ª idade</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+			            </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+            <xs:element name="esporte" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Material esportivo</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+                         <xs:element name="bola" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Bola</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qtBola" minOccurs="0" type="xs:integer">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Quantidade</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendBola" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusBola" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                         <xs:element name="chuteira" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Chuteira</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qtChuteira" minOccurs="0" type="xs:integer">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Quantidade</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendChuteira" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusChuteira" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                         <xs:element name="uniforme" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Uniforme</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qtUniforme" minOccurs="0" type="xs:integer">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Quantidade</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendUniforme" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusUniforme" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                         <xs:element name="redFut" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Rede de futebol</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qtRedFut" minOccurs="0" type="xs:integer">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Quantidade</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendRedFut" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusRedFut" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                         <xs:element name="colete" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Colete</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qtColete" minOccurs="0" type="xs:integer">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Quantidade</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendColete" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusColete" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+                         <xs:element name="meiao" minOccurs="0">
+				                <xs:annotation>
+					                <xs:appinfo>
+						                <xhtml:label>Meião</xhtml:label>
+					                </xs:appinfo>
+				                </xs:annotation>
+				                <xs:complexType>
+					                <xs:sequence>
+			                            <xs:element name="qtMeiao" minOccurs="0" type="xs:integer">
+				                            <xs:annotation>
+					                            <xs:appinfo>
+						                            <xhtml:label>Quatidade</xhtml:label>
+					                            </xs:appinfo>
+				                            </xs:annotation>
+			                            </xs:element>
+                                        <xs:element name="dtAtendMeiao" minOccurs="0" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Data atendimento</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="statusMeiao" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+	                                                <xhtml:label>Status</xhtml:label>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+	                                                <xs:enumeration value="Aguardando atendimento" />
+	                                                <xs:enumeration value="Atendido" />
+	                                                <xs:enumeration value="Negado" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+		                            </xs:sequence>
+	                            </xs:complexType>
+			                </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+            <xs:element name="emprego" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Emprego</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="nome" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Nome</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="areAtuacao" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Área de atuação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="cargo" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Cargo</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="local" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Local</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="indicacao" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Indicacao</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="referencia" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Referência</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="255" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+	                    <xs:element name="dtAtendEmp" minOccurs="0" type="xs:date">
+		                    <xs:annotation>
+			                    <xs:appinfo>
+				                    <xhtml:label>Data atendimento</xhtml:label>
+			                    </xs:appinfo>
+		                    </xs:annotation>
+	                    </xs:element>
+	                    <xs:element name="statusEmp" minOccurs="0">
+		                    <xs:annotation>
+			                    <xs:appinfo>
+				                    <xhtml:label>Status</xhtml:label>
+			                    </xs:appinfo>
+		                    </xs:annotation>
+		                    <xs:simpleType>
+			                    <xs:restriction base="xs:string">
+				                    <xs:enumeration value="Aguardando atendimento" />
+				                    <xs:enumeration value="Atendido" />
+				                    <xs:enumeration value="Negado" />
+			                    </xs:restriction>
+		                    </xs:simpleType>
+	                    </xs:element>
+		            </xs:sequence>
+	            </xs:complexType>
+			</xs:element>
+
+	    <xs:element name="obs" minOccurs="0" type="xs:string">
+		    <xs:annotation>
+			    <xs:appinfo>
+				    <xhtml:label>Observações</xhtml:label>
+			    </xs:appinfo>
+		    </xs:annotation>
+	    </xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

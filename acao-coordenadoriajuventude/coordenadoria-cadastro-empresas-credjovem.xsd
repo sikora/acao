@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cad-emp-credjovem.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/acao/coordenadoriajuventude-cad-emp-credjovem.xsd"
+	elementFormDefault="qualified">
+
+	<xs:element name="cadEmpresas" type="cadEmpresas">
+		<xs:annotation>
+			<xs:appinfo>
+				<xhtml:label>CADASTRO DE EMPRESAS</xhtml:label>
+				<class:classificacoes>
+                    <class:classificacao>cn=Monitoramento,cn=Juventude</class:classificacao>
+				</class:classificacoes>
+				<idx:index>
+				    <idx:hint key="pessoa.nome" xpath="formPoliticaJuventude/nome" />
+				    <idx:hint key="pessoa.nome" xpath="formPoliticaJuventude/nomeMae" />
+				</idx:index>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="cadEmpresas">
+		<xs:sequence>
+
+			<xs:element name="dtAplicacao" minOccurs="0" type="xs:date">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Data aplicação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="edital" minOccurs="0" type="xs:date">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Edital</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="dadosgerais">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Dados gerais</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+			        <xs:element name="contrato" minOccurs="0">
+				        <xs:annotation>
+					        <xs:appinfo>
+						        <xhtml:label>Contrato</xhtml:label>
+					        </xs:appinfo>
+				        </xs:annotation>
+				        <xs:simpleType>
+					        <xs:restriction base="xs:string">
+						        <xs:maxLength value="255" />
+					        </xs:restriction>
+				        </xs:simpleType>
+			        </xs:element>
+						<xs:element name="valFin" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Valor financeiro</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+                                <xs:restriction base="xs:decimal">
+                                    <xs:fractionDigits value='2'/>
+                                    <xs:maxExclusive value="1000000"/>
+                                    <xs:minInclusive value="-1000000"/>
+                                </xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+			            <xs:element name="empresa" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Empreedimento</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+			            <xs:element name="atividade" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Atividade</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+			            <xs:element name="endereco" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Endereço</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+			            <xs:element name="contatos" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Contatos</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+			<xs:element name="socios" maxOccurs="10">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Socios</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+			            <xs:element name="enderecoSoc" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Endereço</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+			            <xs:element name="contatoSoc" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>Contatos</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+			            <xs:element name="cpf" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>CPF</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+						<xs:element name="formacaoSuaArea" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Formação específica para a sua área de atuação</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+        <xs:element name="juridico">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Jurídico</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+						<xs:element name="possuiRegJunta" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Possui registro na Junta Comercial</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+			            <xs:element name="cnpj" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>CNPJ</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+        <xs:element name="qualificacao">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Qualificação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+						<xs:element name="recebQual" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Recebeu qualificação para o precesso</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="avalQual" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Como você avalia a qualificação recebida</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Ótima" />
+									<xs:enumeration value="Boa" />
+									<xs:enumeration value="razoável" />
+									<xs:enumeration value="Insatisfatória" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="qualCont" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Qualificação contribuiu para rendimento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Muito" />
+									<xs:enumeration value="Razoavelmente" />
+									<xs:enumeration value="Pouco" />
+									<xs:enumeration value="Quase nada" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+        <xs:element name="processo">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Processo</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+						<xs:element name="libParcelaUm" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Liberação 1ª parcela</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="prestacParcial" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Prestação parcial</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="libParcelaDois" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Liberação 2ª parcela</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="prestacFinal" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Prestação final</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="reembolso" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Reembolso do recurso financeiro</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Parte reembolsável" />
+									<xs:enumeration value="Parte não reembolsável" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="implantado" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Implantado</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Parte implantado" />
+									<xs:enumeration value="Parte não implantado" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="funcionando" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Funcionando</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+        <xs:element name="financeiro">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Financeiro</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+						<xs:element name="contContabil" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Possui controle contábil</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="regFatMensal" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Registra faturamento mensal</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="balancete" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>realiza balancete</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="prolabore" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Valor do prólabore de cada sócio</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Abaixo de salário minimo" />
+									<xs:enumeration value="Entre 1 e 2 salários minimos" />
+									<xs:enumeration value="Entre 3 e 4 salários minimos" />
+									<xs:enumeration value="Acima de 4 salários minimos" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="capGiro" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Capital de giro</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+                                <xs:restriction base="xs:decimal">
+                                    <xs:fractionDigits value='2'/>
+                                    <xs:maxExclusive value="1000000"/>
+                                    <xs:minInclusive value="-1000000"/>
+                                </xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="lucroMensal" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Qual a taxa de lucro mensal da empresa</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="0 a 5%" />
+									<xs:enumeration value="5 a 10%" />
+									<xs:enumeration value="Acima de 10%" />
+									<xs:enumeration value="Não sei responder" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="atingMetas" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>O Empreendimento atingiu as metas financeiras estabelecidas</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+			            <xs:element name="motNaoAtigMeta" minOccurs="0">
+				            <xs:annotation>
+					            <xs:appinfo>
+						            <xhtml:label>caso negativo, qual motivo não atingiu meta</xhtml:label>
+					            </xs:appinfo>
+				            </xs:annotation>
+				            <xs:simpleType>
+					            <xs:restriction base="xs:string">
+						            <xs:maxLength value="255" />
+					            </xs:restriction>
+				            </xs:simpleType>
+			            </xs:element>
+						<xs:element name="fatMelhorou" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Desde sua implantação, o faturamento de seu empreendimento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Aumentou" />
+									<xs:enumeration value="Permaneceu estável" />
+									<xs:enumeration value="Diminuiu" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="percAumento" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Caso positivo, qual a porcentagem de aumento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="0 a 5%" />
+									<xs:enumeration value="5 a 10%" />
+									<xs:enumeration value="Acima de 10%" />
+									<xs:enumeration value="Não sei responder" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="expansao" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Houve expansão de seu empreendimento</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="tpExpansao" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Tipo de expansão</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="contratou novos funcionários" />
+									<xs:enumeration value="instalou novas filiais" />
+									<xs:enumeration value="adquiriu novos equipamentos/maquinário" />
+									<xs:enumeration value="ampliou serviços" />
+									<xs:enumeration value="Outros" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+        <xs:element name="comercial">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Comercial</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+						<xs:element name="local" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>O empreendimento funciona em local </xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Próprio" />
+									<xs:enumeration value="Cedido" />
+									<xs:enumeration value="Alugado" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="regVenda" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Pratica registro de vendas</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Insatisfatório" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="marketing" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Traça estratégias de marketing</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Insatisfatório" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="publicidade" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Pratica ações publicitárias</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Insatisfatório" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+			<xs:element name="producao">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Produção</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+                  <xs:sequence>
+						<xs:element name="empregados" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Possui empregados</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="terceirizaSv" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<xhtml:label>Terceiriza serviços</xhtml:label>
+								</xs:appinfo>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Sim" />
+									<xs:enumeration value="Não" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+         </xs:element>
+			<xs:element name="obs" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>OBSERVAÇÕES</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
