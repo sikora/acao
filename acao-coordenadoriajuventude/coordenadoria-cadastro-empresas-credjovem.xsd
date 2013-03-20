@@ -26,7 +26,7 @@
 	<xs:complexType name="cadEmpresas">
 		<xs:sequence>
 
-			<xs:element name="dtAplicacao" minOccurs="0" type="xs:date">
+			<xs:element name="dtAplicacao" minOccurs="1" type="xs:date">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Data aplicação</xhtml:label>
@@ -34,7 +34,7 @@
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="edital" minOccurs="0" type="xs:date">
+			<xs:element name="edital" minOccurs="1" type="xs:date">
 				<xs:annotation>
 					<xs:appinfo>
 						<xhtml:label>Edital</xhtml:label>
@@ -50,7 +50,7 @@
 				</xs:annotation>
 				<xs:complexType>
                   <xs:sequence>
-			        <xs:element name="contrato" minOccurs="0">
+			        <xs:element name="contrato" minOccurs="1">
 				        <xs:annotation>
 					        <xs:appinfo>
 						        <xhtml:label>Contrato</xhtml:label>
@@ -62,7 +62,7 @@
 					        </xs:restriction>
 				        </xs:simpleType>
 			        </xs:element>
-						<xs:element name="valFin" minOccurs="0">
+						<xs:element name="valFin" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Valor financeiro</xhtml:label>
@@ -76,7 +76,7 @@
                                 </xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-			            <xs:element name="empresa" minOccurs="0">
+			            <xs:element name="empresa" minOccurs="1">
 				            <xs:annotation>
 					            <xs:appinfo>
 						            <xhtml:label>Empreedimento</xhtml:label>
@@ -88,7 +88,7 @@
 					            </xs:restriction>
 				            </xs:simpleType>
 			            </xs:element>
-			            <xs:element name="atividade" minOccurs="0">
+			            <xs:element name="atividade" minOccurs="1">
 				            <xs:annotation>
 					            <xs:appinfo>
 						            <xhtml:label>Atividade</xhtml:label>
@@ -100,7 +100,7 @@
 					            </xs:restriction>
 				            </xs:simpleType>
 			            </xs:element>
-			            <xs:element name="endereco" minOccurs="0">
+			            <xs:element name="endereco" minOccurs="1">
 				            <xs:annotation>
 					            <xs:appinfo>
 						            <xhtml:label>Endereço</xhtml:label>
@@ -112,7 +112,7 @@
 					            </xs:restriction>
 				            </xs:simpleType>
 			            </xs:element>
-			            <xs:element name="contatos" minOccurs="0">
+			            <xs:element name="contatos" minOccurs="1">
 				            <xs:annotation>
 					            <xs:appinfo>
 						            <xhtml:label>Contatos</xhtml:label>
@@ -135,7 +135,7 @@
 				</xs:annotation>
 				<xs:complexType>
                   <xs:sequence>
-			            <xs:element name="enderecoSoc" minOccurs="0">
+			            <xs:element name="enderecoSoc" minOccurs="1">
 				            <xs:annotation>
 					            <xs:appinfo>
 						            <xhtml:label>Endereço</xhtml:label>
@@ -147,7 +147,7 @@
 					            </xs:restriction>
 				            </xs:simpleType>
 			            </xs:element>
-			            <xs:element name="contatoSoc" minOccurs="0">
+			            <xs:element name="contatoSoc" minOccurs="1">
 				            <xs:annotation>
 					            <xs:appinfo>
 						            <xhtml:label>Contatos</xhtml:label>
@@ -159,7 +159,7 @@
 					            </xs:restriction>
 				            </xs:simpleType>
 			            </xs:element>
-			            <xs:element name="cpf" minOccurs="0">
+			            <xs:element name="cpf" minOccurs="1">
 				            <xs:annotation>
 					            <xs:appinfo>
 						            <xhtml:label>CPF</xhtml:label>
@@ -171,7 +171,7 @@
 					            </xs:restriction>
 				            </xs:simpleType>
 			            </xs:element>
-						<xs:element name="formacaoSuaArea" minOccurs="0">
+						<xs:element name="formacaoSuaArea" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Formação específica para a sua área de atuação</xhtml:label>
@@ -285,7 +285,7 @@
 				</xs:annotation>
 				<xs:complexType>
                   <xs:sequence>
-						<xs:element name="libParcelaUm" minOccurs="0">
+						<xs:element name="libParcelaUm" minOccurs="1">
 							<xs:annotation>
 								<xs:appinfo>
 									<xhtml:label>Liberação 1ª parcela</xhtml:label>
