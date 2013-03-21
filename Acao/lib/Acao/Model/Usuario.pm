@@ -27,6 +27,7 @@ sub buscar_usuarios {
     my $memberOf;
     my $base_acao  = $self->base_acao;
     my $admin_acao = $self->admin_super;
+    my $base = $self->dominios_dn;
     #utf8::decode($admin_acao);
     #utf8::decode($base_acao);
     my $campo = $args->{campo} || 'uid=*';
@@ -36,8 +37,17 @@ sub buscar_usuarios {
     else {
         $pesquisa = $args->{pesquisa} . '*)(' . $campo . $args->{pesquisa};
     }
+
     switch ($campo) {
-        case 'admin' { $campo = 'memberOf='; $pesquisa = $admin_acao; }
+        case 'admin' { 
+            $campo = 'memberOf='; $pesquisa = $admin_acao; 
+            $base = $self->dominios_dn;
+        }
+        case 'lotacao' {
+            $campo = 'member=*'; 
+            $base = $args->{pesquisa};
+            $pesquisa = '';
+        }
 
         else {
         }
@@ -47,11 +57,26 @@ sub buscar_usuarios {
 
     my $filter = $campo . $pesquisa;
 
-    my $base = $self->dominios_dn;
-
     my $mesg =
       $self->searchLDAP(
         { attrs => $attrs, filter => $filter, base => $base } );
+   $campo = '';
+   $base = $self->dominios_dn;
+   if($args->{campo} eq 'lotacao' ) {
+        my $max = $mesg->count;
+        for ( $i = 0 ; $i < $max ; $i++ ) {
+           my $entry = $mesg->entry($i);
+           if($i == 0){
+               $campo .= 'memberOf=' . $entry->dn;
+          }else{
+               $campo .= ')(memberOf=' . $entry->dn;
+          }
+    warn $i;
+        }
+        $filter = $campo . $pesquisa;
+
+        $mesg = $self->searchLDAP( { attrs => $attrs, filter => $filter, base => $base } );
+  }
 
     my $max = $mesg->count;
     for ( $i = 0 ; $i < $max ; $i++ ) {

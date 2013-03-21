@@ -36,6 +36,7 @@
       <select name="campo">
         <option value="" selected="selected">Todos</option>
         <option value="admin">Administradores</option>
+        <option value="lotacao">Lotação</option>
 
         <input type="submit" value="buscar"/>
 

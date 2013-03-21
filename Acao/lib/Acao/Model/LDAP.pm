@@ -304,8 +304,9 @@ sub searchLDAP {
 
         #   control => [$page]
     );
-
+warn Dumper @args;
     my $mesg = $ldap->search(@args);
+
 
 =coments    my $cookie;
 
