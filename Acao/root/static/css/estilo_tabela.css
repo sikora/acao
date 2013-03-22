@@ -1,0 +1,9 @@
+.sorter th.headerSortUp { 
+    background: url(../images/sortSmallAsc.gif)  no-repeat right center !important; 
+    background-color:#aaa !important;
+}
+.sorter th.headerSortDown { 
+    background: url(../images/sortSmallDesc.gif)  no-repeat right center !important; 
+    background-color:#aaa !important;
+
+}

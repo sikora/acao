@@ -261,7 +261,7 @@
         c.model('Sedna').execute( xquery.list );
     %]
 
-  <table id="buscadossie">
+  <table id="buscadossie" class="sorter">
   <thead>
    <tr>
     <th width="70px">Controle</th>

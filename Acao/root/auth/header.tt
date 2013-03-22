@@ -24,8 +24,10 @@
         <title>Ação - Sistema de Acompanhamentos de Projetos Sociais</title>
         <link rel="stylesheet" href='[% c.uri_for('/static/css/jquery.ui-1.8.6.custom.thema.css') %]' type="text/css" media="all" />
         <link href='[% c.uri_for('/static/css/estilo.css') %]' rel='stylesheet' type='text/css' />
+        <link href='[% c.uri_for('/static/css/estilo_tabela.css') %]' rel='stylesheet' type='text/css' />
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery-1.4.4.min.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/plugins/jquery.ui-1.8.6.custom.min.js') %]'></script>
+        <script language='javascript' src='[% c.uri_for('/static/js/plugins/tablesorter.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/funcoes.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/picnet.table.filter.min.js') %]'></script>
         <script language='javascript' src='[% c.uri_for('/static/js/libs/base64.js') %]'></script>
@@ -48,6 +50,13 @@
           $(document).ready(function(){
             $("#form").validate();
           });
+
+       /*ordenação da tabela */
+        $(document).ready(function() {
+           $(".sorter").tablesorter({      
+               widgets: ['zebra']	  // visual listras
+           });
+         });
         </script>
 
 
