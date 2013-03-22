@@ -31,7 +31,7 @@
     <legend>Buscar Usuários</legend>
      <br/>
     <form name="buscarUserLdap"  action="[% c.uri_for_action('/auth/admin/usuario/searchUser') %]" method="post" >
-      <input name="buscar"  value=""  />
+      <input name="buscar"  class='buscaLotacao' value="" size="45"  />
     ou
       <select name="campo">
         <option value="" selected="selected">Todos</option>
@@ -43,10 +43,30 @@
       </select>
 
     </form>
-
     </fieldset>
 </div>
 <table>
+
+<script type="text/javascript">
+$('input.buscaLotacao').each(function() {
+  var autoCompelteElement = this;
+  var formElementName = $(this).attr('name');
+  var hiddenElementID  = formElementName + '_autocomplete_hidden';
+  /* change name of orig input */
+  $(this).attr('name', formElementName + '_autocomplete_label');
+  /* create new hidden input with name of orig input */
+  $(this).after("<input type=\"hidden\" name=\"" + formElementName + "\" id=\"" + hiddenElementID + "\" />");
+  $(this).autocomplete({source:'/auth/ldap',
+    select: function(event, ui) {
+      var selectedObj = ui.item;
+      $(autoCompelteElement).val(selectedObj.label);
+      $('#'+hiddenElementID).val(selectedObj.value);
+      return false;
+    }
+  });
+});
+</script>
+
 <thead>
  <tr>
   <th width="20%">Nome</th>
