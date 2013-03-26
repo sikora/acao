@@ -63,7 +63,8 @@
        [% END %]
          <a class="_buscar" href="[% c.uri_for_action('/auth/registros/volume/index/formIndexes') %]">Buscar por Índices</a>
      </span>
-<table>
+
+<table id="myTable" class="sorter">
 <thead>
  <tr>
   <th width="20%">Volume</th>
@@ -139,7 +140,6 @@
              return false;
         }
      }
-
 </script>
 
 

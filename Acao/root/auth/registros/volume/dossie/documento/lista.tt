@@ -152,7 +152,7 @@
   <br/>
 <form action="[% c.uri_for_action('/auth/registros/volume/dossie/documento/form',[ id_volume, controle ]) %]" id="form" name="form" method="post" onSubmit="return validaDropDonw()"></form>
 <br/>
-  <table class="wide-table">
+  <table class="wide-table sorter"  id="myTable">
   <thead>
    <tr>
     <th>Tipo Documento</th>

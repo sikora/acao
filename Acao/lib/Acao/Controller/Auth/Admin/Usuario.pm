@@ -123,7 +123,7 @@ sub alterar_senha : Chained('getUsuario') : PathPart('alterar_senha') : Args(0)
 sub searchUser : Chained('base') : PathPart('buscar') : Args(0) {
     my ( $self, $c ) = @_;
     $c->stash->{template} = 'auth/admin/usuario/lista.tt';
-    my $pesquisa = $c->req->param('buscar');
+    my $pesquisa = $c->req->param('buscar') || $c->req->param('buscar_autocomplete_label') ;
     my $campo    = $c->req->param('campo');
 
     my %usuarios =

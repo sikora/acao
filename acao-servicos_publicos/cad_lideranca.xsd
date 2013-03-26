@@ -1,0 +1,198 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:class="http://schemas.fortaleza.ce.gov.br/acao/classificacao.xsd"
+	xmlns="http://schemas.fortaleza.ce.gov.br/sv_publicos/cad_lideranca.xsd"
+	xmlns:idx="http://schemas.fortaleza.ce.gov.br/acao/indexhint.xsd"
+	xmlns:xsdext="http://schemas.fortaleza.ce.gov.br/xsdform/extensions.xsd"
+	targetNamespace="http://schemas.fortaleza.ce.gov.br/sv_publicos/cad_lideranca.xsd"
+	elementFormDefault="qualified">
+
+	<xs:element name="cad_lideranca" type="cad_lideranca">
+		<xs:annotation>
+			<xs:appinfo>
+				<xhtml:label>CADASTROS DAS LIDERANÇAS COMUNITÁRIAS</xhtml:label>
+				<class:classificacoes>
+					<class:classificacao>cn=Serviços Públicos</class:classificacao>
+				</class:classificacoes>
+				<idx:index>
+					<idx:hint key="pessoa.nome" xpath="cad_lideranca/nome" />
+                    <idx:hint key="pessoa.nome" xpath="cad_lideranca/nmPresdAssoc" />
+                    <idx:hint key="pessoa.cpf" xpath="cad_lideranca/cpf" />
+				</idx:index>
+
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="cad_lideranca">
+		<xs:sequence>
+            <xs:element name="cpf" minOccurs="0">
+                   <xs:annotation>
+                           <xs:appinfo>
+                                   <xhtml:label>CPF</xhtml:label>
+                           </xs:appinfo>
+                   </xs:annotation>
+                   <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                                   <xs:maxLength value="255" />
+                                   <xs:pattern value="[0-9]+"/>
+                           </xs:restriction>
+                   </xs:simpleType>
+           </xs:element>
+			<xs:element name="nome" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Nome</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="endereco" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Endereço</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bairro" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Bairro</xhtml:label>
+					</xs:appinfo>
+					<xsdext:extensions>
+						<xsdext:engine>autoComplete</xsdext:engine>
+						<xsdext:service>/bairros</xsdext:service>
+					</xsdext:extensions>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="email" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Email</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fone" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Fone</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="presAssoc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Presidende de associação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="associacao" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Nome da associação que preside</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="nmPresdAssoc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Caso não seja presidente, nome do presidente da associação que está vinculado</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="endAssoc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Endereço da associação que está vinculado</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="sitAssoc" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Situação da associação</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Regular" />
+						<xs:enumeration value="Irregular" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tpIrreg" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Se irregular, descreva tipo de irregularidade</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="titUtlPub" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Possui título de utilidade pública</xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Sim" />
+						<xs:enumeration value="Não" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tpUtlPub" minOccurs="0" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<xhtml:label>Se possui título, descreva qual(is) título(s) </xhtml:label>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
