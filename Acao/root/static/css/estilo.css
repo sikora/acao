@@ -517,7 +517,7 @@ input[type=text]
     font: normal 1.0em Sans-Serif;
     color: #666;
     background: #FFFFAF;
-    height: 18px;
+    height: 18px !important;
 }
 
 textarea
@@ -1935,4 +1935,10 @@ font-weight: 600;
 }
 #grid-autorizacoes {
     padding-top: 56px;
+}
+
+select{
+height: auto !important;
+width: 482px !important;
+padding: 2px 0;
 }
