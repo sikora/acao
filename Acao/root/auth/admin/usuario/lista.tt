@@ -91,7 +91,7 @@ $('input.buscaLotacao').each(function() {
         <a href="[% IF usuarios.$key.acao == '1' %][% c.uri_for_action('/auth/admin/usuario/ver_user',[ key ])%][% ELSE %]#[% END %]" > [% usuarios.$key.nome FILTER upper %]</a>
 
      </td>
-     <td>  <a href="[% IF usuarios.$key.acao == '1' %][% c.uri_for_action('/auth/admin/usuario/ver_user',[ key ])%][% ELSE %]#[% END %]" "> [% usuarios.$key.uid %]</a>	</td>
+     <td>  <a href="[% IF usuarios.$key.acao == '1' %][% c.uri_for_action('/auth/admin/usuario/ver_user',[ key ])%][% ELSE %]#[% END %]" "> [% usuarios.$key.uid %] </a>	</td>
      <td>
       [%# Checa se o usuário faz parte do Sistema Ação %]
          [% IF usuarios.$key.acao == '1' %]
