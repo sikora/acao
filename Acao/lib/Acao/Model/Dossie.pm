@@ -228,7 +228,7 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
              . $herdar . ']] '
              . $where .$dossieFechadoAberto
              . ' let $volume := collection("volume")/vol:volume[vol:collection = "'.$args->{id_volume}.'"]/vol:autorizacoes/author:autorizacao '
-             . ' let $dossie := collection("'.$args->{id_volume}.'")/ns:dossie[ns:controle = $x/ns:controle]/ns:autorizacoes/author:autorizacao ' 
+             . ' let $dossie := collection("'.$args->{id_volume}.'")/ns:dossie[ns:controle = $x/ns:controle]/ns:autorizacoes/author:autorizacao  order by $x/ns:nome ascending' 
              . ' return '
 
              . ' let $alterar := if ($x/ns:autorizacoes/@herdar = "1") then ('
@@ -285,6 +285,8 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
               . ' count( for $x in collection("'.$args->{id_volume}.'")/ns:dossie '
               . $where.$dossieFechadoAberto
               . ' return "" )';
+	
+
 
     return {
         list     => $list,
