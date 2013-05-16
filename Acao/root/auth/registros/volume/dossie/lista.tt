@@ -358,4 +358,23 @@
         }
     });
   </script>
+
+
+<script type="text/javascript">
+
+$(function(){
+  // Evento click faz que todos os links do header do accordion funcione.
+  // Ao clicar nos links de alterar e fechar, a página sera redicionada para a url 
+  //contida no atributo href da tag a.
+  $("#accordion h3 #operacoesVolume a").click(function() {
+      window.location = $(this).attr('href');
+      return false;
+   });
+  $("#accordion h3 #operacoes a").click(function() {
+      window.location = $(this).attr('href');
+      return false;
+   });
+});
+
+</script>
   [% INCLUDE 'footer.tt' %]
