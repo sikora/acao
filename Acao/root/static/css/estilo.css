@@ -1943,3 +1943,13 @@ height: auto !important;
 width: 482px !important;
 padding: 2px 0;
 }
+
+/* botoes de ordenação da grid de prontuarios*/
+.btOrdenar input {
+    background: transparent;
+    border: 0px solid;
+}
+.btOrdenar {
+    float: right;
+    margin-top: -20px;
+}

@@ -263,23 +263,39 @@
         c.model('Sedna').begin ;
         c.model('Sedna').execute( xquery.list );
     %]
-
-  <table id="buscadossie" class="sorter">
+ <form action="[% c.uri_for_action('/auth/registros/volume/dossie/lista', [ id_volume ]) %]" method="post">
+  <table id="buscadossie" >
   <thead>
    <tr>
     <th width="70px">Controle</th>
-    <th>Prontuário</th>
+    <th>
+         Prontuário
+       <div class='btOrdenar'>
+         <input type="submit" name="submit_form" id="submit_form_3" value="▾" class="defaultEnter2" />
+         <input type="submit" name="submit_form" id="submit_form_3" value="▴" class="defaultEnter2" />
+         <input type="hidden" name="submit_form" id="submit_form_3" value="prontuario" class="defaultEnter2" />
+       </div>
+   </th>
     <th>Classificação</th>
     <!--<th>Localização</th>-->
     <th width="80px">Pront. Físico</th>
-    <th width="110px">Criação</th>
+</form>
+ <form action="[% c.uri_for_action('/auth/registros/volume/dossie/lista', [ id_volume ]) %]" method="post">
+    <th width="110px">
+        Criação
+       <div class='btOrdenar'>
+         <input type="submit" name="submit_form" id="submit_form_4" value="▾" class="defaultEnter2" />
+         <input type="submit" name="submit_form" id="submit_form_4" value="▴" class="defaultEnter2" />
+         <input type="hidden" name="submit_form" id="submit_form_3" value="criacao" class="defaultEnter2" />
+         
+       </div>
     <th width="110px">Fechamento</th>
     <th width="110px">Arquivamento</th>
     <th width="40px">Estado</th>
     <th colspan="7" align="center">Ação</th>
    </tr>
   </thead>
-
+</form>
    [%
      WHILE (control = c.model('Sedna').get_item) ;
        CALL c.controller.audit_listar(control);
@@ -374,6 +390,7 @@ $(function(){
       window.location = $(this).attr('href');
       return false;
    });
+
 });
 
 </script>

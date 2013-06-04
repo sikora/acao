@@ -219,7 +219,31 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
               . ') + 1 ,'
               . $args->{num_por_pagina} . '' . ')';
     }
- 
+    my $asc_desc = 'ascending';
+    my $orderby = 'criacao';
+    if(ref($args->{pesquisa}{submit_form}) eq 'ARRAY'){
+       $orderby = $args->{pesquisa}{submit_form}[0];
+        if ($args->{pesquisa}{submit_form}[1] eq 'prontuario'){
+            if($orderby eq '▾'){
+                  $orderby = 'nome'; 
+            }
+            if($orderby eq '▴'){
+                  $orderby = 'nome';
+                  $asc_desc = 'descending'; 
+            }
+        }
+
+        if ($args->{pesquisa}{submit_form}[1] eq 'criacao'){
+            if($orderby eq '▾'){
+                  $orderby = 'criacao'; 
+            }
+            if($orderby eq '▴'){
+                  $orderby = 'criacao';
+                  $asc_desc = 'descending'; 
+            }
+     }
+    }
+
     my $list = $declarens
              . 'subsequence('
              . 'for $x in collection("'
@@ -228,7 +252,8 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
              . $herdar . ']] '
              . $where .$dossieFechadoAberto
              . ' let $volume := collection("volume")/vol:volume[vol:collection = "'.$args->{id_volume}.'"]/vol:autorizacoes/author:autorizacao '
-             . ' let $dossie := collection("'.$args->{id_volume}.'")/ns:dossie[ns:controle = $x/ns:controle]/ns:autorizacoes/author:autorizacao  order by $x/ns:nome ascending' 
+             . ' let $dossie := collection("'.$args->{id_volume}.'")/ns:dossie[ns:controle = $x/ns:controle]/ns:autorizacoes/author:autorizacao  order by $x/ns:'
+             . $orderby.' '.$asc_desc  
              . ' return '
 
              . ' let $alterar := if ($x/ns:autorizacoes/@herdar = "1") then ('
@@ -246,7 +271,7 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
              . ') else ( '
              . ' (some $verif in $dossie satisfies ($verif[('.$grupos.') and @role = "transferir"])) '
              . ')'
-             . ' order by $x/ns:nome ascending '
+             . ' order by $x/ns:'.$orderby.' '.$asc_desc. ' '
              . $return;
 
     # contruindo o retorno para gerar o CSV - Tratamento e definiação das colunas do CSV
