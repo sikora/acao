@@ -159,7 +159,6 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
             $xpprefix
         );
 	 push @where, $expr;
-	   
     }
     my $where = join '', @where if @where;
 
@@ -218,31 +217,29 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
               . $args->{interval_ini} * $args->{num_por_pagina}
               . ') + 1 ,'
               . $args->{num_por_pagina} . '' . ')';
-    }
-    my $asc_desc = 'ascending';
-    my $orderby = 'criacao';
-    if(ref($args->{pesquisa}{submit_form}) eq 'ARRAY'){
-       $orderby = $args->{pesquisa}{submit_form}[0];
-        if ($args->{pesquisa}{submit_form}[1] eq 'prontuario'){
-            if($orderby eq '▾'){
+   }
+        my $asc_desc = 'ascending';
+        my $orderby = 'criacao';
+
+        if ($args->{pesquisa}{coluna_grid} eq 'prontuario'){
+            if($args->{pesquisa}{order_grid} eq '▾'){
                   $orderby = 'nome'; 
             }
-            if($orderby eq '▴'){
+            if($args->{pesquisa}{order_grid} eq '▴'){
                   $orderby = 'nome';
                   $asc_desc = 'descending'; 
             }
         }
 
-        if ($args->{pesquisa}{submit_form}[1] eq 'criacao'){
-            if($orderby eq '▾'){
+        if ($args->{pesquisa}{coluna_grid} eq 'criacao'){
+            if($args->{pesquisa}{order_grid} eq '▾'){
                   $orderby = 'criacao'; 
             }
-            if($orderby eq '▴'){
+            if($args->{pesquisa}{order_grid} eq '▴'){
                   $orderby = 'criacao';
                   $asc_desc = 'descending'; 
             }
-     }
-    }
+        }
 
     my $list = $declarens
              . 'subsequence('
@@ -273,7 +270,7 @@ txn_method 'listar_dossies' => authorized $role_listar => sub {
              . ')'
              . ' order by $x/ns:'.$orderby.' '.$asc_desc. ' '
              . $return;
-
+warn $list;
     # contruindo o retorno para gerar o CSV - Tratamento e definiação das colunas do CSV
      if ($args->{pesquisa}{gerarCSV}) {
          my @csvData;

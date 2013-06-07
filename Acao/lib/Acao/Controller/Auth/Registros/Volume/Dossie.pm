@@ -83,7 +83,7 @@ sub lista : Chained('base') : PathPart('') : Args(0) {
         $c->stash->{'dossiesAbertos'}  = 'checked="checked"';
    
    }
-    
+ 
     if ($c->req->param('gerarCSV')) {
         my $datacsv = $c->model('Dossie')->listar_dossies({ pesquisa => \%{$c->req->params}, id_volume => $c->stash->{id_volume}});
         $c->stash->{'csv'} = {'data' => $datacsv };
