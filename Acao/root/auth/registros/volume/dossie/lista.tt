@@ -117,7 +117,7 @@
         [% END %]
        </span>
   <br/><br/>
-      <form action="[% c.uri_for_action('/auth/registros/volume/dossie/lista', [ id_volume ]) %]" method="post">
+      <form id="search" action="[% c.uri_for_action('/auth/registros/volume/dossie/lista', [ id_volume ]) %]" method="post">
   
 [% IF c.req.param('col_0_ns') %]
     <fieldset id="fieldsetColunasShow">
@@ -236,10 +236,10 @@
 
      </div>
     </fieldset>
-    </form>
+
 
   <br/>
-
+ 
   [% IF c.req.param('submit_form')  %]
 
    [% # O foreach abaixo vai buscar diretamente no model por estar livre de contexto %]
@@ -263,7 +263,6 @@
         c.model('Sedna').begin ;
         c.model('Sedna').execute( xquery.list );
     %]
- <form action="[% c.uri_for_action('/auth/registros/volume/dossie/lista', [ id_volume ]) %]" method="post">
   <table id="buscadossie" >
   <thead>
    <tr>
@@ -271,23 +270,21 @@
     <th>
          Prontuário
        <div class='btOrdenar'>
-         <input type="submit" name="submit_form" id="submit_form_3" value="▾" class="defaultEnter2" />
-         <input type="submit" name="submit_form" id="submit_form_3" value="▴" class="defaultEnter2" />
-         <input type="hidden" name="submit_form" id="submit_form_3" value="prontuario" class="defaultEnter2" />
+         <input type="button" name="submit_form" value="▾" class="defaultEnter2" rel="prontuario"/>
+         <input type="button" name="submit_form" value="▴" class="defaultEnter2" rel="prontuario"/>
+         <input type="hidden" name="coluna_grid" class="coluna_grid" />
+         <input type="hidden" name="order_grid"  class="order_grid" />
        </div>
    </th>
     <th>Classificação</th>
     <!--<th>Localização</th>-->
     <th width="80px">Pront. Físico</th>
-</form>
- <form action="[% c.uri_for_action('/auth/registros/volume/dossie/lista', [ id_volume ]) %]" method="post">
     <th width="110px">
         Criação
        <div class='btOrdenar'>
-         <input type="submit" name="submit_form" id="submit_form_4" value="▾" class="defaultEnter2" />
-         <input type="submit" name="submit_form" id="submit_form_4" value="▴" class="defaultEnter2" />
-         <input type="hidden" name="submit_form" id="submit_form_3" value="criacao" class="defaultEnter2" />
-         
+         <input type="button" name="submit_form" value="▾" class="defaultEnter2" rel="criacao"/>
+         <input type="button" name="submit_form" value="▴" class="defaultEnter2" rel="criacao"/>
+        
        </div>
     <th width="110px">Fechamento</th>
     <th width="110px">Arquivamento</th>
@@ -295,7 +292,7 @@
     <th colspan="7" align="center">Ação</th>
    </tr>
   </thead>
-</form>
+
    [%
      WHILE (control = c.model('Sedna').get_item) ;
        CALL c.controller.audit_listar(control);
@@ -331,6 +328,7 @@
 
   [% END %]
 </div>
+</form>
   <script type="text/javascript">
       function confirmaFechamento(){
           if (!confirm('Deseja realmente fechar este prontuário?')){
@@ -391,6 +389,14 @@ $(function(){
       return false;
    });
 
+
+});
+$('.defaultEnter2').click(function() {
+    var tpord = $(this).val();
+    var coluna = $(this).attr('rel');
+    $('.coluna_grid').val(coluna);
+    $('.order_grid').val(tpord);
+    $('#submit_form_2').trigger('click');
 });
 
 </script>
